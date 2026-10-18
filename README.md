@@ -41,7 +41,7 @@ Open http://127.0.0.1:4174. English is the default. The site also contains compl
 
 | Command | Purpose |
 | --- | --- |
-| `npm run build` | Build 18 localized pages, the English root, 404, sitemap and 15 Markdown templates |
+| `npm run build` | Build 57 localized pages, the English root, 404, sitemap and 15 Markdown templates |
 | `npm test` | Check generated links/fragments, locale coverage, escaping, privacy boundaries and model distinctions |
 | `npm run check` | Build and run checks |
 | `npm run dev` | Serve `dist/` on port 4174 |
@@ -51,6 +51,9 @@ Open http://127.0.0.1:4174. English is the default. The site also contains compl
 ```text
 src/content.mjs                 EN/PT/ES editorial content and reference URLs
 src/render.mjs                  Semantic HTML, SVG diagrams and page templates
+src/documentation.mjs           Safe Markdown rendering, guide navigation and source provenance
+knowledge/                     Pinned snapshot of accepted knowledge from the independent repository
+scripts/sync-knowledge.mjs      Explicit main-only knowledge import
 src/runtime.js                  Tabs, filters, checklist and local canvas download
 src/styles.css                  Responsive monochrome design system
 build.mjs                       Deterministic static generator and editable template fields
@@ -76,6 +79,7 @@ Edit `src/` and `build.mjs`, then rebuild. Generated HTML is committed so that a
 - `/{language}/resources/`: five downloadable Markdown templates and a browser-only product canvas generator.
 - `/{language}/community/`: contribution paths, stewardship, licensing and the distinction between the open method and commercial implementations.
 - `/{language}/privacy/`: localized privacy/storage notice, operator and hosting boundaries.
+- `/{language}/docs/`: documentation index, with twelve guides per language under `/{language}/docs/{slug}/`.
 
 All substantive content is present in HTML. JavaScript enhances navigation and interactions. Stage tabs support arrow keys, Home and End. Anatomy concepts use native `details` elements; deep links open the selected concept. Without JavaScript all playbook stages remain readable and the static template downloads still work. Language links retain the current page; no language preference is stored.
 
@@ -100,3 +104,25 @@ Original framework copy, diagrams and templates are available under **CC BY 4.0*
 The monochrome identity continues the KDV brand: large editorial typography, strict grids, original line icons, hive geometry and restrained pixel motifs. Supplied logos are retained. No Delight font files were provided, so the site uses system Arial/Helvetica/sans-serif without remote font requests.
 
 Operator: **Lab of Codes & Kolmeia**. Privacy contact: **info@kolmeia.io**. Application cookies, analytics and persistent storage: **none**. Hosting sign-in and provider processing are separate; see [privacy inventory](docs/PRIVACY.md). Display language does not determine whether LGPD or GDPR applies.
+
+
+## Open knowledge and the documentation section
+
+The authoritative Markdown lives in [kolmeia-dataecosystems/kdv-framework](https://github.com/kolmeia-dataecosystems/kdv-framework), a separate public repository with guardian-reviewed `main`. Community questions, guide improvements, contribution instructions and the main GitHub call to action now point there. Website accessibility/implementation changes still point to this code repository.
+
+The original home, operating model, playbook and resource presentation remain in place. Documentation is an additional navigation destination and reading area, with the existing colours and typography, a responsive guide sidebar, local guide filter, section contents, previous/next links, source revision and edit-proposal links. It currently contains 36 guides, three localized diagrams and the same fifteen editable templates sourced from the knowledge base.
+
+`knowledge/source.json` records the exact accepted commit. `npm run build` is offline and reproducible: it reads the tracked snapshot, never a remote draft. To publish newly accepted knowledge:
+
+```sh
+npm run knowledge:sync
+npm run check
+# Review and commit the resulting knowledge snapshot and generated site changes.
+# Release that exact commit through the existing Sites source/deployment workflow.
+```
+
+The synchronization command clones **main only**, validates the content inventory and allowed file paths, copies documents/diagrams/templates and records the commit. It does not execute source-repository scripts or import contributor branches. Never hand-edit `knowledge/` as the editorial source: propose the change in the knowledge repository, obtain guardian acceptance, then synchronize.
+
+A knowledge merge does not automatically deploy this website. No cross-repository credential, webhook or scheduled task is configured. This explicit release boundary is intentional and documented in the knowledge repository. Static Markdown contains the original content; the site renderer escapes raw HTML and rejects unrecognised link protocols. The guide filter runs on existing document titles/descriptions, with no API or persistent storage.
+
+The initial knowledge guardian is **ismael-lab**, as designated by the owner. Its main branch requires CODEOWNER approval, passing `knowledge-check`, up-to-date branches, resolved conversations and fresh approval after changes. Push restrictions allow only the guardian; administrator bypass, force pushes and deletion are disabled. With only one guardian, a guardian-authored PR requires another authorised guardian for independent approval. The source repo's protected policy governs acceptance; the site snapshot exposes provenance, not a second approval authority.

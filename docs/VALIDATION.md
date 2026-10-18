@@ -27,3 +27,16 @@ Reviewed 18 October 2026.
 - Static templates and no-JavaScript content are also covered by generated-output checks. This was not a full assistive-technology or cross-browser audit.
 
 The temporary mobile QA harness is excluded from the release. No existing institutional site, DNS or operational platform was modified.
+
+## Documentation integration - 18 October 2026
+
+- Ten Node checks pass across 57 generated localized pages, including all 36 knowledge guides and their internal fragments.
+- Documentation and templates are read from the pinned `kolmeia-dataecosystems/kdv-framework` main commit recorded in `knowledge/source.json`.
+- The original hero, honeycomb, layer presentation and model anatomy drawing are byte-identical at their source-function boundaries. Existing global design rules were retained; documentation styles are additions scoped to the new section.
+- The knowledge repository CI completed successfully. GitHub confirmed main protection, required CODEOWNER review, an approval count of one, fresh review after pushes, checks, guardian-only push restrictions, administrator enforcement and disabled force pushes/deletion.
+- Browser: guide filtering matched existing titles/descriptions; opening a guide preserved navigation and showed source/edit links at the pinned revision.
+- Single-guardian independent-review limitation is documented in both repositories and the community guide.
+- Knowledge merges do not automatically deploy the website. Synchronization and publication are explicit release steps; no new scheduled automation or cross-repository secret was created.
+
+- Browser mobile review: 375 px Portuguese documentation index, English anatomy and Spanish contract guide fitted their columns; the guide navigation expanded correctly.
+- Accent-insensitive filtering matched `evidencias` to `Evidências e melhoria`; switching language retained the selected guide.

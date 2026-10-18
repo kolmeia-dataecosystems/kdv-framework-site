@@ -3,11 +3,12 @@ import assert from 'node:assert/strict';
 import {readFile,stat} from 'node:fs/promises';
 import {resolve,join} from 'node:path';
 import vm from 'node:vm';
+import {guides,source,markdownToHtml,docHref} from '../src/documentation.mjs';
 import {languages,content} from '../src/content.mjs';
-import {routes,escape} from '../src/render.mjs';
+import {allRoutes,escape} from '../src/render.mjs';
 const root=resolve('dist');
 const file=async p=>readFile(join(root,p),'utf8');
-const pages=languages.flatMap(l=>routes.map(r=>`${l}/${r?r+'/':''}index.html`));
+const pages=languages.flatMap(l=>allRoutes.map(r=>`${l}/${r?r+'/':''}index.html`));
 test('All locales contain the complete editorial model',()=>{
  for(const l of languages){assert.deepEqual(Object.keys(content[l]).sort(),Object.keys(content.en).sort());assert.equal(content[l].anatomy.length,6);assert.equal(content[l].roles.length,10);assert.equal(content[l].stages.length,4);for(const row of content[l].stages)assert.equal(row.length,8);assert.equal(content[l].mapping.length,9)}
 });
@@ -34,3 +35,15 @@ test('Framework is distinct from product, official assessments and a maturity sc
  const p=await file('en/playbook/index.html');assert.ok(p.includes('not a maturity score'));
 });
 test('Markup escaping protects editorial text',()=>{assert.equal(escape('<img src="x" onerror=\'x\'>&'), '&lt;img src=&quot;x&quot; onerror=&#39;x&#39;&gt;&amp;')});
+
+test('Documentation is rendered from the pinned accepted Markdown, in every locale',async()=>{
+ assert.equal(source.ref,'main');assert.equal(source.repository,'kolmeia-dataecosystems/kdv-framework');assert.match(source.commit,/^[0-9a-f]{40}$/);assert.equal(guides.length,36);
+ for(const g of guides){const html=await file(`${g.language}/docs/${g.slug}/index.html`);assert.ok(html.includes(escape(g.title)));assert.ok(html.includes(source.commit));assert.ok(html.includes(`/edit/main/${g.path}`));assert.ok(html.includes(markdownToHtml(g.markdown,g.language).toc[0].id));assert.equal((html.match(/<h1[ >]/g)||[]).length,1);assert.ok(html.includes('docs-sidebar'));}
+});
+test('Contribution destinations use the knowledge repository, while implementation stays separate',async()=>{
+ for(const l of languages){const html=await file(`${l}/community/index.html`);assert.ok(html.includes('https://github.com/kolmeia-dataecosystems/kdv-framework/issues/new?template=question.yml'));assert.ok(html.includes('ismael-lab'));assert.ok(html.includes(`/${l}/docs/`));assert.ok(html.includes('https://github.com/kolmeia-dataecosystems/kdv-framework-site'));}
+});
+test('Markdown renderer escapes HTML and rejects executable and unrecognised link targets',()=>{
+ const rendered=markdownToHtml('## Safe heading\n\n<script>alert(1)</script>\n\n[x](javascript:alert(1))','en').html;
+ assert.ok(rendered.includes('&lt;script&gt;'));assert.ok(!rendered.includes('href="javascript:'));assert.equal(docHref('data:text/html,hello','en'),'#');assert.equal(docHref('anatomy.md','pt'),'/pt/docs/anatomy/');assert.equal(docHref('../../templates/en/domain-charter.md','en'),'/templates/en/domain-charter.md');
+});

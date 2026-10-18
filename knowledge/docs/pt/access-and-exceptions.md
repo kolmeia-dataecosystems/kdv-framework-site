@@ -1,0 +1,37 @@
+# Acesso e exceções
+
+Do propósito do pedido à revisão e ao fim do acesso.
+
+## Propósito
+
+Reveja a finalidade pedida face à classificação e ao contrato vigente. O steward prepara a análise; o dono autorizado decide. O custodiante técnico implementa a política aprovada. Aprovação e implementação são atos distintos, ambos com evidências. A recusa e o escalonamento devem ter justificação, não apenas um estado sem explicação.
+
+## Sequência de trabalho
+
+1. **Consumidor:** Pede uma versão e declara o uso pretendido.
+2. **Steward:** Verifica propósito, significado, classificação e adequação.
+3. **Dono:** Aprova, recusa ou escala, com justificação registada.
+4. **Custodiante:** Implementa a política autorizada e verifica o acesso.
+5. **Consumidor + dono:** Revêm utilização, prazo, exceções e necessidade.
+
+## Adaptação local
+
+Uma exceção regista a regra afetada, a justificação, o risco, o responsável pela aprovação, o controlo compensatório e a data de expiração ou revisão. Não é um atalho permanente ao baseline. Revogue o acesso quando a finalidade ou o prazo terminarem e mantenha um registo de decisão adequado.
+
+## Questões de revisão
+
+- Quem pode decidir e qual é o papel exercido?
+- Que regra ou acordo autoriza a ação?
+- Que evidências demonstram a execução e as suas limitações?
+- Quando serão revistos o resultado ou a exceção?
+
+## Continuar a leitura
+
+- [Acordos de produto de dados](data-contracts.md)
+- [Comunidade e guardiões](community.md)
+
+---
+
+Conhecimento original KDV Framework. Edição comunitária de trabalho 0.1. CC BY 4.0. Referenciais mantêm os direitos dos titulares; não implica avaliação oficial ou certificação.
+
+[GitHub](https://github.com/kolmeia-dataecosystems/kdv-framework) · [CC BY 4.0](https://creativecommons.org/licenses/by/4.0/)

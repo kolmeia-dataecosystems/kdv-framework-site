@@ -1,0 +1,322 @@
+{
+  "version": 1,
+  "edition": "0.1",
+  "repository": "kolmeia-dataecosystems/kdv-framework",
+  "languages": [
+    "en",
+    "pt",
+    "es"
+  ],
+  "documents": [
+    {
+      "language": "en",
+      "slug": "start-here",
+      "title": "Getting started",
+      "description": "Choose one use case, one owner and a first working agreement.",
+      "group": "Start here",
+      "path": "docs/en/start-here.md"
+    },
+    {
+      "language": "en",
+      "slug": "principles",
+      "title": "Principles and baseline",
+      "description": "The common minimum and the space for local decisions.",
+      "group": "Operating model",
+      "path": "docs/en/principles.md"
+    },
+    {
+      "language": "en",
+      "slug": "anatomy",
+      "title": "Ecosystem anatomy",
+      "description": "Distinguish business domains, groupings, products and execution.",
+      "group": "Operating model",
+      "path": "docs/en/anatomy.md"
+    },
+    {
+      "language": "en",
+      "slug": "responsibilities",
+      "title": "Roles and decision rights",
+      "description": "Assign accountability independently of product interfaces.",
+      "group": "Operating model",
+      "path": "docs/en/responsibilities.md"
+    },
+    {
+      "language": "en",
+      "slug": "lifecycle",
+      "title": "The data lifecycle",
+      "description": "Entry conditions, participants, controls and evidence in four stages.",
+      "group": "Operating model",
+      "path": "docs/en/lifecycle.md"
+    },
+    {
+      "language": "en",
+      "slug": "access-and-exceptions",
+      "title": "Access and exceptions",
+      "description": "Follow a request from intended purpose to review and expiry.",
+      "group": "Practices",
+      "path": "docs/en/access-and-exceptions.md"
+    },
+    {
+      "language": "en",
+      "slug": "data-contracts",
+      "title": "Data product agreements",
+      "description": "Make ownership, quality, compatibility and use explicit.",
+      "group": "Practices",
+      "path": "docs/en/data-contracts.md"
+    },
+    {
+      "language": "en",
+      "slug": "evidence",
+      "title": "Evidence and improvement",
+      "description": "Observe execution and outcomes without inventing maturity scores.",
+      "group": "Practices",
+      "path": "docs/en/evidence.md"
+    },
+    {
+      "language": "en",
+      "slug": "practices",
+      "title": "Practices and references",
+      "description": "An original operational interpretation of the three reference lenses.",
+      "group": "Practices",
+      "path": "docs/en/practices.md"
+    },
+    {
+      "language": "en",
+      "slug": "implementation",
+      "title": "Applying the model",
+      "description": "Move from an operating decision to a suitable implementation.",
+      "group": "Practices",
+      "path": "docs/en/implementation.md"
+    },
+    {
+      "language": "en",
+      "slug": "community",
+      "title": "Community and guardianship",
+      "description": "Open proposals, guardian approval and publication from main.",
+      "group": "Participate",
+      "path": "docs/en/community.md"
+    },
+    {
+      "language": "en",
+      "slug": "glossary",
+      "title": "Shared glossary",
+      "description": "A compact vocabulary for consistent discussions.",
+      "group": "Participate",
+      "path": "docs/en/glossary.md"
+    },
+    {
+      "language": "pt",
+      "slug": "start-here",
+      "title": "Primeiros passos",
+      "description": "Escolha um caso de uso, um responsável e um primeiro acordo.",
+      "group": "Começar",
+      "path": "docs/pt/start-here.md"
+    },
+    {
+      "language": "pt",
+      "slug": "principles",
+      "title": "Princípios e baseline",
+      "description": "O mínimo comum e o espaço para decisões locais.",
+      "group": "Modelo operacional",
+      "path": "docs/pt/principles.md"
+    },
+    {
+      "language": "pt",
+      "slug": "anatomy",
+      "title": "Anatomia do ecossistema",
+      "description": "Distinga domínios, agrupamentos, produtos e execução.",
+      "group": "Modelo operacional",
+      "path": "docs/pt/anatomy.md"
+    },
+    {
+      "language": "pt",
+      "slug": "responsibilities",
+      "title": "Papéis e direitos de decisão",
+      "description": "Atribua responsabilidades independentemente das interfaces.",
+      "group": "Modelo operacional",
+      "path": "docs/pt/responsibilities.md"
+    },
+    {
+      "language": "pt",
+      "slug": "lifecycle",
+      "title": "O ciclo de vida do dado",
+      "description": "Entradas, participantes, controlos e evidências nas quatro etapas.",
+      "group": "Modelo operacional",
+      "path": "docs/pt/lifecycle.md"
+    },
+    {
+      "language": "pt",
+      "slug": "access-and-exceptions",
+      "title": "Acesso e exceções",
+      "description": "Do propósito do pedido à revisão e ao fim do acesso.",
+      "group": "Práticas",
+      "path": "docs/pt/access-and-exceptions.md"
+    },
+    {
+      "language": "pt",
+      "slug": "data-contracts",
+      "title": "Acordos de produto de dados",
+      "description": "Explicite responsáveis, qualidade, compatibilidade e utilização.",
+      "group": "Práticas",
+      "path": "docs/pt/data-contracts.md"
+    },
+    {
+      "language": "pt",
+      "slug": "evidence",
+      "title": "Evidências e melhoria",
+      "description": "Observe execução e resultados sem inventar notas de maturidade.",
+      "group": "Práticas",
+      "path": "docs/pt/evidence.md"
+    },
+    {
+      "language": "pt",
+      "slug": "practices",
+      "title": "Práticas e referenciais",
+      "description": "Interpretação operacional original das três perspetivas de referência.",
+      "group": "Práticas",
+      "path": "docs/pt/practices.md"
+    },
+    {
+      "language": "pt",
+      "slug": "implementation",
+      "title": "Aplicar o modelo",
+      "description": "Da decisão operacional a uma implementação adequada.",
+      "group": "Práticas",
+      "path": "docs/pt/implementation.md"
+    },
+    {
+      "language": "pt",
+      "slug": "community",
+      "title": "Comunidade e guardiões",
+      "description": "Propostas abertas, aprovação dos guardiões e publicação da main.",
+      "group": "Participar",
+      "path": "docs/pt/community.md"
+    },
+    {
+      "language": "pt",
+      "slug": "glossary",
+      "title": "Glossário comum",
+      "description": "Um vocabulário compacto para discussões consistentes.",
+      "group": "Participar",
+      "path": "docs/pt/glossary.md"
+    },
+    {
+      "language": "es",
+      "slug": "start-here",
+      "title": "Primeros pasos",
+      "description": "Elija un caso de uso, un responsable y un primer acuerdo.",
+      "group": "Empezar",
+      "path": "docs/es/start-here.md"
+    },
+    {
+      "language": "es",
+      "slug": "principles",
+      "title": "Principios y baseline",
+      "description": "El mínimo común y el espacio para las decisiones locales.",
+      "group": "Modelo operativo",
+      "path": "docs/es/principles.md"
+    },
+    {
+      "language": "es",
+      "slug": "anatomy",
+      "title": "Anatomía del ecosistema",
+      "description": "Distinga dominios, agrupaciones, productos y ejecución.",
+      "group": "Modelo operativo",
+      "path": "docs/es/anatomy.md"
+    },
+    {
+      "language": "es",
+      "slug": "responsibilities",
+      "title": "Roles y derechos de decisión",
+      "description": "Asigne responsabilidades independientemente de las interfaces.",
+      "group": "Modelo operativo",
+      "path": "docs/es/responsibilities.md"
+    },
+    {
+      "language": "es",
+      "slug": "lifecycle",
+      "title": "El ciclo de vida del dato",
+      "description": "Entradas, participantes, controles y evidencias en cuatro etapas.",
+      "group": "Modelo operativo",
+      "path": "docs/es/lifecycle.md"
+    },
+    {
+      "language": "es",
+      "slug": "access-and-exceptions",
+      "title": "Acceso y excepciones",
+      "description": "Desde el propósito de una solicitud hasta su revisión y expiración.",
+      "group": "Prácticas",
+      "path": "docs/es/access-and-exceptions.md"
+    },
+    {
+      "language": "es",
+      "slug": "data-contracts",
+      "title": "Acuerdos de producto de datos",
+      "description": "Explicite responsables, calidad, compatibilidad y uso.",
+      "group": "Prácticas",
+      "path": "docs/es/data-contracts.md"
+    },
+    {
+      "language": "es",
+      "slug": "evidence",
+      "title": "Evidencias y mejora",
+      "description": "Observe ejecución y resultados sin inventar notas de madurez.",
+      "group": "Prácticas",
+      "path": "docs/es/evidence.md"
+    },
+    {
+      "language": "es",
+      "slug": "practices",
+      "title": "Prácticas y referentes",
+      "description": "Interpretación operativa original de las tres perspectivas de referencia.",
+      "group": "Prácticas",
+      "path": "docs/es/practices.md"
+    },
+    {
+      "language": "es",
+      "slug": "implementation",
+      "title": "Aplicar el modelo",
+      "description": "De una decisión operativa a una implementación adecuada.",
+      "group": "Prácticas",
+      "path": "docs/es/implementation.md"
+    },
+    {
+      "language": "es",
+      "slug": "community",
+      "title": "Comunidad y guardianes",
+      "description": "Propuestas abiertas, aprobación de guardianes y publicación desde main.",
+      "group": "Participar",
+      "path": "docs/es/community.md"
+    },
+    {
+      "language": "es",
+      "slug": "glossary",
+      "title": "Glosario común",
+      "description": "Un vocabulario compacto para conversaciones coherentes.",
+      "group": "Participar",
+      "path": "docs/es/glossary.md"
+    }
+  ],
+  "assets": [
+    "diagrams/en-anatomy.svg",
+    "diagrams/pt-anatomy.svg",
+    "diagrams/es-anatomy.svg"
+  ],
+  "templates": [
+    "templates/en/domain-charter.md",
+    "templates/en/data-product-contract.md",
+    "templates/en/decision-record.md",
+    "templates/en/access-review.md",
+    "templates/en/evidence-register.md",
+    "templates/pt/domain-charter.md",
+    "templates/pt/data-product-contract.md",
+    "templates/pt/decision-record.md",
+    "templates/pt/access-review.md",
+    "templates/pt/evidence-register.md",
+    "templates/es/domain-charter.md",
+    "templates/es/data-product-contract.md",
+    "templates/es/decision-record.md",
+    "templates/es/access-review.md",
+    "templates/es/evidence-register.md"
+  ]
+}

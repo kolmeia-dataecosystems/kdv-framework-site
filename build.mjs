@@ -1,6 +1,6 @@
-import {mkdir,readFile,writeFile,copyFile} from 'node:fs/promises';
+import {mkdir,readFile,writeFile,copyFile,rm} from 'node:fs/promises';
 import {content,languages} from './src/content.mjs';
-import {render,routes,escape} from './src/render.mjs';
+import {render,allRoutes,escape} from './src/render.mjs';
 export const origin=process.env.SITE_ORIGIN||'https://kdv-framework.lab-of-codes-6406.chatgpt.site';
 const hosting=JSON.parse(await readFile('.openai/hosting.json','utf8'));
 hosting.static={directory:'dist'};
@@ -9,20 +9,17 @@ await mkdir('dist/assets',{recursive:true});
 for(const name of ['styles.css','runtime.js'])await copyFile(`src/${name}`,`dist/${name}`);
 let urls=[];
 for(const l of languages){
- for(const r of routes){const dir=`dist/${l}${r?'/'+r:''}`;await mkdir(dir,{recursive:true});await writeFile(`${dir}/index.html`,render(l,r,origin));urls.push(origin+`/${l}/${r?r+'/':''}`)}
- await mkdir(`dist/templates/${l}`,{recursive:true});
- const c=content[l];
- const fields={
- en:[['Domain name','Purpose and intended value','Scope: included / excluded','Domain owner','Coordinating steward','Cells and their owners','Shared vocabulary','Decision and escalation rights','Review cadence'],['Product name and version','Domain / subdomain','Product owner and steward','Purpose and intended consumers','Delivery interfaces','Schema and definitions','Quality rules and thresholds','Classification and permitted use','Access, retention and expiry','Provenance and lineage','Compatibility and deprecation','Approval and review date'],['Decision ID and date','Context and question','Options considered','Decision and rationale','Accountable approver and scope','Affected policies / products','Evidence and limitations','Exceptions and expiry','Next review'],['Requested product / version','Requester and intended purpose','Classification and restrictions','Steward review','Owner decision and rationale','Policy implementation reference','Verification and expiry','Periodic review and revocation'],['Practice / policy','Scope and owner','Implemented control','Evidence reference','Observation date','Indicator and target','Exception / corrective action','Next review']],
- pt:[['Nome do domínio','Propósito e valor pretendido','Âmbito: incluído / excluído','Dono do domínio','Steward coordenador','Cells e respetivos donos','Vocabulário partilhado','Direitos de decisão e escalonamento','Cadência de revisão'],['Nome e versão do produto','Domínio / subdomínio','Dono do produto e steward','Propósito e consumidores','Interfaces de entrega','Esquema e definições','Regras e limites de qualidade','Classificação e uso permitido','Acesso, retenção e prazo','Origem e linhagem','Compatibilidade e depreciação','Aprovação e data de revisão'],['ID da decisão e data','Contexto e questão','Opções consideradas','Decisão e justificação','Responsável pela aprovação e âmbito','Políticas / produtos afetados','Evidências e limitações','Exceções e prazo','Próxima revisão'],['Produto / versão solicitada','Requerente e propósito','Classificação e restrições','Revisão pelo steward','Decisão do dono e justificação','Referência da política implementada','Verificação e prazo','Revisão periódica e revogação'],['Prática / política','Âmbito e responsável','Controlo implementado','Referência da evidência','Data da observação','Indicador e meta','Exceção / ação corretiva','Próxima revisão']],
- es:[['Nombre del dominio','Propósito y valor previsto','Alcance: incluido / excluido','Responsable del dominio','Steward coordinador','Cells y responsables','Vocabulario compartido','Decisiones y escalamiento','Cadencia de revisión'],['Nombre y versión del producto','Dominio / subdominio','Responsable del producto y steward','Propósito y consumidores','Interfaces de entrega','Esquema y definiciones','Reglas y umbrales de calidad','Clasificación y uso permitido','Acceso, retención y plazo','Origen y linaje','Compatibilidad y deprecación','Aprobación y fecha de revisión'],['ID y fecha de decisión','Contexto y pregunta','Opciones consideradas','Decisión y razón','Aprobador responsable y ámbito','Políticas / productos afectados','Evidencias y limitaciones','Excepciones y plazo','Próxima revisión'],['Producto / versión solicitada','Solicitante y propósito','Clasificación y restricciones','Revisión del steward','Decisión y razón del responsable','Referencia de la política implementada','Verificación y plazo','Revisión periódica y revocación'],['Práctica / política','Ámbito y responsable','Control implementado','Referencia de evidencia','Fecha de observación','Indicador y objetivo','Excepción / acción correctiva','Próxima revisión']]
- };
- for(let i=0;i<c.templates.length;i++){const [slug,title,desc]=c.templates[i];const text=`# ${title}\n\n${desc}\n\n> ${c.templateNote}\n\n${fields[l][i].map(x=>`## ${x}\n\n- [ ] ...\n`).join('\n')}\n---\nKDV Framework / Community edition 0.1\nOriginal template © 2026 Lab of Codes & Kolmeia. CC BY 4.0.\nhttps://creativecommons.org/licenses/by/4.0/\nhttps://github.com/kolmeia-dataecosystems/kdv-framework-site\n`;
- await writeFile(`dist/templates/${l}/${slug}.md`,text);}
+ await rm(`dist/${l}/docs`,{recursive:true,force:true});
+ for(const r of allRoutes){const dir=`dist/${l}${r?'/'+r:''}`;await mkdir(dir,{recursive:true});await writeFile(`${dir}/index.html`,render(l,r,origin));urls.push(origin+`/${l}/${r?r+'/':''}`)}
+ await rm(`dist/templates/${l}`,{recursive:true,force:true});
 }
+const knowledge=JSON.parse(await readFile('knowledge/knowledge.json','utf8'));
+await mkdir('dist/knowledge-assets',{recursive:true});
+for(const p of knowledge.assets)await copyFile('knowledge/'+p,'dist/knowledge-assets/'+p.split('/').at(-1));
+for(const p of knowledge.templates){await mkdir('dist/'+p.split('/').slice(0,-1).join('/'),{recursive:true});await copyFile('knowledge/'+p,'dist/'+p);}
 await writeFile('dist/index.html',render('en','',origin));
 await writeFile('dist/404.html',`<!doctype html><html lang="en"><meta charset="utf-8"><meta name="viewport" content="width=device-width, initial-scale=1"><title>Page not found | KDV Framework</title><link rel="stylesheet" href="/styles.css"><main class="section wrap not-found"><p class="eyebrow">404 / KDV FRAMEWORK</p><h1>${escape(content.en.notFound)}</h1><a class="button solid" href="/en/">${escape(content.en.backHome)}</a></main></html>`);
 await writeFile('dist/robots.txt',`User-agent: *\nAllow: /\nSitemap: ${origin}/sitemap.xml\n`);
 await writeFile('dist/sitemap.xml',`<?xml version="1.0" encoding="UTF-8"?><urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">${urls.map(u=>`<url><loc>${u}</loc></url>`).join('')}</urlset>`);
 await writeFile('dist/assets/social.svg',`<svg xmlns="http://www.w3.org/2000/svg" width="1200" height="630" viewBox="0 0 1200 630"><rect width="1200" height="630" fill="#f5f5f1"/><g fill="none" stroke="#999">${[[900,215],[1000,385],[800,385]].map(([x,y])=>`<path d="m${x} ${y-100} 87 50v100l-87 50-87-50V${y-50}Z"/>`).join('')}</g><g font-family="Arial,sans-serif" fill="#181818"><text x="65" y="95" font-size="30">KDV / framework</text><text x="65" y="285" font-size="76">Good governance.</text><text x="65" y="375" font-size="76" fill="#888">A living practice.</text><text x="65" y="555" font-size="19">OPEN OPERATIONAL FRAMEWORK · POWERED BY KDV ECOSYSTEMS</text></g></svg>`);
-console.log(`Built ${urls.length} localized pages, English root and 15 editable templates.`);
+console.log(`Built ${urls.length} localized pages, English root, knowledge documentation and 15 editable templates.`);

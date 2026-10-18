@@ -1,5 +1,6 @@
 export const languages=['en','pt','es'];
-export const REPO='https://github.com/kolmeia-dataecosystems/kdv-framework-site';
+export const SITE_REPO='https://github.com/kolmeia-dataecosystems/kdv-framework-site';
+export const REPO='https://github.com/kolmeia-dataecosystems/kdv-framework';
 export const ECOSYSTEMS='https://kdv-ecosystems.lab-of-codes-6406.chatgpt.site';
 export const refs=[['DAMA-DMBOK 2','https://dama.org/dama-dmbok2-revised-edition-faqs/'],['DCAM','https://edmcouncil.org/frameworks/dcam/'],['Data Mesh','https://martinfowler.com/articles/data-mesh-principles.html']];
 export const content={

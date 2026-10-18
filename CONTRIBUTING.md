@@ -1,6 +1,8 @@
 # Contributing to KDV Framework
 
-We welcome questions, corrections, practical examples, translation improvements and accessible visual explanations. You do not need to use a KDV product to contribute.
+Framework knowledge contributions belong in https://github.com/kolmeia-dataecosystems/kdv-framework. This repository accepts website code, navigation, accessibility and rendering improvements. Do not edit the generated knowledge snapshot as an editorial source.
+
+We welcome accessible visual explanations and implementation improvements. You do not need to use a KDV product to contribute.
 
 1. Open an issue describing the governance problem and context. Do not include personal data, secrets, client details or restricted DAMA/DCAM material.
 2. Explain the proposed change, its intended effect, limitations and evidence. Identify whether it changes a principle, role, process, control, template or measure.
