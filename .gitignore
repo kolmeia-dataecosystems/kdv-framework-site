@@ -1,0 +1,8 @@
+.DS_Store
+node_modules/
+*.log
+*.tar.gz
+.env*
+!.env.example
+.openai/*
+!.openai/hosting.json

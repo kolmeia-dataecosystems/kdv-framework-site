@@ -1,0 +1,9 @@
+{
+  "name": "kdv-framework-site",
+  "version": "0.1.0",
+  "private": true,
+  "type": "module",
+  "scripts": {"build":"node build.mjs","test":"node --test test/*.test.mjs","check":"npm run build && npm test","dev":"python3 -m http.server 4174 --directory dist"},
+  "engines":{"node":">=22"},
+  "repository":{"type":"git","url":"https://github.com/kolmeia-dataecosystems/kdv-framework-site.git"}
+}

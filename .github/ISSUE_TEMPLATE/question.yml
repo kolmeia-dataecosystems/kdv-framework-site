@@ -1,0 +1,22 @@
+name: Governance question or improvement
+description: Bring a practical question, correction or improvement.
+body:
+  - type: markdown
+    attributes:
+      value: Please use synthetic context. Do not disclose confidential information, personal data or restricted DAMA/DCAM material.
+  - type: textarea
+    id: context
+    attributes:
+      label: Context and decision
+      description: What governance situation or decision are you trying to clarify?
+    validations:
+      required: true
+  - type: textarea
+    id: proposal
+    attributes:
+      label: Proposal and evidence
+      description: What could improve, and what supports the proposed change?
+  - type: textarea
+    id: limits
+    attributes:
+      label: Limitations or tradeoffs

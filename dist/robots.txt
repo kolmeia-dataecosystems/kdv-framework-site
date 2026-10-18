@@ -1,0 +1,3 @@
+User-agent: *
+Allow: /
+Sitemap: https://kdv-framework.lab-of-codes-6406.chatgpt.site/sitemap.xml

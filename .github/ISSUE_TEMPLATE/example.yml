@@ -1,0 +1,22 @@
+name: Anonymised operating example
+description: Propose a synthetic or anonymised example for the framework.
+body:
+  - type: textarea
+    id: context
+    attributes:
+      label: Context and accountable roles
+      description: Exclude identifying details and mark synthetic scenarios clearly.
+    validations:
+      required: true
+  - type: textarea
+    id: practice
+    attributes:
+      label: Decision, control and evidence
+    validations:
+      required: true
+  - type: textarea
+    id: learning
+    attributes:
+      label: Outcome, limitations and improvement
+    validations:
+      required: true
