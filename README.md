@@ -3,7 +3,7 @@
 An open operational data governance framework for the data community, powered by KDV Ecosystems. Bio-inspired by hives and beekeeping, it connects good practices to decision rights, everyday processes and evidence. This repository contains the website, original framework explanations, editable templates and contribution process.
 
 - Website preview: https://kdv-framework.lab-of-codes-6406.chatgpt.site
-- Intended independent domain: https://kdvframework.org (DNS has not been changed by this project)
+- Production domain: https://kdvframework.org
 - Repository: https://github.com/kolmeia-dataecosystems/kdv-framework-site
 - Institutional site: https://kdv-ecosystems.lab-of-codes-6406.chatgpt.site
 - Edition: **0.1, working community model**, 18 October 2026
@@ -87,7 +87,11 @@ Canvas data and checklist selections remain only in page memory. Downloads are g
 
 ## Deployment and domain
 
-The default absolute origin is in `build.mjs`; `SITE_ORIGIN` may override it for another host. Set it to the verified final origin before a custom-domain release and rebuild canonical, alternate, Open Graph and sitemap URLs together.
+The default absolute origin is `https://kdvframework.org` in `build.mjs`; `SITE_ORIGIN` may override it for another host. It must be an HTTP(S) origin without credentials, path, query or fragment. Rebuild canonical, alternate, Open Graph and sitemap URLs together after changing it.
+
+Every page, including documentation, contains Open Graph and `summary_large_image` Twitter Card metadata directly in HTML. Each language uses its own 1200 × 630 PNG, with the Framework identity and a link to the public production origin. Titles and descriptions follow the current page. SVG is retained only as an artwork source or legacy asset, not as the sharing image.
+
+Editable SVG masters and their rendered PNGs live in `assets/social/`. The dependency-free build copies the PNGs to `dist/assets/`. Export a matching 1200 × 630 PNG after editing a master. For a future artwork replacement, increment the `v1` filename and its reference in `src/social.mjs`. Social platforms can retain an older preview until they scrape the page again.
 
 For Sites, use the supported source workflow: synchronize the exact source commit, package `dist/` from it, save and deploy that version. The GitHub repository is separate from the Sites source provider. GitHub Actions runs checks only; it does not deploy production. Short-lived hosting credentials must remain in memory and must not be saved in this repository.
 
