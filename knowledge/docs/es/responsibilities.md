@@ -92,11 +92,11 @@ Sin responsable del subdominio, explicite la responsabilidad heredada por el del
 
 ## Continuar leyendo
 
-- [El ciclo de vida del dato](lifecycle.md)
-- [Comunidad y guardianes](community.md)
+- [Ejemplo completo en dos contextos de interés público](worked-example.md)
+- [Aplicar el modelo](implementation.md)
 
 ---
 
-Conocimiento original KDV Framework. Edición comunitaria de trabajo 0.1. CC BY 4.0. Los referentes conservan sus derechos; no implica evaluación oficial o certificación.
+Conocimiento original KDV. Edición comunitaria 1.1.0. CC BY 4.0. Derechos de terceros reservados.
 
 [GitHub](https://github.com/kolmeia-dataecosystems/kdv-framework) · [CC BY 4.0](https://creativecommons.org/licenses/by/4.0/)

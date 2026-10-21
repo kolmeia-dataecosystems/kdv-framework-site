@@ -1,4 +1,4 @@
-# Complete v1.1 review preview
+# Historical v1.1 review preview
 
 This is the owner's requested complete, navigable proposal for deciding the next edition. It is not the accepted framework release and does not deploy `kdvframework.org`.
 
@@ -7,7 +7,7 @@ This is the owner's requested complete, navigable proposal for deciding the next
 - European Portuguese: `/pt/`, preserving existing URLs.
 - Spanish: `/es/`.
 
-The complete preview includes 92 localized pages, 60 guides, 20 editable Markdown templates, evidence worksheet downloads and original responsive diagrams. All four language editions cover the same routes. The normal build continues to use the accepted three-language baseline from `knowledge/`; the review build explicitly uses `review/knowledge/` and marks every page as a proposal, with noindex metadata.
+The complete preview includes 92 localized pages, 60 guides, 20 editable Markdown templates, evidence worksheet downloads and original responsive diagrams. All four language editions cover the same routes. The normal build now uses accepted Framework 1.1.0 in four languages from `knowledge/`; the review build explicitly uses `review/knowledge/` and marks every page as a proposal, with noindex metadata.
 
 ## Run
 
@@ -31,6 +31,6 @@ This helper accepts a local `codex/` proposal branch, records its commit and whe
 
 ## Acceptance and publication
 
-Evaluate the preview first. The source knowledge still needs guardian review under its existing policy. After acceptance and a final framework release, synchronise the accepted snapshot, enable the approved language editions and presentation in the production build, align final version notes and run release checks before a Hostinger deployment. Do not merge this draft expecting it to publish the complete preview: review mode is explicit.
+Evaluate the preview first. The owner approved the complete preview on 21 October 2026. The coordinated release promotes that experience into the normal production build after explicit main-only synchronization. This directory retains the earlier proposal snapshot and its noindex/proposal provenance; it is not the production knowledge source. Future proposed changes still require the appropriate guardian acceptance and publication checks.
 
 The existing owner-private Sites host may serve this proposal for review with its original audience retained. It is separate from public Hostinger production. No main protection, access policy or official release is changed by showing a preview.

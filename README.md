@@ -7,11 +7,11 @@ An open operational data governance framework for the data community, powered by
 - Repository: https://github.com/kolmeia-dataecosystems/kdv-framework-site
 - Institutional site: https://kdvecosystems.com
 - Published baseline: **v1.0.0**, designated 21 October 2026; the tagged files retain the historical 0.1 labels.
-- Working website version: **v1.1.0-dev.2**, targeting v1.1.0; public production remains unchanged.
-- Complete review preview: [instructions](review/README.md), with English, Brazilian Portuguese, European Portuguese and Spanish, 92 pages and 60 proposed guides. Run `npm run preview:check`, then `npm run preview`.
-- Included Framework: **v1.0.0**, accepted commit `498c0f3fc5a52770c06a8088858baebf3b0f20cc`.
+- Website release: **v1.1.0**, owner-approved for publication on 21 October 2026.
+- Complete production edition: English, Brazilian Portuguese, European Portuguese and Spanish; 92 localized pages, 60 guides, 20 Markdown templates and four CSV worksheets. The earlier [proposal preview](review/README.md) remains a separate historical review snapshot.
+- Included Framework: **v1.1.0**, accepted commit `05a3572b51bde335212dc1fb71df282ac3431c69`.
 
-See [release policy and publication checklist](docs/RELEASING.md). Website and Framework versions are independent. The localized `/releases/` pages identify the exact version pair, history and development status. The proposed next Framework edition is not yet included.
+See [release policy and publication checklist](docs/RELEASING.md). Website and Framework versions are independent. The localized `/releases/` pages identify the exact version pair, history and publication status. The production build reads only the explicitly imported accepted knowledge snapshot.
 
 The original Sites preview is owner-private. Public production is hosted on Hostinger at `https://kdvframework.org`. GitHub visibility and Sites preview access are independent; preserve the preview's existing identity and audience.
 
@@ -42,11 +42,11 @@ npm run check
 npm run dev
 ```
 
-Open http://127.0.0.1:4174. English is the default. The site also contains complete Portuguese and Spanish editions.
+Open http://127.0.0.1:4174. English is the default. The site also contains complete Brazilian Portuguese, European Portuguese and Spanish editions.
 
 | Command | Purpose |
 | --- | --- |
-| `npm run build` | Build 60 localized pages, the English root, 404, sitemap and 15 Markdown templates |
+| `npm run build` | Build 92 localized pages, the English root, 404, sitemap, 20 Markdown templates and four CSV worksheets |
 | `npm test` | Check generated links/fragments, locale coverage, escaping, privacy boundaries and model distinctions |
 | `npm run check` | Build and run checks |
 | `npm run dev` | Serve `dist/` on port 4174 |
@@ -54,7 +54,7 @@ Open http://127.0.0.1:4174. English is the default. The site also contains compl
 ## Structure
 
 ```text
-src/content.mjs                 EN/PT/ES editorial content and reference URLs
+src/content.mjs                 Four-language editorial content and reference URLs
 src/render.mjs                  Semantic HTML, SVG diagrams and page templates
 src/documentation.mjs           Safe Markdown rendering, guide navigation and source provenance
 knowledge/                     Pinned snapshot of accepted knowledge from the independent repository
@@ -64,8 +64,8 @@ src/styles.css                  Responsive monochrome design system
 build.mjs                       Deterministic static generator and editable template fields
 dist/                           Generated static site; deploy this directory only
   assets/                       Supplied KDV brand assets and original share illustration
-  {en,pt,es}/                   Localized pages
-  templates/{en,pt,es}/         Five editable original Markdown artefacts per language
+  {en,pt-br,pt,es}/                   Localized pages
+  templates/{en,pt-br,pt,es}/         Five Markdown templates and a CSV worksheet per language
 test/site.test.mjs              Node regression checks
 docs/                          Model, sources, privacy, validation and release notes
 .github/                        CI and community issue templates
@@ -81,11 +81,11 @@ Edit `src/` and `build.mjs`, then rebuild. Generated HTML is committed so that a
 - `/{language}/`: overview, bio-inspired visual anatomy, operating layers and journey.
 - `/{language}/model/`: business structure diagram, glossary, ten accountable roles and filterable reference mapping.
 - `/{language}/playbook/`: four-stage playbook with participants, practices, evidence, gates and measures; example access flow; proposed review rhythm; readiness conversation checklist.
-- `/{language}/resources/`: five downloadable Markdown templates and a browser-only product canvas generator.
+- `/{language}/resources/`: five downloadable Markdown templates, a localized evidence CSV worksheet and a browser-only product canvas generator.
 - `/{language}/community/`: contribution paths, stewardship, licensing and the distinction between the open method and commercial implementations.
-- `/{language}/releases/`: website/framework versions, baseline notes and the next-edition status.
+- `/{language}/releases/`: website/framework versions, delivered changes, exact accepted knowledge revision and baseline notes.
 - `/{language}/privacy/`: localized privacy/storage notice, operator and hosting boundaries.
-- `/{language}/docs/`: documentation index, with twelve guides per language under `/{language}/docs/{slug}/`.
+- `/{language}/docs/`: documentation index, with fifteen guides per language under `/{language}/docs/{slug}/`.
 
 All substantive content is present in HTML. JavaScript enhances navigation and interactions. Stage tabs support arrow keys, Home and End. Anatomy concepts use native `details` elements; deep links open the selected concept. Without JavaScript all playbook stages remain readable and the static template downloads still work. Language links retain the current page; no language preference is stored.
 
@@ -120,7 +120,7 @@ Operator: **Lab of Codes & Kolmeia**. Privacy contact: **info@kolmeia.io**. Appl
 
 The authoritative Markdown lives in [kolmeia-dataecosystems/kdv-framework](https://github.com/kolmeia-dataecosystems/kdv-framework), a separate public repository with guardian-reviewed `main`. Community questions, guide improvements, contribution instructions and the main GitHub call to action now point there. Website accessibility/implementation changes still point to this code repository.
 
-The original home, operating model, playbook and resource presentation remain in place. Documentation is an additional navigation destination and reading area, with the existing colours and typography, a responsive guide sidebar, local guide filter, section contents, previous/next links, source revision and edit-proposal links. It currently contains 36 guides, three localized diagrams and the same fifteen editable templates sourced from the knowledge base.
+The approved presentation retains the monochrome brand and existing routes while adding problem-led reading paths, preparation, worked examples and reference implementation choices. Documentation is an integrated reading area, with the existing colours and typography, a responsive guide sidebar, local guide filter, section contents, previous/next links, source revision and edit-proposal links. It currently contains 60 guides, four localized diagrams and twenty editable Markdown templates sourced from the knowledge base.
 
 `knowledge/source.json` records the exact accepted commit. `npm run build` is offline and reproducible: it reads the tracked snapshot, never a remote draft. To publish newly accepted knowledge:
 
@@ -128,7 +128,7 @@ The original home, operating model, playbook and resource presentation remain in
 npm run knowledge:sync
 npm run check
 # Review and commit the resulting knowledge snapshot and generated site changes.
-# Release that exact commit through the existing Sites source/deployment workflow.
+# Merge the reviewed site commit into main for the existing Hostinger deployment.
 ```
 
 The synchronization command clones **main only**, validates the content inventory and allowed file paths, copies documents/diagrams/templates and records the commit. It does not execute source-repository scripts or import contributor branches. Never hand-edit `knowledge/` as the editorial source: propose the change in the knowledge repository, obtain guardian acceptance, then synchronize.

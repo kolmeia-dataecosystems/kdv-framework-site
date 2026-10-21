@@ -8,7 +8,7 @@ Uma política importa quando alguém pode agir sobre ela. A KDV conecta o que se
 
 ## Baseline mínimo
 
-Cada produto compartilhado precisa de responsável, contrato, classificação, acesso por política e rastreabilidade. Cada ecossistema adapta nomes de papéis, fluxos de aprovação, limites e cadências em torno desse mínimo.
+Cada produto partilhado precisa de responsável, contrato, classificação, acesso por política e rastreabilidade. Cada ecossistema adapta nomes de papéis, fluxos de aprovação, limites e cadências em torno desse mínimo.
 
 - Responsável identificado
 - Contrato versionado
@@ -32,7 +32,7 @@ Quem decide e entrega. Donos e stewards explícitos, com responsabilidades no â
 
 ### Processos e decisões
 
-Como o trabalho avança. Cultivar, governar, compartilhar e ativar, com revisão e tratamento de exceções.
+Como o trabalho avança. Cultivar, governar, partilhar e ativar, com revisão e tratamento de exceções.
 
 ### Controlos e meios
 
@@ -44,11 +44,11 @@ Como sabemos e aprendemos. Decisões registadas, resultados de testes, utilizaç
 
 ## Continuar a leitura
 
-- [Anatomia do ecossistema](anatomy.md)
-- [Comunidade e guardiões](community.md)
+- [Exemplo completo em dois contextos de interesse público](worked-example.md)
+- [Aplicar o modelo](implementation.md)
 
 ---
 
-Conhecimento original KDV Framework. Edição comunitária de trabalho 0.1. CC BY 4.0. Referenciais mantêm os direitos dos titulares; não implica avaliação oficial ou certificação.
+Conhecimento original KDV. Edição comunitária 1.1.0. CC BY 4.0. Direitos de terceiros reservados.
 
 [GitHub](https://github.com/kolmeia-dataecosystems/kdv-framework) · [CC BY 4.0](https://creativecommons.org/licenses/by/4.0/)

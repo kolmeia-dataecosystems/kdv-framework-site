@@ -15,42 +15,38 @@ La documentación del producto KDV es una implementación de referencia e incluy
 5. Automatizar tras comprender regla, alcance, fallos y responsable.
 6. Empezar con un producto, revisar evidencias y ampliar deliberadamente.
 
-## Cinco capas operativas
+## Elegir la implementación después de la decisión
 
-### Principios y políticas
+El modelo operativo se mantiene. La automatización y el alojamiento dependen de la escala, las capacidades, el riesgo y la arquitectura existente.
 
-Propósito, clasificación, retención y baseline mínimo de gobernanza.
+### Empezar con un equipo pequeño
 
-### Organización y roles
+Documentos, una hoja de cálculo controlada y una reunión de revisión pueden establecer responsables, acuerdos y decisiones.
 
-Responsables y stewards explícitos en el ámbito adecuado.
+Adecuado para un primer caso acotado; verifique manualmente accesos y evidencias.
 
-### Procesos y decisiones
+### Usar la plataforma existente
 
-Cultivar, gobernar, compartir y activar, con revisión y gestión de excepciones.
+Conecte el método con su catálogo, proveedor de identidad, plataforma de datos y gestión de servicios.
 
-### Controles y medios
+Priorice interfaces interoperables, salidas explícitas y evidencias recuperables.
 
-Contratos, pruebas de calidad, políticas de acceso, catálogos y salvaguardas operativas.
+### Usar una implementación de referencia
 
-### Evidencias y mejora
+Combine herramientas open source seleccionadas o implementaciones KDV opcionales cuando encajen con los requisitos.
 
-Decisiones registradas, pruebas, uso, incidentes y medidas de resultado.
+Verifique la versión, licencia, soporte, disponibilidad y responsabilidades operativas de cada componente.
 
-## Preguntas de revisión
-
-- ¿Quién puede decidir y con qué rol?
-- ¿Qué regla o acuerdo autoriza la acción?
-- ¿Qué evidencias muestran ejecución y limitaciones?
-- ¿Cuándo se revisan resultado y excepción?
+Los dominios de negocio organizan la responsabilidad. Los entornos de ejecución organizan la operación. La soberanía de datos también implica control, autoridad, contratos, jurisdicción y portabilidad.
 
 ## Continuar leyendo
 
-- [Comunidad y guardianes](community.md)
-- [Comunidad y guardianes](community.md)
+- [Opciones de implementación de referencia](reference-architecture.md)
+- [Ejemplo completo en dos contextos de interés público](worked-example.md)
+- [IA y privacidad en el modelo operativo](ai-privacy.md)
 
 ---
 
-Conocimiento original KDV Framework. Edición comunitaria de trabajo 0.1. CC BY 4.0. Los referentes conservan sus derechos; no implica evaluación oficial o certificación.
+Conocimiento original KDV. Edición comunitaria 1.1.0. CC BY 4.0. Derechos de terceros reservados.
 
 [GitHub](https://github.com/kolmeia-dataecosystems/kdv-framework) · [CC BY 4.0](https://creativecommons.org/licenses/by/4.0/)

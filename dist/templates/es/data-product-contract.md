@@ -52,8 +52,12 @@ Acuerdo de trabajo sobre alcance, calidad, acceso, versiones y uso.
 
 - [ ] ...
 
+## Privacidad y uso permitido en IA
+
+Registre propósito, roles legales, entradas minimizadas, conservación, revisión de acceso, uso permitido en IA y condiciones para nuevos consumidores. El DPO asesora; la organización conserva sus responsabilidades legales. Vincule la aprobación con la política aplicada.
+
 ---
-KDV Framework / Community edition 0.1
-Original template © 2026 Lab of Codes & Kolmeia. CC BY 4.0.
+KDV Framework / Edición comunitaria 1.1.0
+Plantilla original © 2026 Lab of Codes & Kolmeia. CC BY 4.0.
 https://creativecommons.org/licenses/by/4.0/
 https://github.com/kolmeia-dataecosystems/kdv-framework

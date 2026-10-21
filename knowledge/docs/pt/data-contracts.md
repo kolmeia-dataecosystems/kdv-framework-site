@@ -30,13 +30,17 @@ Uma equipa fictícia de planeamento de serviços precisa de um agregado semanal 
 - Que evidências demonstram a execução e as suas limitações?
 - Quando serão revistos o resultado ou a exceção?
 
+## Privacidade e utilização permitida em IA
+
+Registe propósito, papéis legais aplicáveis, entradas minimizadas, retenção, revisão de acesso, utilização permitida em IA e condições para novos consumidores. O encarregado aconselha; a organização conserva as suas responsabilidades legais. Ligue a aprovação à política efetivamente aplicada.
+
 ## Continuar a leitura
 
-- [Evidências e melhoria](evidence.md)
-- [Comunidade e guardiões](community.md)
+- [Exemplo completo em dois contextos de interesse público](worked-example.md)
+- [Aplicar o modelo](implementation.md)
 
 ---
 
-Conhecimento original KDV Framework. Edição comunitária de trabalho 0.1. CC BY 4.0. Referenciais mantêm os direitos dos titulares; não implica avaliação oficial ou certificação.
+Conhecimento original KDV. Edição comunitária 1.1.0. CC BY 4.0. Direitos de terceiros reservados.
 
 [GitHub](https://github.com/kolmeia-dataecosystems/kdv-framework) · [CC BY 4.0](https://creativecommons.org/licenses/by/4.0/)

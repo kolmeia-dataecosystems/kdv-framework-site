@@ -6,7 +6,7 @@ The owner designated the current website as **v1.0.0** on 21 October 2026, prese
 
 That baseline includes [Framework v1.0.0](https://github.com/kolmeia-dataecosystems/kdv-framework/releases/tag/v1.0.0), accepted knowledge commit `498c0f3fc5a52770c06a8088858baebf3b0f20cc`. Version 1 is a historical reference, not a certification or product readiness claim.
 
-The working website version is **1.1.0-dev.1**, targeting **1.1.0**. This branch prepares release identification; it does not deliver all the team's proposed content changes. The separate [knowledge release plan](https://github.com/kolmeia-dataecosystems/kdv-framework/pulls) tracks the proposal. A final release date has not been set.
+The owner approved the complete four-language edition on 21 October 2026. Website **1.1.0** includes Framework **1.1.0**, accepted main commit `05a3572b51bde335212dc1fb71df282ac3431c69`. The normal build publishes all 92 localized pages; the separate proposal snapshot remains explicitly marked as historical review material. GitHub release notes record the final integration and live-host verification.
 
 ## Version contract
 
@@ -27,7 +27,7 @@ Use PATCH for compatible fixes, MINOR for compatible additions, and MAJOR for in
 7. Tag the exact accepted website commit and create GitHub release notes with the included framework version and commit, significant changes, compatibility, tests and remaining limits. A draft or prerelease must not be presented as a final edition. Tags must not be moved or reused.
 8. Verify the Hostinger deployment at `https://kdvframework.org`, including release indication and documentation provenance. Record any deployment failure separately from the GitHub release state.
 
-## Next-edition acceptance
+## Publication checklist for this and future editions
 
 - [ ] Agreed clarity, documentation, adoption and reference changes reviewed in their authoritative repositories.
 - [ ] Revised resources, examples, formulas, translations and accessibility checked.

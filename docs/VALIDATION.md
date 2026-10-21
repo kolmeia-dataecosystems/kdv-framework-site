@@ -1,3 +1,16 @@
+# Validation — version 1.1.0
+
+Prepared and checked on 21 October 2026. The complete production build contains 92 localized pages, 60 accepted guides, 20 Markdown templates and four CSV worksheets in English, Brazilian Portuguese, European Portuguese and Spanish.
+
+- Fourteen Node checks cover the generated site, internal links/fragments, assets, localized metadata, escaping, privacy boundaries, model distinctions, source provenance, release consistency and raster sharing cards.
+- The independent knowledge validator checks 60 guides, 20 templates, four SVGs and the permanent guardian policy.
+- The separate proposal validator checks the complete historical preview with explicit proposal provenance and noindex metadata.
+- Desktop browser review covered home, model, playbook tabs, guide filtering and switching among the four languages while retaining the current route.
+- The revised version has not received a dedicated mobile visual, assistive-technology or full cross-browser audit. Earlier mobile observations below apply to the earlier edition and must not be presented as new version 1.1 evidence.
+- Final main integration, protection restoration, GitHub releases and live Hostinger checks are recorded in the corresponding release notes.
+
+---
+
 # Validation - initial community edition
 
 Reviewed 18 October 2026.

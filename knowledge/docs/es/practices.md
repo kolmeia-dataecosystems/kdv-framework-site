@@ -30,13 +30,23 @@ Interpretación original de KDV para uso operativo. Relaciones ilustrativas, no 
 
 KDV aporta una interpretación operativa original. No redistribuye material DAMA-DMBOK o DCAM. Las referencias no implican respaldo, afiliación, certificación ni mapeo oficial.
 
+## Leer los límites de las referencias
+
+| Referencia | Qué hace operativo KDV | Qué requiere trabajo propio |
+| --- | --- | --- |
+| DAMA-DMBOK 2 · edición revisada | Prácticas de responsabilidad, metadatos, calidad, seguridad y ciclo de vida. | Arquitectura, modelado, datos maestros, integración, almacenamiento y otras disciplinas requieren diseño contextual y trabajo especializado. |
+| DCAM · perspectiva v3 | Mejora de capacidades respaldada por implicación, procesos y evidencias. | Un recuento de eventos técnicos no evalúa capacidades. Use la metodología licenciada del editor si el objetivo es una evaluación. |
+| Data Mesh · cuatro principios | Responsabilidad por dominio, datos como producto, autoservicio y gobernanza federada. | Deben diseñarse los límites organizativos, la capacidad de plataforma y la financiación viable de los productos; la terminología no crea un data mesh. |
+
+Interpretación original KDV, revisada frente a las fuentes de los editores el 21 de octubre de 2026. Sin afirmar un mapeo oficial, respaldo o certificación; no reproduce material restringido.
+
 ## Continuar leyendo
 
+- [Ejemplo completo en dos contextos de interés público](worked-example.md)
 - [Aplicar el modelo](implementation.md)
-- [Comunidad y guardianes](community.md)
 
 ---
 
-Conocimiento original KDV Framework. Edición comunitaria de trabajo 0.1. CC BY 4.0. Los referentes conservan sus derechos; no implica evaluación oficial o certificación.
+Conocimiento original KDV. Edición comunitaria 1.1.0. CC BY 4.0. Derechos de terceros reservados.
 
 [GitHub](https://github.com/kolmeia-dataecosystems/kdv-framework) · [CC BY 4.0](https://creativecommons.org/licenses/by/4.0/)

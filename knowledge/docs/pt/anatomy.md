@@ -48,13 +48,17 @@ Onde os produtos são cultivados e operados: produção, teste ou desenvolviment
 
 A metáfora ajuda a explicar o modelo. Não substitui os termos da organização nem atribui papéis humanos com base na biologia das abelhas.
 
+## Limites de negócio antes do organograma
+
+Um domínio de negócio é uma área coerente de significado e responsabilidade de decisão; não precisa de coincidir com um departamento. Várias unidades podem contribuir com acordos explícitos. O ambiente de execução não é a hierarquia de negócio.
+
 ## Continuar a leitura
 
-- [Papéis e direitos de decisão](responsibilities.md)
-- [Comunidade e guardiões](community.md)
+- [Exemplo completo em dois contextos de interesse público](worked-example.md)
+- [Aplicar o modelo](implementation.md)
 
 ---
 
-Conhecimento original KDV Framework. Edição comunitária de trabalho 0.1. CC BY 4.0. Referenciais mantêm os direitos dos titulares; não implica avaliação oficial ou certificação.
+Conhecimento original KDV. Edição comunitária 1.1.0. CC BY 4.0. Direitos de terceiros reservados.
 
 [GitHub](https://github.com/kolmeia-dataecosystems/kdv-framework) · [CC BY 4.0](https://creativecommons.org/licenses/by/4.0/)

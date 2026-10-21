@@ -23,13 +23,18 @@ Every shared product needs ownership, a contract, a classification, policy-based
 
 A fictional service-planning team needs a weekly aggregate of requests. The service domain owns the meaning; a subdomain team prepares the data; a product owner agrees freshness and allowed use. The first release is an internal aggregate, not a copy of identifiable source records. The team records quality results and reviews whether the product supports the intended planning decision.
 
+## Prepare a bounded first case
+
+Name the decision, consumer, accountable owner and outcome before entering the four lifecycle stages. Preparation sets the boundary; it is not a fifth mandatory stage. Avoid promising a delivery date before checking source access, capacity and applicable controls.
+
 ## Continue reading
 
+- [Worked example across two public-interest contexts](worked-example.md)
 - [Principles and baseline](principles.md)
-- [Community and guardianship](community.md)
+- [Data product agreements](data-contracts.md)
 
 ---
 
-Original KDV Framework knowledge. Working community edition 0.1. CC BY 4.0. References retain their owners’ rights; no official assessment or certification is implied.
+Original KDV knowledge. Community edition 1.1.0. CC BY 4.0. Third-party rights remain reserved.
 
 [GitHub](https://github.com/kolmeia-dataecosystems/kdv-framework) · [CC BY 4.0](https://creativecommons.org/licenses/by/4.0/)

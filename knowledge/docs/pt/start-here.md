@@ -17,19 +17,24 @@ Comece pela decisão que as pessoas precisam de tomar, não pelo inventário de 
 
 ## Baseline mínimo
 
-Cada produto compartilhado precisa de responsável, contrato, classificação, acesso por política e rastreabilidade. Cada ecossistema adapta nomes de papéis, fluxos de aprovação, limites e cadências em torno desse mínimo.
+Cada produto partilhado precisa de responsável, contrato, classificação, acesso por política e rastreabilidade. Cada ecossistema adapta nomes de papéis, fluxos de aprovação, limites e cadências em torno desse mínimo.
 
 ## Exemplo sintético
 
 Uma equipa fictícia de planeamento de serviços precisa de um agregado semanal de pedidos. O domínio do serviço responde pelo significado; uma equipa do subdomínio prepara os dados; o dono do produto acorda a atualização e os usos permitidos. A primeira entrega é um agregado interno, sem copiar registos identificáveis. A equipa guarda os resultados de qualidade e revê se o produto apoia a decisão pretendida.
 
+## Preparar um primeiro caso delimitado
+
+Identifique decisão, consumidor, dono responsável e resultado antes das quatro etapas do ciclo. A preparação delimita o trabalho; não é uma quinta etapa obrigatória. Evite prometer datas antes de verificar acesso às fontes, capacidade e controlos aplicáveis.
+
 ## Continuar a leitura
 
+- [Exemplo completo em dois contextos de interesse público](worked-example.md)
 - [Princípios e baseline](principles.md)
-- [Comunidade e guardiões](community.md)
+- [Acordos de produto de dados](data-contracts.md)
 
 ---
 
-Conhecimento original KDV Framework. Edição comunitária de trabalho 0.1. CC BY 4.0. Referenciais mantêm os direitos dos titulares; não implica avaliação oficial ou certificação.
+Conhecimento original KDV. Edição comunitária 1.1.0. CC BY 4.0. Direitos de terceiros reservados.
 
 [GitHub](https://github.com/kolmeia-dataecosystems/kdv-framework) · [CC BY 4.0](https://creativecommons.org/licenses/by/4.0/)

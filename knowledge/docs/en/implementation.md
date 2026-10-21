@@ -15,42 +15,38 @@ KDV product documentation is a reference implementation and includes proposals a
 5. Automate a control only after its rule, scope, failure path and owner are understood.
 6. Start with one product, review evidence and expand deliberately.
 
-## Five operating layers
+## Choose an implementation after the decision
 
-### Principles & policies
+The operating model stays the same. Automation and hosting choices depend on scale, skills, risk and existing architecture.
 
-Purpose, classification, retention and the minimum governance baseline.
+### Start with a small team
 
-### Organisation & roles
+Documents, a controlled spreadsheet and a review meeting can establish ownership, agreements and decisions.
 
-Explicit owners and stewards, with responsibilities assigned at the right scope.
+Suitable for a bounded first case; manually verify access and evidence.
 
-### Processes & decisions
+### Use your existing platform
 
-Cultivate, govern, share and activate, with review and exception paths.
+Connect the method to your catalogue, identity provider, data platform and service management.
 
-### Controls & enablers
+Prefer interoperable interfaces, explicit exit paths and recoverable evidence.
 
-Contracts, quality checks, access policies, catalogues and operational safeguards.
+### Use a reference implementation
 
-### Evidence & improvement
+Combine selected open-source tools or optional KDV implementations where they fit the requirements.
 
-Decision records, test results, usage, incidents and agreed outcome measures.
+Verify each component’s version, licence, support, availability and operating responsibilities.
 
-## Review questions
-
-- Who can decide, and is the acting role explicit?
-- What rule or agreement authorises the action?
-- What evidence demonstrates execution and its limitations?
-- When will the outcome or exception be reviewed?
+Business domains organise accountability. Execution environments organise operation. Data sovereignty also involves control, authority, contracts, jurisdiction and portability.
 
 ## Continue reading
 
-- [Community and guardianship](community.md)
-- [Community and guardianship](community.md)
+- [Reference implementation choices](reference-architecture.md)
+- [Worked example across two public-interest contexts](worked-example.md)
+- [AI and privacy in the operating model](ai-privacy.md)
 
 ---
 
-Original KDV Framework knowledge. Working community edition 0.1. CC BY 4.0. References retain their owners’ rights; no official assessment or certification is implied.
+Original KDV knowledge. Community edition 1.1.0. CC BY 4.0. Third-party rights remain reserved.
 
 [GitHub](https://github.com/kolmeia-dataecosystems/kdv-framework) · [CC BY 4.0](https://creativecommons.org/licenses/by/4.0/)

@@ -11,8 +11,8 @@ const inventory=await json('../knowledge/knowledge.json');
 
 test('A changed knowledge snapshot cannot retain the historical baseline release claim',()=>{
  assert.throws(()=>validateRelease(release,{...source,commit:'a'.repeat(40)},inventory,release.version),/Confirm the framework release/);
- const changed=structuredClone(release);changed.knowledge.commit='a'.repeat(40);
- assert.throws(()=>validateRelease(changed,{...source,commit:'a'.repeat(40)},inventory,release.version));
+ const historical={...release,knowledge:{version:'1.0.0',tag:'v1.0.0',commit:'a'.repeat(40),sourceEdition:'0.1'}};
+ assert.throws(()=>validateRelease(historical,{repository:source.repository,ref:'main',commit:'a'.repeat(40),edition:'0.1'},{edition:'0.1'},release.version));
 });
 
 test('Stable publication rejects development knowledge and inconsistent website versions',()=>{

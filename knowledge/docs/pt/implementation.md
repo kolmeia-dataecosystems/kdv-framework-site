@@ -15,42 +15,38 @@ A documentação do produto KDV é uma implementação de referência e inclui p
 5. Automatizar um controlo depois de compreender regra, âmbito, falhas e responsável.
 6. Começar por um produto, rever evidências e ampliar deliberadamente.
 
-## Cinco camadas operacionais
+## Escolher a implementação depois da decisão
 
-### Princípios e políticas
+O modelo operacional mantém-se. As escolhas de automação e alojamento dependem da escala, competências, risco e arquitetura existente.
 
-Propósito, classificação, retenção e baseline mínimo de governança.
+### Começar com uma equipa pequena
 
-### Organização e papéis
+Documentos, uma folha de cálculo controlada e uma reunião de revisão podem estabelecer responsáveis, acordos e decisões.
 
-Donos e stewards explícitos, com responsabilidades no âmbito adequado.
+Adequado a um primeiro caso delimitado; verifique manualmente acessos e evidências.
 
-### Processos e decisões
+### Usar a plataforma existente
 
-Cultivar, governar, compartilhar e ativar, com revisão e tratamento de exceções.
+Ligue o método ao catálogo, fornecedor de identidade, plataforma de dados e gestão de serviços existentes.
 
-### Controlos e meios
+Prefira interfaces interoperáveis, caminhos de saída explícitos e evidências recuperáveis.
 
-Contratos, testes de qualidade, políticas de acesso, catálogos e salvaguardas operacionais.
+### Usar uma implementação de referência
 
-### Evidências e melhoria
+Combine ferramentas open source selecionadas ou implementações KDV opcionais quando forem adequadas aos requisitos.
 
-Decisões registadas, resultados de testes, utilização, incidentes e medidas de resultado.
+Verifique a versão, licença, suporte, disponibilidade e responsabilidades operacionais de cada componente.
 
-## Questões de revisão
-
-- Quem pode decidir e qual é o papel exercido?
-- Que regra ou acordo autoriza a ação?
-- Que evidências demonstram a execução e as suas limitações?
-- Quando serão revistos o resultado ou a exceção?
+Os domínios de negócio organizam a responsabilidade. Os ambientes de execução organizam a operação. A soberania dos dados também envolve controlo, autoridade, contratos, jurisdição e portabilidade.
 
 ## Continuar a leitura
 
-- [Comunidade e guardiões](community.md)
-- [Comunidade e guardiões](community.md)
+- [Escolhas de implementação de referência](reference-architecture.md)
+- [Exemplo completo em dois contextos de interesse público](worked-example.md)
+- [IA e privacidade no modelo operacional](ai-privacy.md)
 
 ---
 
-Conhecimento original KDV Framework. Edição comunitária de trabalho 0.1. CC BY 4.0. Referenciais mantêm os direitos dos titulares; não implica avaliação oficial ou certificação.
+Conhecimento original KDV. Edição comunitária 1.1.0. CC BY 4.0. Direitos de terceiros reservados.
 
 [GitHub](https://github.com/kolmeia-dataecosystems/kdv-framework) · [CC BY 4.0](https://creativecommons.org/licenses/by/4.0/)

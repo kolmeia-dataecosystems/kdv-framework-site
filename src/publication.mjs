@@ -1,5 +1,4 @@
 import {release,releaseUi,releaseStatus,frameworkReleaseUrl,websiteBaselineUrl,sourceCommitUrl} from './releases.mjs';
-import {copy} from '../review/copy.mjs';
 const e=s=>String(s).replace(/[&<>"']/g,c=>({'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;',"'":'&#39;'}[c]));
 const text={
  en:{title:'Versions and release notes',intro:'The website and the open Framework have independent versions. This edition identifies its exact accepted knowledge source.',changes:'Changes in 1.1.0',candidate:'The approved scope is prepared for publication. The included knowledge version below is the currently accepted source; final publication follows the coordinated release.',items:['A clearer introduction, familiar business vocabulary and reader journeys.','A visual operating model, first-case preparation and explicit access decisions.','Worked examples for municipalities and professional councils.','Reference implementation choices, AI/privacy guidance and editable resources.','English, Brazilian Portuguese, European Portuguese and Spanish.'],site:'Website',source:'Exact accepted knowledge revision'},

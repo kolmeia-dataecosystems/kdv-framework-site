@@ -92,11 +92,11 @@ Sem dono de subdomínio, explicite a responsabilidade herdada pelo dono do domí
 
 ## Continuar a leitura
 
-- [O ciclo de vida do dado](lifecycle.md)
-- [Comunidade e guardiões](community.md)
+- [Exemplo completo em dois contextos de interesse público](worked-example.md)
+- [Aplicar o modelo](implementation.md)
 
 ---
 
-Conhecimento original KDV Framework. Edição comunitária de trabalho 0.1. CC BY 4.0. Referenciais mantêm os direitos dos titulares; não implica avaliação oficial ou certificação.
+Conhecimento original KDV. Edição comunitária 1.1.0. CC BY 4.0. Direitos de terceiros reservados.
 
 [GitHub](https://github.com/kolmeia-dataecosystems/kdv-framework) · [CC BY 4.0](https://creativecommons.org/licenses/by/4.0/)

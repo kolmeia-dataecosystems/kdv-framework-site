@@ -1,15 +1,14 @@
 # Changelog
 
-## 1.1.0 — in development
+## 1.1.0 — 2026-10-21
 
-- Prepared the complete review-only proposal in four language editions: problem-led opening, reader journeys, visual model, first-case preparation, worked examples, explicit access branches, implementation choices, reference boundaries, AI/privacy guidance and roadmap themes.
-- Added a separate proposed-knowledge bundle with 60 guides and 20 templates. Normal builds still read only the accepted snapshot; review builds have visible proposal provenance and noindex metadata.
-- Added explicit review-only import, preview build and preview validation commands. Existing `/pt/` remains European Portuguese; `/pt-br/` is Brazilian Portuguese in the proposal.
-
-- Added independent website/framework release metadata, visible version links, localized release notes and exact knowledge provenance.
-- Updated institutional destinations to the public `https://kdvecosystems.com` site.
-- Kept the accepted v1.0.0 knowledge snapshot while the next edition is proposed. Development status is explicit; planned editorial work is not presented as delivered.
-- Added release checks that reject a stale knowledge version claim after synchronization and reject prerelease knowledge in a stable website.
+- Promoted the complete owner-approved experience to the normal production build: clearer problem-led opening, reader journeys, operating model, first-case preparation, explicit access decisions, implementation choices and roadmap themes.
+- Added complete English, Brazilian Portuguese, European Portuguese and Spanish editions: 92 localized pages and 60 accepted guides. Existing `/pt/` URLs remain European Portuguese; `/pt-br/` adds Brazilian Portuguese.
+- Imported Framework 1.1.0 from its accepted main commit, recorded exactly in `release.json` and `knowledge/source.json`.
+- Added worked examples for proactive municipal management and professional-council inspection, reference boundaries, AI/privacy guidance, 20 Markdown templates and four localized evidence CSV worksheets.
+- Added independent website/framework release metadata, translated release notes and exact accepted knowledge provenance. The build rejects inconsistent version claims.
+- Retained the earlier proposal bundle as an explicitly marked, noindex review snapshot; production does not read it as accepted knowledge.
+- Updated institutional destinations to `https://kdvecosystems.com` and public hosting information to Hostinger. No application analytics or persistent storage was added.
 
 ## 1.0.0 — baseline designated 2026-10-21
 
