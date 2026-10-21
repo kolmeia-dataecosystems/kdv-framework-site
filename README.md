@@ -7,7 +7,8 @@ An open operational data governance framework for the data community, powered by
 - Repository: https://github.com/kolmeia-dataecosystems/kdv-framework-site
 - Institutional site: https://kdvecosystems.com
 - Published baseline: **v1.0.0**, designated 21 October 2026; the tagged files retain the historical 0.1 labels.
-- Working website version: **v1.1.0-dev.1**, targeting v1.1.0; this development branch is not deployed.
+- Working website version: **v1.1.0-dev.2**, targeting v1.1.0; public production remains unchanged.
+- Complete review preview: [instructions](review/README.md), with English, Brazilian Portuguese, European Portuguese and Spanish, 92 pages and 60 proposed guides. Run `npm run preview:check`, then `npm run preview`.
 - Included Framework: **v1.0.0**, accepted commit `498c0f3fc5a52770c06a8088858baebf3b0f20cc`.
 
 See [release policy and publication checklist](docs/RELEASING.md). Website and Framework versions are independent. The localized `/releases/` pages identify the exact version pair, history and development status. The proposed next Framework edition is not yet included.

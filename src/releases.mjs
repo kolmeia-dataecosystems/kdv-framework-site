@@ -1,3 +1,4 @@
+import {brazilian} from '../review/regional.mjs';
 import assert from 'node:assert/strict';
 import {readFileSync} from 'node:fs';
 
@@ -79,3 +80,5 @@ export const releaseUi={
 };
 
 export const releaseStatus=l=>releaseUi[l][release.status];
+
+releaseUi['pt-br']=brazilian(releaseUi.pt);

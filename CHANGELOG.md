@@ -2,6 +2,10 @@
 
 ## 1.1.0 — in development
 
+- Prepared the complete review-only proposal in four language editions: problem-led opening, reader journeys, visual model, first-case preparation, worked examples, explicit access branches, implementation choices, reference boundaries, AI/privacy guidance and roadmap themes.
+- Added a separate proposed-knowledge bundle with 60 guides and 20 templates. Normal builds still read only the accepted snapshot; review builds have visible proposal provenance and noindex metadata.
+- Added explicit review-only import, preview build and preview validation commands. Existing `/pt/` remains European Portuguese; `/pt-br/` is Brazilian Portuguese in the proposal.
+
 - Added independent website/framework release metadata, visible version links, localized release notes and exact knowledge provenance.
 - Updated institutional destinations to the public `https://kdvecosystems.com` site.
 - Kept the accepted v1.0.0 knowledge snapshot while the next edition is proposed. Development status is explicit; planned editorial work is not presented as delivered.
