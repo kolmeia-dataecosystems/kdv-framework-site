@@ -5,10 +5,14 @@ An open operational data governance framework for the data community, powered by
 - Website preview: https://kdv-framework.lab-of-codes-6406.chatgpt.site
 - Production domain: https://kdvframework.org
 - Repository: https://github.com/kolmeia-dataecosystems/kdv-framework-site
-- Institutional site: https://kdv-ecosystems.lab-of-codes-6406.chatgpt.site
-- Edition: **0.1, working community model**, 18 October 2026
+- Institutional site: https://kdvecosystems.com
+- Published baseline: **v1.0.0**, designated 21 October 2026; the tagged files retain the historical 0.1 labels.
+- Working website version: **v1.1.0-dev.1**, targeting v1.1.0; this development branch is not deployed.
+- Included Framework: **v1.0.0**, accepted commit `498c0f3fc5a52770c06a8088858baebf3b0f20cc`.
 
-The initial Sites deployment is owner-private. GitHub visibility is independent of Sites hosting. Linking to the institutional site does not change that site's existing access. A future public deployment or domain cutover must preserve ownership and use the hosting provider's supported access/domain tools.
+See [release policy and publication checklist](docs/RELEASING.md). Website and Framework versions are independent. The localized `/releases/` pages identify the exact version pair, history and development status. The proposed next Framework edition is not yet included.
+
+The original Sites preview is owner-private. Public production is hosted on Hostinger at `https://kdvframework.org`. GitHub visibility and Sites preview access are independent; preserve the preview's existing identity and audience.
 
 ## The operating model
 
@@ -41,7 +45,7 @@ Open http://127.0.0.1:4174. English is the default. The site also contains compl
 
 | Command | Purpose |
 | --- | --- |
-| `npm run build` | Build 57 localized pages, the English root, 404, sitemap and 15 Markdown templates |
+| `npm run build` | Build 60 localized pages, the English root, 404, sitemap and 15 Markdown templates |
 | `npm test` | Check generated links/fragments, locale coverage, escaping, privacy boundaries and model distinctions |
 | `npm run check` | Build and run checks |
 | `npm run dev` | Serve `dist/` on port 4174 |
@@ -78,6 +82,7 @@ Edit `src/` and `build.mjs`, then rebuild. Generated HTML is committed so that a
 - `/{language}/playbook/`: four-stage playbook with participants, practices, evidence, gates and measures; example access flow; proposed review rhythm; readiness conversation checklist.
 - `/{language}/resources/`: five downloadable Markdown templates and a browser-only product canvas generator.
 - `/{language}/community/`: contribution paths, stewardship, licensing and the distinction between the open method and commercial implementations.
+- `/{language}/releases/`: website/framework versions, baseline notes and the next-edition status.
 - `/{language}/privacy/`: localized privacy/storage notice, operator and hosting boundaries.
 - `/{language}/docs/`: documentation index, with twelve guides per language under `/{language}/docs/{slug}/`.
 
@@ -93,9 +98,9 @@ Every page, including documentation, contains Open Graph and `summary_large_imag
 
 Editable SVG masters and their rendered PNGs live in `assets/social/`. The dependency-free build copies the PNGs to `dist/assets/`. Export a matching 1200 × 630 PNG after editing a master. For a future artwork replacement, increment the `v1` filename and its reference in `src/social.mjs`. Social platforms can retain an older preview until they scrape the page again.
 
-For Sites, use the supported source workflow: synchronize the exact source commit, package `dist/` from it, save and deploy that version. The GitHub repository is separate from the Sites source provider. GitHub Actions runs checks only; it does not deploy production. Short-lived hosting credentials must remain in memory and must not be saved in this repository.
+For Sites, use the supported source workflow: synchronize the exact source commit, package `dist/` from it, save and deploy that version. The GitHub repository is separate from the Sites source provider. GitHub Actions runs checks only. Production on Hostinger uses the existing Git integration from `main`; a reviewed main change can trigger deployment independently of GitHub Releases. Short-lived hosting credentials must remain in memory and must not be saved in this repository.
 
-No DNS change to `kdvframework.org` is included. The new preview is separate from any existing site at that domain.
+Production uses `https://kdvframework.org` on Hostinger. The owner-private Sites preview is separate. Release preparation does not change DNS or the preview audience.
 
 ## Community and licensing
 
