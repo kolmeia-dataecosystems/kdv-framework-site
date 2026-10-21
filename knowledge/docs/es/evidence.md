@@ -14,7 +14,7 @@ Defina población, periodo, significado y revisor de cada indicador. Un resultad
 - Plazo de acceso: tiempo entre solicitud completa y decisión implementada, con exclusiones.
 - Valor: resultado específico acordado con el consumidor, más allá del número de activos.
 
-## Secuencia de trabajo
+## Ritmo de revisión sugerido
 
 ### En cada publicación
 
@@ -35,13 +35,17 @@ Revisar resultados, excepciones y mejoras de política con el foro.
 - ¿Qué evidencias muestran ejecución y limitaciones?
 - ¿Cuándo se revisan resultado y excepción?
 
+## Definir el sentido de cada indicador
+
+Registre unidad, población, periodo, comparador y objetivo. En actualidad o plazo de acceso, menos puede ser mejor; en completitud, más puede ser mejor. Una observación vacía es falta de evidencia, no cero ni éxito. Separe pruebas de ejecución de pruebas de eficacia; los registros técnicos aislados no demuestran madurez.
+
 ## Continuar leyendo
 
-- [Prácticas y referentes](practices.md)
-- [Comunidad y guardianes](community.md)
+- [Ejemplo completo en dos contextos de interés público](worked-example.md)
+- [Aplicar el modelo](implementation.md)
 
 ---
 
-Conocimiento original KDV Framework. Edición comunitaria de trabajo 0.1. CC BY 4.0. Los referentes conservan sus derechos; no implica evaluación oficial o certificación.
+Conocimiento original KDV. Edición comunitaria 1.1.0. CC BY 4.0. Derechos de terceros reservados.
 
 [GitHub](https://github.com/kolmeia-dataecosystems/kdv-framework) · [CC BY 4.0](https://creativecommons.org/licenses/by/4.0/)

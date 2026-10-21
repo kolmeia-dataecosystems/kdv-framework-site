@@ -1,6 +1,6 @@
 {
   "name": "kdv-framework-site",
-  "version": "0.1.0",
+  "version": "1.1.0",
   "private": true,
   "type": "module",
   "scripts": {
@@ -8,7 +8,10 @@
     "test": "node --test test/*.test.mjs",
     "check": "npm run build && npm test",
     "dev": "python3 -m http.server 4174 --directory dist",
-    "knowledge:sync": "node scripts/sync-knowledge.mjs"
+    "knowledge:sync": "node scripts/sync-knowledge.mjs",
+    "preview:build": "node review/preview.mjs",
+    "preview:check": "node review/preview.mjs --check",
+    "preview": "python3 -m http.server 4174 --directory preview-dist"
   },
   "engines": {
     "node": ">=22"

@@ -68,11 +68,11 @@ A fictional service-planning team needs a weekly aggregate of requests. The serv
 
 ## Continue reading
 
-- [Access and exceptions](access-and-exceptions.md)
-- [Community and guardianship](community.md)
+- [Worked example across two public-interest contexts](worked-example.md)
+- [Applying the model](implementation.md)
 
 ---
 
-Original KDV Framework knowledge. Working community edition 0.1. CC BY 4.0. References retain their owners’ rights; no official assessment or certification is implied.
+Original KDV knowledge. Community edition 1.1.0. CC BY 4.0. Third-party rights remain reserved.
 
 [GitHub](https://github.com/kolmeia-dataecosystems/kdv-framework) · [CC BY 4.0](https://creativecommons.org/licenses/by/4.0/)

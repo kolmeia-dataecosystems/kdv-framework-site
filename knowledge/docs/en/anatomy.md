@@ -48,13 +48,17 @@ Where products are cultivated and operated: production, test or development envi
 
 The metaphor helps explain the model. It does not replace an organisation’s terminology or assign human roles based on bee biology.
 
+## Business boundaries before an organisation chart
+
+A business domain is a coherent area of meaning and decision responsibility; it need not coincide with a department. Multiple organisational units can contribute under explicit agreements. An execution environment is not the business hierarchy.
+
 ## Continue reading
 
-- [Roles and decision rights](responsibilities.md)
-- [Community and guardianship](community.md)
+- [Worked example across two public-interest contexts](worked-example.md)
+- [Applying the model](implementation.md)
 
 ---
 
-Original KDV Framework knowledge. Working community edition 0.1. CC BY 4.0. References retain their owners’ rights; no official assessment or certification is implied.
+Original KDV knowledge. Community edition 1.1.0. CC BY 4.0. Third-party rights remain reserved.
 
 [GitHub](https://github.com/kolmeia-dataecosystems/kdv-framework) · [CC BY 4.0](https://creativecommons.org/licenses/by/4.0/)

@@ -52,8 +52,12 @@ Acordo de trabalho sobre âmbito, qualidade, acesso, versões e utilização.
 
 - [ ] ...
 
+## Privacidade e utilização permitida em IA
+
+Registe propósito, papéis legais aplicáveis, entradas minimizadas, retenção, revisão de acesso, utilização permitida em IA e condições para novos consumidores. O encarregado aconselha; a organização conserva as suas responsabilidades legais. Ligue a aprovação à política efetivamente aplicada.
+
 ---
-KDV Framework / Community edition 0.1
-Original template © 2026 Lab of Codes & Kolmeia. CC BY 4.0.
+KDV Framework / Edição comunitária 1.1.0
+Modelo original © 2026 Lab of Codes & Kolmeia. CC BY 4.0.
 https://creativecommons.org/licenses/by/4.0/
 https://github.com/kolmeia-dataecosystems/kdv-framework

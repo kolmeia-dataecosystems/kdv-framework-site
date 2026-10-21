@@ -1,9 +1,10 @@
 {
   "version": 1,
-  "edition": "0.1",
+  "edition": "1.1.0",
   "repository": "kolmeia-dataecosystems/kdv-framework",
   "languages": [
     "en",
+    "pt-br",
     "pt",
     "es"
   ],
@@ -50,19 +51,19 @@
     },
     {
       "language": "en",
-      "slug": "access-and-exceptions",
-      "title": "Access and exceptions",
-      "description": "Follow a request from intended purpose to review and expiry.",
-      "group": "Practices",
-      "path": "docs/en/access-and-exceptions.md"
-    },
-    {
-      "language": "en",
       "slug": "data-contracts",
       "title": "Data product agreements",
       "description": "Make ownership, quality, compatibility and use explicit.",
       "group": "Practices",
       "path": "docs/en/data-contracts.md"
+    },
+    {
+      "language": "en",
+      "slug": "access-and-exceptions",
+      "title": "Access and exceptions",
+      "description": "Follow a request from intended purpose to review and expiry.",
+      "group": "Practices",
+      "path": "docs/en/access-and-exceptions.md"
     },
     {
       "language": "en",
@@ -74,19 +75,51 @@
     },
     {
       "language": "en",
+      "slug": "implementation",
+      "title": "Applying the model",
+      "description": "Move from an operating decision to a suitable implementation.",
+      "group": "Apply the model",
+      "path": "docs/en/implementation.md"
+    },
+    {
+      "language": "en",
+      "slug": "reference-architecture",
+      "title": "Reference implementation choices",
+      "description": "Separate business responsibilities, reusable controls and deployment choices.",
+      "group": "Apply the model",
+      "path": "docs/en/reference-architecture.md"
+    },
+    {
+      "language": "en",
       "slug": "practices",
       "title": "Practices and references",
       "description": "An original operational interpretation of the three reference lenses.",
-      "group": "Practices",
+      "group": "References",
       "path": "docs/en/practices.md"
     },
     {
       "language": "en",
-      "slug": "implementation",
-      "title": "Applying the model",
-      "description": "Move from an operating decision to a suitable implementation.",
+      "slug": "ai-privacy",
+      "title": "AI and privacy in the operating model",
+      "description": "Turn intended use, risk and individual rights into explicit operational decisions.",
       "group": "Practices",
-      "path": "docs/en/implementation.md"
+      "path": "docs/en/ai-privacy.md"
+    },
+    {
+      "language": "en",
+      "slug": "worked-example",
+      "title": "Worked example across two public-interest contexts",
+      "description": "From dispersed sources to municipal planning and traceable professional inspection.",
+      "group": "Apply the model",
+      "path": "docs/en/worked-example.md"
+    },
+    {
+      "language": "en",
+      "slug": "glossary",
+      "title": "Shared glossary",
+      "description": "A compact vocabulary for consistent discussions.",
+      "group": "References",
+      "path": "docs/en/glossary.md"
     },
     {
       "language": "en",
@@ -97,12 +130,124 @@
       "path": "docs/en/community.md"
     },
     {
-      "language": "en",
+      "language": "pt-br",
+      "slug": "start-here",
+      "title": "Primeiros passos",
+      "description": "Escolha um caso de uso, um responsável e um primeiro acordo.",
+      "group": "Começar",
+      "path": "docs/pt-br/start-here.md"
+    },
+    {
+      "language": "pt-br",
+      "slug": "principles",
+      "title": "Princípios e baseline",
+      "description": "O mínimo comum e o espaço para decisões locais.",
+      "group": "Modelo operacional",
+      "path": "docs/pt-br/principles.md"
+    },
+    {
+      "language": "pt-br",
+      "slug": "anatomy",
+      "title": "Anatomia do ecossistema",
+      "description": "Distinga domínios, agrupamentos, produtos e execução.",
+      "group": "Modelo operacional",
+      "path": "docs/pt-br/anatomy.md"
+    },
+    {
+      "language": "pt-br",
+      "slug": "responsibilities",
+      "title": "Papéis e direitos de decisão",
+      "description": "Atribua responsabilidades independentemente das interfaces.",
+      "group": "Modelo operacional",
+      "path": "docs/pt-br/responsibilities.md"
+    },
+    {
+      "language": "pt-br",
+      "slug": "lifecycle",
+      "title": "O ciclo de vida do dado",
+      "description": "Entradas, participantes, controles e evidências nas quatro etapas.",
+      "group": "Modelo operacional",
+      "path": "docs/pt-br/lifecycle.md"
+    },
+    {
+      "language": "pt-br",
+      "slug": "data-contracts",
+      "title": "Acordos de produto de dados",
+      "description": "Explicite responsáveis, qualidade, compatibilidade e utilização.",
+      "group": "Práticas",
+      "path": "docs/pt-br/data-contracts.md"
+    },
+    {
+      "language": "pt-br",
+      "slug": "access-and-exceptions",
+      "title": "Acesso e exceções",
+      "description": "Do propósito do pedido à revisão e ao fim do acesso.",
+      "group": "Práticas",
+      "path": "docs/pt-br/access-and-exceptions.md"
+    },
+    {
+      "language": "pt-br",
+      "slug": "evidence",
+      "title": "Evidências e melhoria",
+      "description": "Observe execução e resultados sem inventar notas de maturidade.",
+      "group": "Práticas",
+      "path": "docs/pt-br/evidence.md"
+    },
+    {
+      "language": "pt-br",
+      "slug": "implementation",
+      "title": "Aplicar o modelo",
+      "description": "Da decisão operacional a uma implementação adequada.",
+      "group": "Aplicar o modelo",
+      "path": "docs/pt-br/implementation.md"
+    },
+    {
+      "language": "pt-br",
+      "slug": "reference-architecture",
+      "title": "Escolhas de implementação de referência",
+      "description": "Separe responsabilidades de negócio, controles reutilizáveis e escolhas de implantação.",
+      "group": "Aplicar o modelo",
+      "path": "docs/pt-br/reference-architecture.md"
+    },
+    {
+      "language": "pt-br",
+      "slug": "practices",
+      "title": "Práticas e referenciais",
+      "description": "Interpretação operacional original das três perspectivas de referência.",
+      "group": "Referências",
+      "path": "docs/pt-br/practices.md"
+    },
+    {
+      "language": "pt-br",
+      "slug": "ai-privacy",
+      "title": "IA e privacidade no modelo operacional",
+      "description": "Transforme finalidade, risco e direitos das pessoas em decisões operacionais explícitas.",
+      "group": "Práticas",
+      "path": "docs/pt-br/ai-privacy.md"
+    },
+    {
+      "language": "pt-br",
+      "slug": "worked-example",
+      "title": "Exemplo completo em dois contextos de interesse público",
+      "description": "De fontes dispersas ao planejamento municipal e à fiscalização profissional rastreável.",
+      "group": "Aplicar o modelo",
+      "path": "docs/pt-br/worked-example.md"
+    },
+    {
+      "language": "pt-br",
       "slug": "glossary",
-      "title": "Shared glossary",
-      "description": "A compact vocabulary for consistent discussions.",
-      "group": "Participate",
-      "path": "docs/en/glossary.md"
+      "title": "Glossário comum",
+      "description": "Um vocabulário compacto para discussões consistentes.",
+      "group": "Referências",
+      "path": "docs/pt-br/glossary.md"
+    },
+    {
+      "language": "pt-br",
+      "slug": "community",
+      "title": "Comunidade e guardiões",
+      "description": "Propostas abertas, aprovação dos guardiões e publicação da main.",
+      "group": "Participar",
+      "path": "docs/pt-br/community.md"
     },
     {
       "language": "pt",
@@ -146,19 +291,19 @@
     },
     {
       "language": "pt",
-      "slug": "access-and-exceptions",
-      "title": "Acesso e exceções",
-      "description": "Do propósito do pedido à revisão e ao fim do acesso.",
-      "group": "Práticas",
-      "path": "docs/pt/access-and-exceptions.md"
-    },
-    {
-      "language": "pt",
       "slug": "data-contracts",
       "title": "Acordos de produto de dados",
       "description": "Explicite responsáveis, qualidade, compatibilidade e utilização.",
       "group": "Práticas",
       "path": "docs/pt/data-contracts.md"
+    },
+    {
+      "language": "pt",
+      "slug": "access-and-exceptions",
+      "title": "Acesso e exceções",
+      "description": "Do propósito do pedido à revisão e ao fim do acesso.",
+      "group": "Práticas",
+      "path": "docs/pt/access-and-exceptions.md"
     },
     {
       "language": "pt",
@@ -170,19 +315,51 @@
     },
     {
       "language": "pt",
+      "slug": "implementation",
+      "title": "Aplicar o modelo",
+      "description": "Da decisão operacional a uma implementação adequada.",
+      "group": "Aplicar o modelo",
+      "path": "docs/pt/implementation.md"
+    },
+    {
+      "language": "pt",
+      "slug": "reference-architecture",
+      "title": "Escolhas de implementação de referência",
+      "description": "Separe responsabilidades de negócio, controlos reutilizáveis e escolhas de implantação.",
+      "group": "Aplicar o modelo",
+      "path": "docs/pt/reference-architecture.md"
+    },
+    {
+      "language": "pt",
       "slug": "practices",
       "title": "Práticas e referenciais",
       "description": "Interpretação operacional original das três perspetivas de referência.",
-      "group": "Práticas",
+      "group": "Referências",
       "path": "docs/pt/practices.md"
     },
     {
       "language": "pt",
-      "slug": "implementation",
-      "title": "Aplicar o modelo",
-      "description": "Da decisão operacional a uma implementação adequada.",
+      "slug": "ai-privacy",
+      "title": "IA e privacidade no modelo operacional",
+      "description": "Transforme finalidade, risco e direitos das pessoas em decisões operacionais explícitas.",
       "group": "Práticas",
-      "path": "docs/pt/implementation.md"
+      "path": "docs/pt/ai-privacy.md"
+    },
+    {
+      "language": "pt",
+      "slug": "worked-example",
+      "title": "Exemplo completo em dois contextos de interesse público",
+      "description": "De fontes dispersas ao planeamento municipal e à fiscalização profissional rastreável.",
+      "group": "Aplicar o modelo",
+      "path": "docs/pt/worked-example.md"
+    },
+    {
+      "language": "pt",
+      "slug": "glossary",
+      "title": "Glossário comum",
+      "description": "Um vocabulário compacto para discussões consistentes.",
+      "group": "Referências",
+      "path": "docs/pt/glossary.md"
     },
     {
       "language": "pt",
@@ -193,19 +370,11 @@
       "path": "docs/pt/community.md"
     },
     {
-      "language": "pt",
-      "slug": "glossary",
-      "title": "Glossário comum",
-      "description": "Um vocabulário compacto para discussões consistentes.",
-      "group": "Participar",
-      "path": "docs/pt/glossary.md"
-    },
-    {
       "language": "es",
       "slug": "start-here",
       "title": "Primeros pasos",
       "description": "Elija un caso de uso, un responsable y un primer acuerdo.",
-      "group": "Empezar",
+      "group": "Comenzar",
       "path": "docs/es/start-here.md"
     },
     {
@@ -242,19 +411,19 @@
     },
     {
       "language": "es",
-      "slug": "access-and-exceptions",
-      "title": "Acceso y excepciones",
-      "description": "Desde el propósito de una solicitud hasta su revisión y expiración.",
-      "group": "Prácticas",
-      "path": "docs/es/access-and-exceptions.md"
-    },
-    {
-      "language": "es",
       "slug": "data-contracts",
       "title": "Acuerdos de producto de datos",
       "description": "Explicite responsables, calidad, compatibilidad y uso.",
       "group": "Prácticas",
       "path": "docs/es/data-contracts.md"
+    },
+    {
+      "language": "es",
+      "slug": "access-and-exceptions",
+      "title": "Acceso y excepciones",
+      "description": "Desde el propósito de una solicitud hasta su revisión y expiración.",
+      "group": "Prácticas",
+      "path": "docs/es/access-and-exceptions.md"
     },
     {
       "language": "es",
@@ -266,19 +435,51 @@
     },
     {
       "language": "es",
+      "slug": "implementation",
+      "title": "Aplicar el modelo",
+      "description": "De una decisión operativa a una implementación adecuada.",
+      "group": "Aplicar el modelo",
+      "path": "docs/es/implementation.md"
+    },
+    {
+      "language": "es",
+      "slug": "reference-architecture",
+      "title": "Opciones de implementación de referencia",
+      "description": "Separe responsabilidades de negocio, controles reutilizables y opciones de despliegue.",
+      "group": "Aplicar el modelo",
+      "path": "docs/es/reference-architecture.md"
+    },
+    {
+      "language": "es",
       "slug": "practices",
       "title": "Prácticas y referentes",
       "description": "Interpretación operativa original de las tres perspectivas de referencia.",
-      "group": "Prácticas",
+      "group": "Referencias",
       "path": "docs/es/practices.md"
     },
     {
       "language": "es",
-      "slug": "implementation",
-      "title": "Aplicar el modelo",
-      "description": "De una decisión operativa a una implementación adecuada.",
+      "slug": "ai-privacy",
+      "title": "IA y privacidad en el modelo operativo",
+      "description": "Convierta propósito, riesgo y derechos de las personas en decisiones operativas explícitas.",
       "group": "Prácticas",
-      "path": "docs/es/implementation.md"
+      "path": "docs/es/ai-privacy.md"
+    },
+    {
+      "language": "es",
+      "slug": "worked-example",
+      "title": "Ejemplo completo en dos contextos de interés público",
+      "description": "De fuentes dispersas a planificación municipal y fiscalización profesional trazable.",
+      "group": "Aplicar el modelo",
+      "path": "docs/es/worked-example.md"
+    },
+    {
+      "language": "es",
+      "slug": "glossary",
+      "title": "Glosario común",
+      "description": "Un vocabulario compacto para conversaciones coherentes.",
+      "group": "Referencias",
+      "path": "docs/es/glossary.md"
     },
     {
       "language": "es",
@@ -287,18 +488,11 @@
       "description": "Propuestas abiertas, aprobación de guardianes y publicación desde main.",
       "group": "Participar",
       "path": "docs/es/community.md"
-    },
-    {
-      "language": "es",
-      "slug": "glossary",
-      "title": "Glosario común",
-      "description": "Un vocabulario compacto para conversaciones coherentes.",
-      "group": "Participar",
-      "path": "docs/es/glossary.md"
     }
   ],
   "assets": [
     "diagrams/en-anatomy.svg",
+    "diagrams/pt-br-anatomy.svg",
     "diagrams/pt-anatomy.svg",
     "diagrams/es-anatomy.svg"
   ],
@@ -308,6 +502,11 @@
     "templates/en/decision-record.md",
     "templates/en/access-review.md",
     "templates/en/evidence-register.md",
+    "templates/pt-br/domain-charter.md",
+    "templates/pt-br/data-product-contract.md",
+    "templates/pt-br/decision-record.md",
+    "templates/pt-br/access-review.md",
+    "templates/pt-br/evidence-register.md",
     "templates/pt/domain-charter.md",
     "templates/pt/data-product-contract.md",
     "templates/pt/decision-record.md",
@@ -318,5 +517,6 @@
     "templates/es/decision-record.md",
     "templates/es/access-review.md",
     "templates/es/evidence-register.md"
-  ]
+  ],
+  "release": "1.1.0"
 }

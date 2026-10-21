@@ -28,6 +28,10 @@ O site lê uma cópia versionada da main aprovada, nunca um ramo de contribuiç�
 
 Textos, diagramas e modelos originais do framework: CC BY 4.0. Código do site: MIT. As marcas KDV e os referenciais de terceiros conservam os seus próprios direitos; as licenças não concedem direitos sobre marcas.
 
+## Limites de release e revisão
+
+Qualquer pessoa pode propor alterações. As releases oficiais são marcadas a partir de revisões aceites na main protegida; o site importa a revisão exata e identifica-a com a versão do framework. Site e framework mantêm versões independentes. A referência v1.0.0 continua disponível no histórico de releases.
+
 ## Continuar a leitura
 
 - [Glossário comum](glossary.md)
@@ -35,6 +39,6 @@ Textos, diagramas e modelos originais do framework: CC BY 4.0. Código do site: 
 
 ---
 
-Conhecimento original KDV Framework. Edição comunitária de trabalho 0.1. CC BY 4.0. Referenciais mantêm os direitos dos titulares; não implica avaliação oficial ou certificação.
+Conhecimento original KDV. Edição comunitária 1.1.0. CC BY 4.0. Direitos de terceiros reservados.
 
 [GitHub](https://github.com/kolmeia-dataecosystems/kdv-framework) · [CC BY 4.0](https://creativecommons.org/licenses/by/4.0/)

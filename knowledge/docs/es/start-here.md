@@ -23,13 +23,18 @@ Cada producto compartido necesita responsable, contrato, clasificación, acceso 
 
 Un equipo ficticio de planificación necesita un agregado semanal de solicitudes. El dominio responde por el significado, el subdominio prepara los datos y el responsable del producto acuerda actualización y usos. La primera entrega es un agregado interno sin copiar registros identificables. Se conservan pruebas de calidad y se revisa si el producto apoya la decisión prevista.
 
+## Preparar un primer caso acotado
+
+Identifique decisión, consumidor, responsable y resultado antes de las cuatro etapas del ciclo. La preparación delimita el trabajo; no es una quinta etapa obligatoria. Evite prometer fechas sin verificar acceso a fuentes, capacidad y controles aplicables.
+
 ## Continuar leyendo
 
+- [Ejemplo completo en dos contextos de interés público](worked-example.md)
 - [Principios y baseline](principles.md)
-- [Comunidad y guardianes](community.md)
+- [Acuerdos de producto de datos](data-contracts.md)
 
 ---
 
-Conocimiento original KDV Framework. Edición comunitaria de trabajo 0.1. CC BY 4.0. Los referentes conservan sus derechos; no implica evaluación oficial o certificación.
+Conocimiento original KDV. Edición comunitaria 1.1.0. CC BY 4.0. Derechos de terceros reservados.
 
 [GitHub](https://github.com/kolmeia-dataecosystems/kdv-framework) · [CC BY 4.0](https://creativecommons.org/licenses/by/4.0/)

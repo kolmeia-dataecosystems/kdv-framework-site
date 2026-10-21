@@ -34,7 +34,7 @@ Comece pequeno. Defina um propósito, percorra as quatro etapas e use o retorno 
 
 **Exemplos de medidas:** Cobertura de responsáveis e exceções de qualidade.
 
-## Compartilhar / Publicar um acordo.
+## Partilhar / Publicar um acordo.
 
 **Condição de entrada:** Um produto aprovado e um público claro.
 
@@ -68,11 +68,11 @@ Uma equipa fictícia de planeamento de serviços precisa de um agregado semanal 
 
 ## Continuar a leitura
 
-- [Acesso e exceções](access-and-exceptions.md)
-- [Comunidade e guardiões](community.md)
+- [Exemplo completo em dois contextos de interesse público](worked-example.md)
+- [Aplicar o modelo](implementation.md)
 
 ---
 
-Conhecimento original KDV Framework. Edição comunitária de trabalho 0.1. CC BY 4.0. Referenciais mantêm os direitos dos titulares; não implica avaliação oficial ou certificação.
+Conhecimento original KDV. Edição comunitária 1.1.0. CC BY 4.0. Direitos de terceiros reservados.
 
 [GitHub](https://github.com/kolmeia-dataecosystems/kdv-framework) · [CC BY 4.0](https://creativecommons.org/licenses/by/4.0/)

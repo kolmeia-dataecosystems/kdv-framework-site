@@ -1,5 +1,25 @@
 # Changelog
 
+## 1.1.0 — 2026-10-21
+
+- Promoted the complete owner-approved experience to the normal production build: clearer problem-led opening, reader journeys, operating model, first-case preparation, explicit access decisions, implementation choices and roadmap themes.
+- Added complete English, Brazilian Portuguese, European Portuguese and Spanish editions: 92 localized pages and 60 accepted guides. Existing `/pt/` URLs remain European Portuguese; `/pt-br/` adds Brazilian Portuguese.
+- Imported Framework 1.1.0 from its accepted main commit, recorded exactly in `release.json` and `knowledge/source.json`.
+- Added worked examples for proactive municipal management and professional-council inspection, reference boundaries, AI/privacy guidance, 20 Markdown templates and four localized evidence CSV worksheets.
+- Added independent website/framework release metadata, translated release notes and exact accepted knowledge provenance. The build rejects inconsistent version claims.
+- Retained the earlier proposal bundle as an explicitly marked, noindex review snapshot; production does not read it as accepted knowledge.
+- Updated institutional destinations to `https://kdvecosystems.com` and public hosting information to Hostinger. No application analytics or persistent storage was added.
+
+## 1.0.0 — baseline designated 2026-10-21
+
+- Preserved website commit `9dafad188e419a0019177289e168b06e9bd938f5` as the owner's version 1 baseline, including knowledge commit `498c0f3fc5a52770c06a8088858baebf3b0f20cc`.
+- The tag retains the original 0.1 labels. Its GitHub notes document the numbering transition without modifying history.
+
+## Sharing cards — 2026-10-19
+
+- Added localized 1200 × 630 raster Open Graph/Twitter images and complete sharing metadata, including documentation pages.
+- Set the public production origin as the default for generated URLs.
+
 ## Documentation integration - 2026-10-18
 
 - Added a documentation destination without redesigning the existing presentation.

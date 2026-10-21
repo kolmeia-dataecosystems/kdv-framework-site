@@ -3,7 +3,7 @@ import assert from 'node:assert/strict';
 import {readFile,stat} from 'node:fs/promises';
 import {resolve,join} from 'node:path';
 import vm from 'node:vm';
-import {guides,source,markdownToHtml,docHref} from '../src/documentation.mjs';
+import {guides,source,inventory,markdownToHtml,docHref} from '../src/documentation.mjs';
 import {languages,content} from '../src/content.mjs';
 import {allRoutes,escape} from '../src/render.mjs';
 const root=resolve('dist');
@@ -14,7 +14,7 @@ test('All locales contain the complete editorial model',()=>{
 });
 test('English default, localized metadata and unique accessible page structure',async()=>{
  assert.equal(await file('index.html'),await file('en/index.html'));
- for(const p of pages){const html=await file(p);const l=p.split('/')[0];assert.ok(html.includes(`lang="${content[l].locale}"`));assert.equal((html.match(/<h1[ >]/g)||[]).length,1,p);assert.equal((html.match(/hreflang=/g)||[]).length,4,p);assert.ok(html.includes('<main id="main">'));const ids=[...html.matchAll(/\sid="([^"]+)"/g)].map(x=>x[1]);assert.equal(new Set(ids).size,ids.length,p);assert.ok(!html.includes('undefined'),p)}
+ for(const p of pages){const html=await file(p);const l=p.split('/')[0];assert.ok(html.includes(`lang="${content[l].locale}"`));assert.equal((html.match(/<h1[ >]/g)||[]).length,1,p);assert.equal((html.match(/hreflang=/g)||[]).length,languages.length+1,p);assert.ok(html.includes('<main id="main">'));const ids=[...html.matchAll(/\sid="([^"]+)"/g)].map(x=>x[1]);assert.equal(new Set(ids).size,ids.length,p);assert.ok(!html.includes('undefined'),p)}
 });
 test('Every generated internal link, asset and fragment resolves',async()=>{
  for(const p of pages){const html=await file(p);for(const [,raw] of html.matchAll(/(?:href|src)="([^"]+)"/g)){
@@ -31,13 +31,13 @@ test('No external execution, persistent storage or accidental form transmission'
  for(const p of pages){const html=await file(p);assert.doesNotMatch(html,/<script[^>]+src="https?:/);assert.doesNotMatch(html,/<iframe|<form[^>]+action=/);if(p.includes('/resources/'))assert.ok(html.includes('<form method="dialog"'))}
 });
 test('Framework is distinct from product, official assessments and a maturity score',async()=>{
- const html=await file('en/model/index.html');assert.ok(html.includes('A Cell can own several data products'));assert.ok(html.includes('not an extra infrastructure layer'));assert.ok(html.includes('not an official equivalence'));assert.ok(html.includes('does not require a KDV platform'));
+ const html=await file('en/model/index.html');assert.ok(html.includes('A Cell can own several data products'));assert.ok(html.includes('not an extra infrastructure layer'));assert.ok(html.includes('No official mapping')||html.includes('not an official equivalence'));assert.ok(html.includes('without buying a platform')||html.includes('does not require a KDV platform')||html.includes('operating model stays the same'));
  const p=await file('en/playbook/index.html');assert.ok(p.includes('not a maturity score'));
 });
 test('Markup escaping protects editorial text',()=>{assert.equal(escape('<img src="x" onerror=\'x\'>&'), '&lt;img src=&quot;x&quot; onerror=&#39;x&#39;&gt;&amp;')});
 
 test('Documentation is rendered from the pinned accepted Markdown, in every locale',async()=>{
- assert.equal(source.ref,'main');assert.equal(source.repository,'kolmeia-dataecosystems/kdv-framework');assert.match(source.commit,/^[0-9a-f]{40}$/);assert.equal(guides.length,36);
+ assert.equal(source.ref,'main');assert.equal(source.repository,'kolmeia-dataecosystems/kdv-framework');assert.match(source.commit,/^[0-9a-f]{40}$/);assert.equal(guides.length,inventory.documents.length);
  for(const g of guides){const html=await file(`${g.language}/docs/${g.slug}/index.html`);assert.ok(html.includes(escape(g.title)));assert.ok(html.includes(source.commit));assert.ok(html.includes(`/edit/main/${g.path}`));assert.ok(html.includes(markdownToHtml(g.markdown,g.language).toc[0].id));assert.equal((html.match(/<h1[ >]/g)||[]).length,1);assert.ok(html.includes('docs-sidebar'));}
 });
 test('Contribution destinations use the knowledge repository, while implementation stays separate',async()=>{

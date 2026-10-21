@@ -1,0 +1,10 @@
+{
+  "repository": "kolmeia-dataecosystems/kdv-framework",
+  "ref": "codex/prepare-v1.1-release",
+  "baseCommit": "498c0f3fc5a52770c06a8088858baebf3b0f20cc",
+  "status": "proposal",
+  "release": "1.1.0-dev.2",
+  "commit": "b21ab40b775ce19acf8e3b039a2d653c56cca399",
+  "uncommitted": false,
+  "edition": "1.1 proposed"
+}
