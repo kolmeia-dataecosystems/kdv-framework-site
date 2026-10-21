@@ -1,6 +1,6 @@
-import {reviewMode} from './context.mjs';
+import {reviewMode,completeExperience,buildLanguages} from './context.mjs';
 import {applyReviewContent} from '../review/copy.mjs';
-export const languages=reviewMode?['en','pt-br','pt','es']:['en','pt','es'];
+export const languages=buildLanguages;
 export const SITE_REPO='https://github.com/kolmeia-dataecosystems/kdv-framework-site';
 export const REPO='https://github.com/kolmeia-dataecosystems/kdv-framework';
 export const ECOSYSTEMS='https://kdvecosystems.com';
@@ -66,4 +66,4 @@ playbookTitle:'Empiece pequeño.\nConserve la evidencia.',playbookIntro:'Un cami
 }
 };
 
-if(reviewMode)Object.assign(content,applyReviewContent(content));
+if(completeExperience)Object.assign(content,applyReviewContent(content,reviewMode));

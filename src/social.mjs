@@ -1,6 +1,7 @@
-import {reviewMode} from './context.mjs';
+import {reviewMode,buildLanguages} from './context.mjs';
 const escape=value=>String(value).replace(/[&<>"']/g,c=>({'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;',"'":'&#39;'}[c]));
-const locales=reviewMode?{en:'en_GB','pt-br':'pt_BR',pt:'pt_PT',es:'es_ES'}:{en:'en_GB',pt:'pt_PT',es:'es_ES'};
+const allLocales={en:'en_GB','pt-br':'pt_BR',pt:'pt_PT',es:'es_ES'};
+const locales=Object.fromEntries(buildLanguages.map(l=>[l,allLocales[l]]));
 const descriptions={
  en:'KDV Framework. Good governance. A living practice. Open operational framework powered by KDV Ecosystems, with connected hive cells.',
  pt:'KDV Framework. Boa governança. Uma prática viva. Framework operacional aberto impulsionado pela KDV Ecosystems, com células de uma colmeia conectadas.',

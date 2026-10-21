@@ -1,7 +1,7 @@
 import {copy} from './copy.mjs';
-import {institutionalLanguage} from '../src/context.mjs';
+import {institutionalLanguage,availableGuideSlugs} from '../src/context.mjs';
 const e=s=>String(s).replace(/[&<>"']/g,c=>({'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;',"'":'&#39;'}[c]));
-const doc=(l,slug)=>`/${l}/docs/${slug}/`;
+const doc=(l,slug)=>availableGuideSlugs.has(slug)?`/${l}/docs/${slug}/`:`/${l}/docs/`;
 const a=(url,label,cls='text-link')=>`<a class="${cls}" href="${url}">${e(label)} <span aria-hidden="true">↗</span></a>`;
 const heading=(label,title,body='')=>`<div class="section-heading"><div><p class="eyebrow">${e(label)}</p><h2>${e(title)}</h2></div>${body?`<p>${e(body)}</p>`:''}</div>`;
 const symbols=['◈','◎','⌘','◇','↗','＋'];

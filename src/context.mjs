@@ -1,5 +1,10 @@
+import {readFileSync} from 'node:fs';
 export const reviewMode=process.env.KDV_REVIEW_PREVIEW==='1';
+export const completeExperience=true;
 export const outputDirectory=reviewMode?'preview-dist':'dist';
 export const knowledgeDirectory=reviewMode?'review/knowledge':'knowledge';
+export const selectedInventory=JSON.parse(readFileSync(new URL('../'+knowledgeDirectory+'/knowledge.json',import.meta.url),'utf8'));
+export const buildLanguages=selectedInventory.languages;
+export const availableGuideSlugs=new Set(selectedInventory.documents.filter(d=>d.language==='en').map(d=>d.slug));
 export const localeLabels={en:'EN','pt-br':'PT-BR',pt:'PT-PT',es:'ES'};
 export const institutionalLanguage=l=>l==='pt-br'?'pt':l;

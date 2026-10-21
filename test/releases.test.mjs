@@ -35,9 +35,9 @@ test('All localized pages expose website version, accepted framework version and
  }
  for(const l of languages){
   const html=await readFile(`dist/${l}/releases/index.html`,'utf8');
-  assert.ok(html.includes(releaseUi[l].development));
+  assert.ok(html.includes(releaseUi[l][release.status]));
   assert.ok(html.includes('v1.0.0'));assert.ok(html.includes('0.1'));
-  assert.ok(html.includes('id="next"'));
+  assert.ok(html.includes('id="baseline"'));
   assert.ok(html.includes(`/releases/tag/${release.knowledge.tag}`));
  }
 });

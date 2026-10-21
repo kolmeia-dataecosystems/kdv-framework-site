@@ -83,7 +83,13 @@ copy['pt-br'].overrides.heroNote='Um framework aberto para a comunidade de dados
 copy['pt-br'].personas[1][1]='“Temos ferramentas. Como fazemos a governança funcionar?”';
 copy['pt-br'].cases[1][2]='Combine indicadores permitidos de diferentes órgãos e sistemas setoriais, com atualização, cobertura e limites claros, para apoiar uma gestão municipal proativa.';
 
-export function applyReviewContent(base){
+const productionHosting={
+ en:['Hosting and external services','The public website is hosted on Hostinger. The hosting provider may process connection and security information under the applicable service terms. This application adds no analytics, tracking cookies or remote fonts. GitHub and reference publishers apply their own policies when you follow an external link. Contact the operator about provider processing and retention.'],
+ pt:['Alojamento e serviços externos','O site público é alojado na Hostinger. O fornecedor pode tratar informação de ligação e segurança segundo as condições do serviço. Esta aplicação não acrescenta analytics, cookies de rastreio ou fontes remotas. GitHub e os editores dos referenciais aplicam as suas políticas ao seguir uma ligação externa. Contacte o operador sobre o tratamento e a retenção pelo fornecedor.'],
+ es:['Alojamiento y servicios externos','El sitio público se aloja en Hostinger. El proveedor puede tratar información de conexión y seguridad según las condiciones del servicio. Esta aplicación no añade analytics, cookies de seguimiento ni fuentes remotas. GitHub y los editores aplican sus políticas al seguir un enlace externo. Contacte al operador sobre el tratamiento y la conservación por el proveedor.']
+};productionHosting['pt-br']=brazilian(productionHosting.pt);
+
+export function applyReviewContent(base,review=true){
  const result=structuredClone(base);
  result['pt-br']=brazilian(base.pt);
  result['pt-br'].templates.forEach((row,i)=>{row[0]=base.pt.templates[i][0]});
@@ -92,7 +98,7 @@ export function applyReviewContent(base){
   c.locale=l==='pt-br'?'pt-BR':l==='pt'?'pt-PT':c.locale;
   c.langName=l==='pt-br'?'Português do Brasil':l==='pt'?'Português de Portugal':c.langName;
   c.anatomy=c.anatomy.map((row,i)=>[row[0],copy[l].names[i],copy[l].subnames[i],...row.slice(3)]);
-  c.privacySections[2]=copy[l].privacyHosting;
+  c.privacySections[2]=review?copy[l].privacyHosting:productionHosting[l];
   if(l==='pt'){
    const transform=v=>typeof v==='string'?v.replaceAll('compartilhar','partilhar').replaceAll('Compartilhar','Partilhar').replaceAll('compartilhado','partilhado').replaceAll('compartilhada','partilhada'):Array.isArray(v)?v.map(transform):v;
    for(const k of Object.keys(c))c[k]=transform(c[k]);
