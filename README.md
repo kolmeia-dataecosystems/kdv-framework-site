@@ -8,7 +8,7 @@ An open operational data governance framework for the data community, powered by
 - Institutional site: https://kdvecosystems.com
 - Published baseline: **v1.0.0**, designated 21 October 2026; the tagged files retain the historical 0.1 labels.
 - Previous public release: **v1.1.0**, published on 21 October 2026.
-- Current website release: **v1.2.0**, authorised for coordinated publication on 22 October 2026.
+- Current website release: **v1.2.1**, authorised for coordinated publication on 22 October 2026.
 - Current edition: English, Brazilian Portuguese, European Portuguese and Spanish; 96 active localized pages plus four compatibility notices, 60 guides, 20 Markdown templates and four CSV worksheets. The earlier [proposal preview](review/README.md) remains a separate historical review snapshot. The [1.2 UX decision log](docs/UX-1.2.md) records the new reference, implementation decisions and validation limits.
 - Included Framework: **v1.2.0**, accepted commit `57bc85be294170be1f419629ed241d302530d4d9`.
 
@@ -148,3 +148,5 @@ The initial knowledge guardian is **ismael-lab**, as designated by the owner. It
 Public pages, guide text and concept panels describe what capabilities do, with no named market tools. The accepted glossary includes nineteen technical capabilities and six functional areas. The commercial-name/concept/function correspondence stays in the knowledge repository under `references/`, outside the website content inventory. It is an editorial aid, not a mandatory stack or licence/readiness claim.
 
 `src/ux/availability.mjs` is the explicit switch for the paused Implementation section. Re-enabling it requires reviewing all entry links, prepared content and the supplier-specific diagram before publication. Old tool hashes resolve to the new functional identifiers. Root language links also preserve valid single-slash routes.
+
+The 1.2.1 website patch versions stylesheet and JavaScript request URLs to prevent browsers from combining new HTML with cached files from a previous release. Framework knowledge remains 1.2.0.

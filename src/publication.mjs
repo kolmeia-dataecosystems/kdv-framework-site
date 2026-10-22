@@ -4,9 +4,10 @@ const text={
   "en": {
     "title": "Versions and release notes",
     "intro": "The website and the open Framework have independent versions. This edition identifies the exact accepted knowledge source.",
-    "changes": "Changes in 1.2.0",
+    "changes": "Changes in 1.2.1 / 1.2.0",
     "candidate": "A review candidate, separate from the accepted knowledge release.",
     "items": [
+      "Versioned styles and scripts prevent stale browser caches from mixing website editions.",
       "In-context concept panels, profile reading paths, quick search and accessible keyboard interactions.",
       "Functional terminology for technical capabilities and supporting areas; KDV Studio/Cloud is an optional example.",
       "Implementation menu and inbound links paused; the previous URL shows an explanatory notice.",
@@ -19,9 +20,10 @@ const text={
   "pt-br": {
     "title": "Versões e notas de release",
     "intro": "O site e o Framework aberto têm versões independentes. Esta edição identifica a revisão exata do conhecimento aprovado.",
-    "changes": "Alterações da versão 1.2.0",
+    "changes": "Alterações das versões 1.2.1 / 1.2.0",
     "candidate": "Versão candidata para avaliação, separada da release aprovada do conhecimento.",
     "items": [
+      "Estilos e scripts identificados por versão evitam a mistura de edições pelo cache do navegador.",
       "Painéis de conceitos no contexto, trilhas por perfil, busca rápida e interações acessíveis pelo teclado.",
       "Terminologia funcional para capacidades técnicas e áreas de apoio; KDV Studio/Cloud é um exemplo opcional.",
       "Menu Implementação e vínculos para a seção suspensos; o endereço anterior apresenta um aviso explicativo.",
@@ -34,9 +36,10 @@ const text={
   "pt": {
     "title": "Versões e notas de release",
     "intro": "O site e o Framework aberto têm versões independentes. Esta edição identifica a revisão exata do conhecimento aceite.",
-    "changes": "Alterações da versão 1.2.0",
+    "changes": "Alterações das versões 1.2.1 / 1.2.0",
     "candidate": "Versão candidata para avaliação, separada da release aceite do conhecimento.",
     "items": [
+      "Estilos e scripts identificados por versão evitam a mistura de edições pela cache do navegador.",
       "Painéis de conceitos no contexto, percursos por perfil, pesquisa rápida e interações acessíveis pelo teclado.",
       "Terminologia funcional para capacidades técnicas e áreas de apoio; KDV Studio/Cloud é um exemplo opcional.",
       "Menu Implementação e ligações para a secção suspensos; o endereço anterior apresenta um aviso explicativo.",
@@ -49,9 +52,10 @@ const text={
   "es": {
     "title": "Versiones y notas de release",
     "intro": "El sitio y el Framework abierto tienen versiones independientes. Esta edición identifica la revisión exacta del conocimiento aceptado.",
-    "changes": "Cambios de la versión 1.2.0",
+    "changes": "Cambios de las versiones 1.2.1 / 1.2.0",
     "candidate": "Versión candidata para revisión, independiente de la release aceptada del conocimiento.",
     "items": [
+      "Estilos y scripts identificados por versión evitan que la caché del navegador mezcle ediciones.",
       "Paneles de conceptos en contexto, rutas por perfil, búsqueda rápida e interacciones accesibles por teclado.",
       "Terminología funcional para capacidades técnicas y áreas de apoyo; KDV Studio/Cloud es un ejemplo opcional.",
       "Menú Implementación y enlaces a la sección suspendidos; la dirección anterior muestra un aviso explicativo.",
