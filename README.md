@@ -7,9 +7,10 @@ An open operational data governance framework for the data community, powered by
 - Repository: https://github.com/kolmeia-dataecosystems/kdv-framework-site
 - Institutional site: https://kdvecosystems.com
 - Published baseline: **v1.0.0**, designated 21 October 2026; the tagged files retain the historical 0.1 labels.
-- Website release: **v1.1.0**, owner-approved for publication on 21 October 2026.
-- Complete production edition: English, Brazilian Portuguese, European Portuguese and Spanish; 92 localized pages, 60 guides, 20 Markdown templates and four CSV worksheets. The earlier [proposal preview](review/README.md) remains a separate historical review snapshot.
-- Included Framework: **v1.1.0**, accepted commit `05a3572b51bde335212dc1fb71df282ac3431c69`.
+- Previous public release: **v1.1.0**, published on 21 October 2026.
+- Current website release: **v1.2.0**, authorised for coordinated publication on 22 October 2026.
+- Current edition: English, Brazilian Portuguese, European Portuguese and Spanish; 96 active localized pages plus four compatibility notices, 60 guides, 20 Markdown templates and four CSV worksheets. The earlier [proposal preview](review/README.md) remains a separate historical review snapshot. The [1.2 UX decision log](docs/UX-1.2.md) records the new reference, implementation decisions and validation limits.
+- Included Framework: **v1.2.0**, accepted commit `57bc85be294170be1f419629ed241d302530d4d9`.
 
 See [release policy and publication checklist](docs/RELEASING.md). Website and Framework versions are independent. The localized `/releases/` pages identify the exact version pair, history and publication status. The production build reads only the explicitly imported accepted knowledge snapshot.
 
@@ -46,7 +47,7 @@ Open http://127.0.0.1:4174. English is the default. The site also contains compl
 
 | Command | Purpose |
 | --- | --- |
-| `npm run build` | Build 92 localized pages, the English root, 404, sitemap, 20 Markdown templates and four CSV worksheets |
+| `npm run build` | Build 100 localized pages, the English root, 404, sitemap, 20 Markdown templates and four CSV worksheets |
 | `npm test` | Check generated links/fragments, locale coverage, escaping, privacy boundaries and model distinctions |
 | `npm run check` | Build and run checks |
 | `npm run dev` | Serve `dist/` on port 4174 |
@@ -55,17 +56,20 @@ Open http://127.0.0.1:4174. English is the default. The site also contains compl
 
 ```text
 src/content.mjs                 Four-language editorial content and reference URLs
-src/render.mjs                  Semantic HTML, SVG diagrams and page templates
+src/render.mjs                  Semantic document frame, metadata, routes and accepted reader
+src/legacy-render.mjs           Preserved brand artwork and footer
+src/ux/                        Four-language UX catalogue, SSR components and progressive behaviours
 src/documentation.mjs           Safe Markdown rendering, guide navigation and source provenance
 knowledge/                     Pinned snapshot of accepted knowledge from the independent repository
 scripts/sync-knowledge.mjs      Explicit main-only knowledge import
-src/runtime.js                  Tabs, filters, checklist and local canvas download
+src/runtime.js                  Historical 1.1 runtime, retained for the historical review build
 src/styles.css                  Responsive monochrome design system
 build.mjs                       Deterministic static generator and editable template fields
 dist/                           Generated static site; deploy this directory only
   assets/                       Supplied KDV brand assets and original share illustration
   {en,pt-br,pt,es}/                   Localized pages
   templates/{en,pt-br,pt,es}/         Five Markdown templates and a CSV worksheet per language
+  templates/office/pt-br/             Supplied editable Word/Excel companions (PT-BR)
 test/site.test.mjs              Node regression checks
 docs/                          Model, sources, privacy, validation and release notes
 .github/                        CI and community issue templates
@@ -78,18 +82,20 @@ Edit `src/` and `build.mjs`, then rebuild. Generated HTML is committed so that a
 
 ## Pages and interactions
 
-- `/{language}/`: overview, bio-inspired visual anatomy, operating layers and journey.
-- `/{language}/model/`: business structure diagram, glossary, ten accountable roles and filterable reference mapping.
+- `/{language}/`: problem-led overview, six reader roles and six organisation types, in-place concepts and illustrative cases.
+- `/{language}/audience/`: organisation needs, persona cards and frequently asked questions.
+- `/{language}/implementation/`: temporarily paused; the previous URL displays a noindex notice. Its menu, inbound links, diagram and sitemap entries are disabled. Prepared source remains available for later editorial review.
+- `/{language}/model/`: interactive anatomy, twenty layer/stage cells, ten roles, an illustrative RACI, six generic supporting functional areas and reference boundaries. KDV Studio/Cloud appears as one optional example, without a sales CTA.
 - `/{language}/playbook/`: four-stage playbook with participants, practices, evidence, gates and measures; example access flow; proposed review rhythm; readiness conversation checklist.
-- `/{language}/resources/`: five downloadable Markdown templates, a localized evidence CSV worksheet and a browser-only product canvas generator.
+- `/{language}/resources/`: five Markdown templates in four languages, PT-BR Word/Excel companions, four available process/anatomy diagrams, a localized evidence CSV and a browser-only product canvas generator.
 - `/{language}/community/`: contribution paths, stewardship, licensing and the distinction between the open method and commercial implementations.
 - `/{language}/releases/`: website/framework versions, delivered changes, exact accepted knowledge revision and baseline notes.
 - `/{language}/privacy/`: localized privacy/storage notice, operator and hosting boundaries.
 - `/{language}/docs/`: documentation index, with fifteen guides per language under `/{language}/docs/{slug}/`.
 
-All substantive content is present in HTML. JavaScript enhances navigation and interactions. Stage tabs support arrow keys, Home and End. Anatomy concepts use native `details` elements; deep links open the selected concept. Without JavaScript all playbook stages remain readable and the static template downloads still work. Language links retain the current page; no language preference is stored.
+All substantive content is present in HTML. JavaScript enhances navigation and interactions. Stage tabs support arrow keys, Home and End. Concepts use native modal dialogs with keyboard handling, a panel history and direct links; static links open the accepted full guide when JavaScript is unavailable. Without JavaScript all playbook stages remain readable and the static template downloads still work. Language links retain the current page and open concept. The root remains English; no language preference is stored. Quick search supports Ctrl/Cmd+K and /.
 
-Canvas data and checklist selections remain only in page memory. Downloads are generated locally as text; the application does not send email, collect leads, save form fields or call a service. The checklist is explicitly not an official maturity score or certification. Form `method="dialog"` prevents accidental network submission if JavaScript is unavailable.
+Canvas data, checklist selections and reading progress remain in page memory. Theme and a reader profile selected explicitly by the visitor are stored locally under `kdv:tema` and `kdv:perfil`; a saved profile can be removed with the profile chip. Downloads are generated locally as text; the application does not send email, collect leads, save form fields or call a service. The checklist is explicitly not an official maturity score or certification. Form `method="dialog"` prevents accidental network submission if JavaScript is unavailable.
 
 ## Deployment and domain
 
@@ -113,7 +119,7 @@ Original framework copy, diagrams and templates are available under **CC BY 4.0*
 
 The monochrome identity continues the KDV brand: large editorial typography, strict grids, original line icons, hive geometry and restrained pixel motifs. Supplied logos are retained. No Delight font files were provided, so the site uses system Arial/Helvetica/sans-serif without remote font requests.
 
-Operator: **Lab of Codes & Kolmeia**. Privacy contact: **info@kolmeia.io**. Application cookies, analytics and persistent storage: **none**. Hosting sign-in and provider processing are separate; see [privacy inventory](docs/PRIVACY.md). Display language does not determine whether LGPD or GDPR applies.
+Operator: **Lab of Codes & Kolmeia**. Privacy contact: **info@kolmeia.io**. Application cookies and analytics: **none**. Persistent storage is limited to the optional theme and explicitly selected reader profile. Hosting sign-in and provider processing are separate; see [privacy inventory](docs/PRIVACY.md). Display language does not determine whether LGPD or GDPR applies.
 
 
 ## Open knowledge and the documentation section
@@ -136,3 +142,9 @@ The synchronization command clones **main only**, validates the content inventor
 A knowledge merge does not automatically deploy this website. No cross-repository credential, webhook or scheduled task is configured. This explicit release boundary is intentional and documented in the knowledge repository. Static Markdown contains the original content; the site renderer escapes raw HTML and rejects unrecognised link protocols. The guide filter runs on existing document titles/descriptions, with no API or persistent storage.
 
 The initial knowledge guardian is **ismael-lab**, as designated by the owner. Its main branch requires CODEOWNER approval, passing `knowledge-check`, up-to-date branches, resolved conversations and fresh approval after changes. Push restrictions allow only the guardian; administrator bypass, force pushes and deletion are disabled. With only one guardian, a guardian-authored PR requires another authorised guardian for independent approval. The source repo's protected policy governs acceptance; the site snapshot exposes provenance, not a second approval authority.
+
+## Functional terminology and Implementation pause
+
+Public pages, guide text and concept panels describe what capabilities do, with no named market tools. The accepted glossary includes nineteen technical capabilities and six functional areas. The commercial-name/concept/function correspondence stays in the knowledge repository under `references/`, outside the website content inventory. It is an editorial aid, not a mandatory stack or licence/readiness claim.
+
+`src/ux/availability.mjs` is the explicit switch for the paused Implementation section. Re-enabling it requires reviewing all entry links, prepared content and the supplier-specific diagram before publication. Old tool hashes resolve to the new functional identifiers. Root language links also preserve valid single-slash routes.

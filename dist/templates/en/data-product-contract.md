@@ -57,7 +57,7 @@ A human-readable working agreement on scope, quality, access, versions and use.
 Record purpose, applicable legal roles, minimised inputs, retention, access review, allowed AI use and conditions for new consumers. The DPO advises; the accountable organisation retains its legal responsibilities. Link the approval to the policy actually implemented.
 
 ---
-KDV Framework / Community edition 1.1.0
+KDV Framework / Community edition 1.2.0
 Original template © 2026 Lab of Codes & Kolmeia. CC BY 4.0.
 https://creativecommons.org/licenses/by/4.0/
 https://github.com/kolmeia-dataecosystems/kdv-framework

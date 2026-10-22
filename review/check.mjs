@@ -3,7 +3,7 @@ import {readFile,stat} from 'node:fs/promises';
 import {resolve,join} from 'node:path';
 import {languages,content} from '../src/content.mjs';
 import {guides,source} from '../src/documentation.mjs';
-import {allRoutes} from '../src/render.mjs';
+import {allRoutes} from '../src/legacy-render.mjs';
 import {copy} from './copy.mjs';
 assert.equal(process.env.KDV_REVIEW_PREVIEW,'1');
 assert.deepEqual(languages,['en','pt-br','pt','es']);assert.equal(guides.length,60);assert.equal(source.status,'proposal');

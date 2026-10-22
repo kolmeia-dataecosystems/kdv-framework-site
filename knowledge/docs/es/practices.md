@@ -47,6 +47,6 @@ Interpretación original KDV, revisada frente a las fuentes de los editores el 2
 
 ---
 
-Conocimiento original KDV. Edición comunitaria 1.1.0. CC BY 4.0. Derechos de terceros reservados.
+Conocimiento original KDV. Edición comunitaria 1.2.0. CC BY 4.0. Derechos de terceros reservados.
 
 [GitHub](https://github.com/kolmeia-dataecosystems/kdv-framework) · [CC BY 4.0](https://creativecommons.org/licenses/by/4.0/)

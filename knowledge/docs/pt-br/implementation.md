@@ -4,7 +4,7 @@ Da decisão operacional a uma implementação adequada.
 
 ## Propósito
 
-A documentação do produto KDV é uma implementação de referência e inclui propostas e componentes implantados. Esta base descreve o modelo operacional, sem prometer disponibilidade de funcionalidades. Consumer, Producer, EcOps e PlatOps são perspectivas de apoio. Outras tecnologias e práticas manuais podem implementar o mesmo modelo de responsabilidade.
+Comece pelo caso de uso, pelos direitos de decisão e pelas evidências. Descreva as capacidades necessárias para entregar e operar o produto de dados antes de escolher tecnologias. O modelo operacional pode ser atendido por sistemas existentes, ferramentas integradas ou práticas manuais controladas.
 
 ## Sequência de trabalho
 
@@ -47,6 +47,6 @@ Os domínios de negócio organizam a responsabilidade. Os ambientes de execuçã
 
 ---
 
-Conhecimento original KDV. Edição comunitária 1.1.0. CC BY 4.0. Direitos de terceiros reservados.
+Conhecimento original KDV. Edição comunitária 1.2.0. CC BY 4.0. Direitos de terceiros reservados.
 
 [GitHub](https://github.com/kolmeia-dataecosystems/kdv-framework) · [CC BY 4.0](https://creativecommons.org/licenses/by/4.0/)

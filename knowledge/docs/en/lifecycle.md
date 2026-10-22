@@ -52,7 +52,7 @@ Start small. Define a purpose, follow the four stages and use feedback to improv
 
 **Entry condition:** An authorised consumer and an agreed purpose.
 
-**Accountable participants:** Consumer + product owner
+**Accountable participants:** Data discovery and consumption portal + product owner
 
 **Working practices:** Use the product in analytics, applications or AI; monitor outcomes; report issues; review continued use.
 
@@ -73,6 +73,6 @@ A fictional service-planning team needs a weekly aggregate of requests. The serv
 
 ---
 
-Original KDV knowledge. Community edition 1.1.0. CC BY 4.0. Third-party rights remain reserved.
+Original KDV knowledge. Community edition 1.2.0. CC BY 4.0. Third-party rights remain reserved.
 
 [GitHub](https://github.com/kolmeia-dataecosystems/kdv-framework) · [CC BY 4.0](https://creativecommons.org/licenses/by/4.0/)

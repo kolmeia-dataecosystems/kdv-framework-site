@@ -4,7 +4,7 @@ Assign accountability independently of product interfaces.
 
 ## Purpose
 
-A person may hold several roles. Record the role exercised for each decision. Consumer, Producer, EcOps and PlatOps are product interaction perspectives, not substitutes for business accountability.
+A person may hold several roles. Record the role exercised in each decision. The functional areas for discovery and consumption, product publishing, ecosystem governance, platform operations, service desk and integration support the business roles. They do not replace the accountable domain, subdomain or product owner.
 
 ## Governance forum
 
@@ -12,7 +12,7 @@ A person may hold several roles. Record the role exercised for each decision. Co
 
 Sets the baseline, reviews cross-domain exceptions and resolves conflicts.
 
-**Reference interface:** EcOps records decisions.
+**Supporting capability:** Data ecosystem governance console records decisions.
 
 ## Ecosystem manager
 
@@ -20,7 +20,7 @@ Sets the baseline, reviews cross-domain exceptions and resolves conflicts.
 
 Coordinates implementation, scope, policy versions and improvement follow-up.
 
-**Reference interface:** EcOps.
+**Supporting capability:** Data ecosystem governance console.
 
 ## Domain owner
 
@@ -28,7 +28,7 @@ Coordinates implementation, scope, policy versions and improvement follow-up.
 
 Accountable for the domain and escalated approval decisions.
 
-**Reference interface:** EcOps / Producer.
+**Supporting capability:** Data ecosystem governance console / Data product management and publishing.
 
 ## Subdomain owner
 
@@ -36,7 +36,7 @@ Accountable for the domain and escalated approval decisions.
 
 Accountable for the subdomain and its approval decisions.
 
-**Reference interface:** Producer.
+**Supporting capability:** Data product management and publishing.
 
 ## Data product owner
 
@@ -44,7 +44,7 @@ Accountable for the subdomain and its approval decisions.
 
 Owns purpose, contract, versions, publication and consumer relationships.
 
-**Reference interface:** Producer.
+**Supporting capability:** Data product management and publishing.
 
 ## Operational steward
 
@@ -52,7 +52,7 @@ Owns purpose, contract, versions, publication and consumer relationships.
 
 Maintains meaning, classification and quality; reviews requests.
 
-**Reference interface:** Producer / EcOps.
+**Supporting capability:** Data product management and publishing / Data ecosystem governance console.
 
 ## Coordinating steward
 
@@ -60,7 +60,7 @@ Maintains meaning, classification and quality; reviews requests.
 
 Coordinates stewardship and resolves issues across Cells.
 
-**Reference interface:** EcOps.
+**Supporting capability:** Data ecosystem governance console.
 
 ## Data engineering
 
@@ -68,7 +68,7 @@ Coordinates stewardship and resolves issues across Cells.
 
 Builds and maintains reproducible data preparation and delivery.
 
-**Reference interface:** Producer.
+**Supporting capability:** Data product management and publishing.
 
 ## Technical custodian
 
@@ -76,15 +76,15 @@ Builds and maintains reproducible data preparation and delivery.
 
 Operates environments and implements authorised controls.
 
-**Reference interface:** PlatOps / EcOps.
+**Supporting capability:** Data platform operations console / Data ecosystem governance console.
 
-## Consumer
+## Data discovery and consumption portal
 
 **Scope:** Product.
 
 Uses data within agreed terms and provides feedback on fitness for purpose.
 
-**Reference interface:** Consumer.
+**Supporting capability:** Data discovery and consumption portal.
 
 ## Scope and limitations
 
@@ -97,6 +97,6 @@ When no subdomain owner is assigned, make the domain owner’s inherited respons
 
 ---
 
-Original KDV knowledge. Community edition 1.1.0. CC BY 4.0. Third-party rights remain reserved.
+Original KDV knowledge. Community edition 1.2.0. CC BY 4.0. Third-party rights remain reserved.
 
 [GitHub](https://github.com/kolmeia-dataecosystems/kdv-framework) · [CC BY 4.0](https://creativecommons.org/licenses/by/4.0/)

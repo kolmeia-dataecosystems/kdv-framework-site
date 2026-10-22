@@ -1,6 +1,6 @@
-import {mkdir,readFile,writeFile,copyFile,rm,readdir} from 'node:fs/promises';
+import {mkdir,readFile,writeFile,copyFile,rm,cp} from 'node:fs/promises';
 import {content,languages} from '../src/content.mjs';
-import {render,allRoutes,escape} from '../src/render.mjs';
+import {render,allRoutes,escape} from '../src/legacy-render.mjs';
 import {reviewMode} from '../src/context.mjs';
 import {copy} from './copy.mjs';
 if(!reviewMode)throw new Error('Review builds require KDV_REVIEW_PREVIEW=1. Production uses npm run build.');
@@ -8,7 +8,7 @@ const out='preview-dist',origin=(process.env.SITE_ORIGIN||'http://127.0.0.1:4174
 const siteUrl=new URL(origin);
 if(!['https:','http:'].includes(siteUrl.protocol)||siteUrl.origin!==origin)throw new Error('SITE_ORIGIN must be an HTTP(S) origin without credentials or a path.');
 await mkdir(out+'/assets',{recursive:true});
-for(const name of await readdir('dist/assets'))await copyFile('dist/assets/'+name,out+'/assets/'+name);
+await cp('dist/assets',out+'/assets',{recursive:true});
 for(const l of languages)await copyFile(`assets/social/kdv-framework-social-${l==='pt-br'?'pt':l}-v1.png`,`${out}/assets/kdv-framework-social-${l}-v1.png`);
 await writeFile(out+'/styles.css',await readFile('src/styles.css','utf8')+'\n'+await readFile('review/styles.css','utf8'));
 await copyFile('src/runtime.js',out+'/runtime.js');

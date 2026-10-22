@@ -41,6 +41,6 @@ Record purpose, applicable legal roles, minimised inputs, retention, access revi
 
 ---
 
-Original KDV knowledge. Community edition 1.1.0. CC BY 4.0. Third-party rights remain reserved.
+Original KDV knowledge. Community edition 1.2.0. CC BY 4.0. Third-party rights remain reserved.
 
 [GitHub](https://github.com/kolmeia-dataecosystems/kdv-framework) · [CC BY 4.0](https://creativecommons.org/licenses/by/4.0/)

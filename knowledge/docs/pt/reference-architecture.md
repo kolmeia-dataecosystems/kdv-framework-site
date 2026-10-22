@@ -2,50 +2,45 @@
 
 Separe responsabilidades de negócio, controlos reutilizáveis e escolhas de implantação.
 
-## Três pontos de partida viáveis
+## Capacidades antes das tecnologias
 
-Aplique o modelo manualmente num primeiro caso delimitado, ligue-o à plataforma existente ou use uma implementação de referência adequada. O baseline não exige uma plataforma KDV ou um lakehouse específico. Selecione tecnologia depois de compreender o propósito, os papéis, os controlos necessários e os limites de operação.
+Comece pelo caso de uso, pelos direitos de decisão e pelas evidências. Descreva as capacidades necessárias para entregar e operar o produto de dados antes de escolher tecnologias. O modelo operacional pode ser assegurado por sistemas existentes, ferramentas integradas ou práticas manuais controladas.
 
-## Planos de negócio e execução
+| Conceito funcional | O que faz |
+| --- | --- |
+| Armazenamento de objetos | Armazenamento de objetos (lake) |
+| Formato aberto e catálogo técnico de tabelas | Formato de tabela aberto e catálogo de tabelas |
+| Orquestração de pipelines ETL/ELT | Pipelines com qualidade e linhagem |
+| Catálogo de dados e governação | Catálogo, glossário, linhagem e qualidade |
+| Gestão de políticas de acesso | Autorização por política e auditoria de acessos |
+| Resolução de entidades e correspondência de registos | Dados mestre: correspondência entre registos |
+| Motor distribuído de consultas SQL | Motor de consulta, um por ambiente |
+| Gestão de APIs | APIs e subscrições |
+| BI e visualização de dados | Painéis e análise visual |
+| Serviços de dados para aplicações e IA | Serviços de dados para aplicações e assistentes de IA |
+| Observabilidade de serviços | Observabilidade e evidência operacional |
+| Identidade, autenticação e diretório | Identidade e autenticação única |
+| Gestão de segredos | Cofre de segredos |
+| Base de dados relacional | Registo de hierarquia, contratos, concessões e auditoria |
 
-Um domínio responde por significado e decisões; um subdomínio organiza o trabalho perto dos dados; um produto oferece uma entrega com responsável. Um ambiente de execução aloja as cargas relevantes. Não force os domínios a seguir um organograma ou nomes de servidores. O Comb opcional agrupa Cells da mesma Hive, sem se tornar uma camada de infraestrutura.
+## As interfaces apoiam responsabilidades
 
-## Capacidades antes de nomes de produtos
+As áreas funcionais de descoberta e consumo, publicação de produtos, governação do ecossistema, operação da plataforma, apoio e integração apoiam os papéis de negócio. Não substituem o responsável pelo domínio, subdomínio ou produto.
 
-| Capacidade | Pergunta de implementação | Exemplo de evidência |
-| --- | --- | --- |
-| Identidade e permissões | Como se identifica o consumidor e se aplica o âmbito aprovado? | Referência de identidade, política autorizada e verificação do prazo. |
-| Catálogo e semântica | Como se descobrem propósito, definições e limitações? | Contrato, glossário e linhagem publicados. |
-| Qualidade e entrega | Como se tornam visíveis testes, atualizações e falhas? | Entrega reproduzível, testes e tratamento de falhas. |
-| Execução e recuperação | Onde funciona a carga e como se recupera o serviço? | Inventário, cópia de segurança e ensaio de recuperação. |
-| Observabilidade e auditoria | Que eventos demonstram operação sem recolha excessiva de dados pessoais? | Registos protegidos, retenção e revisão. |
+## Critérios de escolha
 
-## Ferramentas ilustrativas
+Avalie interoperabilidade, integração de identidade, aplicação das políticas de acesso, recuperação de evidências, acessibilidade, portabilidade e apoio operacional. Escolha componentes com base nesses requisitos, sem transformar uma stack num requisito do Framework.
 
-OpenMetadata para discutir catálogo; Keycloak para identidade; Apache Ranger para aplicação de políticas suportadas; OpenLineage para linhagem; Airflow para orquestração; dbt Core para transformação; Trino e Apache Iceberg em arquiteturas analíticas adequadas; Superset para consumo visual. São opções a avaliar, não uma distribuição integrada ou suficiente para qualquer contexto.
+## Exemplo opcional de implementação
 
-Verifique versões, licenças, manutenção, compatibilidade e limites de suporte na seleção. A disponibilidade de uma ferramenta não demonstra que uma integração KDV esteja entregue ou que a stack completa de produto seja open source.
+KDV Studio/Cloud é um exemplo de ferramenta que reúne os módulos necessários para apoiar o KDV: consumo, publicação, governação do ecossistema, operação da plataforma, apoio e integrações. A sua utilização é opcional; o Framework pode ser aplicado com outras ferramentas. Este exemplo não é uma recomendação de contratação.
 
-## Framework e ofertas KDV
-
-KDV Framework é conhecimento aberto. Kolmeia é a abordagem open source em desenvolvimento; o âmbito de um instalador ou distribuição exige inventário versionado e decisão de licenciamento próprios. KDV Studio, Cloud, perspetivas de interação e serviços geridos são opcionais. Não deduza disponibilidade, licença ou garantias de implantação a partir do modelo operacional.
-
-## Soberania e portabilidade
-
-Registe controlo sobre propósito e permissões, jurisdição, responsabilidades do fornecedor, exportação, gestão de chaves, recuperação e condições de saída. Manter dados no ambiente do cliente pode ser uma escolha, mas não é a definição completa de soberania. Os metadados comuns também exigem proteção e âmbito documentados.
-
-## Adoção e revisão
-
-Comece por um produto e valide a decisão operacional completa antes de automatizar em larga escala. Use um registo de decisão de arquitetura para escolhas relevantes. Demonstre uma recusa de acesso, além do percurso autorizado, teste uma falha de atualização e verifique recuperação e exportação das evidências. Expanda quando for possível sustentar controlos e responsabilidades.
+O exemplo descreve uma organização de capacidades, sem compromisso universal de disponibilidade ou licença. Confirme a versão instalada, o âmbito e as evidências antes de depender de um controlo.
 
 ## Continuar a leitura
 
-- [Aplicar o modelo](implementation.md)
-- [Exemplo completo](worked-example.md)
-- [IA e privacidade](ai-privacy.md)
+[Playbook](lifecycle.md) · [Capacidades técnicas de apoio](glossary.md) · [Capacidades que apoiam o trabalho.](responsibilities.md)
 
 ---
 
-Conhecimento original KDV. Edição comunitária 1.1.0. CC BY 4.0. Direitos de terceiros reservados.
-
-[GitHub](https://github.com/kolmeia-dataecosystems/kdv-framework) · [CC BY 4.0](https://creativecommons.org/licenses/by/4.0/)
+KDV Framework · Community edition 1.2.0 · CC BY 4.0.
