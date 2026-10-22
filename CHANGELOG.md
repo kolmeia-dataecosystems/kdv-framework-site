@@ -1,5 +1,15 @@
 # Changelog
 
+## 1.2.0-rc.1 — proposed 2026-10-22
+
+- Integrated the supplied UX reference into the existing dependency-free static website and monochrome KDV identity.
+- Added eight navigation areas, in-place detail dialogs/history, six personas, six organisation contexts and three illustrative cases.
+- Added a business/execution explorer, 5 × 4 operating matrix, illustrative RACI, access simulator, action checklist, implementation chooser and tool filters.
+- Retained all sixty accepted Markdown guides, source commit/edit links, canonical URLs, Open Graph cards and four languages; substantive page content is rendered at build time.
+- Added a quick-search palette, light/dark theme and explicit reader-profile preference; checklist and reading progress are transient.
+- Added the supplied PT-BR Word/Excel and diagram resources; corrected the evidence workbook to handle minimum, maximum and exact targets, blanks and zero.
+- Kept accepted Framework 1.1.0 unchanged. Public Hostinger deployment remains on main/v1.1.0 while this candidate is reviewed.
+
 ## 1.1.0 — 2026-10-21
 
 - Promoted the complete owner-approved experience to the normal production build: clearer problem-led opening, reader journeys, operating model, first-case preparation, explicit access decisions, implementation choices and roadmap themes.

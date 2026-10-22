@@ -14,7 +14,7 @@ test('All locales contain the complete editorial model',()=>{
 });
 test('English default, localized metadata and unique accessible page structure',async()=>{
  assert.equal(await file('index.html'),await file('en/index.html'));
- for(const p of pages){const html=await file(p);const l=p.split('/')[0];assert.ok(html.includes(`lang="${content[l].locale}"`));assert.equal((html.match(/<h1[ >]/g)||[]).length,1,p);assert.equal((html.match(/hreflang=/g)||[]).length,languages.length+1,p);assert.ok(html.includes('<main id="main">'));const ids=[...html.matchAll(/\sid="([^"]+)"/g)].map(x=>x[1]);assert.equal(new Set(ids).size,ids.length,p);assert.ok(!html.includes('undefined'),p)}
+ for(const p of pages){const html=await file(p);const l=p.split('/')[0];assert.ok(html.includes(`lang="${content[l].locale}"`));assert.equal((html.match(/<h1[ >]/g)||[]).length,1,p);assert.equal((html.match(/<link rel="alternate" hreflang=/g)||[]).length,languages.length+1,p);assert.ok(/<main\b[^>]*id="main"/.test(html));const ids=[...html.matchAll(/\sid="([^"]+)"/g)].map(x=>x[1]);assert.equal(new Set(ids).size,ids.length,p);assert.ok(!html.includes('undefined'),p)}
 });
 test('Every generated internal link, asset and fragment resolves',async()=>{
  for(const p of pages){const html=await file(p);for(const [,raw] of html.matchAll(/(?:href|src)="([^"]+)"/g)){
@@ -26,12 +26,17 @@ test('Every generated internal link, asset and fragment resolves',async()=>{
 test('Templates contain working sections, original-content licence and provenance',async()=>{
  for(const l of languages)for(const [slug,title] of content[l].templates){const md=await file(`templates/${l}/${slug}.md`);assert.ok(md.startsWith('# '+title));assert.ok((md.match(/^## /gm)||[]).length>=8);assert.ok(md.includes('CC BY 4.0'));assert.ok(md.includes('not official')||md.includes('não formulários oficiais')||md.includes('no formularios oficiales'))}
 });
-test('No external execution, persistent storage or accidental form transmission',async()=>{
- const runtime=await file('runtime.js');new vm.Script(runtime);assert.doesNotMatch(runtime,/\b(?:fetch|XMLHttpRequest|localStorage|sessionStorage|sendBeacon)\b|document\.cookie/);
- for(const p of pages){const html=await file(p);assert.doesNotMatch(html,/<script[^>]+src="https?:/);assert.doesNotMatch(html,/<iframe|<form[^>]+action=/);if(p.includes('/resources/'))assert.ok(html.includes('<form method="dialog"'))}
+test('Progressive interaction stays local, with only explicit browser preferences persisted',async()=>{
+ const scripts=await Promise.all(['interaction.js','components.js','enhancements.js'].map(f=>file('assets/ux/'+f)));
+ for(const script of scripts){new vm.Script(script);assert.doesNotMatch(script,/XMLHttpRequest|sendBeacon|document\.cookie/);}
+ assert.match(scripts[0],/if \(!\["tema", "perfil"\]\.includes\(k\)\)/);
+ assert.doesNotMatch(scripts[0]+scripts[1],/\bfetch\(/);
+ assert.match(scripts[2],/url\.origin!==location\.origin/);
+ assert.match(scripts[2],/credentials:'same-origin'/);
+ for(const p of pages){const html=await file(p);assert.doesNotMatch(html,/<script[^>]+src="https?:/);assert.doesNotMatch(html,/<iframe|<form[^>]+action=/);for(const form of html.matchAll(/<form\b[^>]*>/g))assert.match(form[0],/method="dialog"/);}
 });
 test('Framework is distinct from product, official assessments and a maturity score',async()=>{
- const html=await file('en/model/index.html');assert.ok(html.includes('A Cell can own several data products'));assert.ok(html.includes('not an extra infrastructure layer'));assert.ok(html.includes('No official mapping')||html.includes('not an official equivalence'));assert.ok(html.includes('without buying a platform')||html.includes('does not require a KDV platform')||html.includes('operating model stays the same'));
+ const html=await file('en/model/index.html');assert.ok(html.includes('A Cell can own several data products'));assert.ok(html.includes('not an extra infrastructure layer'));assert.ok(html.includes('not an official equivalence')||html.includes('original interpretation'));assert.ok(html.includes('without buying a platform')||html.includes('does not require a KDV platform')||html.includes('operating model stays the same'));
  const p=await file('en/playbook/index.html');assert.ok(p.includes('not a maturity score'));
 });
 test('Markup escaping protects editorial text',()=>{assert.equal(escape('<img src="x" onerror=\'x\'>&'), '&lt;img src=&quot;x&quot; onerror=&#39;x&#39;&gt;&amp;')});

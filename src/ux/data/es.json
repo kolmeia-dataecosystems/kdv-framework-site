@@ -1,0 +1,3210 @@
+{
+  "idiomas": [
+    {
+      "code": "en",
+      "label": "EN",
+      "html": "en",
+      "nome": "English"
+    },
+    {
+      "code": "pt-br",
+      "label": "PT-BR",
+      "html": "pt-BR",
+      "nome": "Português (Brasil)"
+    },
+    {
+      "code": "pt",
+      "label": "PT-PT",
+      "html": "pt-PT",
+      "nome": "Português (Portugal)"
+    },
+    {
+      "code": "es",
+      "label": "ES",
+      "html": "es",
+      "nome": "Español"
+    }
+  ],
+  "meta": {
+    "email": "info@kolmeia.io",
+    "github": "https://github.com/kolmeia-dataecosystems/kdv-framework",
+    "siteEmpresa": {
+      "en": "https://kdvecosystems.com/en/",
+      "pt-br": "https://kdvecosystems.com/pt/",
+      "pt": "https://kdvecosystems.com/pt/",
+      "es": "https://kdvecosystems.com/es/"
+    },
+    "versao": "Framework 1.1.0 / Site 1.2.0-rc.1",
+    "proposta": "KDV convierte la gobernanza de datos en trabajo cotidiano."
+  },
+  "paginas": [
+    {
+      "id": "home",
+      "href": "/es/",
+      "nome": "Visión general",
+      "pergunta": "¿Esto resuelve mi problema?"
+    },
+    {
+      "id": "para-quem",
+      "href": "/es/audience/",
+      "nome": "Para quién",
+      "pergunta": "¿Organizaciones y personas como yo lo usan?"
+    },
+    {
+      "id": "modelo",
+      "href": "/es/model/",
+      "nome": "Cómo funciona",
+      "pergunta": "¿Cómo organiza KDV responsabilidades y decisiones?"
+    },
+    {
+      "id": "playbook",
+      "href": "/es/playbook/",
+      "nome": "Playbook",
+      "pergunta": "¿Por dónde empiezo y qué entrego?"
+    },
+    {
+      "id": "implementacao",
+      "href": "/es/implementation/",
+      "nome": "Implementación",
+      "pergunta": "¿Existe una herramienta lista? ¿Es abierta?"
+    },
+    {
+      "id": "recursos",
+      "href": "/es/resources/",
+      "nome": "Recursos",
+      "pergunta": "¿Qué plantillas puedo usar mañana?"
+    },
+    {
+      "id": "documentacao",
+      "href": "/es/docs/",
+      "nome": "Documentación",
+      "pergunta": "¿Dónde profundizo, en mi rol?"
+    },
+    {
+      "id": "comunidade",
+      "href": "/es/community/",
+      "nome": "Comunidad",
+      "pergunta": "¿Quién lo mantiene y cómo participo?"
+    }
+  ],
+  "conceitos": [
+    {
+      "id": "ecossistema",
+      "kdv": "Ecosystem",
+      "papeis": [
+        "forum",
+        "gestor-ecossistema"
+      ],
+      "relacionados": [
+        "conceito:dominio",
+        "conceito:ambiente",
+        "base:acesso"
+      ],
+      "cliente": "Ecosistema",
+      "frase": "El límite de la colaboración: quién participa, con qué objetivo y bajo qué reglas comunes.",
+      "como": "Reúne los dominios participantes, las políticas comunes y el {{papel:forum|foro de gobernanza}}. Puede ser una sola organización o una red de organizaciones. Empiece por un caso de uso y un patrocinador identificado.",
+      "exemplo": "Una red de consejos regionales que comparte datos de registro profesional; un grupo empresarial con varias empresas; un municipio cuyas áreas intercambian indicadores.",
+      "evidencias": [
+        "Política común aprobada",
+        "Registro de decisiones del foro",
+        "Indicador de valor del ecosistema"
+      ],
+      "mercado": "Data ecosystem · espacio de datos (data space)",
+      "analogia": "El entorno natural donde conviven muchas colmenas que dependen unas de otras."
+    },
+    {
+      "id": "dominio",
+      "kdv": "Hive",
+      "papeis": [
+        "dono-dominio",
+        "steward-coordenador"
+      ],
+      "relacionados": [
+        "conceito:subdominio",
+        "conceito:agrupamento",
+        "modelo:carta",
+        "papel:dono-dominio"
+      ],
+      "cliente": "Dominio de negocio",
+      "frase": "El área de negocio que responde por el significado y las prioridades de un conjunto de datos.",
+      "como": "Tiene un {{papel:dono-dominio|responsable}} designado, coordina sus {{conceito:subdominio|subdominios}} y respeta la base común del ecosistema. No tiene por qué coincidir con el organigrama: sigue a quien decide sobre el significado del dato.",
+      "exemplo": "Finanzas; Atención al público; Registro profesional; Inspección.",
+      "evidencias": [
+        "Carta del dominio",
+        "Responsable designado",
+        "Glosario del dominio"
+      ],
+      "mercado": "Data domain · business domain (Data Mesh)",
+      "analogia": "La colmena: una unidad autónoma, con organización propia, que contribuye al conjunto."
+    },
+    {
+      "id": "subdominio",
+      "kdv": "Cell",
+      "papeis": [
+        "dono-subdominio",
+        "steward-operacional",
+        "engenharia"
+      ],
+      "relacionados": [
+        "conceito:dominio",
+        "conceito:produto",
+        "papel:steward-operacional"
+      ],
+      "cliente": "Subdominio de negocio",
+      "frase": "El subárea, equipo o proceso donde se preparan los datos y de donde salen los productos.",
+      "como": "El {{termo:steward|stewardship}} y la ingeniería trabajan cerca de los datos. Un subdominio puede tener varios {{conceito:produto|productos de datos}}; el subdominio no es el producto.",
+      "exemplo": "Cuentas por pagar (en Finanzas); Sanciones (en Inspección).",
+      "evidencias": [
+        "Steward designado",
+        "Reglas de calidad",
+        "Inventario de productos"
+      ],
+      "mercado": "Subdomain · data team",
+      "analogia": "La celda: donde ocurre el trabajo y se guarda el producto."
+    },
+    {
+      "id": "agrupamento",
+      "kdv": "Comb",
+      "opcional": true,
+      "papeis": [
+        "dono-dominio"
+      ],
+      "relacionados": [
+        "conceito:subdominio",
+        "conceito:dominio"
+      ],
+      "cliente": "Agrupación de negocio",
+      "frase": "Una agrupación opcional de subdominios del mismo dominio, para reglas o permisos comunes.",
+      "como": "Un subdominio puede pertenecer a varias agrupaciones. Es una forma de organizar el negocio y los permisos, sin crear otra capa de infraestructura ni otro rol.",
+      "exemplo": "«Ingresos», que reúne Cobros y Facturación dentro de Finanzas.",
+      "evidencias": [
+        "Criterio de agrupación",
+        "Responsabilidades por ámbito"
+      ],
+      "mercado": "Grouping · permission group",
+      "analogia": "El panal: un conjunto de celdas que forman una estructura."
+    },
+    {
+      "id": "produto",
+      "kdv": "Data product",
+      "papeis": [
+        "dono-produto",
+        "consumidor"
+      ],
+      "relacionados": [
+        "modelo:contrato",
+        "base:contrato",
+        "papel:dono-produto",
+        "termo:odcs"
+      ],
+      "cliente": "Producto de datos",
+      "frase": "Un conjunto de datos fiable, publicado con responsable, contrato y consumidores conocidos.",
+      "como": "Tiene propósito, versión, expectativas de calidad y ciclo de vida, descritos en el {{termo:contrato|contrato}}. Puede entregarse como tabla, vista, API, panel o servicio para IA: son interfaces del mismo producto.",
+      "exemplo": "Agregado semanal de pedidos; API del registro profesional; panel de priorización de inspecciones.",
+      "evidencias": [
+        "Contrato versionado",
+        "Resultados de las pruebas de calidad",
+        "Registro de acceso y de uso"
+      ],
+      "mercado": "Data product · data contract (ODCS)",
+      "analogia": "La miel: un resultado útil, con etiqueta de origen y caducidad (el contrato)."
+    },
+    {
+      "id": "ambiente",
+      "kdv": "Farm",
+      "papeis": [
+        "custodiante"
+      ],
+      "relacionados": [
+        "papel:custodiante",
+        "conceito:ecossistema",
+        "modulo:platops"
+      ],
+      "cliente": "Entorno de ejecución",
+      "frase": "Donde se preparan y operan los productos: producción, preproducción, desarrollo.",
+      "como": "Delimita la ejecución, no la responsabilidad de negocio. Un mismo dominio puede tener datos en varios entornos. El código sube por promoción (desarrollo → preproducción → producción); el dato real no baja a los entornos de prueba.",
+      "exemplo": "Producción; Preproducción; Desarrollo.",
+      "evidencias": [
+        "Inventario del entorno",
+        "Controles de acceso",
+        "Evidencia de recuperación"
+      ],
+      "mercado": "Environment · workspace · deployment",
+      "analogia": "El colmenar: donde el apicultor instala y cuida las colmenas."
+    }
+  ],
+  "papeis": [
+    {
+      "id": "forum",
+      "interface": "EcOps",
+      "modulo": "ecops",
+      "raci": {
+        "preparar": "I",
+        "cultivar": "",
+        "governar": "I",
+        "compartilhar": "C",
+        "ativar": "I"
+      },
+      "nome": "Foro de gobernanza",
+      "escopo": "Ecosistema",
+      "resp": "Define la base común, revisa excepciones entre dominios y resuelve conflictos.",
+      "mercado": "Data governance council"
+    },
+    {
+      "id": "gestor-ecossistema",
+      "interface": "EcOps",
+      "modulo": "ecops",
+      "raci": {
+        "preparar": "C",
+        "cultivar": "I",
+        "governar": "I",
+        "compartilhar": "I",
+        "ativar": "I"
+      },
+      "nome": "Gestor del ecosistema",
+      "escopo": "Ecosistema",
+      "resp": "Coordina la implantación, el alcance, las versiones de políticas y la mejora continua.",
+      "mercado": "Data governance lead · oficina del CDO"
+    },
+    {
+      "id": "dono-dominio",
+      "interface": "EcOps / Producer",
+      "modulo": "ecops",
+      "raci": {
+        "preparar": "A",
+        "cultivar": "I",
+        "governar": "C",
+        "compartilhar": "I",
+        "ativar": "I"
+      },
+      "nome": "Responsable del dominio",
+      "escopo": "Dominio de negocio",
+      "resp": "Responde por el dominio, patrocina el caso de uso y decide las aprobaciones escaladas.",
+      "mercado": "Data owner (domain) · business owner"
+    },
+    {
+      "id": "dono-subdominio",
+      "interface": "Producer",
+      "modulo": "producer",
+      "raci": {
+        "preparar": "",
+        "cultivar": "C",
+        "governar": "C",
+        "compartilhar": "C",
+        "ativar": ""
+      },
+      "nome": "Responsable del subdominio",
+      "escopo": "Subdominio de negocio",
+      "resp": "Responde por el subdominio y por sus decisiones de aprobación.",
+      "mercado": "Data owner (subdomain)"
+    },
+    {
+      "id": "dono-produto",
+      "interface": "Producer",
+      "modulo": "producer",
+      "raci": {
+        "preparar": "R",
+        "cultivar": "A",
+        "governar": "A",
+        "compartilhar": "A",
+        "ativar": "A"
+      },
+      "nome": "Responsable del producto de datos",
+      "escopo": "Producto de datos",
+      "resp": "Responde por el propósito, el contrato, las versiones, la publicación y la relación con los consumidores.",
+      "mercado": "Data product owner"
+    },
+    {
+      "id": "steward-operacional",
+      "interface": "Producer / EcOps",
+      "modulo": "producer",
+      "raci": {
+        "preparar": "C",
+        "cultivar": "C",
+        "governar": "R",
+        "compartilhar": "C",
+        "ativar": "C"
+      },
+      "nome": "Steward operativo",
+      "escopo": "Subdominio (opcionalmente dominio)",
+      "resp": "Mantiene significado, clasificación y calidad; revisa las solicitudes de acceso antes de la decisión.",
+      "mercado": "Data steward"
+    },
+    {
+      "id": "steward-coordenador",
+      "interface": "EcOps",
+      "modulo": "ecops",
+      "raci": {
+        "preparar": "",
+        "cultivar": "",
+        "governar": "C",
+        "compartilhar": "",
+        "ativar": ""
+      },
+      "nome": "Steward coordinador",
+      "escopo": "Dominio de negocio",
+      "resp": "Coordina el trabajo de los stewards y resuelve dudas entre subdominios.",
+      "mercado": "Lead data steward"
+    },
+    {
+      "id": "engenharia",
+      "interface": "Producer",
+      "modulo": "producer",
+      "raci": {
+        "preparar": "C",
+        "cultivar": "R",
+        "governar": "C",
+        "compartilhar": "",
+        "ativar": ""
+      },
+      "nome": "Ingeniería de datos",
+      "escopo": "Subdominio (opcionalmente dominio)",
+      "resp": "Construye y mantiene una preparación y una entrega reproducibles.",
+      "mercado": "Data engineer"
+    },
+    {
+      "id": "custodiante",
+      "interface": "PlatOps / EcOps",
+      "modulo": "platops",
+      "raci": {
+        "preparar": "",
+        "cultivar": "C",
+        "governar": "",
+        "compartilhar": "R",
+        "ativar": ""
+      },
+      "nome": "Custodio técnico",
+      "escopo": "Entorno de ejecución",
+      "resp": "Opera los entornos e implementa los controles autorizados. No decide el acceso: aplica la decisión.",
+      "mercado": "Data custodian · equipo de plataforma"
+    },
+    {
+      "id": "consumidor",
+      "interface": "Consumer",
+      "modulo": "consumer",
+      "raci": {
+        "preparar": "C",
+        "cultivar": "",
+        "governar": "C",
+        "compartilhar": "I",
+        "ativar": "R"
+      },
+      "nome": "Consumidor",
+      "escopo": "Producto de datos",
+      "resp": "Usa los datos según lo acordado e informa si el producto sirve al propósito.",
+      "mercado": "Data consumer · analista · equipo de IA"
+    }
+  ],
+  "modulos": [
+    {
+      "id": "consumer",
+      "nome": "KDV Consumer",
+      "quem": "Quien busca y usa datos",
+      "faz": "Catálogo, solicitud de acceso con plazo, lectura del contrato y seguimiento de las concesiones.",
+      "etapa": "Compartir · Activar"
+    },
+    {
+      "id": "producer",
+      "nome": "KDV Producer",
+      "quem": "Quien prepara y publica datos",
+      "faz": "Dominios, subdominios, contratos, versiones, calidad y decisión sobre solicitudes de acceso.",
+      "etapa": "Cultivar · Gobernar · Compartir"
+    },
+    {
+      "id": "ecops",
+      "nome": "KDV EcOps",
+      "quem": "Quien gobierna el ecosistema",
+      "faz": "Políticas comunes, perfiles de gobernanza, roles, decisiones del foro e indicadores.",
+      "etapa": "Gobernar"
+    },
+    {
+      "id": "platops",
+      "nome": "KDV PlatOps",
+      "quem": "Quien opera la plataforma",
+      "faz": "Entornos, servicios, alertas, certificados y secretos, sin mostrar sus valores.",
+      "etapa": "Base compartida"
+    },
+    {
+      "id": "desk",
+      "nome": "KDV Desk",
+      "quem": "Todos",
+      "faz": "Mostrador común para dudas, problemas e incidentes de datos.",
+      "etapa": "Activar"
+    },
+    {
+      "id": "adapters",
+      "nome": "Adapters",
+      "quem": "Ingeniería de plataforma",
+      "faz": "Conectan el modelo con las herramientas elegidas, sin versiones separadas del producto.",
+      "etapa": "Base compartida"
+    }
+  ],
+  "etapas": [
+    {
+      "id": "preparar",
+      "n": "0",
+      "participantes": [
+        "dono-dominio",
+        "dono-produto",
+        "steward-operacional",
+        "consumidor"
+      ],
+      "modelos": [
+        "carta"
+      ],
+      "cliente": "Elegir el primer caso",
+      "kdv": "Preparación",
+      "frase": "Delimitar antes de empezar.",
+      "entrada": "Una decisión difícil hoy y alguien dispuesto a patrocinarla.",
+      "perguntas": [
+        [
+          "Decisión",
+          "¿Qué decisión es difícil hoy y quién tiene que tomarla?"
+        ],
+        [
+          "Alcance",
+          "¿Qué fuentes, producto y límites puede abordar el equipo?"
+        ],
+        [
+          "Responsabilidad",
+          "¿Quién responde por el resultado, prepara los datos y autoriza el uso?"
+        ],
+        [
+          "Resultado",
+          "¿Qué evidencia mostrará si la primera entrega ayudó?"
+        ]
+      ],
+      "criterios": [
+        "Valor claro para una decisión real",
+        "Patrocinador con autoridad sobre el dominio",
+        "Fuente disponible y autorizada",
+        "Riesgo bajo para empezar (evite datos personales sensibles en el primer caso)"
+      ],
+      "evidencia": [
+        "Caso de uso delimitado",
+        "Patrocinador designado",
+        "Indicador de valor elegido"
+      ],
+      "decisao": "El caso tiene valor, patrocinador y una fuente disponible.",
+      "medidas": "Claridad de la decisión apoyada; plazo hasta la primera entrega.",
+      "impl": "No hace falta ninguna herramienta: bastan documentos y una reunión.",
+      "exemplo": "El consejo decide priorizar las inspecciones: la decisión es dónde inspeccionar primero, el patrocinador es el responsable del dominio de Inspección y el indicador es la proporción de inspecciones que confirman una irregularidad."
+    },
+    {
+      "id": "cultivar",
+      "n": "1",
+      "participantes": [
+        "dono-produto",
+        "engenharia"
+      ],
+      "modelos": [
+        "evidencias"
+      ],
+      "cliente": "Preparar los datos",
+      "kdv": "Cultivar",
+      "frase": "Preparar con propósito.",
+      "entrada": "Un caso de uso definido y una fuente identificada.",
+      "praticas": [
+        "Conectar las fuentes",
+        "Documentar el origen",
+        "Preparar los datos",
+        "Establecer una entrega reproducible"
+      ],
+      "evidencia": [
+        "Inventario de fuentes",
+        "Registro de las transformaciones (linaje)",
+        "Pruebas iniciales de calidad"
+      ],
+      "decisao": "La fuente está autorizada y el resultado puede explicarse.",
+      "medidas": "Cobertura de fuentes; fallos de entrega.",
+      "impl": "{{modulo:producer|KDV Producer}}; pipelines en {{ferramenta:mage|Mage}}; almacenamiento en {{ferramenta:seaweedfs|SeaweedFS}} con tablas {{ferramenta:iceberg|Iceberg}}; linaje en {{ferramenta:openmetadata|OpenMetadata}}.",
+      "exemplo": "Inventaría registros profesionales, quejas y fuentes públicas autorizadas. Registra la fecha de recogida, el origen y las limitaciones de cada fuente."
+    },
+    {
+      "id": "governar",
+      "n": "2",
+      "participantes": [
+        "steward-operacional",
+        "dono-produto",
+        "dono-dominio"
+      ],
+      "modelos": [
+        "contrato",
+        "decisao",
+        "carta"
+      ],
+      "cliente": "Definir reglas y responsables",
+      "kdv": "Gobernar",
+      "frase": "Hacer aplicable la confianza.",
+      "entrada": "Datos preparados, con significado y uso propuestos.",
+      "praticas": [
+        "Acordar definiciones",
+        "Clasificar los datos",
+        "Definir umbrales de calidad",
+        "Declarar los usos permitidos",
+        "Registrar quién decide"
+      ],
+      "evidencia": [
+        "Glosario",
+        "Contrato versionado",
+        "Resultados de calidad",
+        "Decisiones de política"
+      ],
+      "decisao": "Responsables, términos y expectativas de calidad han sido revisados.",
+      "medidas": "Cobertura de responsables; excepciones de calidad.",
+      "impl": "{{modulo:producer|KDV Producer}} y {{modulo:ecops|KDV EcOps}}; glosario y calidad en {{ferramenta:openmetadata|OpenMetadata}}; políticas en {{ferramenta:ranger|Apache Ranger}}.",
+      "exemplo": "Acuerda identificadores, reglas de cruce, incertidumbre aceptable, finalidades permitidas y quién revisa cada caso."
+    },
+    {
+      "id": "compartilhar",
+      "n": "3",
+      "participantes": [
+        "dono-produto",
+        "steward-operacional",
+        "custodiante"
+      ],
+      "modelos": [
+        "acesso",
+        "decisao"
+      ],
+      "cliente": "Publicar y dar acceso",
+      "kdv": "Compartir",
+      "frase": "Publicar un acuerdo.",
+      "entrada": "Un producto aprobado y un público claro.",
+      "praticas": [
+        "Publicar metadatos y condiciones",
+        "Revisar solicitudes de acceso",
+        "Aplicar los controles",
+        "Comunicar los cambios"
+      ],
+      "evidencia": [
+        "Contrato publicado",
+        "Decisión de acceso",
+        "Política aplicada",
+        "Historial de versiones"
+      ],
+      "decisao": "El consumidor previsto puede encontrar y acceder a la versión autorizada.",
+      "medidas": "Tiempo hasta la decisión de acceso; adopción del contrato.",
+      "impl": "{{modulo:consumer|KDV Consumer}} para las solicitudes; {{ferramenta:ranger|Apache Ranger}} aplica la política; consultas con {{ferramenta:trino|Trino}}; APIs con {{ferramenta:wso2|WSO2 API Manager}}.",
+      "exemplo": "Publica un producto agregado para la planificación y una vista separada y restringida para el análisis de casos. El responsable decide el acceso antes de que el custodio lo implemente."
+    },
+    {
+      "id": "ativar",
+      "n": "4",
+      "participantes": [
+        "consumidor",
+        "dono-produto"
+      ],
+      "modelos": [
+        "evidencias",
+        "acesso"
+      ],
+      "cliente": "Usar y medir el valor",
+      "kdv": "Activar",
+      "frase": "Observar el valor.",
+      "entrada": "Un consumidor autorizado y un propósito acordado.",
+      "praticas": [
+        "Usar el producto en análisis, aplicaciones o IA",
+        "Seguir los resultados",
+        "Informar de problemas",
+        "Revisar el uso"
+      ],
+      "evidencia": [
+        "Registro de uso",
+        "Indicador de resultado",
+        "Problemas informados",
+        "Decisión de mejora o retirada"
+      ],
+      "decisao": "Se han revisado el valor y las limitaciones; se decide mejorar o retirar.",
+      "medidas": "Uso frente al propósito; incidentes; indicador de valor.",
+      "impl": "Paneles en {{ferramenta:superset|Superset}}; consultas con {{ferramenta:trino|Trino}}; APIs y servicios para IA en {{ferramenta:vassets|vassets}}; observabilidad en {{ferramenta:observabilidade|Grafana}}.",
+      "exemplo": "Usa los indicadores para planificar las inspecciones. Una persona habilitada valida la evidencia antes de cualquier actuación individual."
+    }
+  ],
+  "camadas": [
+    {
+      "id": "principios",
+      "nome": "Principios y políticas",
+      "pergunta": "¿Qué hay que respetar?",
+      "resumo": "Propósito, clasificación, conservación y la base común de gobernanza.",
+      "celulas": {
+        "cultivar": [
+          "Propósito",
+          "Solo se preparan datos con un propósito declarado; este limita las fuentes y el alcance."
+        ],
+        "governar": [
+          "Clasificación",
+          "Cada dato recibe un nivel de sensibilidad que define las reglas de uso."
+        ],
+        "compartilhar": [
+          "Uso permitido",
+          "El contrato dice para qué puede usarse el producto, también por IA."
+        ],
+        "ativar": [
+          "Revisión del propósito",
+          "El uso real se compara con el propósito acordado; las desviaciones se convierten en decisiones."
+        ]
+      }
+    },
+    {
+      "id": "organizacao",
+      "nome": "Organización y roles",
+      "pergunta": "¿Quién decide y quién entrega?",
+      "resumo": "Responsables y stewards explícitos, con responsabilidades en el ámbito adecuado.",
+      "celulas": {
+        "cultivar": [
+          "Ingeniería + responsable",
+          "La ingeniería prepara; el responsable del producto responde por el resultado."
+        ],
+        "governar": [
+          "Steward + responsable",
+          "El steward conduce las definiciones; el responsable aprueba el contrato."
+        ],
+        "compartilhar": [
+          "Responsable + custodio",
+          "El responsable decide el acceso; el custodio aplica la decisión."
+        ],
+        "ativar": [
+          "Consumidor + responsable",
+          "El consumidor usa e informa; el responsable decide mejorar o retirar."
+        ]
+      }
+    },
+    {
+      "id": "processos",
+      "nome": "Procesos y decisiones",
+      "pergunta": "¿Cómo avanza el trabajo?",
+      "resumo": "Las cuatro etapas, con revisión y tratamiento de excepciones.",
+      "celulas": {
+        "cultivar": [
+          "Preparar",
+          "Conectar fuentes y montar una entrega que se pueda repetir."
+        ],
+        "governar": [
+          "Acordar",
+          "Cerrar definiciones, umbrales de calidad y usos permitidos."
+        ],
+        "compartilhar": [
+          "Autorizar",
+          "Solicitud, revisión, decisión e implementación como actos separados."
+        ],
+        "ativar": [
+          "Observar",
+          "Seguir uso, resultados y problemas con un ritmo acordado."
+        ]
+      }
+    },
+    {
+      "id": "controles",
+      "nome": "Controles y medios",
+      "pergunta": "¿Cómo se aplican las reglas?",
+      "resumo": "Contratos, pruebas de calidad, políticas de acceso, catálogos y salvaguardas.",
+      "celulas": {
+        "cultivar": [
+          "Linaje",
+          "Cada transformación queda registrada, de la fuente al producto."
+        ],
+        "governar": [
+          "Pruebas de calidad",
+          "Los umbrales del contrato se convierten en pruebas automáticas."
+        ],
+        "compartilhar": [
+          "Política de acceso",
+          "La decisión se convierte en una regla aplicada por la plataforma, con plazo."
+        ],
+        "ativar": [
+          "Supervisión",
+          "Uso, fallos e incidentes son visibles para el responsable."
+        ]
+      }
+    },
+    {
+      "id": "evidencias",
+      "nome": "Evidencias y mejora",
+      "pergunta": "¿Cómo lo sabemos y aprendemos?",
+      "resumo": "Decisiones registradas, resultados de pruebas, uso, incidentes y medidas de resultado.",
+      "celulas": {
+        "cultivar": [
+          "Inventario",
+          "Lista de fuentes, origen y limitaciones."
+        ],
+        "governar": [
+          "Contrato",
+          "El acuerdo versionado es la prueba de lo acordado."
+        ],
+        "compartilhar": [
+          "Decisión",
+          "Quién aprobó, con qué alcance y hasta cuándo."
+        ],
+        "ativar": [
+          "Resultado",
+          "El indicador de valor muestra si el producto ayudó a la decisión."
+        ]
+      }
+    }
+  ],
+  "baseline": [
+    {
+      "id": "responsavel",
+      "modelo": "carta",
+      "camada": "organizacao",
+      "nome": "Responsable identificado",
+      "porque": "Sin responsable, nadie responde por errores, cambios ni solicitudes de acceso.",
+      "verificar": "Todo producto compartido tiene responsable y steward designados, con el rol registrado.",
+      "evidencia": "Carta del dominio y registro de roles."
+    },
+    {
+      "id": "contrato",
+      "modelo": "contrato",
+      "camada": "controles",
+      "nome": "Contrato versionado",
+      "porque": "Las cifras no cuadran cuando cada área usa su propia definición.",
+      "verificar": "Existe un contrato vigente, con versión, definiciones, calidad y uso permitido.",
+      "evidencia": "Contrato publicado e historial de versiones."
+    },
+    {
+      "id": "classificacao",
+      "modelo": "contrato",
+      "camada": "principios",
+      "nome": "Clasificación",
+      "porque": "La regla de uso depende de la sensibilidad del dato.",
+      "verificar": "Cada producto tiene un nivel de sensibilidad (público, interno, confidencial, restringido).",
+      "evidencia": "Clasificación en el contrato y en el catálogo."
+    },
+    {
+      "id": "acesso",
+      "modelo": "acesso",
+      "camada": "controles",
+      "nome": "Acceso por política",
+      "porque": "El acceso concedido por correo rara vez se revoca.",
+      "verificar": "El acceso solo se concede si la política lo permite; toda concesión tiene plazo y revisión.",
+      "evidencia": "Decisión de acceso, política aplicada y fecha de vencimiento."
+    },
+    {
+      "id": "auditabilidade",
+      "modelo": "evidencias",
+      "camada": "evidencias",
+      "nome": "Trazabilidad",
+      "porque": "La auditoría y la protección de datos piden pruebas, no intenciones.",
+      "verificar": "Se puede reconstruir quién decidió, qué se aplicó y qué se usó.",
+      "evidencia": "Registro de decisiones, de acceso y de uso."
+    }
+  ],
+  "acesso": {
+    "passos": [
+      {
+        "id": "pedido",
+        "papel": "consumidor",
+        "titulo": "Solicitud y propósito",
+        "texto": "El consumidor solicita una versión del producto y declara para qué la usará."
+      },
+      {
+        "id": "analise",
+        "papel": "steward-operacional",
+        "titulo": "Revisión del steward",
+        "texto": "Comprueba propósito, significado, clasificación y si el producto es adecuado."
+      },
+      {
+        "id": "decisao",
+        "papel": "dono-produto",
+        "titulo": "Decisión del responsable",
+        "texto": "Aprueba, rechaza o escala, siempre con una justificación registrada."
+      },
+      {
+        "id": "aplicacao",
+        "papel": "custodiante",
+        "titulo": "Aplicación técnica",
+        "texto": "El custodio implementa exactamente el alcance aprobado y lo verifica."
+      },
+      {
+        "id": "revisao",
+        "papel": "consumidor",
+        "titulo": "Uso y revisión",
+        "texto": "Consumidor y responsable revisan uso, plazo y necesidad en la fecha acordada."
+      },
+      {
+        "id": "decisao-escalada",
+        "papel": "dono-dominio",
+        "titulo": "Decisión escalada",
+        "texto": "El responsable del dominio decide y devuelve la decisión registrada."
+      },
+      {
+        "id": "revogacao",
+        "papel": "custodiante",
+        "titulo": "Retirada verificada",
+        "texto": "El custodio retira la concesión y verifica la retirada."
+      }
+    ],
+    "desfechos": [
+      {
+        "id": "aprovar",
+        "caminho": [
+          "pedido",
+          "analise",
+          "decisao",
+          "aplicacao",
+          "revisao"
+        ],
+        "nome": "Aprobar",
+        "registro": "Alcance, propósito, plazo y fecha de revisión registrados antes de la implementación; política aplicada y verificada.",
+        "nota": "Aprobación e implementación son actos distintos: quien decide no es quien aplica."
+      },
+      {
+        "id": "recusar",
+        "caminho": [
+          "pedido",
+          "analise",
+          "decisao"
+        ],
+        "nome": "Rechazar",
+        "registro": "Justificación registrada; se informa al solicitante y se cierra la solicitud.",
+        "nota": "Un rechazo sin justificación no sirve como evidencia."
+      },
+      {
+        "id": "escalar",
+        "caminho": [
+          "pedido",
+          "analise",
+          "decisao",
+          "decisao-escalada",
+          "aplicacao",
+          "revisao"
+        ],
+        "nome": "Escalar",
+        "registro": "La solicitud se remite al responsable del dominio; vuelve con una decisión registrada antes de cualquier implementación.",
+        "nota": "Úselo cuando la solicitud cruza dominios o supera la autoridad del responsable del producto."
+      },
+      {
+        "id": "revogar",
+        "caminho": [
+          "revisao",
+          "revogacao"
+        ],
+        "nome": "Vencer o revocar",
+        "registro": "Se retira la concesión, se verifica la retirada y la decisión se conserva durante el plazo acordado.",
+        "nota": "¿Terminó el plazo o el propósito? El acceso también termina. Renovar exige una nueva solicitud."
+      }
+    ],
+    "excecao": "Una excepción registra la regla afectada, la justificación, el riesgo, quién la aprobó, el control compensatorio y la fecha de vencimiento. No es un atajo permanente."
+  },
+  "ritmo": [
+    {
+      "id": "publicacao",
+      "quando": "En cada publicación",
+      "oque": "Revisar contrato, responsables, calidad y condiciones de acceso antes de la entrega."
+    },
+    {
+      "id": "semanal",
+      "quando": "Cada semana (punto de partida)",
+      "oque": "Clasificar problemas, solicitudes de acceso y cambios de contrato con el equipo."
+    },
+    {
+      "id": "mensal",
+      "quando": "Cada mes (punto de partida)",
+      "oque": "Revisar resultados, excepciones y mejoras de política con el foro de gobernanza."
+    }
+  ],
+  "checklist": [
+    {
+      "id": "c1",
+      "etapa": "preparar",
+      "t": "El caso de uso y el consumidor previsto están claros.",
+      "acao": "Haga la preparación (preguntas P1 a P4) con el patrocinador."
+    },
+    {
+      "id": "c2",
+      "etapa": "preparar",
+      "t": "Los responsables del dominio, del subdominio y del producto están identificados.",
+      "acao": "Rellene la carta del dominio y designe a los responsables."
+    },
+    {
+      "id": "c3",
+      "etapa": "governar",
+      "t": "El producto tiene un contrato versionado.",
+      "acao": "Redacte el contrato con el steward y publique la versión 1."
+    },
+    {
+      "id": "c4",
+      "etapa": "governar",
+      "t": "La clasificación y las finalidades permitidas son explícitas.",
+      "acao": "Clasifique el producto y declare los usos permitidos en el contrato."
+    },
+    {
+      "id": "c5",
+      "etapa": "governar",
+      "t": "Los umbrales de calidad y las pruebas están acordados.",
+      "acao": "Convierta los umbrales del contrato en pruebas automáticas."
+    },
+    {
+      "id": "c6",
+      "etapa": "compartilhar",
+      "t": "Los flujos de aprobación y de excepción son conocidos.",
+      "acao": "Acuerde quién revisa, quién decide y quién aplica el acceso."
+    },
+    {
+      "id": "c7",
+      "etapa": "cultivar",
+      "t": "El entorno de ejecución y el custodio están identificados.",
+      "acao": "Registre dónde se ejecuta el producto y quién aplica los controles."
+    },
+    {
+      "id": "c8",
+      "etapa": "ativar",
+      "t": "El indicador de valor y la próxima revisión están definidos.",
+      "acao": "Elija el indicador con el consumidor y fije la fecha de revisión."
+    }
+  ],
+  "personas": [
+    {
+      "id": "gestor",
+      "sinal": "◈",
+      "trilha": [
+        "primeiros-passos",
+        "exemplo",
+        "principios",
+        "evidencias"
+      ],
+      "nome": "Directivo de un área de negocio",
+      "curto": "Dirección de negocio",
+      "dor": "Cada reunión empieza discutiendo qué cifra es la correcta.",
+      "quer": "Beneficio para el negocio, esfuerzo exigido al equipo y un primer resultado visible.",
+      "muda": "Un producto de datos con responsable y definición acordada sustituye las versiones paralelas de la misma cifra.",
+      "comeco": "Elija una decisión importante y patrocine el primer caso."
+    },
+    {
+      "id": "dados",
+      "sinal": "◎",
+      "trilha": [
+        "principios",
+        "papeis",
+        "ciclo",
+        "referenciais"
+      ],
+      "nome": "CDO, responsable de datos o de TI",
+      "curto": "Liderazgo de datos",
+      "dor": "Tenemos herramientas, pero no gobernanza. El DAMA es demasiado grande para empezar.",
+      "quer": "Por dónde empezar, roles mínimos y cómo medir el progreso sin un cuestionario de madurez.",
+      "muda": "Una base común de cinco elementos y cuatro etapas ponen orden en el trabajo, medido por lo que queda registrado.",
+      "comeco": "Defina la base común y los roles del primer dominio."
+    },
+    {
+      "id": "privacidade",
+      "sinal": "◇",
+      "trilha": [
+        "acesso",
+        "ia-privacidade",
+        "evidencias",
+        "referenciais"
+      ],
+      "nome": "Delegado de protección de datos (DPO), cumplimiento y auditoría",
+      "curto": "Privacidad y auditoría",
+      "dor": "No puedo demostrar quién accedió a qué, por qué y hasta cuándo.",
+      "quer": "Registro de decisiones, rastro de acceso y vínculo con el RGPD y la LGPD.",
+      "muda": "Solicitud, decisión, aplicación y revisión quedan registradas como actos separados, con plazo.",
+      "comeco": "Revise el flujo de acceso y el registro de excepciones."
+    },
+    {
+      "id": "engenharia",
+      "sinal": "⌘",
+      "trilha": [
+        "anatomia",
+        "implementacao",
+        "contratos",
+        "ciclo"
+      ],
+      "nome": "Ingeniería y arquitectura de datos",
+      "curto": "Ingeniería y arquitectura",
+      "dor": "Las solicitudes de acceso llegan por correo, los pipelines no tienen responsable y temo quedar atado a un proveedor.",
+      "quer": "Herramientas abiertas, contratos versionados, políticas automatizadas y licencias claras.",
+      "muda": "Cada regla acordada se convierte en un control aplicado por la plataforma, con herramientas abiertas.",
+      "comeco": "Compare los tres caminos de implementación."
+    },
+    {
+      "id": "steward",
+      "sinal": "◐",
+      "trilha": [
+        "papeis",
+        "contratos",
+        "acesso",
+        "glossario"
+      ],
+      "nome": "Data steward (a veces sin saberlo)",
+      "curto": "Stewards",
+      "dor": "Soy a quien todo el mundo pregunta qué significa esta columna.",
+      "quer": "El rol designado, qué hacer en cada etapa y plantillas de glosario y contrato.",
+      "muda": "Lo que hoy es un favor informal pasa a ser un rol reconocido, con ámbito y plantilla de trabajo.",
+      "comeco": "Empiece por el contrato del producto más solicitado."
+    },
+    {
+      "id": "consumidor",
+      "sinal": "↗",
+      "trilha": [
+        "contratos",
+        "acesso",
+        "ia-privacidade"
+      ],
+      "nome": "Analista, científico de datos o equipo de IA",
+      "curto": "Analistas e IA",
+      "dor": "Tardo semanas en conseguir acceso y no sé si puedo usar el dato.",
+      "quer": "Catálogo, solicitud de acceso con plazo y un contrato fácil de leer.",
+      "muda": "El contrato dice de antemano qué se puede hacer, y la solicitud tiene responsable y plazo de respuesta.",
+      "comeco": "Lea el contrato del producto antes de solicitar acceso."
+    }
+  ],
+  "nichos": [
+    {
+      "id": "publico",
+      "exemplo": "conselho",
+      "nome": "Sector público, organismos y consejos profesionales",
+      "dores": [
+        "Protección de datos y transparencia",
+        "Rendición de cuentas ante órganos de control",
+        "Datos atrapados en sistemas heredados",
+        "Intercambio de datos entre organismos por hoja de cálculo",
+        "Presupuesto escaso para licencias"
+      ],
+      "responde": "Base común con responsable, contrato, clasificación y acceso por política; evidencia de cada decisión; el dato se queda en el entorno del organismo.",
+      "comeco": "Un producto que responda a una pregunta del órgano de control."
+    },
+    {
+      "id": "redes",
+      "exemplo": "municipio",
+      "nome": "Redes y ecosistemas de varias organizaciones",
+      "dores": [
+        "Quieren compartir datos sin perder el control",
+        "No hay una regla común",
+        "Nadie sabe quién aprobó qué"
+      ],
+      "responde": "Ecosistema con propósito común; reglas mínimas comunes y decisiones locales; acceso con plazo y revocable.",
+      "comeco": "Un indicador que dos miembros necesitan y que ninguno tiene por sí solo."
+    },
+    {
+      "id": "medias",
+      "exemplo": "empresa",
+      "nome": "Medianas empresas que dejan atrás las hojas de cálculo y el BI aislado",
+      "dores": [
+        "Cada área tiene su cifra",
+        "Informes sin responsable",
+        "Dependencia de una persona",
+        "Ningún equipo de gobernanza"
+      ],
+      "responde": "Empezar por un producto de datos; cuatro etapas; plantillas listas; gobernanza proporcional al tamaño del equipo.",
+      "comeco": "El indicador que más discusión genera en el comité de dirección."
+    },
+    {
+      "id": "regulados",
+      "exemplo": "conselho",
+      "nome": "Sectores regulados (salud, finanzas, energía, agua, educación)",
+      "dores": [
+        "La auditoría exige pruebas",
+        "Clasificación de datos sensibles",
+        "Acceso concedido por correo y nunca revocado"
+      ],
+      "responde": "Aprobación e implementación como actos distintos y registrados; excepciones con plazo; indicadores de evidencia.",
+      "comeco": "La revisión de acceso de un producto con datos personales."
+    },
+    {
+      "id": "ia",
+      "exemplo": "empresa",
+      "nome": "Organizaciones que empiezan con IA generativa y agentes",
+      "dores": [
+        "Miedo a exponer datos a los modelos",
+        "Respuestas sin una fuente fiable",
+        "Nadie responde por los datos usados"
+      ],
+      "responde": "Producto de datos con contrato y uso permitido declarado antes de cualquier consumo por IA.",
+      "comeco": "Declarar en el contrato si el producto puede usarse por IA y cómo."
+    },
+    {
+      "id": "consultorias",
+      "exemplo": "empresa",
+      "nome": "Consultoras, integradores y profesionales independientes",
+      "dores": [
+        "Necesitan un método reconocible y reutilizable",
+        "Los clientes piden «DAMA en la práctica»",
+        "Reinventan los artefactos en cada proyecto"
+      ],
+      "responde": "Método abierto (CC BY 4.0), plantillas editables y relación explícita con DAMA-DMBOK, DCAM y Data Mesh.",
+      "comeco": "Aplicar el Playbook con un cliente usando las plantillas listas."
+    }
+  ],
+  "casos": [
+    {
+      "id": "empresa",
+      "rotulo": "Empresa",
+      "titulo": "De informes comerciales contradictorios a un producto de ingresos acordado.",
+      "texto": "Finanzas y Ventas acuerdan definiciones, actualización, un responsable y un contrato versionado. La dirección pasa a discutir la decisión, no la cifra.",
+      "etapas": [
+        "Inventario de las fuentes de facturación y del CRM",
+        "Definición única de «ingreso reconocido» en el contrato",
+        "Acceso por política para las áreas comerciales",
+        "Indicador: reuniones sin conciliación manual de cifras"
+      ]
+    },
+    {
+      "id": "municipio",
+      "rotulo": "Municipio",
+      "titulo": "Anticipar la presión sobre los servicios con datos de sistemas dispersos.",
+      "texto": "Se combinan indicadores permitidos de distintas áreas y sistemas sectoriales, con actualización, cobertura y límites claros, para apoyar una gestión proactiva.",
+      "etapas": [
+        "Inventario de las fuentes de cada área",
+        "Acuerdo sobre geografía, periodo y supresión de grupos pequeños",
+        "Producto agregado, sin registros identificables",
+        "Indicador: demanda por zona antes de la reunión de planificación"
+      ]
+    },
+    {
+      "id": "conselho",
+      "rotulo": "Consejo profesional",
+      "titulo": "Priorizar las inspecciones con información actual y trazable.",
+      "texto": "Se cruzan fuentes internas y externas autorizadas. La priorización analítica se separa de la evidencia y de la decisión humana necesarias en cada caso individual.",
+      "etapas": [
+        "Inventario de registros profesionales, quejas y fuentes públicas",
+        "Reglas de cruce versionadas y revisión humana",
+        "Producto de planificación y vista restringida por caso",
+        "Indicador: inspecciones que confirman una irregularidad"
+      ]
+    }
+  ],
+  "termos": [
+    {
+      "id": "steward",
+      "rel": [
+        "papel:steward-operacional"
+      ],
+      "cliente": "Steward (custodio del significado)",
+      "mercado": "Data steward",
+      "def": "Persona que mantiene el significado, la clasificación y la calidad de un conjunto de datos y revisa las solicitudes de acceso."
+    },
+    {
+      "id": "custodiante",
+      "rel": [
+        "papel:custodiante"
+      ],
+      "cliente": "Custodio técnico",
+      "mercado": "Data custodian",
+      "def": "Quien opera el entorno y aplica los controles autorizados. Ejecuta la decisión de acceso; no la toma."
+    },
+    {
+      "id": "contrato",
+      "rel": [
+        "modelo:contrato",
+        "termo:odcs",
+        "base:contrato"
+      ],
+      "cliente": "Contrato de producto de datos",
+      "mercado": "Data contract",
+      "def": "Acuerdo versionado entre quienes producen, gobiernan y consumen un producto: definiciones, calidad, uso permitido, acceso y plazos."
+    },
+    {
+      "id": "baseline",
+      "rel": [
+        "base:responsavel",
+        "base:acesso"
+      ],
+      "cliente": "Base común",
+      "mercado": "Governance baseline",
+      "def": "Los cinco elementos que todo dato compartido debe tener y que ningún ecosistema puede eliminar."
+    },
+    {
+      "id": "classificacao",
+      "rel": [
+        "base:classificacao"
+      ],
+      "cliente": "Clasificación",
+      "mercado": "Data classification",
+      "def": "Nivel de sensibilidad del dato (público, interno, confidencial, restringido) que define las reglas de uso."
+    },
+    {
+      "id": "linhagem",
+      "rel": [
+        "ferramenta:openmetadata"
+      ],
+      "cliente": "Linaje",
+      "mercado": "Data lineage",
+      "def": "Registro del recorrido del dato, de la fuente al producto, con cada transformación aplicada."
+    },
+    {
+      "id": "concessao",
+      "rel": [
+        "base:acesso",
+        "modelo:acesso"
+      ],
+      "cliente": "Concesión de acceso",
+      "mercado": "Access grant",
+      "def": "Permiso aprobado para un consumidor, con alcance, propósito y plazo. Vence y debe revisarse."
+    },
+    {
+      "id": "excecao",
+      "rel": [
+        "modelo:decisao"
+      ],
+      "cliente": "Excepción",
+      "mercado": "Policy exception · waiver",
+      "def": "Desviación autorizada de una regla, con justificación, riesgo, control compensatorio y fecha de vencimiento."
+    },
+    {
+      "id": "evidencia",
+      "rel": [
+        "base:auditabilidade",
+        "modelo:evidencias"
+      ],
+      "cliente": "Evidencia",
+      "mercado": "Evidence · audit trail",
+      "def": "Registro producido por el propio trabajo (decisión, prueba, uso) que muestra lo que se hizo. La falta de registro es falta de evidencia, no éxito."
+    },
+    {
+      "id": "indicador-valor",
+      "rel": [
+        "etapa:ativar"
+      ],
+      "cliente": "Indicador de valor",
+      "mercado": "Value metric · outcome KPI",
+      "def": "Medida, acordada con el consumidor, que muestra si el producto ayudó a la decisión prevista."
+    },
+    {
+      "id": "catalogo",
+      "rel": [
+        "ferramenta:openmetadata",
+        "modulo:consumer"
+      ],
+      "cliente": "Catálogo de datos",
+      "mercado": "Data catalog",
+      "def": "Lugar donde se encuentran los productos, con descripción, responsable, contrato y linaje."
+    },
+    {
+      "id": "glossario-negocio",
+      "rel": [
+        "conceito:dominio"
+      ],
+      "cliente": "Glosario de negocio",
+      "mercado": "Business glossary",
+      "def": "Definiciones acordadas de los términos de un dominio, usadas en los contratos y en el catálogo."
+    },
+    {
+      "id": "lakehouse",
+      "rel": [
+        "ferramenta:iceberg",
+        "ferramenta:trino"
+      ],
+      "cliente": "Data lakehouse",
+      "mercado": "Data lakehouse",
+      "def": "Arquitectura que guarda los datos en almacenamiento de objetos con un formato de tabla abierto, consultables como una base de datos."
+    },
+    {
+      "id": "odcs",
+      "rel": [
+        "termo:contrato",
+        "modelo:contrato"
+      ],
+      "cliente": "ODCS",
+      "mercado": "Open Data Contract Standard",
+      "def": "Estándar abierto para escribir contratos de datos legibles por máquina. La plantilla KDV es para personas; la implementación de referencia la expresa en ODCS."
+    },
+    {
+      "id": "mcp",
+      "rel": [
+        "ferramenta:vassets"
+      ],
+      "cliente": "Servicio de datos para IA (MCP)",
+      "mercado": "Model Context Protocol",
+      "def": "Protocolo que permite a los asistentes de IA consultar datos. En la implementación de referencia, solo lectura y respetando la identidad de quien pregunta."
+    },
+    {
+      "id": "raci",
+      "rel": [
+        "papel:dono-produto"
+      ],
+      "cliente": "Matriz RACI",
+      "mercado": "RACI matrix",
+      "def": "Tabla que indica, para cada actividad, quién ejecuta (R), quién aprueba (A), a quién se consulta (C) y a quién se informa (I)."
+    },
+    {
+      "id": "lgpd",
+      "rel": [
+        "termo:encarregado"
+      ],
+      "cliente": "RGPD / LGPD",
+      "mercado": "RGPD (UE) · LGPD (Brasil, Ley 13.709/2018)",
+      "def": "Leyes de protección de datos personales. KDV apoya el cumplimiento con registros y decisiones, pero no sustituye el asesoramiento jurídico."
+    },
+    {
+      "id": "encarregado",
+      "rel": [
+        "termo:lgpd"
+      ],
+      "cliente": "Delegado de protección de datos",
+      "mercado": "Data Protection Officer (DPO)",
+      "def": "Persona que asesora a la organización en protección de datos. Asesora; la decisión y la responsabilidad legal siguen en la organización."
+    },
+    {
+      "id": "homologacao",
+      "rel": [
+        "conceito:ambiente"
+      ],
+      "cliente": "Preproducción",
+      "mercado": "Staging · UAT",
+      "def": "Entorno de prueba donde el responsable valida una nueva versión antes de producción. Usa datos sintéticos o enmascarados."
+    },
+    {
+      "id": "metadados",
+      "rel": [
+        "termo:catalogo"
+      ],
+      "cliente": "Metadatos",
+      "mercado": "Metadata",
+      "def": "Información sobre el dato: descripción, responsable, origen, actualización, calidad y clasificación."
+    }
+  ],
+  "ferramentas": [
+    {
+      "id": "seaweedfs",
+      "nome": "SeaweedFS",
+      "licenca": "Apache-2.0",
+      "etapa": "cultivar",
+      "funcao": "Almacenamiento de objetos (lake)"
+    },
+    {
+      "id": "iceberg",
+      "nome": "Apache Iceberg + Hive Metastore",
+      "licenca": "Apache-2.0",
+      "etapa": "cultivar",
+      "funcao": "Formato de tabla abierto y catálogo de tablas"
+    },
+    {
+      "id": "mage",
+      "nome": "Mage + kdv-pipelines",
+      "licenca": "Mage: Apache-2.0; kdv-pipelines: KDV",
+      "etapa": "cultivar",
+      "funcao": "Pipelines con calidad y linaje"
+    },
+    {
+      "id": "openmetadata",
+      "nome": "OpenMetadata",
+      "licenca": "Apache-2.0",
+      "etapa": "governar",
+      "funcao": "Catálogo, glosario, linaje y calidad"
+    },
+    {
+      "id": "ranger",
+      "nome": "Apache Ranger",
+      "licenca": "Apache-2.0",
+      "etapa": "governar",
+      "funcao": "Autorización por política y auditoría de acceso"
+    },
+    {
+      "id": "splink",
+      "nome": "Splink",
+      "licenca": "MIT",
+      "etapa": "governar",
+      "funcao": "Datos maestros: correspondencia entre registros"
+    },
+    {
+      "id": "trino",
+      "nome": "Trino",
+      "licenca": "Apache-2.0",
+      "etapa": "compartilhar",
+      "funcao": "Motor de consulta, uno por entorno"
+    },
+    {
+      "id": "wso2",
+      "nome": "WSO2 API Manager",
+      "licenca": "Apache-2.0",
+      "etapa": "compartilhar",
+      "funcao": "APIs y suscripciones"
+    },
+    {
+      "id": "superset",
+      "nome": "Apache Superset",
+      "licenca": "Apache-2.0",
+      "etapa": "ativar",
+      "funcao": "Paneles y análisis visual"
+    },
+    {
+      "id": "vassets",
+      "nome": "vassets (API / MCP)",
+      "licenca": "KDV",
+      "etapa": "ativar",
+      "funcao": "Servicios de datos para aplicaciones y asistentes de IA"
+    },
+    {
+      "id": "observabilidade",
+      "nome": "Prometheus, Loki, Tempo, Grafana",
+      "licenca": "Apache-2.0 · AGPL",
+      "etapa": "ativar",
+      "funcao": "Observabilidad y evidencia operativa"
+    },
+    {
+      "id": "keycloak",
+      "nome": "Keycloak + OpenLDAP",
+      "licenca": "Apache-2.0 · OpenLDAP",
+      "etapa": "base",
+      "funcao": "Identidad e inicio de sesión único"
+    },
+    {
+      "id": "openbao",
+      "nome": "OpenBao",
+      "licenca": "MPL-2.0",
+      "etapa": "base",
+      "funcao": "Almacén de secretos"
+    },
+    {
+      "id": "postgres",
+      "nome": "PostgreSQL",
+      "licenca": "PostgreSQL",
+      "etapa": "base",
+      "funcao": "Registro de jerarquía, contratos, concesiones y auditoría"
+    }
+  ],
+  "camadasArq": [
+    {
+      "id": "uso",
+      "tools": [
+        "superset",
+        "vassets",
+        "trino"
+      ],
+      "mods": [
+        "consumer",
+        "desk"
+      ],
+      "nome": "Consumidores y uso",
+      "desc": "Aplicaciones, análisis y uso autorizado por IA."
+    },
+    {
+      "id": "produto",
+      "tools": [
+        "openmetadata",
+        "wso2",
+        "splink"
+      ],
+      "mods": [
+        "producer",
+        "ecops"
+      ],
+      "nome": "Interfaces de producto",
+      "desc": "Contratos, catálogo, calidad y decisiones de acceso."
+    },
+    {
+      "id": "controles",
+      "tools": [
+        "ranger",
+        "keycloak",
+        "openbao",
+        "observabilidade",
+        "postgres"
+      ],
+      "mods": [
+        "ecops"
+      ],
+      "nome": "Controles reutilizables",
+      "desc": "Identidad, políticas, linaje, secretos y auditoría."
+    },
+    {
+      "id": "execucao",
+      "tools": [
+        "seaweedfs",
+        "iceberg",
+        "mage"
+      ],
+      "mods": [
+        "platops",
+        "adapters"
+      ],
+      "nome": "Ejecución de datos",
+      "desc": "Almacenamiento, formato de tabla y pipelines."
+    }
+  ],
+  "caminhos": [
+    {
+      "id": "pequeno",
+      "nome": "Empezar con un equipo pequeño",
+      "quando": "Un primer caso delimitado, sin presupuesto para herramientas.",
+      "como": "Documentos, una hoja de cálculo controlada y una reunión de revisión establecen responsables, acuerdos y decisiones.",
+      "cuidado": "Verifique accesos y evidencias a mano; no escala a muchos productos."
+    },
+    {
+      "id": "existente",
+      "nome": "Usar la plataforma que ya tiene",
+      "quando": "La organización ya tiene catálogo, identidad y una plataforma de datos.",
+      "como": "El método se conecta al catálogo, al proveedor de identidad y a la plataforma de datos existentes.",
+      "cuidado": "Prefiera interfaces abiertas, caminos de salida explícitos y evidencias recuperables."
+    },
+    {
+      "id": "referencia",
+      "nome": "Usar la implementación de referencia",
+      "quando": "Necesita un data lakehouse gobernado y quiere herramientas abiertas.",
+      "como": "Una stack predominantemente de código abierto, instalada como código y verificada en cada cambio, con los módulos KDV.",
+      "cuidado": "Compruebe la versión, la licencia y el soporte de cada componente."
+    }
+  ],
+  "referenciais": {
+    "dama": [
+      {
+        "id": "governanca",
+        "cov": "nucleo",
+        "area": "Gobernanza de datos",
+        "como": "Roles por ámbito, base común, reglas versionadas, flujo de aprobación y registro de decisiones"
+      },
+      {
+        "id": "arquitetura",
+        "cov": "coberta",
+        "area": "Arquitectura de datos",
+        "como": "Ecosistema, dominio, subdominio, agrupación y entorno"
+      },
+      {
+        "id": "modelagem",
+        "cov": "parcial",
+        "area": "Modelado y diseño",
+        "como": "Esquema en el contrato; glosario de negocio"
+      },
+      {
+        "id": "armazenamento",
+        "cov": "parcial",
+        "area": "Almacenamiento y operaciones",
+        "como": "Lake por entorno; copia de seguridad y prueba de recuperación"
+      },
+      {
+        "id": "seguranca",
+        "cov": "coberta",
+        "area": "Seguridad de datos",
+        "como": "Clasificación, acceso por política y auditoría"
+      },
+      {
+        "id": "integracao",
+        "cov": "parcial",
+        "area": "Integración e interoperabilidad",
+        "como": "Ingesta por subdominio; APIs y servicios de datos"
+      },
+      {
+        "id": "documentos",
+        "cov": "basica",
+        "area": "Documentos y contenido",
+        "como": "Objetos guardados en el lake"
+      },
+      {
+        "id": "mestres",
+        "cov": "evolucao",
+        "area": "Datos de referencia y maestros",
+        "como": "Correspondencia entre registros y registro maestro"
+      },
+      {
+        "id": "bi",
+        "cov": "parcial",
+        "area": "Data warehousing y BI",
+        "como": "Capas por subdominio; productos de tipo panel"
+      },
+      {
+        "id": "metadados",
+        "cov": "coberta",
+        "area": "Metadatos",
+        "como": "Catálogo por ecosistema, dominios y linaje"
+      },
+      {
+        "id": "qualidade",
+        "cov": "parcial",
+        "area": "Calidad de datos",
+        "como": "Umbrales de calidad en el contrato y pruebas automáticas"
+      }
+    ],
+    "dcam": [
+      {
+        "id": "estrategia",
+        "comp": "Estrategia y caso de negocio",
+        "evid": "Indicador de valor de cada caso de uso",
+        "fora": "Definir la estrategia y la financiación de la función de datos"
+      },
+      {
+        "id": "programa",
+        "comp": "Programa y financiación",
+        "evid": "Backlog y seguimiento por dominio",
+        "fora": "Presupuesto y modelo de financiación"
+      },
+      {
+        "id": "arquitetura",
+        "comp": "Arquitectura: negocio, datos y tecnología",
+        "evid": "Anatomía del ecosistema y contratos",
+        "fora": "Arquitectura empresarial completa"
+      },
+      {
+        "id": "conhecimento",
+        "comp": "Conocimiento de los datos de negocio",
+        "evid": "Vocabulario de negocio acordado, responsables y definiciones de productos.",
+        "fora": "La gestión del conocimiento, la educación en datos y la gestión del cambio requieren un programa organizativo."
+      },
+      {
+        "id": "qualidade",
+        "comp": "Gestión de la calidad",
+        "evid": "Umbrales en el contrato, pruebas y excepciones",
+        "fora": "Programa corporativo de calidad"
+      },
+      {
+        "id": "governanca",
+        "comp": "Gobernanza de datos",
+        "evid": "Roles, base común, foro y decisiones registradas",
+        "fora": "—"
+      },
+      {
+        "id": "controle",
+        "comp": "Entorno de control",
+        "evid": "Acceso por política, auditoría y revisión de concesiones",
+        "fora": "Controles internos fuera del ciclo de datos"
+      },
+      {
+        "id": "analytics",
+        "comp": "Gestión de analítica",
+        "evid": "Productos de tipo panel; uso en IA con contrato",
+        "fora": "Gestión de modelos analíticos y de IA"
+      }
+    ],
+    "mesh": [
+      {
+        "id": "dominio",
+        "pri": "Propiedad por dominio",
+        "como": "Dominios y subdominios con responsables designados",
+        "fora": "Diseñar los límites organizativos"
+      },
+      {
+        "id": "produto",
+        "pri": "Dato como producto",
+        "como": "Producto con contrato versionado y consumidores conocidos",
+        "fora": "Financiar el mantenimiento de los productos"
+      },
+      {
+        "id": "plataforma",
+        "pri": "Plataforma de autoservicio",
+        "como": "Módulos y Adapters; todo como código y verificado",
+        "fora": "Capacidad del equipo de plataforma"
+      },
+      {
+        "id": "federada",
+        "pri": "Gobernanza federada computacional",
+        "como": "Base común, decisiones locales y políticas aplicadas automáticamente",
+        "fora": "Acordar las reglas entre dominios"
+      }
+    ],
+    "aviso": "Interpretación original de KDV para uso operativo. No es una correspondencia oficial, un respaldo, una certificación ni una reproducción de las referencias.",
+    "dcamNota": "KDV registra evidencias que pueden alimentar una evaluación DCAM, pero no emite una nota de madurez. Para evaluar, use la metodología con licencia del EDM Council. DCAM v3: https://edmcouncil.org/frameworks/dcam/",
+    "cobertura": {
+      "nucleo": "Núcleo del framework",
+      "coberta": "Cubierta",
+      "parcial": "Parcial",
+      "basica": "Básica",
+      "evolucao": "En evolución"
+    }
+  },
+  "modelos": [
+    {
+      "id": "carta",
+      "n": "01",
+      "etapas": [
+        "preparar",
+        "governar"
+      ],
+      "camada": "organizacao",
+      "md": "domain-charter",
+      "office": "01_Carta_do_dominio",
+      "nome": "Carta del dominio",
+      "para": "Propósito, límites, responsables, vocabulario y derechos de decisión de un dominio.",
+      "quem": "Responsable del dominio con el steward coordinador",
+      "exemplo": [
+        [
+          "Nombre del dominio",
+          "Inspección"
+        ],
+        [
+          "Propósito y valor",
+          "Priorizar las inspecciones con información actual y trazable"
+        ],
+        [
+          "Alcance",
+          "Incluye registros profesionales, quejas y fuentes públicas autorizadas; excluye expedientes disciplinarios"
+        ],
+        [
+          "Responsable del dominio",
+          "Dirección de Inspección"
+        ],
+        [
+          "Steward coordinador",
+          "Coordinación de Datos de Inspección"
+        ],
+        [
+          "Subdominios",
+          "Sanciones · Planificación de campo"
+        ],
+        [
+          "Derechos de decisión",
+          "Vistas por caso: responsable del dominio; agregados: responsable del producto"
+        ],
+        [
+          "Revisión",
+          "Trimestral"
+        ]
+      ]
+    },
+    {
+      "id": "contrato",
+      "n": "02",
+      "etapas": [
+        "governar",
+        "compartilhar"
+      ],
+      "camada": "controles",
+      "md": "data-product-contract",
+      "office": "02_Contrato_de_produto_de_dados",
+      "nome": "Contrato de producto de datos",
+      "para": "Acuerdo sobre alcance, calidad, acceso, versiones y uso, también por IA.",
+      "quem": "Responsable del producto con el steward",
+      "exemplo": [
+        [
+          "Producto y versión",
+          "Priorización de inspecciones · v1.0"
+        ],
+        [
+          "Dominio / subdominio",
+          "Inspección / Planificación de campo"
+        ],
+        [
+          "Propósito",
+          "Ordenar regiones y actividades para el plan mensual"
+        ],
+        [
+          "Interfaces",
+          "Tabla agregada y panel"
+        ],
+        [
+          "Calidad",
+          "Actualización en menos de 24 h; completitud ≥ 98 %"
+        ],
+        [
+          "Clasificación",
+          "Interno (agregado, sin datos personales)"
+        ],
+        [
+          "Uso por IA",
+          "Permitido solo para resumir el plan; prohibido para decisiones individuales"
+        ],
+        [
+          "Revisión",
+          "Con cada nueva fuente o cada 6 meses"
+        ]
+      ]
+    },
+    {
+      "id": "decisao",
+      "n": "03",
+      "etapas": [
+        "governar",
+        "compartilhar"
+      ],
+      "camada": "processos",
+      "md": "decision-record",
+      "office": "03_Registro_de_decisao_de_governanca",
+      "nome": "Registro de decisión de gobernanza",
+      "para": "Contexto, opciones, decisión, quién aprobó y cuándo revisar.",
+      "quem": "Quien decide, con apoyo del steward",
+      "exemplo": [
+        [
+          "ID y fecha",
+          "DEC-007 · 14/10/2026"
+        ],
+        [
+          "Pregunta",
+          "¿Un cruce de fuentes puede abrir un expediente?"
+        ],
+        [
+          "Opciones",
+          "Abrir automáticamente · Exigir validación humana"
+        ],
+        [
+          "Decisión",
+          "Exigir validación por una persona habilitada"
+        ],
+        [
+          "Aprobado por",
+          "Responsable del dominio de Inspección"
+        ],
+        [
+          "Próxima revisión",
+          "Tras 3 meses de uso"
+        ]
+      ]
+    },
+    {
+      "id": "acesso",
+      "n": "04",
+      "etapas": [
+        "compartilhar",
+        "ativar"
+      ],
+      "camada": "controles",
+      "md": "access-review",
+      "office": "04_Lista_de_revisao_de_acesso",
+      "nome": "Lista de revisión de acceso",
+      "para": "Propósito, clasificación, aprobación, plazo y evidencias de cada concesión.",
+      "quem": "Steward, responsable y custodio",
+      "exemplo": [
+        [
+          "Producto",
+          "Vista restringida por caso · v1.0"
+        ],
+        [
+          "Solicitante y propósito",
+          "Inspector habilitado · análisis de un caso"
+        ],
+        [
+          "Clasificación",
+          "Restringido (contiene datos personales)"
+        ],
+        [
+          "Decisión",
+          "Aprobado por 30 días, solo lectura"
+        ],
+        [
+          "Política aplicada",
+          "Regla por rol y región"
+        ],
+        [
+          "Revisión",
+          "Al vencer o al cerrar el caso"
+        ]
+      ]
+    },
+    {
+      "id": "evidencias",
+      "n": "05",
+      "etapas": [
+        "cultivar",
+        "ativar"
+      ],
+      "camada": "evidencias",
+      "md": "evidence-register",
+      "office": "05_Registro_de_evidencias",
+      "csv": true,
+      "nome": "Registro de evidencias",
+      "para": "Vincula cada práctica con un responsable, un control, una evidencia y una revisión.",
+      "quem": "Steward y responsable del producto",
+      "exemplo": [
+        [
+          "Práctica",
+          "Plazo de acceso"
+        ],
+        [
+          "Indicador y meta",
+          "Días hasta la decisión ≤ 2"
+        ],
+        [
+          "Observado",
+          "5 días · fuera de la meta"
+        ],
+        [
+          "Acción",
+          "Analizar los retrasos entre decisión e implementación"
+        ],
+        [
+          "Próxima revisión",
+          "Reunión mensual del foro"
+        ]
+      ]
+    }
+  ],
+  "grupos": [
+    {
+      "id": "comecar",
+      "nome": "Empezar"
+    },
+    {
+      "id": "modelo",
+      "nome": "Modelo operativo"
+    },
+    {
+      "id": "praticas",
+      "nome": "Prácticas"
+    },
+    {
+      "id": "aplicar",
+      "nome": "Aplicar"
+    },
+    {
+      "id": "participar",
+      "nome": "Participar"
+    }
+  ],
+  "guias": [
+    {
+      "id": "primeiros-passos",
+      "grupo": "comecar",
+      "render": "preparacao",
+      "proximo": [
+        "exemplo",
+        "principios"
+      ],
+      "titulo": "Primeros pasos",
+      "resumo": "Elija un caso de uso, un responsable y un primer acuerdo.",
+      "secoes": [
+        [
+          "Empiece por la decisión",
+          "Empiece por la decisión que las personas necesitan tomar, no por el inventario de herramientas. Identifique al {{papel:consumidor|consumidor}}, el valor que se observará y el {{conceito:dominio|dominio de negocio}} que puede asumir la responsabilidad. Limite el primer alcance para poder revisarlo con el responsable y el {{termo:steward|steward}}."
+        ],
+        [
+          "Secuencia de trabajo",
+          "<ol><li>Nombre la decisión, el consumidor y el propósito.</li><li>Identifique el dominio, el subdominio y el responsable del producto.</li><li>Inventaríe las fuentes autorizadas y {{termo:classificacao|clasifique}} los datos.</li><li>Redacte el {{termo:contrato|contrato}} y acuerde los umbrales de calidad.</li><li>Entregue una versión limitada, con acceso por política.</li><li>Observe el uso, revise las limitaciones y registre la próxima mejora.</li></ol>"
+        ],
+        [
+          "Evite prometer fechas demasiado pronto",
+          "Antes de prometer un plazo, compruebe el acceso a las fuentes, la capacidad del equipo y los controles necesarios. La preparación delimita el trabajo; no es una quinta etapa obligatoria."
+        ]
+      ]
+    },
+    {
+      "id": "glossario",
+      "grupo": "comecar",
+      "render": "glossario",
+      "proximo": [
+        "anatomia"
+      ],
+      "titulo": "Glosario",
+      "resumo": "Los términos de KDV, con el nombre que usa el mercado."
+    },
+    {
+      "id": "principios",
+      "grupo": "modelo",
+      "render": "baseline-camadas",
+      "proximo": [
+        "anatomia",
+        "papeis"
+      ],
+      "titulo": "Principios y base común",
+      "resumo": "Lo que ningún ecosistema elimina y lo que cada uno decide.",
+      "secoes": [
+        [
+          "Una política importa cuando alguien puede actuar sobre ella",
+          "KDV conecta lo que se quiere gobernar, quién decide, cómo se hace el trabajo y qué muestra el resultado. La base común tiene cinco elementos; el resto lo adapta cada ecosistema: nombres de roles, flujos de aprobación, umbrales y ritmo de revisión."
+        ],
+        [
+          "Adaptación local",
+          "Adapte nombres, flujos y herramientas sin ocultar la base común. Una variación local no puede eliminar al responsable ni impedir que la decisión sea trazable. Toda {{termo:excecao|excepción}} tiene alcance, aprobación, justificación y plazo."
+        ]
+      ]
+    },
+    {
+      "id": "anatomia",
+      "grupo": "modelo",
+      "render": "conceitos",
+      "proximo": [
+        "papeis",
+        "ciclo"
+      ],
+      "titulo": "Anatomía del ecosistema",
+      "resumo": "Dominios, subdominios, agrupaciones, productos y entornos.",
+      "secoes": [
+        [
+          "Límites de negocio antes que el organigrama",
+          "Un dominio lo define quién responde por el significado del dato, no la casilla del organigrama. Los entornos de ejecución organizan la operación; los dominios organizan la responsabilidad. Son dos vistas del mismo ecosistema."
+        ]
+      ]
+    },
+    {
+      "id": "papeis",
+      "grupo": "modelo",
+      "render": "raci",
+      "proximo": [
+        "ciclo",
+        "acesso"
+      ],
+      "titulo": "Roles y derechos de decisión",
+      "resumo": "Quién ejecuta, aprueba, es consultado e informado en cada etapa.",
+      "secoes": [
+        [
+          "Un rol no es un puesto",
+          "Una persona puede acumular roles; registre el rol ejercido en cada decisión. Sin responsable del subdominio, la responsabilidad sube al responsable del dominio. La separación entre quien decide y quien aplica depende del riesgo."
+        ]
+      ]
+    },
+    {
+      "id": "ciclo",
+      "grupo": "modelo",
+      "render": "etapas",
+      "proximo": [
+        "contratos",
+        "evidencias"
+      ],
+      "titulo": "El ciclo de vida del dato",
+      "resumo": "Condiciones de entrada, participantes, decisiones y evidencias de las cuatro etapas."
+    },
+    {
+      "id": "contratos",
+      "grupo": "praticas",
+      "render": "modelo:contrato",
+      "proximo": [
+        "acesso",
+        "ia-privacidade"
+      ],
+      "titulo": "Contratos de producto de datos",
+      "resumo": "Responsables, calidad, compatibilidad y uso, también por IA.",
+      "secoes": [
+        [
+          "Para qué sirve",
+          "El contrato es un acuerdo de trabajo versionado entre quienes producen, gobiernan y consumen un producto. Un esquema de datos, por sí solo, no establece responsabilidad ni autorización."
+        ],
+        [
+          "Lo mínimo de un contrato",
+          "<ul><li>Identidad, versión, dominio, subdominio y responsable</li><li>Propósito, consumidores e interfaces de entrega</li><li>Definiciones, esquema, origen y linaje</li><li>Clasificación, uso permitido, conservación y condiciones de acceso</li><li>Umbrales de calidad, pruebas, actualización y contacto para incidentes</li><li>Compatibilidad, obsolescencia y registro de aprobación</li></ul>"
+        ],
+        [
+          "Versiones y compatibilidad",
+          "Acuerde cómo distinguir cambios incompatibles, añadidos compatibles y correcciones de texto. Avise a los consumidores antes de una versión incompatible y mantenga un camino de transición."
+        ],
+        [
+          "De la plantilla al ODCS",
+          "La plantilla KDV está escrita para personas. En la implementación de referencia, el mismo contrato se expresa en el estándar abierto {{termo:odcs|ODCS}}, lo que permite validar automáticamente esquema, calidad y condiciones. La plantilla no alega conformidad formal con el ODCS."
+        ]
+      ]
+    },
+    {
+      "id": "acesso",
+      "grupo": "praticas",
+      "render": "acesso",
+      "proximo": [
+        "evidencias",
+        "ia-privacidade"
+      ],
+      "titulo": "Acceso y excepciones",
+      "resumo": "Del propósito de la solicitud a la revisión y al fin del acceso.",
+      "secoes": [
+        [
+          "Cuatro actos, cuatro registros",
+          "El steward revisa, el responsable decide y el custodio aplica. Aprobación e implementación son actos distintos y ambos dejan evidencia. El rechazo y el escalado siempre llevan justificación."
+        ]
+      ]
+    },
+    {
+      "id": "evidencias",
+      "grupo": "praticas",
+      "render": "ritmo",
+      "proximo": [
+        "referenciais",
+        "exemplo"
+      ],
+      "titulo": "Evidencias y mejora",
+      "resumo": "Observar la ejecución y el resultado sin inventar notas de madurez.",
+      "secoes": [
+        [
+          "Qué medir",
+          "<ul><li><b>Cobertura de responsables:</b> productos con responsable / productos en el alcance.</li><li><b>Cobertura de contratos:</b> productos con contrato vigente / productos compartidos.</li><li><b>Calidad:</b> pruebas superadas / pruebas evaluadas, con muestra y periodo.</li><li><b>Plazo de acceso:</b> tiempo entre la solicitud completa y la decisión implementada.</li><li><b>Valor:</b> el resultado acordado con el consumidor, más allá del recuento de activos.</li></ul>"
+        ],
+        [
+          "Defina el sentido de cada indicador",
+          "Registre unidad, población, periodo y meta. En el plazo de acceso, menos es mejor; en la completitud, más es mejor. Una observación vacía es falta de evidencia, no cero ni éxito."
+        ],
+        [
+          "Sin nota de madurez",
+          "Estas medidas apoyan la conversación y pueden alimentar una evaluación externa, pero no producen una nota DCAM ni equivalencia con modelos de madurez."
+        ]
+      ]
+    },
+    {
+      "id": "ia-privacidade",
+      "grupo": "praticas",
+      "proximo": [
+        "contratos",
+        "acesso"
+      ],
+      "titulo": "IA y privacidad",
+      "resumo": "Finalidad, riesgo y derechos de las personas como decisiones explícitas.",
+      "secoes": [
+        [
+          "Empiece por el uso previsto",
+          "Un producto adecuado para un panel no lo es automáticamente para entrenar modelos, búsquedas contextuales o decisiones automatizadas. Registre propósito, consumidor, alcance de los datos y quién autoriza el nuevo uso."
+        ],
+        [
+          "Decisiones que registrar antes de usar",
+          "<table><thead><tr><th>Pregunta</th><th>Registrar</th><th>Revisar cuando</th></tr></thead><tbody><tr><td>¿Qué se puede tratar?</td><td>Finalidad, categorías, fuentes y base jurídica</td><td>Nuevo propósito, fuente o consumidor</td></tr><tr><td>¿Quién decide?</td><td>Responsable y encargado del tratamiento, autoridad del producto, asesoramiento</td><td>Cambio de responsable o proveedor</td></tr><tr><td>¿Qué es necesario?</td><td>Entrada mínima, búsqueda acotada, resultados restringidos</td><td>Más datos o nuevos atributos derivados</td></tr><tr><td>¿Qué pasa después?</td><td>Conservación, supresión, revisión, rectificación e incidentes</td><td>Fin del plazo o de la finalidad</td></tr></tbody></table>"
+        ],
+        [
+          "Comprobaciones específicas de IA",
+          "<ul><li>Confirme si el proveedor conserva las entradas o entrena con ellas.</li><li>Preserve los permisos de la fuente en la búsqueda y en los resultados.</li><li>Pruebe respuestas engañosas, fugas de información y fallos dañinos.</li><li>Garantice revisión humana y medios para impugnar resultados relevantes.</li></ul>"
+        ],
+        [
+          "RGPD y LGPD",
+          "El idioma del sitio no decide si se aplica el {{termo:lgpd|RGPD o la LGPD}}: lo decide el tratamiento concreto. El responsable de datos del framework no es automáticamente el responsable del tratamiento. Es una orientación operativa, no asesoramiento jurídico; valídela con el {{termo:encarregado|delegado de protección de datos}} y las fuentes oficiales."
+        ]
+      ]
+    },
+    {
+      "id": "implementacao",
+      "grupo": "aplicar",
+      "render": "caminhos",
+      "proximo": [
+        "exemplo",
+        "referenciais"
+      ],
+      "titulo": "Elegir la implementación",
+      "resumo": "Tres caminos, y las capacidades antes que los nombres de herramientas.",
+      "secoes": [
+        [
+          "Decida el modelo antes que la herramienta",
+          "Mapee la decisión y los responsables antes de elegir herramientas. Automatice un control solo después de entender la regla, el alcance, los fallos y quién responde."
+        ],
+        [
+          "Soberanía y portabilidad",
+          "Registre quién controla el propósito y los permisos, la jurisdicción, las responsabilidades del proveedor, la exportación, las claves y las condiciones de salida. Mantener los datos en el entorno del cliente es una elección, no la definición completa de soberanía."
+        ]
+      ]
+    },
+    {
+      "id": "exemplo",
+      "grupo": "aplicar",
+      "render": "exemplo-etapas",
+      "proximo": [
+        "primeiros-passos",
+        "evidencias"
+      ],
+      "titulo": "Ejemplo completo",
+      "resumo": "Un consejo profesional y un municipio, del propósito a la revisión.",
+      "secoes": [
+        [
+          "Un consejo profesional prepara las inspecciones",
+          "Un consejo ficticio necesita información actual de registros internos, quejas y fuentes externas autorizadas. Hay dos usos: un producto analítico apoya la priorización; una vista restringida ayuda a una persona habilitada a examinar un caso. Un cruce es una alerta para validar, no una prueba de infracción."
+        ],
+        [
+          "Un municipio con información dispersa",
+          "Un municipio ficticio planifica mantenimiento, apoyo social y atención con sistemas separados. La pregunta práctica es dónde está aumentando la demanda antes de la próxima reunión de planificación. El producto agregado no da acceso a registros identificables."
+        ],
+        [
+          "Medidas con sentido de comparación",
+          "<table><thead><tr><th>Indicador</th><th>Meta ilustrativa</th><th>Observado</th><th>Lectura</th></tr></thead><tbody><tr><td>Actualidad de la fuente</td><td>≤ 24 horas</td><td>30 horas</td><td>Fuera de la meta</td></tr><tr><td>Completitud validada</td><td>≥ 98 %</td><td>99 %</td><td>Cumple esta meta</td></tr><tr><td>Plazo de acceso</td><td>≤ 2 días</td><td>5 días</td><td>Fuera de la meta; analizar retrasos</td></tr><tr><td>Falsos positivos</td><td>Definir con el equipo</td><td>Sin medir</td><td>Falta de evidencia</td></tr></tbody></table><p class='nota'>Metas ficticias. No son resultados de clientes ni compromisos de plazo.</p>"
+        ]
+      ]
+    },
+    {
+      "id": "referenciais",
+      "grupo": "aplicar",
+      "render": "referenciais",
+      "proximo": [
+        "evidencias",
+        "implementacao"
+      ],
+      "titulo": "DAMA-DMBOK, DCAM y Data Mesh",
+      "resumo": "Lo que KDV lleva a la práctica y lo que exige trabajo propio."
+    },
+    {
+      "id": "comunidade",
+      "grupo": "participar",
+      "proximo": [
+        "primeiros-passos"
+      ],
+      "titulo": "Comunidad y guardianes",
+      "resumo": "Propuestas abiertas, revisión de los guardianes y publicación.",
+      "secoes": [
+        [
+          "Contribución abierta, publicación revisada",
+          "Cualquier persona puede proponer mejoras en el repositorio. Los cambios entran en la versión publicada tras la revisión de un guardián y verificaciones automáticas. Los ejemplos no pueden contener datos personales ni confidenciales."
+        ],
+        [
+          "Guardianes",
+          "Guardián inicial: @ismael-lab. Con un único guardián, una propuesta del propio guardián necesita otro revisor autorizado. Criterios propuestos para nuevos guardianes (por validar): contribuciones aceptadas, revisión de propuestas de terceros y disponibilidad acordada."
+        ],
+        [
+          "Versiones",
+          "El sitio y el framework tienen versiones independientes. Una versión estable (1.x) mantiene los nombres de los conceptos y la base común; textos, ejemplos y plantillas pueden mejorar entre versiones menores."
+        ]
+      ]
+    }
+  ],
+  "marcas": [
+    {
+      "id": "framework",
+      "nome": "KDV Framework",
+      "papel": "El método abierto (CC BY 4.0). Gratuito para leer, adaptar y aplicar con cualquier herramienta."
+    },
+    {
+      "id": "kolmeia",
+      "nome": "Kolmeia",
+      "papel": "La base de código abierto, en desarrollo, que implementa el método en un data lakehouse."
+    },
+    {
+      "id": "edicoes",
+      "nome": "KDV Studio · KDV Cloud",
+      "papel": "Implementaciones opcionales: en el entorno del cliente u operada por KDV."
+    },
+    {
+      "id": "empresa",
+      "nome": "KDV Ecosystems",
+      "papel": "La empresa que mantiene el framework y ofrece implementación y servicios opcionales."
+    },
+    {
+      "id": "operador",
+      "nome": "Lab of Codes & Kolmeia",
+      "papel": "Operador identificado de este sitio, a efectos de privacidad (contacto: info@kolmeia.io)."
+    }
+  ],
+  "diagramas": [
+    {
+      "id": "D1",
+      "arquivo": "D1_visao_integrada_quatro_blocos"
+    },
+    {
+      "id": "D2",
+      "arquivo": "D2_anatomia_ecossistema_arquitetura"
+    },
+    {
+      "id": "D3",
+      "arquivo": "D3_processo_jornada_do_dado"
+    },
+    {
+      "id": "D4",
+      "arquivo": "D4_processo_decisao_de_acesso"
+    },
+    {
+      "id": "D5",
+      "arquivo": "D5_arquitetura_referencia_ferramentas"
+    }
+  ],
+  "code": "es",
+  "ui": {
+    "aspas": [
+      "«",
+      "»"
+    ],
+    "tipos": {
+      "conceito": "Concepto",
+      "papel": "Rol",
+      "etapa": "Etapa",
+      "camada": "Capa",
+      "base": "Base común",
+      "termo": "Término",
+      "ferramenta": "Herramienta",
+      "modulo": "Módulo",
+      "modelo": "Plantilla",
+      "persona": "Perfil",
+      "nicho": "Organización",
+      "caso": "Ejemplo",
+      "guia": "Guía",
+      "pagina": "Página",
+      "contato": "Contacto"
+    },
+    "raci": {
+      "R": "Ejecuta",
+      "A": "Aprueba y responde",
+      "C": "Es consultado",
+      "I": "Es informado"
+    },
+    "raciNota": "Sugerencia inicial. Cada ecosistema la ajusta.",
+    "arquivos": {
+      "md": "Markdown (.md)",
+      "docx": "Word (.docx)",
+      "xlsx": "Excel (.xlsx)",
+      "csv": "Hoja CSV"
+    },
+    "arquivosNota": "Word y Excel para rellenar; Markdown para quien contribuye en el repositorio.",
+    "officeNota": "Las versiones Word y Excel están disponibles por ahora solo en portugués de Brasil.",
+    "skip": "Saltar al contenido",
+    "buscar": "Buscar",
+    "buscarAria": "Buscar en el sitio",
+    "menu": "Menú",
+    "perfil": "Perfil:",
+    "removerPerfil": "Quitar el perfil elegido",
+    "idioma": "Idioma",
+    "temaClaro": "Tema claro",
+    "temaEscuro": "Tema oscuro",
+    "temaAria": "Cambiar entre tema claro y oscuro",
+    "navAria": "Principal",
+    "subnavAria": "En esta página",
+    "marcaAria": "KDV Framework, página de inicio",
+    "fab": "Hablar con KDV",
+    "dicaClique": "Haga clic para ver el detalle",
+    "painel": {
+      "voltar": "← Volver",
+      "copiarLink": "Copiar enlace",
+      "copiarLinkTitulo": "Copiar un enlace directo a este detalle",
+      "fechar": "Cerrar panel",
+      "relacionados": "Relacionados",
+      "abrirGuia": "Abrir la guía completa",
+      "verNoPlaybook": "Ver en el Playbook",
+      "verFerramentas": "Ver todos los componentes",
+      "todosModelos": "Todas las plantillas",
+      "usarPerfil": "Usar este perfil en el sitio",
+      "opcional": "opcional",
+      "detalhesDe": "Detalles de",
+      "comoFunciona": "Cómo funciona",
+      "exemplo": "Ejemplo",
+      "quemResponde": "Quién responde",
+      "evidencias": "Evidencias",
+      "evidenciasIntro": "Lo que demuestra que este concepto existe en la práctica:",
+      "termos": "Términos",
+      "noMercado": "En el mercado:",
+      "noKdv": "En KDV:",
+      "porQueNome": "¿Por qué este nombre?",
+      "emCadaEtapa": "En cada etapa",
+      "ondeTrabalha": "Dónde actúa",
+      "escopo": "Ámbito:",
+      "interfaceRef": "Interfaz de referencia:",
+      "interfaceNota": "La interfaz es la pantalla que apoya el trabajo; la responsabilidad es del rol.",
+      "noMercadoAba": "En el mercado",
+      "perguntas": "Preguntas",
+      "criterios": "Buenos criterios para el primer caso",
+      "oQueFazer": "Qué hacer",
+      "comecaQuando": "Empieza cuando:",
+      "quem": "Quién",
+      "evidencia": "Evidencia",
+      "pontoDecisao": "Punto de decisión:",
+      "medidas": "Medidas:",
+      "modelos": "Plantillas",
+      "naImplementacao": "En la implementación",
+      "noExemplo": "En el ejemplo",
+      "etapa": "Etapa",
+      "comoVerificar": "Cómo verificar",
+      "modelo": "Plantilla",
+      "funcao": "Función",
+      "licenca": "Licencia:",
+      "etapaLbl": "Etapa:",
+      "baseComum": "Base compartida",
+      "ferramentaNota": "Arquitectura de referencia, sin compromiso universal de disponibilidad. Las capacidades, la integración y la preparación dependen de la versión implantada y del alcance acordado. Algunos módulos KDV y controles aún requieren validación en el entorno de destino.",
+      "baixar": "Descargar",
+      "exemploPreenchido": "Ejemplo rellenado",
+      "exemploNota": "Consejo profesional ficticio. Datos sintéticos.",
+      "quandoUsar": "Cuándo usarla",
+      "etapasLbl": "Etapas:",
+      "camadaLbl": "Capa:",
+      "quemPreenche": "Quién la rellena:",
+      "oQueMuda": "Qué cambia",
+      "precisaVer": "Necesita ver:",
+      "porOndeComecar": "Por dónde empezar",
+      "doresTipicas": "Problemas típicos",
+      "exemploProximo": "Ejemplo cercano:",
+      "nasQuatro": "En las cuatro etapas",
+      "ficticio": "Ficticio",
+      "implementacaoRef": "Implementación de referencia",
+      "paraQuem": "Para quién",
+      "etapasMod": "Etapas:",
+      "tipoOrg": "Tipo de organización"
+    },
+    "contato": {
+      "titulo": "Hablar con KDV",
+      "texto": "El método es abierto y puede aplicarlo por su cuenta. Si quiere apoyo para el primer caso, KDV Ecosystems ofrece implementación y servicios opcionales.",
+      "aba1": "Contacto",
+      "email": "Correo:",
+      "copiar": "Copiar",
+      "site": "Sitio de KDV Ecosystems",
+      "aba2": "Qué llevar a la conversación",
+      "levar": [
+        "La decisión que quiere apoyar",
+        "Quién la patrocina (responsable del dominio)",
+        "Las fuentes de datos implicadas",
+        "Si hay datos personales o sensibles",
+        "El resultado esperado de la primera entrega"
+      ],
+      "nota": "Use la checklist del Playbook para llegar con el resumen preparado."
+    },
+    "busca": {
+      "label": "Buscar conceptos, términos, roles, guías y plantillas",
+      "placeholder": "Buscar concepto, término, rol, guía o plantilla…",
+      "vazio": "No se encontró nada para «{q}». Pruebe «acceso», «steward» o «contrato».",
+      "navegar": "↑ ↓ navegar",
+      "abrir": "Intro abrir",
+      "fechar": "Esc cerrar",
+      "aria": "Búsqueda rápida"
+    },
+    "toast": {
+      "copiado": "Copiado",
+      "linkCopiado": "Enlace copiado",
+      "perfilGuardado": "Perfil guardado en este navegador",
+      "perfilRemovido": "Perfil quitado",
+      "copieManual": "Seleccione y copie el texto",
+      "resumoCopiado": "Resumen copiado",
+      "canvasBaixado": "Canvas descargado",
+      "canvasCopiado": "Canvas copiado",
+      "semDownload": "Descarga no disponible; texto copiado"
+    },
+    "rodape": {
+      "blurb": "Un método abierto para convertir la gobernanza de datos en trabajo cotidiano. Mantenido por KDV Ecosystems, abierto a la comunidad.",
+      "entender": "Entender",
+      "aplicar": "Aplicar",
+      "sobre": "Acerca de",
+      "marcas": "Framework, KDV y Kolmeia",
+      "privacidade": "Privacidad",
+      "licenca": "Contenido CC BY 4.0 · Código MIT · Marcas reservadas",
+      "semRastreio": "Sin rastreo, cookies ni fuentes remotas"
+    },
+    "lightbox": {
+      "aria": "Diagrama ampliado",
+      "fechar": "Cerrar ✕"
+    },
+    "home": {
+      "hexCap": "Seleccione un concepto para ver el detalle aquí mismo",
+      "hexAria": "{c} ({k}): ver el detalle",
+      "hexMapa": "Los seis conceptos del modelo",
+      "modoAria": "Cómo quiere identificarse",
+      "porPapel": "Por su rol",
+      "porOrg": "Por organización",
+      "oQueMuda": "Qué cambia",
+      "porOndeComecar": "Por dónde empezar",
+      "leitura": "Lectura sugerida",
+      "verPlaybook": "Ver el Playbook",
+      "tipoOrg": "Tipo de organización",
+      "dores": "Problemas típicos",
+      "responde": "Cómo responde KDV",
+      "primeiroCaso": "Primer caso",
+      "exemploProximo": "Ejemplo cercano",
+      "verMaisOrg": "Más sobre este tipo de organización",
+      "etapasAria": "Las cuatro etapas",
+      "comecaQuando": "Empieza cuando",
+      "oQueFazer": "Qué hacer",
+      "evidencia": "Evidencia que queda",
+      "quem": "Quién",
+      "maisDetalhes": "Más detalles",
+      "abrirPlaybook": "Abrir en el Playbook",
+      "tradDica": "Seleccione una fila para ver el concepto sin salir de esta página.",
+      "colunasAria": "Columnas",
+      "colExemplos": "Ejemplos",
+      "colAnalogia": "Analogía de la colmena",
+      "thCliente": "Cómo lo llama su organización",
+      "thKdv": "Término KDV",
+      "thExemplo": "Ejemplo",
+      "thPorque": "Por qué este nombre",
+      "linhaCiclo": [
+        "Preparar · regular · publicar · usar y medir",
+        "Cultivar · Gobernar · Compartir · Activar",
+        "Las cuatro etapas del Playbook.",
+        "El ciclo de cuidado de la apicultura."
+      ],
+      "casosAria": "Ejemplos ilustrativos",
+      "verEtapas": "Ver en las cuatro etapas",
+      "lerExemplo": "Leer el ejemplo completo",
+      "casosNota": "Escenarios ficticios. No son casos de clientes ni compromisos de entrega.",
+      "compararCaminhos": "Comparar los caminos"
+    },
+    "paraQuem": {
+      "seuPerfil": "Su perfil · ",
+      "verMuda": "Ver qué cambia →",
+      "dores": "Problemas típicos",
+      "responde": "Cómo responde KDV",
+      "primeiroCaso": "Un buen primer caso",
+      "exemploProximo": "Ejemplo cercano:"
+    },
+    "explorer": {
+      "eyebrow": "Ejemplo: un consejo profesional",
+      "vistaAria": "Vista",
+      "negocio": "Vista de negocio",
+      "execucao": "Vista de ejecución",
+      "ecossistema": "Ecosistema",
+      "dominio": "Dominio",
+      "subdominio": "Subdominio",
+      "agrupamento": "Agrupación",
+      "ambiente": "Entorno",
+      "nomes": {
+        "rede": "Red de consejos",
+        "financeiro": "Finanzas",
+        "fiscalizacao": "Inspección",
+        "contas": "Cuentas por pagar",
+        "pagamentos": "Pagos semanales",
+        "receitas": "Ingresos",
+        "cobranca": "Cobros",
+        "faturamento": "Facturación",
+        "autuacoes": "Sanciones",
+        "priorizacao": "Priorización de inspecciones",
+        "planejamento": "Planificación de campo",
+        "agenda": "Agenda de campo",
+        "producao": "Producción",
+        "homologacao": "Preproducción",
+        "desenvolvimento": "Desarrollo"
+      },
+      "execNota": "Los mismos dominios se ejecutan en varios entornos. El entorno organiza la operación; la responsabilidad sigue en el dominio.",
+      "verDiagrama": "Ver el diagrama completo",
+      "diagramaLegenda": "Anatomía del ecosistema: plano de negocio y plano de ejecución"
+    },
+    "matriz": {
+      "canto": "Capa \\ Etapa",
+      "sobreCamada": "Sobre la capa",
+      "sobreEtapa": "Sobre la etapa",
+      "apoio": "Todo esto se apoya en la base común:"
+    },
+    "papeis": {
+      "thPapel": "Rol",
+      "thOnde": "Ámbito",
+      "thResp": "Responsabilidad",
+      "thInterface": "Interfaz de referencia",
+      "dica": "Una persona puede acumular roles. Seleccione un rol para ver el detalle.",
+      "vistaAria": "Forma de ver",
+      "resp": "Responsabilidades",
+      "raci": "Matriz RACI",
+      "legendaA": "Aprueba y responde (uno por etapa)",
+      "nota": "Sugerencia inicial para el primer caso. Cada ecosistema la ajusta; registre el rol ejercido en cada decisión."
+    },
+    "refs": {
+      "aba": "Referencias",
+      "abaDama": "DAMA-DMBOK 2 · 11 áreas",
+      "abaDcam": "DCAM · 8 componentes",
+      "abaMesh": "Data Mesh · 4 principios",
+      "filtroAria": "Filtrar por cobertura",
+      "todas": "Todas (11)",
+      "thArea": "Área de conocimiento",
+      "thComo": "Cómo lo pone en práctica KDV",
+      "thCobertura": "Cobertura",
+      "thComp": "Componente",
+      "thEvid": "Evidencia KDV que aporta",
+      "thFora": "Fuera del alcance de KDV",
+      "thPrinc": "Principio",
+      "thTrabalho": "Exige trabajo propio"
+    },
+    "playbook": {
+      "antes": "Antes de las cuatro etapas",
+      "marcar": "Marcar esta etapa como hecha en mi caso"
+    },
+    "acesso": {
+      "escolhaAria": "Elija el desenlace",
+      "dica": "Elija un desenlace y vea el recorrido",
+      "registro": "Qué queda registrado",
+      "porque": "Por qué importa",
+      "excecaoPergunta": "¿Y cuando hace falta una excepción?",
+      "usarRegistro": "Use el registro de decisión."
+    },
+    "check": {
+      "resumo": "Su resumen",
+      "itens": "{ok} de {n} puntos tratados",
+      "proximas": "Próximas acciones, en el orden sugerido:",
+      "eMais": "Y {n} más.",
+      "tudo": "Todo tratado. Fije la fecha de la próxima revisión con el foro.",
+      "copiar": "Copiar resumen",
+      "limpar": "Limpiar",
+      "nota": "Solo en la memoria de la página. No se envía nada.",
+      "titulo": "Checklist KDV — primer caso",
+      "proximasTxt": "Próximas acciones:"
+    },
+    "caminho": {
+      "eyebrow": "Responda y vea la sugerencia",
+      "perguntas": [
+        "¿Su organización ya tiene catálogo, proveedor de identidad y una plataforma de datos?",
+        "¿Necesita un data lakehouse nuevo y gobernado?",
+        "¿El primer caso es pequeño y sin presupuesto para herramientas?"
+      ],
+      "sim": "Sí",
+      "nao": "No",
+      "sugestao": "Sugerencia:",
+      "combinados": "Los caminos se pueden combinar.",
+      "responda": "Responda para recibir una sugerencia.",
+      "sugerido": "sugerido",
+      "cuidado": "Atención:"
+    },
+    "ferramentas": {
+      "etapaAria": "Filtrar por etapa",
+      "todas": "Todas",
+      "baseComum": "Base compartida",
+      "mostrando": "Mostrando la capa",
+      "mostrarTodas": "Mostrar todas",
+      "um": "componente",
+      "varios": "componentes",
+      "nenhum": "Ningún componente con este filtro."
+    },
+    "recursos": {
+      "todasEtapas": "Todas las etapas",
+      "verExemplo": "Ver ejemplo rellenado",
+      "filtroAria": "Filtrar por etapa"
+    },
+    "canvas": {
+      "campos": {
+        "nome": [
+          "Nombre del producto",
+          "Priorización de inspecciones"
+        ],
+        "dono": [
+          "Responsable del producto",
+          "Dirección de Inspección"
+        ],
+        "proposito": [
+          "Propósito de uso",
+          "Ordenar regiones para el plan mensual"
+        ],
+        "consumidores": [
+          "Consumidores",
+          "Equipo de planificación de campo"
+        ],
+        "classificacao": [
+          "Clasificación",
+          ""
+        ],
+        "indicador": [
+          "Indicador de valor",
+          "Inspecciones que confirman una irregularidad"
+        ]
+      },
+      "classes": [
+        "Público",
+        "Interno",
+        "Confidencial",
+        "Restringido"
+      ],
+      "baixar": "Descargar canvas (.md)",
+      "copiar": "Copiar texto",
+      "previa": "Vista previa",
+      "titulo": "Canvas inicial",
+      "exemplo": "(ejemplo)",
+      "proximo": "Siguiente paso: redactar el contrato del producto de datos con el steward.",
+      "rodape": "Plantilla KDV · CC BY 4.0",
+      "arquivo": "canvas-producto-kdv.md"
+    },
+    "diagramas": {
+      "D1": "Cinco capas × cuatro etapas, sobre la base común",
+      "D2": "Anatomía del ecosistema: negocio y ejecución",
+      "D3": "Recorrido del dato en carriles por rol",
+      "D4": "Decisión de acceso de principio a fin",
+      "D5": "Arquitectura de referencia y herramientas",
+      "ampliar": "Ampliar:",
+      "svg": "SVG editable ↓",
+      "png": "PNG ↓",
+      "nota": "Diagramas en SVG editable. El material original está en portugués de Brasil; los pies traducidos explican su finalidad."
+    },
+    "docs": {
+      "documentacao": "Documentación",
+      "guiasAria": "Guías",
+      "contextoAria": "Contexto de la guía",
+      "todosGuias": "Todas las guías",
+      "perguntasTitulo": "Las cuatro preguntas de la preparación",
+      "glossFiltro": "Filtrar el glosario",
+      "glossPlaceholder": "Filtrar términos (p. ej.: steward, owner, contrato)",
+      "thTermo": "Término de negocio",
+      "thKdvMercado": "KDV / mercado",
+      "thOque": "Qué es",
+      "minimo": "La base común",
+      "cinco": "Cinco capas",
+      "seisConceitos": "Los seis conceptos",
+      "verDetalhe": "Ver detalle →",
+      "verAnatomia": "Ver el diagrama de la anatomía",
+      "quemFaz": "Quién hace qué en cada etapa",
+      "etapasUmaUma": "Las etapas, una a una",
+      "verJornada": "Ver el recorrido en carriles",
+      "modeloBaixar": "Plantilla para descargar",
+      "verContrato": "Ver el contrato rellenado del ejemplo",
+      "simule": "Simule una decisión",
+      "ritmo": "Ritmo de revisión sugerido",
+      "tresPontos": "Tres puntos de partida",
+      "verImplementacao": "Ver los componentes en la página Implementación",
+      "conselhoEtapas": "El consejo, etapa por etapa",
+      "leiaFuncao": "Lea según su función",
+      "escolhaPerfil": "Elija un perfil y reciba un itinerario de lectura.",
+      "trilha": "Itinerario:",
+      "lidos": "leídas",
+      "continuar": "Para continuar",
+      "anterior": "← Anterior",
+      "seguinte": "Siguiente →",
+      "pagerAria": "Guía anterior y siguiente",
+      "citados": "Conceptos citados",
+      "citadosDica": "Abra el detalle sin salir de la guía.",
+      "nestaPagina": "En esta página",
+      "fonte": "Fuente",
+      "verRepo": "Ver en el repositorio ↗",
+      "tituloSufixo": " · Documentación · KDV Framework"
+    }
+  },
+  "page": {
+    "home": {
+      "title": "Visión general",
+      "desc": "Cifras contradictorias, responsabilidades poco claras y accesos que nadie revisa. KDV convierte la gobernanza de datos en trabajo cotidiano.",
+      "hero": {
+        "eb": "Framework operativo abierto · edición comunitaria",
+        "h1": "Sus datos ya existen. <span class='dim'>Falta saber quién responde por ellos.</span>",
+        "lead": "Cifras que no cuadran entre áreas, nadie sabe quién aprueba el acceso, la auditoría pide pruebas y solo hay correos. KDV convierte la gobernanza de datos en rutina: cada dato compartido tiene un responsable, un acuerdo de uso, acceso por regla y evidencia del valor que genera.",
+        "cta1": "Ver si es para mí",
+        "cta2": "Empezar por un primer caso",
+        "sub": "Método abierto. Aplíquelo con las herramientas que ya utiliza o elija una implementación adecuada a su contexto."
+      },
+      "refsLabel": "Lleva a la práctica lo que ya existe",
+      "sec": {
+        "voce": {
+          "eb": "¿Se reconoce?",
+          "h2": "Elija su punto de partida. <span class='dim'>La respuesta aparece aquí mismo.</span>",
+          "p": "Por su rol o por su tipo de organización. Si quiere, guarde el perfil: la Documentación le sugerirá un itinerario de lectura."
+        },
+        "proposta": {
+          "eb": "Qué hace KDV",
+          "h2": "La gobernanza de datos como trabajo cotidiano, no como un proyecto aparte.",
+          "p": "Empiece por un único caso de uso. Cada entrega deja registrado quién decidió, qué se acordó y qué valor generó."
+        },
+        "como": {
+          "eb": "Cómo funciona",
+          "h2": "Cuatro etapas, del dato en bruto al valor observado.",
+          "p": "Elija una etapa para ver qué hacer, quién participa y qué evidencia queda. Antes, una preparación breve delimita el primer caso."
+        },
+        "minimo": {
+          "eb": "Lo mínimo que necesita todo dato compartido",
+          "h2": "Cinco elementos comunes. <span class='dim'>El resto lo decide cada organización.</span>",
+          "p": "Los nombres de los roles, los flujos de aprobación y el ritmo de revisión se adaptan. Estos cinco elementos no se eliminan."
+        },
+        "colmeia": {
+          "eb": "¿Por qué una colmena?",
+          "h2": "Usamos primero sus términos. <span class='dim'>La colmena solo ayuda a recordar.</span>",
+          "p": "Las colmenas cooperan sin un mando central: cada una cuida lo suyo y respeta reglas comunes. Es una metáfora organizativa; no sustituye los términos de su organización ni asigna roles según la biología de las abejas."
+        },
+        "aberto": {
+          "eb": "Método abierto, implementaciones opcionales",
+          "h2": "Método abierto, con implementaciones opcionales.",
+          "p": "El contenido del Framework está disponible bajo CC BY 4.0. Kolmeia es un enfoque abierto de integración; cada componente conserva su licencia. KDV Studio y KDV Cloud son ofertas opcionales de implementación y operación."
+        },
+        "exemplos": {
+          "eb": "Ejemplos ilustrativos",
+          "h2": "Contextos distintos. <span class='dim'>Las mismas preguntas.</span>",
+          "p": "¿Quién responde? ¿Qué se acordó? ¿Quién puede usarlo? ¿Qué valor generó?"
+        }
+      },
+      "propostaCells": [
+        [
+          "01 · Responsable",
+          "Alguien responde por cada dato compartido.",
+          "Un responsable y un {{termo:steward|steward}} designados para cada {{conceito:dominio|dominio de negocio}} y {{conceito:produto|producto de datos}}."
+        ],
+        [
+          "02 · Acuerdo y acceso por regla",
+          "Una definición acordada y acceso con plazo.",
+          "Un {{termo:contrato|contrato versionado}} dice qué significa el dato y para qué puede usarse; la plataforma aplica la {{base:acesso|política de acceso}}."
+        ],
+        [
+          "03 · Evidencia",
+          "Pruebas que genera el propio trabajo.",
+          "Las decisiones, pruebas y usos dejan evidencias para su revisión. Apoyan la evaluación y la mejora sin producir una puntuación automática de madurez."
+        ]
+      ],
+      "abertoLinks": [
+        "Ver la implementación de referencia",
+        "Entender Framework, KDV y Kolmeia"
+      ],
+      "cta": {
+        "eb": "Siguiente paso",
+        "h2": "Elija una decisión difícil y conviértala en su primer producto de datos.",
+        "p": "El Playbook guía la preparación y las cuatro etapas, con plantillas listas para descargar.",
+        "btn1": "Abrir el Playbook",
+        "btn2": "Prefiero hablar con KDV"
+      }
+    },
+    "para-quem": {
+      "title": "Para quién",
+      "desc": "Organizaciones y personas que se benefician del KDV Framework.",
+      "hero": {
+        "eb": "Para quién",
+        "h1": "Para quien necesita compartir datos <span class='dim'>con confianza y sin burocracia.</span>",
+        "lead": "Seis tipos de organización y seis perfiles profesionales encuentran en KDV una respuesta a problemas parecidos. Abra cada uno para ver los problemas, qué cambia y un buen primer caso."
+      },
+      "sec": {
+        "organizacoes": {
+          "sub": "Organizaciones",
+          "eb": "Tipos de organización",
+          "h2": "Organizaciones como la suya.",
+          "p": "Abra un elemento para ver problemas típicos, cómo responde KDV y un buen primer caso."
+        },
+        "perfis": {
+          "sub": "Perfiles",
+          "eb": "Perfiles profesionales",
+          "h2": "Quién decide y quién usa.",
+          "p": "Seleccione un perfil. Puede guardarlo: la Documentación le sugerirá un itinerario de lectura."
+        },
+        "perguntas": {
+          "sub": "Preguntas",
+          "eb": "Preguntas de quien decide",
+          "h2": "Lo que preguntan los directivos antes de empezar.",
+          "p": "Respuestas breves, sin promesas de plazos ni resultados."
+        }
+      },
+      "faq": [
+        [
+          "¿Cuánto cuesta?",
+          "El método es gratuito y abierto (CC BY 4.0). Puede aplicarlo con documentos y hojas de cálculo. La implementación y los servicios de KDV Ecosystems son opcionales y se contratan aparte."
+        ],
+        [
+          "¿Tengo que comprar una plataforma?",
+          "No. Hay tres caminos: empezar con un equipo pequeño, usar la plataforma que ya tiene o usar la <a href='implementacao.html'>implementación de referencia</a> de código abierto."
+        ],
+        [
+          "¿Cuánto tiempo lleva?",
+          "Depende del acceso a las fuentes, del equipo disponible y de los controles necesarios. Por eso el Playbook empieza con una {{etapa:preparar|preparación}} que delimita el primer caso antes de cualquier plazo."
+        ],
+        [
+          "¿Sustituye al DAMA-DMBOK, al DCAM o a Data Mesh?",
+          "No. KDV lleva estas referencias a la práctica diaria. Vea <a href='modelo.html#referenciais'>qué cubre cada una y qué exige trabajo propio</a>. KDV no alega certificación."
+        ],
+        [
+          "¿Garantiza el cumplimiento del RGPD o de la LGPD?",
+          "No lo garantiza. Apoya el cumplimiento con decisiones y registros explícitos, pero no sustituye el asesoramiento jurídico. Vea la guía <a href='documentacao.html#ia-privacidade'>IA y privacidad</a>."
+        ],
+        [
+          "¿Quién tiene que participar?",
+          "En el primer caso: un patrocinador ({{papel:dono-dominio|responsable del dominio}}), un {{papel:dono-produto|responsable del producto}}, un {{termo:steward|steward}}, alguien de ingeniería y el consumidor que usará el dato. Una persona puede acumular roles."
+        ]
+      ]
+    },
+    "modelo": {
+      "title": "Cómo funciona",
+      "desc": "Anatomía del ecosistema, capas, roles y relación con DAMA-DMBOK, DCAM y Data Mesh.",
+      "hero": {
+        "eb": "Cómo funciona",
+        "h1": "Quién responde, quién decide <span class='dim'>y qué prueba queda.</span>",
+        "lead": "Toda organización ya tiene áreas que producen datos y personas que dependen de ellos. El modelo operativo KDV le pone nombre. Explore cada parte sin salir de esta página."
+      },
+      "sec": {
+        "anatomia": {
+          "sub": "Anatomía",
+          "eb": "Anatomía del ecosistema",
+          "h2": "Una organización, mapeada.",
+          "p": "Seleccione una caja para ver el detalle al lado. Alterne entre la vista de negocio (quién responde) y la vista de ejecución (dónde se ejecuta)."
+        },
+        "camadas": {
+          "sub": "Capas",
+          "eb": "Cinco capas × cuatro etapas",
+          "h2": "Un hilo que une la intención con la prueba.",
+          "p": "Cada celda dice qué exige una capa en una etapa. Seleccione una para leerla."
+        },
+        "papeis": {
+          "sub": "Roles",
+          "eb": "Roles y derechos de decisión",
+          "h2": "Los roles definen responsabilidades. <span class='dim'>Las interfaces apoyan el trabajo.</span>",
+          "p": "Vea la lista de responsabilidades o la matriz RACI por etapa."
+        },
+        "modulos": {
+          "sub": "Interfaces",
+          "eb": "Interfaces de referencia",
+          "h2": "Consumer, Producer, EcOps y PlatOps en una línea.",
+          "p": "Son las pantallas de la implementación de referencia, organizadas por quién las usa. No sustituyen a los roles."
+        },
+        "referenciais": {
+          "sub": "Referencias",
+          "eb": "DAMA-DMBOK 2 · DCAM · Data Mesh",
+          "h2": "Lo que KDV lleva a la práctica <span class='dim'>y lo que exige trabajo propio.</span>",
+          "p": "Interpretación original. Mostrar lo que no cubrimos forma parte de la confianza."
+        },
+        "ia": {
+          "sub": "IA y privacidad",
+          "eb": "IA, RGPD y LGPD",
+          "h2": "Datos para IA con límites de uso explícitos.",
+          "p": "Una entrada de catálogo o un conector de IA no bastan. La gobernanza se aplica a la finalidad, las entradas, los resultados y las decisiones humanas."
+        }
+      },
+      "iaCards": [
+        [
+          "Propósito y autoridad",
+          "Registre el uso previsto y quién puede autorizarlo. Un nuevo uso en IA puede exigir una nueva decisión."
+        ],
+        [
+          "Minimización y acceso",
+          "Limite datos y privilegios a lo necesario, también en la búsqueda y en los resultados derivados."
+        ],
+        [
+          "Origen y evaluación",
+          "Registre fuentes, actualización y limitaciones; evalúe la calidad de las respuestas."
+        ],
+        [
+          "Personas y derechos",
+          "Prevea revisión, impugnación, incidentes y los derechos de los interesados ({{termo:lgpd|RGPD/LGPD}})."
+        ]
+      ],
+      "iaLink": "Abrir la guía IA y privacidad",
+      "iaNota": "Orientación operativa, no asesoramiento jurídico."
+    },
+    "playbook": {
+      "title": "Playbook",
+      "desc": "Un camino práctico hacia el primer producto de datos, con plantillas para descargar.",
+      "hero": {
+        "eb": "Playbook",
+        "h1": "Empiece pequeño. <span class='dim'>Guarde la evidencia.</span>",
+        "lead": "Un camino práctico hacia el primer producto de datos: una preparación breve y cuatro etapas. Cada etapa se abre aquí mismo, con qué hacer, quién participa, la evidencia y la plantilla para descargar.",
+        "cta1": "Empezar por la preparación",
+        "cta2": "Ver el ejemplo completo"
+      },
+      "sec": {
+        "etapas": {
+          "sub": "Etapas",
+          "eb": "Preparación y cuatro etapas",
+          "h2": "Del caso elegido al valor observado.",
+          "p": "Abre una etapa y márcala como completada en tu caso; el progreso se conserva en esta página hasta recargarla o salir."
+        },
+        "acesso": {
+          "sub": "Acceso",
+          "eb": "Una decisión de principio a fin",
+          "h2": "Una solicitud se convierte en acceso mediante una decisión explícita.",
+          "p": "Revisión, decisión y aplicación técnica son responsabilidades distintas. Todo recorrido deja registro."
+        },
+        "ritmo": {
+          "sub": "Ritmo",
+          "eb": "Ritmo de revisión",
+          "h2": "Ligero, regular y acordado.",
+          "p": "Puntos de partida. Ajústelos al tamaño del equipo."
+        },
+        "checklist": {
+          "sub": "Checklist",
+          "eb": "Checklist del primer caso",
+          "h2": "Un punto de partida para conversar, <span class='dim'>no una nota de madurez.</span>",
+          "p": "Marque lo que ya se ha tratado. El resumen de al lado arma las próximas acciones; cópielo y llévelo a la reunión."
+        }
+      },
+      "verFluxo": "Ver el flujo completo en diagrama"
+    },
+    "implementacao": {
+      "title": "Implementación",
+      "desc": "Tres caminos para aplicar KDV y la implementación de referencia de código abierto en data lakehouse.",
+      "hero": {
+        "eb": "Implementación",
+        "h1": "El método no depende de una herramienta. <span class='dim'>Pero existe una implementación abierta.</span>",
+        "lead": "Puede aplicar KDV con documentos, con la plataforma que ya tiene o con la implementación de referencia: un data lakehouse predominantemente de código abierto, instalado como código y verificado en cada cambio."
+      },
+      "sec": {
+        "caminhos": {
+          "sub": "Caminos",
+          "eb": "Elija el camino",
+          "h2": "Tres puntos de partida viables.",
+          "p": "Responda tres preguntas y vea una sugerencia. Los caminos se pueden combinar."
+        },
+        "arquitetura": {
+          "sub": "Arquitectura",
+          "eb": "Arquitectura de referencia",
+          "h2": "Cuatro capas, del uso a la ejecución.",
+          "p": "Seleccione una capa para filtrar los componentes de abajo."
+        },
+        "ferramentas": {
+          "sub": "Componentes",
+          "eb": "Componentes de la implementación de referencia",
+          "h2": "Las herramientas abiertas detrás de cada etapa.",
+          "p": "Filtre por etapa o por capa de la arquitectura. Seleccione un componente para ver su función y su licencia."
+        },
+        "interfaces": {
+          "sub": "Interfaces",
+          "eb": "Módulos KDV",
+          "h2": "Una interfaz para cada rol.",
+          "p": "Los módulos organizan el trabajo según quién los usa; la responsabilidad sigue en los roles."
+        },
+        "licencas": {
+          "sub": "Licencias",
+          "eb": "Licencias y alternativas",
+          "h2": "Abierto por elección, con una política explícita.",
+          "p": "La stack es predominantemente de código abierto, con política de licencias documentada e inventario de componentes (SBOM) generado en cada build."
+        }
+      },
+      "verDiagrama": "Ver el diagrama completo",
+      "diagramaLegenda": "Arquitectura de referencia: módulos, herramientas y capas",
+      "licencas": {
+        "h3a": "Sin quedar atado a un proveedor",
+        "pa": "Cada componente tiene versión, licencia y condiciones de uso registradas. El objetivo es cualquier Kubernetes conforme; las diferencias entre plataformas están en los Adapters, no en versiones separadas del producto.",
+        "h3b": "Otras herramientas también sirven",
+        "pb": "El modelo no exige esta stack. Organizaciones que ya usan, por ejemplo, Airflow para orquestación, dbt Core para transformación u OpenLineage para linaje aplican el mismo modelo de responsabilidad. La lista anterior describe la implementación de referencia; las alternativas son opciones que conviene evaluar en su contexto."
+      }
+    },
+    "recursos": {
+      "title": "Recursos",
+      "desc": "Plantillas en Markdown, Word y Excel, ejemplos rellenados, canvas inicial y diagramas.",
+      "hero": {
+        "eb": "Recursos",
+        "h1": "Plantillas para usar mañana.",
+        "lead": "Cinco plantillas en Markdown, Word y Excel, cada una con un ejemplo rellenado y la etapa en que se usa. Los ejemplos usan datos ficticios. Son plantillas de trabajo KDV, no formularios oficiales DAMA ni DCAM."
+      },
+      "sec": {
+        "modelos": {
+          "sub": "Plantillas",
+          "eb": "Plantillas de trabajo",
+          "h2": "Filtre por la etapa en la que está.",
+          "p": "Seleccione «Ver ejemplo rellenado» para ver cómo queda, sin descargar nada."
+        },
+        "canvas": {
+          "sub": "Canvas",
+          "eb": "Canvas inicial",
+          "h2": "Esboce su primer producto.",
+          "p": "Rellene los campos y descargue un borrador en Markdown. Todo ocurre en el navegador; no se envía nada."
+        },
+        "diagramas": {
+          "sub": "Diagramas",
+          "eb": "Diagramas",
+          "h2": "Los cuatro bloques del modelo, en imagen.",
+          "p": "Seleccione para ampliar. Los archivos SVG se pueden editar y reutilizar (CC BY 4.0)."
+        },
+        "fontes": {
+          "sub": "Fuentes",
+          "eb": "Fuentes originales",
+          "h2": "Consulte las referencias en su fuente.",
+          "p": "KDV añade una interpretación operativa original y no redistribuye contenidos del DAMA-DMBOK ni del DCAM."
+        }
+      },
+      "fontes": [
+        [
+          "DAMA-DMBOK 2",
+          "Cuerpo de conocimiento sobre gestión de datos."
+        ],
+        [
+          "DCAM",
+          "Modelo de capacidades del EDM Council. Consulte al editor sobre acceso y licencia."
+        ],
+        [
+          "Data Mesh",
+          "Cuatro principios: dominio, producto, autoservicio y federación."
+        ]
+      ]
+    },
+    "documentacao": {
+      "title": "Documentación",
+      "desc": "Guías del KDV Framework con itinerarios de lectura por perfil."
+    },
+    "comunidade": {
+      "title": "Comunidad",
+      "desc": "Cómo participar, quién lo mantiene, hoja de ruta y relación entre KDV Framework, KDV Ecosystems y Kolmeia.",
+      "hero": {
+        "eb": "Comunidad",
+        "h1": "Hecho para usarse. <span class='dim'>Mejor cuando se comparte.</span>",
+        "lead": "Lea, use, cuestione y mejore el método. Las propuestas son públicas y los guardianes revisan lo que entra en la versión publicada.",
+        "cta1": "Ir a GitHub ↗"
+      },
+      "sec": {
+        "contribuir": {
+          "sub": "Contribuir",
+          "eb": "Primera contribución",
+          "h2": "Elija cómo ayudar.",
+          "p": "Las pequeñas contribuciones cuentan. Los ejemplos nunca pueden contener datos personales ni confidenciales."
+        },
+        "guardioes": {
+          "sub": "Guardianes",
+          "eb": "Quién lo mantiene",
+          "h2": "Contribución abierta. Publicación revisada.",
+          "p": "KDV Ecosystems inició y mantiene esta edición comunitaria, sin alegar un consenso comunitario establecido."
+        },
+        "roteiro": {
+          "sub": "Hoja de ruta",
+          "eb": "Hoja de ruta abierta",
+          "h2": "Temas, sin fechas prometidas.",
+          "p": "Las propuestas entran en una versión tras la revisión."
+        },
+        "marcas": {
+          "sub": "Marcas",
+          "eb": "Framework, KDV y Kolmeia",
+          "h2": "Quién es quién.",
+          "p": "El método es abierto; las implementaciones y los servicios son opcionales."
+        }
+      },
+      "contribuir": [
+        [
+          "Haga una pregunta útil",
+          "Describa una situación de gobernanza y la decisión que necesita tomar.",
+          "Abrir una issue ↗"
+        ],
+        [
+          "Mejore una plantilla",
+          "Proponga un campo, una definición o una evidencia más clara.",
+          "Guía de contribución ↗"
+        ],
+        [
+          "Comparta un ejemplo",
+          "Anonimizado: contexto, práctica, limitaciones y qué cambió.",
+          "Proponer un ejemplo ↗"
+        ],
+        [
+          "Hágalo más accesible",
+          "Traducciones, diagramas, navegación por teclado o explicaciones.",
+          "Código del sitio ↗"
+        ]
+      ],
+      "guardioes": {
+        "h3a": "Cómo entra una propuesta",
+        "passos": [
+          "Cualquier persona abre una propuesta en el repositorio.",
+          "Se ejecutan verificaciones automáticas.",
+          "Un guardián la revisa; un guardián nunca aprueba solo su propia propuesta.",
+          "El cambio entra en la versión publicada, con nota de versión."
+        ],
+        "h3b": "Guardianes",
+        "p1": "Guardián inicial: <span class='mono'>@ismael-lab</span>.",
+        "p2": "Guardián inicial: ismael-lab. Cualquier persona puede proponer un cambio. La gobernanza publicada en el repositorio determina la revisión y aceptación; los nuevos guardianes requieren autorización del responsable para actualizar accesos y políticas. Un guardián no puede aprobar de forma independiente su propio PR."
+      },
+      "roteiro": [
+        [
+          "Facilitar el primer caso",
+          "Probar la preparación, el vocabulario y los ejemplos con profesionales."
+        ],
+        [
+          "Mejorar los recursos",
+          "Definiciones de evidencia, diagramas accesibles, traducciones y nuevas plantillas (RACI, inventario de productos, caso de negocio)."
+        ],
+        [
+          "Profundizar en la implementación",
+          "Patrones de integración y decisiones de privacidad e IA, con evidencias y limitaciones."
+        ]
+      ],
+      "versao": {
+        "h3": "Qué significa la versión 1.x",
+        "p": "El sitio y el framework tienen versiones independientes. En la versión 1.x se mantienen estables los nombres de los conceptos y la base común; textos, ejemplos y plantillas pueden mejorar entre versiones menores. Las versiones anteriores (identificadas como 0.1) siguen registradas en el repositorio."
+      },
+      "licenca": {
+        "h3": "Use, adapte y cite",
+        "p": "Textos, diagramas y plantillas originales: CC BY 4.0. Código del sitio: MIT. Las marcas KDV y las referencias de terceros conservan sus propios derechos."
+      },
+      "contato": {
+        "h3": "Contacto",
+        "p": "Dudas sobre el framework: abra una issue. Interés en aplicarlo con apoyo: {{contato:kdv|hable con KDV}}."
+      }
+    },
+    "privacidade": {
+      "title": "Privacidad",
+      "desc": "Cómo trata los datos este sitio: sin analítica, cookies ni fuentes remotas.",
+      "hero": {
+        "eb": "Privacidad",
+        "h1": "Lea, explore y descargue <span class='dim'>sin crear una cuenta.</span>",
+        "lead": "Este sitio no usa analítica, publicidad, píxeles de rastreo, fuentes remotas ni cookies."
+      },
+      "blocos": [
+        [
+          "Quién es responsable",
+          "Lab of Codes &amp; Kolmeia es el operador identificado de este sitio. Solicitudes de privacidad: <span class='mono'>info@kolmeia.io</span>. Sedes: Florianópolis (Brasil) y Braga (Portugal)."
+        ],
+        [
+          "Preferencias del navegador",
+          "El sitio no envía datos del canvas, checklist o lectura a un servidor. El tema y un perfil de lectura elegido explícitamente pueden guardarse en este navegador. El checklist y el progreso de lectura permanecen en la memoria de la página. No usamos cookies publicitarias ni de analítica."
+        ],
+        [
+          "Alojamiento",
+          "El proveedor de alojamiento puede tratar datos de conexión y seguridad según sus condiciones de servicio. GitHub y los editores de las referencias aplican sus propias políticas cuando usted sigue un enlace externo."
+        ],
+        [
+          "Sus derechos",
+          "El RGPD y la LGPD pueden aplicarse según el contexto del tratamiento, no según el idioma elegido. Póngase en contacto con el operador para acceso, rectificación, supresión, oposición y otros derechos."
+        ]
+      ]
+    }
+  },
+  "ux": {
+    "ready": "Método abierto. Aplíquelo con las herramientas que ya utiliza o elija una implementación adecuada a su contexto.",
+    "open": "Método abierto, con implementaciones opcionales.",
+    "openBody": "El contenido del Framework está disponible bajo CC BY 4.0. Kolmeia es un enfoque abierto de integración; cada componente conserva su licencia. KDV Studio y KDV Cloud son ofertas opcionales de implementación y operación.",
+    "evidence": "Las decisiones, pruebas y usos dejan evidencias para su revisión. Apoyan la evaluación y la mejora sin producir una puntuación automática de madurez.",
+    "maturity": "Arquitectura de referencia, sin compromiso universal de disponibilidad. Las capacidades, la integración y la preparación dependen de la versión implantada y del alcance acordado. Algunos módulos KDV y controles aún requieren validación en el entorno de destino.",
+    "preferences": "El sitio no envía datos del canvas, checklist o lectura a un servidor. El tema y un perfil de lectura elegido explícitamente pueden guardarse en este navegador. El checklist y el progreso de lectura permanecen en la memoria de la página. No usamos cookies publicitarias ni de analítica.",
+    "storage": "Preferencias del navegador",
+    "knowledge": "Conocimiento de los datos de negocio",
+    "architecture": "Arquitectura: negocio, datos y tecnología",
+    "knowledgeEvidence": "Vocabulario de negocio acordado, responsables y definiciones de productos.",
+    "knowledgeLimit": "La gestión del conocimiento, la educación en datos y la gestión del cambio requieren un programa organizativo.",
+    "guardian": "Guardián inicial: ismael-lab. Cualquier persona puede proponer un cambio. La gobernanza publicada en el repositorio determina la revisión y aceptación; los nuevos guardianes requieren autorización del responsable para actualizar accesos y políticas. Un guardián no puede aprobar de forma independiente su propio PR.",
+    "diagram": "Diagramas en SVG editable. El material original está en portugués de Brasil; los pies traducidos explican su finalidad.",
+    "pilot": "Piloto propuesto con datos sintéticos. Los ejemplos ilustran la aplicación del método, sin afirmar resultados medidos de clientes.",
+    "slugs": {
+      "primeiros-passos": "start-here",
+      "glossario": "glossary",
+      "principios": "principles",
+      "anatomia": "anatomy",
+      "papeis": "responsibilities",
+      "ciclo": "lifecycle",
+      "contratos": "data-contracts",
+      "acesso": "access-and-exceptions",
+      "evidencias": "evidence",
+      "ia-privacidade": "ai-privacy",
+      "implementacao": "implementation",
+      "exemplo": "worked-example",
+      "referenciais": "practices",
+      "comunidade": "community"
+    },
+    "routeMap": {
+      "home": "",
+      "para-quem": "audience",
+      "modelo": "model",
+      "playbook": "playbook",
+      "implementacao": "implementation",
+      "recursos": "resources",
+      "documentacao": "docs",
+      "comunidade": "community",
+      "privacidade": "privacy"
+    },
+    "anatomyNote": "Una Cell puede ser responsable de varios productos de datos. Un Comb es una agrupación de negocio opcional, no una capa adicional de infraestructura. Una Farm es un entorno de ejecución, no un dominio de negocio. El método puede aplicarse sin contratar una plataforma.",
+    "checkNote": "Esta lista de verificación apoya una conversación sobre evidencias; no es una puntuación de madurez ni una evaluación oficial."
+  }
+}

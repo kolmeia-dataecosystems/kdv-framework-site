@@ -1,5 +1,6 @@
 import {mkdir,readFile,writeFile,copyFile,rm} from 'node:fs/promises';
 import {copy} from './review/copy.mjs';
+import {buildUxAssets} from './src/ux/build.mjs';
 import {content,languages} from './src/content.mjs';
 import {render,allRoutes,escape} from './src/render.mjs';
 export const origin=(process.env.SITE_ORIGIN||'https://kdvframework.org').replace(/\/+$/,'');
@@ -12,6 +13,7 @@ await mkdir('dist/assets',{recursive:true});
 for(const language of languages)await copyFile(`assets/social/kdv-framework-social-${language==='pt-br'?'pt':language}-v1.png`,`dist/assets/kdv-framework-social-${language}-v1.png`);
 await writeFile('dist/styles.css',await readFile('src/styles.css','utf8')+'\n'+await readFile('review/styles.css','utf8'));
 await copyFile('src/runtime.js','dist/runtime.js');
+await buildUxAssets();
 let urls=[];
 for(const l of languages){
  await rm(`dist/${l}/docs`,{recursive:true,force:true});
