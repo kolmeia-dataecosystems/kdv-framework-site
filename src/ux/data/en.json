@@ -34,7 +34,7 @@
       "pt": "https://kdvecosystems.com/pt/",
       "es": "https://kdvecosystems.com/es/"
     },
-    "versao": "Framework 1.1.0 / Site 1.2.0-rc.1",
+    "versao": "Framework 1.2.0 / Site 1.2.0",
     "proposta": "KDV turns data governance into everyday work."
   },
   "paginas": [
@@ -61,12 +61,6 @@
       "href": "/en/playbook/",
       "nome": "Playbook",
       "pergunta": "Where do I start and what do I deliver?"
-    },
-    {
-      "id": "implementacao",
-      "href": "/en/implementation/",
-      "nome": "Implementation",
-      "pergunta": "Is there a ready tool? Is it open?"
     },
     {
       "id": "recursos",
@@ -236,7 +230,7 @@
   "papeis": [
     {
       "id": "forum",
-      "interface": "EcOps",
+      "interface": "Data ecosystem governance console",
       "modulo": "ecops",
       "raci": {
         "preparar": "I",
@@ -252,7 +246,7 @@
     },
     {
       "id": "gestor-ecossistema",
-      "interface": "EcOps",
+      "interface": "Data ecosystem governance console",
       "modulo": "ecops",
       "raci": {
         "preparar": "C",
@@ -268,7 +262,7 @@
     },
     {
       "id": "dono-dominio",
-      "interface": "EcOps / Producer",
+      "interface": "Data ecosystem governance console / Data product management and publishing",
       "modulo": "ecops",
       "raci": {
         "preparar": "A",
@@ -284,7 +278,7 @@
     },
     {
       "id": "dono-subdominio",
-      "interface": "Producer",
+      "interface": "Data product management and publishing",
       "modulo": "producer",
       "raci": {
         "preparar": "",
@@ -300,7 +294,7 @@
     },
     {
       "id": "dono-produto",
-      "interface": "Producer",
+      "interface": "Data product management and publishing",
       "modulo": "producer",
       "raci": {
         "preparar": "R",
@@ -316,7 +310,7 @@
     },
     {
       "id": "steward-operacional",
-      "interface": "Producer / EcOps",
+      "interface": "Data product management and publishing / Data ecosystem governance console",
       "modulo": "producer",
       "raci": {
         "preparar": "C",
@@ -332,7 +326,7 @@
     },
     {
       "id": "steward-coordenador",
-      "interface": "EcOps",
+      "interface": "Data ecosystem governance console",
       "modulo": "ecops",
       "raci": {
         "preparar": "",
@@ -348,7 +342,7 @@
     },
     {
       "id": "engenharia",
-      "interface": "Producer",
+      "interface": "Data product management and publishing",
       "modulo": "producer",
       "raci": {
         "preparar": "C",
@@ -364,7 +358,7 @@
     },
     {
       "id": "custodiante",
-      "interface": "PlatOps / EcOps",
+      "interface": "Data platform operations console / Data ecosystem governance console",
       "modulo": "platops",
       "raci": {
         "preparar": "",
@@ -380,7 +374,7 @@
     },
     {
       "id": "consumidor",
-      "interface": "Consumer",
+      "interface": "Data discovery and consumption portal",
       "modulo": "consumer",
       "raci": {
         "preparar": "C",
@@ -389,7 +383,7 @@
         "compartilhar": "I",
         "ativar": "R"
       },
-      "nome": "Consumer",
+      "nome": "Data discovery and consumption portal",
       "escopo": "Data product",
       "resp": "Uses data within the agreed terms and reports whether the product fits the purpose.",
       "mercado": "Data consumer · analyst · AI team"
@@ -398,42 +392,42 @@
   "modulos": [
     {
       "id": "consumer",
-      "nome": "KDV Consumer",
+      "nome": "Data discovery and consumption portal",
       "quem": "Those who find and use data",
       "faz": "Catalogue, time-limited access requests, contract reading and tracking of grants.",
       "etapa": "Share · Activate"
     },
     {
       "id": "producer",
-      "nome": "KDV Producer",
+      "nome": "Data product management and publishing",
       "quem": "Those who prepare and publish data",
       "faz": "Domains, subdomains, contracts, versions, quality and decisions on access requests.",
       "etapa": "Cultivate · Govern · Share"
     },
     {
       "id": "ecops",
-      "nome": "KDV EcOps",
+      "nome": "Data ecosystem governance console",
       "quem": "Those who govern the ecosystem",
       "faz": "Common policies, governance profiles, roles, forum decisions and indicators.",
       "etapa": "Govern"
     },
     {
       "id": "platops",
-      "nome": "KDV PlatOps",
+      "nome": "Data platform operations console",
       "quem": "Those who operate the platform",
       "faz": "Environments, services, alerts, certificates and secrets, without showing their values.",
       "etapa": "Shared foundation"
     },
     {
       "id": "desk",
-      "nome": "KDV Desk",
+      "nome": "Data service desk",
       "quem": "Everyone",
       "faz": "Common desk for questions, problems and data incidents.",
       "etapa": "Activate"
     },
     {
       "id": "adapters",
-      "nome": "Adapters",
+      "nome": "Platform integration adapters",
       "quem": "Platform engineering",
       "faz": "Connect the model to the chosen tools, without separate product versions.",
       "etapa": "Shared foundation"
@@ -517,7 +511,7 @@
       ],
       "decisao": "The source is authorised and the result can be explained.",
       "medidas": "Source coverage; delivery failures.",
-      "impl": "{{modulo:producer|KDV Producer}}; pipelines in {{ferramenta:mage|Mage}}; storage in {{ferramenta:seaweedfs|SeaweedFS}} with {{ferramenta:iceberg|Iceberg}} tables; lineage in {{ferramenta:openmetadata|OpenMetadata}}.",
+      "impl": "{{modulo:producer|Data product management and publishing}}; pipelines in {{ferramenta:etl-orchestration|ETL/ELT pipeline orchestration}}; storage in {{ferramenta:object-storage|Object storage}} with {{ferramenta:open-tables|Open analytical table format}} tables; lineage in {{ferramenta:data-catalogue|Data catalogue and governance}}.",
       "exemplo": "Inventories registrations, complaints and authorised public sources. Records collection date, origin and limitations of each source."
     },
     {
@@ -552,7 +546,7 @@
       ],
       "decisao": "Owners, terms and quality expectations have been reviewed.",
       "medidas": "Owner coverage; quality exceptions.",
-      "impl": "{{modulo:producer|KDV Producer}} and {{modulo:ecops|KDV EcOps}}; glossary and quality in {{ferramenta:openmetadata|OpenMetadata}}; policies in {{ferramenta:ranger|Apache Ranger}}.",
+      "impl": "{{modulo:producer|Data product management and publishing}} and {{modulo:ecops|Data ecosystem governance console}}; glossary and quality in {{ferramenta:data-catalogue|Data catalogue and governance}}; policies in {{ferramenta:access-policy|Access policy management}}.",
       "exemplo": "Agrees identifiers, matching rules, acceptable uncertainty, permitted purposes and who reviews each case."
     },
     {
@@ -585,7 +579,7 @@
       ],
       "decisao": "The intended consumer can find and access the authorised version.",
       "medidas": "Time to access decision; contract adoption.",
-      "impl": "{{modulo:consumer|KDV Consumer}} for requests; {{ferramenta:ranger|Apache Ranger}} enforces the policy; queries through {{ferramenta:trino|Trino}}; APIs through {{ferramenta:wso2|WSO2 API Manager}}.",
+      "impl": "{{modulo:consumer|Data discovery and consumption portal}} for requests; {{ferramenta:access-policy|Access policy management}} enforces the policy; queries through {{ferramenta:sql-query|Distributed SQL query engine}}; APIs through {{ferramenta:api-management|API management}}.",
       "exemplo": "Publishes an aggregated product for planning and a separate, restricted view for case review. The owner decides access before the custodian implements it."
     },
     {
@@ -617,7 +611,7 @@
       ],
       "decisao": "Value and limitations have been reviewed; improve or retire is decided.",
       "medidas": "Use against purpose; incidents; value indicator.",
-      "impl": "Dashboards in {{ferramenta:superset|Superset}}; queries through {{ferramenta:trino|Trino}}; APIs and AI services in {{ferramenta:vassets|vassets}}; observability in {{ferramenta:observabilidade|Grafana}}.",
+      "impl": "Dashboards in {{ferramenta:business-intelligence|Business intelligence and data visualisation}}; queries through {{ferramenta:sql-query|Distributed SQL query engine}}; APIs and AI services in {{ferramenta:data-services|Data services for applications and AI}}; observability in {{ferramenta:observability|Observability dashboards}}.",
       "exemplo": "Uses the indicators to plan inspections. A qualified person validates the evidence before any individual action."
     }
   ],
@@ -665,7 +659,7 @@
           "The owner decides access; the custodian enforces the decision."
         ],
         "ativar": [
-          "Consumer + owner",
+          "Data discovery and consumption portal + owner",
           "The consumer uses and reports; the owner decides to improve or retire."
         ]
       }
@@ -820,7 +814,7 @@
         "id": "revisao",
         "papel": "consumidor",
         "titulo": "Use and review",
-        "texto": "Consumer and owner review usage, term and need on the agreed date."
+        "texto": "Data discovery and consumption portal and owner review usage, term and need on the agreed date."
       },
       {
         "id": "decisao-escalada",
@@ -1218,7 +1212,7 @@
     {
       "id": "linhagem",
       "rel": [
-        "ferramenta:openmetadata"
+        "ferramenta:data-catalogue"
       ],
       "cliente": "Lineage",
       "mercado": "Data lineage",
@@ -1265,7 +1259,7 @@
     {
       "id": "catalogo",
       "rel": [
-        "ferramenta:openmetadata",
+        "ferramenta:data-catalogue",
         "modulo:consumer"
       ],
       "cliente": "Data catalogue",
@@ -1284,8 +1278,8 @@
     {
       "id": "lakehouse",
       "rel": [
-        "ferramenta:iceberg",
-        "ferramenta:trino"
+        "ferramenta:open-tables",
+        "ferramenta:sql-query"
       ],
       "cliente": "Data lakehouse",
       "mercado": "Data lakehouse",
@@ -1304,7 +1298,7 @@
     {
       "id": "mcp",
       "rel": [
-        "ferramenta:vassets"
+        "ferramenta:data-services"
       ],
       "cliente": "Data service for AI (MCP)",
       "mercado": "Model Context Protocol",
@@ -1358,100 +1352,86 @@
   ],
   "ferramentas": [
     {
-      "id": "seaweedfs",
-      "nome": "SeaweedFS",
-      "licenca": "Apache-2.0",
+      "id": "object-storage",
+      "nome": "Object storage",
       "etapa": "cultivar",
       "funcao": "Object storage (lake)"
     },
     {
-      "id": "iceberg",
-      "nome": "Apache Iceberg + Hive Metastore",
-      "licenca": "Apache-2.0",
+      "id": "open-tables",
+      "nome": "Open table format and technical catalogue",
       "etapa": "cultivar",
       "funcao": "Open table format and table catalogue"
     },
     {
-      "id": "mage",
-      "nome": "Mage + kdv-pipelines",
-      "licenca": "Mage: Apache-2.0; kdv-pipelines: KDV",
+      "id": "etl-orchestration",
+      "nome": "ETL/ELT pipeline orchestration",
       "etapa": "cultivar",
       "funcao": "Pipelines with quality and lineage"
     },
     {
-      "id": "openmetadata",
-      "nome": "OpenMetadata",
-      "licenca": "Apache-2.0",
+      "id": "data-catalogue",
+      "nome": "Data catalogue and governance",
       "etapa": "governar",
       "funcao": "Catalogue, glossary, lineage and quality"
     },
     {
-      "id": "ranger",
-      "nome": "Apache Ranger",
-      "licenca": "Apache-2.0",
+      "id": "access-policy",
+      "nome": "Access policy management",
       "etapa": "governar",
       "funcao": "Policy-based authorisation and access audit"
     },
     {
-      "id": "splink",
-      "nome": "Splink",
-      "licenca": "MIT",
+      "id": "entity-resolution",
+      "nome": "Entity resolution and record matching",
       "etapa": "governar",
       "funcao": "Master data: matching across registers"
     },
     {
-      "id": "trino",
-      "nome": "Trino",
-      "licenca": "Apache-2.0",
+      "id": "sql-query",
+      "nome": "Distributed SQL query engine",
       "etapa": "compartilhar",
       "funcao": "Query engine, one per environment"
     },
     {
-      "id": "wso2",
-      "nome": "WSO2 API Manager",
-      "licenca": "Apache-2.0",
+      "id": "api-management",
+      "nome": "API management",
       "etapa": "compartilhar",
       "funcao": "APIs and subscriptions"
     },
     {
-      "id": "superset",
-      "nome": "Apache Superset",
-      "licenca": "Apache-2.0",
+      "id": "business-intelligence",
+      "nome": "Business intelligence and data visualisation",
       "etapa": "ativar",
       "funcao": "Dashboards and visual analysis"
     },
     {
-      "id": "vassets",
-      "nome": "vassets (API / MCP)",
-      "licenca": "KDV",
+      "id": "data-services",
+      "nome": "Data services for applications and AI",
       "etapa": "ativar",
       "funcao": "Data services for applications and AI assistants"
     },
     {
-      "id": "observabilidade",
-      "nome": "Prometheus, Loki, Tempo, Grafana",
-      "licenca": "Apache-2.0 · AGPL",
+      "id": "observability",
+      "nome": "Service observability",
       "etapa": "ativar",
       "funcao": "Observability and operational evidence"
     },
     {
-      "id": "keycloak",
-      "nome": "Keycloak + OpenLDAP",
-      "licenca": "Apache-2.0 · OpenLDAP",
+      "id": "identity-directory",
+      "nome": "Identity, authentication and directory",
       "etapa": "base",
       "funcao": "Identity and single sign-on"
     },
     {
-      "id": "openbao",
-      "nome": "OpenBao",
-      "licenca": "MPL-2.0",
+      "id": "secrets-management",
+      "nome": "Secrets management",
       "etapa": "base",
       "funcao": "Secrets vault"
     },
     {
-      "id": "postgres",
-      "nome": "PostgreSQL",
-      "licenca": "PostgreSQL",
+      "id": "relational-database",
+      "nome": "Relational database",
       "etapa": "base",
       "funcao": "Register of hierarchy, contracts, grants and audit"
     }
@@ -1460,9 +1440,9 @@
     {
       "id": "uso",
       "tools": [
-        "superset",
-        "vassets",
-        "trino"
+        "business-intelligence",
+        "data-services",
+        "sql-query"
       ],
       "mods": [
         "consumer",
@@ -1474,9 +1454,9 @@
     {
       "id": "produto",
       "tools": [
-        "openmetadata",
-        "wso2",
-        "splink"
+        "data-catalogue",
+        "api-management",
+        "entity-resolution"
       ],
       "mods": [
         "producer",
@@ -1488,11 +1468,11 @@
     {
       "id": "controles",
       "tools": [
-        "ranger",
-        "keycloak",
-        "openbao",
-        "observabilidade",
-        "postgres"
+        "access-policy",
+        "identity-directory",
+        "secrets-management",
+        "observability",
+        "relational-database"
       ],
       "mods": [
         "ecops"
@@ -1503,9 +1483,9 @@
     {
       "id": "execucao",
       "tools": [
-        "seaweedfs",
-        "iceberg",
-        "mage"
+        "object-storage",
+        "open-tables",
+        "etl-orchestration"
       ],
       "mods": [
         "platops",
@@ -1532,10 +1512,10 @@
     },
     {
       "id": "referencia",
-      "nome": "Use the reference implementation",
-      "quando": "You need a governed data lakehouse and want open tools.",
-      "como": "A predominantly open-source stack, installed as code and verified with every change, with the KDV modules.",
-      "cuidado": "Check the version, licence and support of each component."
+      "nome": "Combine modular capabilities",
+      "quando": "The context calls for more integration and automation.",
+      "como": "Combine the capabilities for storage, data preparation, catalogue, access, consumption and operations that the case requires.",
+      "cuidado": "Verify interoperability, security, licensing and evidence for each selected component."
     }
   ],
   "referenciais": {
@@ -1673,7 +1653,7 @@
       {
         "id": "plataforma",
         "pri": "Self-serve platform",
-        "como": "Modules and Adapters; everything as code and verified",
+        "como": "Modules and Platform integration adapters; everything as code and verified",
         "fora": "Platform team capacity"
       },
       {
@@ -2139,8 +2119,8 @@
         "exemplo",
         "referenciais"
       ],
-      "titulo": "Choosing the implementation",
-      "resumo": "Three paths, and capabilities before tool names.",
+      "titulo": "Apply the operating model",
+      "resumo": "Start from the use case, decision rights and evidence. Describe the capabilities required to deliver and operate the data product before choosing technologies. The operating model can be supported by existing systems, multiple integrated tools or controlled manual practices.",
       "secoes": [
         [
           "Decide the model before the tool",
@@ -2225,8 +2205,8 @@
     },
     {
       "id": "edicoes",
-      "nome": "KDV Studio · KDV Cloud",
-      "papel": "Optional implementations: in the customer's environment or operated by KDV."
+      "nome": "KDV Studio/Cloud",
+      "papel": "KDV Studio/Cloud is one example of software bringing together the modules needed to support KDV: consumption, publishing, ecosystem governance, platform operations, service desk and integrations. It is optional; the Framework can be applied with other tools. This example is not a purchasing recommendation."
     },
     {
       "id": "empresa",
@@ -2270,8 +2250,8 @@
       "camada": "Layer",
       "base": "Common baseline",
       "termo": "Term",
-      "ferramenta": "Tool",
-      "modulo": "Module",
+      "ferramenta": "Technical capability",
+      "modulo": "Functional area",
       "modelo": "Template",
       "persona": "Profile",
       "nicho": "Organisation",
@@ -2335,8 +2315,8 @@
       "emCadaEtapa": "At each stage",
       "ondeTrabalha": "Where it works",
       "escopo": "Scope:",
-      "interfaceRef": "Reference interface:",
-      "interfaceNota": "The interface is the screen that supports the work; accountability belongs to the role.",
+      "interfaceRef": "Supporting capability",
+      "interfaceNota": "These are functional areas, not named product screens. They can be supported by different technologies or controlled manual practices.",
       "noMercadoAba": "In the market",
       "perguntas": "Questions",
       "criterios": "Good criteria for a first case",
@@ -2347,7 +2327,7 @@
       "pontoDecisao": "Decision point:",
       "medidas": "Measures:",
       "modelos": "Templates",
-      "naImplementacao": "In the implementation",
+      "naImplementacao": "Operational support",
       "noExemplo": "In the example",
       "etapa": "Stage",
       "comoVerificar": "How to check",
@@ -2356,7 +2336,7 @@
       "licenca": "Licence:",
       "etapaLbl": "Stage:",
       "baseComum": "Shared foundation",
-      "ferramentaNota": "Reference architecture, not a universal availability commitment. Capabilities, integration and readiness depend on the deployed version and agreed scope. Some KDV modules and controls still require validation in the target environment.",
+      "ferramentaNota": "This describes what the capability does. Technology selection, integration, licensing and assurance depend on the requirements and agreed context.",
       "baixar": "Download",
       "exemploPreenchido": "Filled-in example",
       "exemploNota": "Fictitious professional council. Synthetic data.",
@@ -2371,7 +2351,7 @@
       "exemploProximo": "Closest example:",
       "nasQuatro": "Across the four stages",
       "ficticio": "Fictitious",
-      "implementacaoRef": "Reference implementation",
+      "implementacaoRef": "Functional area",
       "paraQuem": "For whom",
       "etapasMod": "Stages:",
       "tipoOrg": "Type of organisation"
@@ -2469,7 +2449,7 @@
       "verEtapas": "See across the four stages",
       "lerExemplo": "Read the full example",
       "casosNota": "Fictitious scenarios. They are not customer cases or delivery commitments.",
-      "compararCaminhos": "Compare the paths"
+      "compararCaminhos": "Start with the Playbook"
     },
     "paraQuem": {
       "seuPerfil": "Your profile · ",
@@ -2520,7 +2500,7 @@
       "thPapel": "Role",
       "thOnde": "Scope",
       "thResp": "Responsibility",
-      "thInterface": "Reference interface",
+      "thInterface": "Supporting capability",
       "dica": "One person can hold several roles. Select a role to see the detail.",
       "vistaAria": "View",
       "resp": "Responsibilities",
@@ -2734,8 +2714,8 @@
         },
         "aberto": {
           "eb": "Open method, optional implementations",
-          "h2": "An open method, with optional implementations.",
-          "p": "The Framework content is available under CC BY 4.0. Kolmeia is an open integration approach; components retain their own licences. KDV Studio and KDV Cloud are optional implementation and operation offers."
+          "h2": "An open method. Choose the support that fits your context.",
+          "p": "The Framework content is available under CC BY 4.0. Apply it with agreed working practices and technical capabilities suited to your context. The method does not require a specific platform, supplier or commercial service."
         },
         "exemplos": {
           "eb": "Illustrative examples",
@@ -2761,7 +2741,7 @@
         ]
       ],
       "abertoLinks": [
-        "See the reference implementation",
+        "Explore supporting capabilities",
         "Understand Framework, KDV and Kolmeia"
       ],
       "cta": {
@@ -2769,7 +2749,7 @@
         "h2": "Pick a hard decision and make it your first data product.",
         "p": "The Playbook guides the preparation and the four stages, with templates ready to download.",
         "btn1": "Open the Playbook",
-        "btn2": "I'd rather talk to KDV"
+        "btn2": "Ask the community"
       }
     },
     "para-quem": {
@@ -2807,7 +2787,7 @@
         ],
         [
           "Do I need to buy a platform?",
-          "No. There are three paths: start with a small team, use the platform you already have, or use the open-source <a href='implementacao.html'>reference implementation</a>."
+          "No. Start with controlled documents and working practices, use your existing platform, or combine modular capabilities. Choose support appropriate to your context."
         ],
         [
           "How long does it take?",
@@ -2856,9 +2836,9 @@
         },
         "modulos": {
           "sub": "Interfaces",
-          "eb": "Reference interfaces",
-          "h2": "Consumer, Producer, EcOps and PlatOps in one line.",
-          "p": "These are the screens of the reference implementation, organised by who uses them. They do not replace roles."
+          "eb": "Functional area",
+          "h2": "Capabilities that support the work.",
+          "p": "These functional areas support consumption, publishing, governance and operations. An organisation can provide them through different tools or agreed working practices; decision rights remain with the business roles."
         },
         "referenciais": {
           "sub": "References",
@@ -2934,11 +2914,11 @@
     },
     "implementacao": {
       "title": "Implementation",
-      "desc": "Three paths to apply KDV and the open-source reference implementation on a data lakehouse.",
+      "desc": "Start from the use case, decision rights and evidence. Describe the capabilities required to deliver and operate the data product before choosing technologies. The operating model can be supported by existing systems, multiple integrated tools or controlled manual practices.",
       "hero": {
         "eb": "Implementation",
-        "h1": "The method is tool-agnostic. <span class='dim'>But there is an open implementation.</span>",
-        "lead": "You can apply KDV with documents, with the platform you already have, or with the reference implementation: a predominantly open-source data lakehouse, installed as code and verified with every change."
+        "h1": "An open method. Choose the support that fits your context.",
+        "lead": "Start from the use case, decision rights and evidence. Describe the capabilities required to deliver and operate the data product before choosing technologies. The operating model can be supported by existing systems, multiple integrated tools or controlled manual practices."
       },
       "sec": {
         "caminhos": {
@@ -2956,29 +2936,29 @@
         "ferramentas": {
           "sub": "Components",
           "eb": "Components of the reference implementation",
-          "h2": "The open tools behind each stage.",
-          "p": "Filter by stage or by architecture layer. Select a component to see its function and licence."
+          "h2": "Supporting technical capabilities",
+          "p": "Use these functional names when discussing requirements. They identify the required capability without prescribing a vendor or a tool. A single product may combine several capabilities, and one capability may use several components."
         },
         "interfaces": {
           "sub": "Interfaces",
-          "eb": "KDV modules",
+          "eb": "Functional area",
           "h2": "One interface for each role.",
-          "p": "Modules organise the work by who uses them; accountability stays with the roles."
+          "p": "These functional areas support consumption, publishing, governance and operations. An organisation can provide them through different tools or agreed working practices; decision rights remain with the business roles."
         },
         "licencas": {
           "sub": "Licences",
           "eb": "Licences and alternatives",
           "h2": "Open by choice, with an explicit policy.",
-          "p": "The stack is predominantly open source, with a documented licence policy and a software bill of materials (SBOM) generated with every build."
+          "p": "Evaluate interoperability, identity integration, access enforcement, recoverable evidence, accessibility, portability and operational support. Select components against these requirements rather than treating a stack as a requirement of the Framework."
         }
       },
       "verDiagrama": "See the full diagram",
       "diagramaLegenda": "Reference architecture: modules, tools and layers",
       "licencas": {
         "h3a": "No lock-in to a single supplier",
-        "pa": "Each component has its version, licence and conditions of use recorded. The target is any conformant Kubernetes; platform differences live in the Adapters, not in separate product versions.",
+        "pa": "Evaluate interoperability, identity integration, access enforcement, recoverable evidence, accessibility, portability and operational support. Select components against these requirements rather than treating a stack as a requirement of the Framework.",
         "h3b": "Other tools work too",
-        "pb": "The model does not require this stack. Organisations already using, for example, Airflow for orchestration, dbt Core for transformation or OpenLineage for lineage apply the same accountability model. The list above describes the reference implementation; alternatives are options to evaluate in your context."
+        "pb": "This describes what the capability does. Technology selection, integration, licensing and assurance depend on the requirements and agreed context."
       }
     },
     "recursos": {
@@ -3127,7 +3107,7 @@
       },
       "contato": {
         "h3": "Contact",
-        "p": "Questions about the framework: open an issue. Interested in applying it with support: {{contato:kdv|talk to KDV}}."
+        "p": "Questions about applying the Framework belong in the open knowledge repository. Describe the context and the decision you need to make."
       }
     },
     "privacidade": {
@@ -3160,8 +3140,8 @@
   },
   "ux": {
     "ready": "An open method. Apply it with your existing tools or choose an implementation suited to your context.",
-    "open": "An open method, with optional implementations.",
-    "openBody": "The Framework content is available under CC BY 4.0. Kolmeia is an open integration approach; components retain their own licences. KDV Studio and KDV Cloud are optional implementation and operation offers.",
+    "open": "An open method. Choose the support that fits your context.",
+    "openBody": "The Framework content is available under CC BY 4.0. Apply it with agreed working practices and technical capabilities suited to your context. The method does not require a specific platform, supplier or commercial service.",
     "evidence": "Decisions, tests and usage leave evidence for review. They support assessment and improvement without producing an automatic maturity score.",
     "maturity": "Reference architecture, not a universal availability commitment. Capabilities, integration and readiness depend on the deployed version and agreed scope. Some KDV modules and controls still require validation in the target environment.",
     "preferences": "The site sends no canvas, checklist or reading data to a server. Theme and an explicitly selected reader profile may be saved in this browser. Checklist and reading progress remain in page memory. No advertising or analytics cookies are used.",
@@ -3201,6 +3181,9 @@
       "privacidade": "privacy"
     },
     "anatomyNote": "A Cell can own several data products. A Comb is an optional business grouping, not an extra infrastructure layer. A Farm is an execution environment, not a business domain. The method can be applied without buying a platform.",
-    "checkNote": "This checklist supports a conversation about evidence; it is not a maturity score or an official assessment."
+    "checkNote": "This checklist supports a conversation about evidence; it is not a maturity score or an official assessment.",
+    "implementationEnabled": false,
+    "implementationExample": "KDV Studio/Cloud is one example of software bringing together the modules needed to support KDV: consumption, publishing, ecosystem governance, platform operations, service desk and integrations. It is optional; the Framework can be applied with other tools. This example is not a purchasing recommendation.",
+    "exampleLabel": "One possible software implementation"
   }
 }

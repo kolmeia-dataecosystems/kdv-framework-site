@@ -35,7 +35,7 @@ const PAGES = {
     const C = P.cta;
     return `<section class="cta-band" aria-labelledby="cta-h"><div class="wrap">
   <div class="stack"><span class="eyebrow" style="color:inherit">${C.eb}</span><h2 id="cta-h">${C.h2}</h2></div>
-  <div class="stack"><p class="muted">${C.p}</p><div class="actions"><a class="btn" href="playbook.html">${C.btn1}</a><button type="button" class="btn-line" data-ref="contato:kdv">${C.btn2}</button></div></div>
+  <div class="stack"><p class="muted">${C.p}</p><div class="actions"><a class="btn" href="playbook.html">${C.btn1}</a><a class="btn-line" href="comunidade.html">${C.btn2}</a></div></div>
 </div></section>\n`;
   },
   "para-quem"(P) {

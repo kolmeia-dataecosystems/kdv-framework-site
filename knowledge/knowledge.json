@@ -1,6 +1,6 @@
 {
   "version": 1,
-  "edition": "1.1.0",
+  "edition": "1.2.0",
   "repository": "kolmeia-dataecosystems/kdv-framework",
   "languages": [
     "en",
@@ -518,5 +518,5 @@
     "templates/es/access-review.md",
     "templates/es/evidence-register.md"
   ],
-  "release": "1.1.0"
+  "release": "1.2.0"
 }

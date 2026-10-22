@@ -3,6 +3,7 @@ import {createRequire} from 'node:module';
 import vm from 'node:vm';
 import {honeycomb} from '../legacy-render.mjs';
 import {content} from '../content.mjs';
+import {implementationEnabled} from './availability.mjs';
 
 const require=createRequire(import.meta.url);
 export const templates=require('./templates.cjs');
@@ -15,6 +16,7 @@ export const escape=s=>String(s??'').replace(/[&<>"']/g,c=>({'&':'&amp;','<':'&l
 export function fallback(l,ref){const [kind,id]=ref.split(':');const slugs={conceito:'anatomy',papel:'responsibilities',etapa:'lifecycle',camada:'principles',base:'principles',termo:'glossary',ferramenta:'reference-architecture',modulo:'reference-architecture',modelo:'data-contracts',persona:'start-here',nicho:'worked-example',caso:'worked-example'};return kind==='contato'?'mailto:info@kolmeia.io':`/${l}/docs/${slugs[kind]||'start-here'}/`;}
 export function localizeLinks(html,l){
  html=html.replaceAll('../assets/ux/','/assets/ux/');
+ if(!implementationEnabled)html=html.replace(/href=(["'])implementacao\.html(?:#[a-z0-9-]+)?\1/g,`href="/${l}/model/#modulos"`);
  html=html.replace(/href="documentacao\.html#([a-z0-9-]+)"/g,(_,id)=>`href="/${l}/docs/${slugFor(id)}/"`);
  for(const [file,route] of Object.entries(routeFiles))html=html.replaceAll(`href="${file}`,`href="/${l}/${route?route+'/':''}`);
  return html.replace(/[ \t]+$/gm,'');
@@ -59,6 +61,7 @@ export function renderPrototypePage(l,route){
  }
  if(id==='implementacao')html=html.replace('<div id="tools">',`<p class="nota maturity-note">${escape(K.ux.maturity)}</p><div id="tools">`);
  if(id==='modelo')html=html.replace('<div class="explorer" id="explorer">',`<p class="nota maturity-note">${escape(K.ux.anatomyNote)}</p><div class="explorer" id="explorer">`);
+ if(id==='modelo')html=html.replace(/(<div class="grid g3" id="modules">[\s\S]*?<\/button><\/div>)/,`$1<aside class="implementation-example"><p class="eyebrow">${escape(K.ux.exampleLabel)}</p><p>${escape(K.ux.implementationExample)}</p></aside>`);
  if(id==='playbook')html=html.replace('<div class="check" id="check-ui">',`<p class="nota maturity-note">${escape(K.ux.checkNote)}</p><div class="check" id="check-ui">`);
  if(id==='playbook')html=html.replace('id="etapas"', 'id="etapas"').replace('<div id="steps">',`<figure class="wrap journey-figure"><img src="/assets/ux/D3_processo_jornada_do_dado.svg" alt="${escape(K.ui.diagramas.D3)}" loading="lazy"><figcaption>${escape(K.ui.diagramas.nota)}</figcaption></figure><div id="steps">`);
  const aliases=route==='model'?{anatomy:'anatomia',mapping:'referenciais'}:route==='playbook'?{journey:'etapas',readiness:'checklist','stage-0':'cultivar','stage-1':'governar','stage-2':'compartilhar','stage-3':'ativar'}:route==='resources'?{templates:'modelos'}:{};

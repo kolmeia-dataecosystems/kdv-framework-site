@@ -1,7 +1,7 @@
 {
   "repository": "kolmeia-dataecosystems/kdv-framework",
   "ref": "main",
-  "commit": "05a3572b51bde335212dc1fb71df282ac3431c69",
-  "edition": "1.1.0",
-  "release": "1.1.0"
+  "commit": "57bc85be294170be1f419629ed241d302530d4d9",
+  "edition": "1.2.0",
+  "release": "1.2.0"
 }

@@ -41,7 +41,7 @@ Purpose, boundaries, owners, shared vocabulary and decision rights.
 - [ ] ...
 
 ---
-KDV Framework / Community edition 1.1.0
+KDV Framework / Community edition 1.2.0
 Original template © 2026 Lab of Codes & Kolmeia. CC BY 4.0.
 https://creativecommons.org/licenses/by/4.0/
 https://github.com/kolmeia-dataecosystems/kdv-framework

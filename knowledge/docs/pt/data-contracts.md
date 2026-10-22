@@ -41,6 +41,6 @@ Registe propósito, papéis legais aplicáveis, entradas minimizadas, retenção
 
 ---
 
-Conhecimento original KDV. Edição comunitária 1.1.0. CC BY 4.0. Direitos de terceiros reservados.
+Conhecimento original KDV. Edição comunitária 1.2.0. CC BY 4.0. Direitos de terceiros reservados.
 
 [GitHub](https://github.com/kolmeia-dataecosystems/kdv-framework) · [CC BY 4.0](https://creativecommons.org/licenses/by/4.0/)

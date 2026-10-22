@@ -42,7 +42,9 @@
     termo: by(K.termos), ferramenta: by(K.ferramentas), modulo: by(K.modulos), modelo: by(K.modelos),
     persona: by(K.personas), nicho: by(K.nichos), caso: by(K.casos), guia: by(K.guias)
   };
-  function get(ref) { const [t, id] = String(ref).split(":"); return { t, id, x: IDX[t] && IDX[t][id] }; }
+  const toolAliases={"seaweedfs": "object-storage", "iceberg": "open-tables", "mage": "etl-orchestration", "openmetadata": "data-catalogue", "ranger": "access-policy", "splink": "entity-resolution", "trino": "sql-query", "wso2": "api-management", "superset": "business-intelligence", "vassets": "data-services", "observabilidade": "observability", "keycloak": "identity-directory", "openbao": "secrets-management", "postgres": "relational-database"};
+  function canonicalRef(ref){const [kind,id]=String(ref).split(":");return kind==="ferramenta"&&toolAliases[id]?kind+":"+toolAliases[id]:String(ref);}
+  function get(ref) { const [t, id] = canonicalRef(ref).split(":"); return { t, id, x: IDX[t] && IDX[t][id] }; }
   function titleOf(ref) {
     const { t, x } = get(ref); if (t === "contato") return T.contato.titulo; if (!x) return ref;
     return x.cliente || x.nome || x.titulo || x.rotulo || x.id;
@@ -139,11 +141,11 @@
     },
     termo(x) { return { kicker: "", title: x.cliente, one: x.def, tabs: [{ label: P.noMercadoAba, html: `<p>${esc(x.mercado)}</p>` }], related: x.rel || [], guide: "glossario" }; },
     ferramenta(x) {
-      return { kicker: `<span class="tag">${esc(x.licenca)}</span>`, title: x.nome, one: x.funcao,
-        tabs: [{ label: P.funcao, html: `<p><b>${esc(P.etapaLbl)}</b> ${IDX.etapa[x.etapa] ? refBtn("etapa:" + x.etapa) : esc(P.baseComum)}</p><p><b>${esc(P.licenca)}</b> ${esc(x.licenca)}</p><p class="nota">${esc(P.ferramentaNota)}</p>` }],
-        related: [], guide: "implementacao", extra: `<a class="btn-line arrow" href="implementacao.html#ferramentas">${esc(P.verFerramentas)}</a>` };
+      return { kicker: "", title: x.nome, one: x.funcao,
+        tabs: [{ label: P.funcao, html: `<p><b>${esc(P.etapaLbl)}</b> ${IDX.etapa[x.etapa] ? refBtn("etapa:" + x.etapa) : esc(P.baseComum)}</p><p class="nota">${esc(P.ferramentaNota)}</p>` }],
+        related: [], guide: "implementacao", extra: K.ux.implementationEnabled ? `<a class="btn-line arrow" href="implementacao.html#ferramentas">${esc(P.verFerramentas)}</a>` : "" };
     },
-    modulo(x) { return { kicker: `<span class="tag">${esc(P.implementacaoRef)}</span>`, title: x.nome, one: x.faz, tabs: [{ label: P.paraQuem, html: `<p>${esc(x.quem)}</p><p><b>${esc(P.etapasMod)}</b> ${esc(x.etapa)}</p>` }], related: [], guide: "implementacao" }; },
+    modulo(x) { return { kicker: "", title: x.nome, one: x.faz, tabs: [{ label: P.paraQuem, html: `<p>${esc(x.quem)}</p><p><b>${esc(P.etapasMod)}</b> ${esc(x.etapa)}</p>` }], related: [], guide: "papeis" }; },
     modelo(x) {
       return { kicker: `<span class="tag">${esc(P.modelo)} ${x.n}</span>`, title: x.nome, one: x.para,
         tabs: [
@@ -190,6 +192,7 @@
       <div class="row">${v.extra || ""}${v.guide ? `<a class="btn-line arrow" href="${guideHref(v.guide)}">${esc(P.abrirGuia)}</a>` : ""}</div>`;
   }
   function openRef(ref, opts = {}) {
+    ref=canonicalRef(ref);
     const html = detailHTML(ref); if (!html) return;
     const d = $("#drawer");
     if (!d.classList.contains("on")) { lastFocus = document.activeElement; hist = []; prevHash = location.hash.startsWith("#ver=") ? "" : location.hash; }
@@ -274,7 +277,7 @@
   }
 
   /* ---------- idiomas ---------- */
-  function pageFile() { return location.pathname.replace(/^\/(en|pt-br|pt|es)\//, ""); }
+  function pageFile() { return location.pathname.replace(/^\/(en|pt-br|pt|es)(?:\/|$)/, "").replace(/^\/+/, ""); }
   function updateLangLinks() { $$("[data-lang-to]").forEach((a) => { a.href = `/${a.dataset.langTo}/${pageFile()}${location.hash}`; }); }
 
   /* ---------- toast e copiar ---------- */

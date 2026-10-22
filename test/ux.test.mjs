@@ -2,13 +2,14 @@ import test from 'node:test';
 import assert from 'node:assert/strict';
 import {readFile} from 'node:fs/promises';
 import {data,languages} from '../src/ux/model.mjs';
+import {release} from '../src/releases.mjs';
 const html=(lang,route='')=>readFile(`dist/${lang}/${route?route+'/':''}index.html`,'utf8');
 const keys={conceito:'conceitos',papel:'papeis',etapa:'etapas',camada:'camadas',base:'baseline',termo:'termos',ferramenta:'ferramentas',modulo:'modulos',modelo:'modelos',persona:'personas',nicho:'nichos',caso:'casos'};
 
 test('Every locale has the complete interactive catalogue and valid concept references',()=>{
  for(const l of languages){const K=data[l];
   for(const key of Object.values(keys))assert.deepEqual(K[key].map(x=>x.id),data.en[key].map(x=>x.id),`${l}: ${key}`);
-  assert.equal(K.paginas.length,8);assert.equal(K.personas.length,6);assert.equal(K.nichos.length,6);assert.equal(K.ferramentas.length,14);
+  assert.equal(K.paginas.length,7);assert.equal(K.personas.length,6);assert.equal(K.nichos.length,6);assert.equal(K.ferramentas.length,14);
   for(const [,kind,id] of JSON.stringify(K).matchAll(/\{\{([a-z]+):([a-z0-9-]+)\|/g))assert.ok((kind==='contato'&&id==='kdv')||K[keys[kind]]?.some(x=>x.id===id),`${l}: ${kind}:${id}`);
  }
 });
@@ -23,9 +24,9 @@ test('The illustrative RACI retains a single accountable role per stage and the 
 
 test('Substantive page content and download fallbacks are available before JavaScript executes',async()=>{
  for(const l of languages){
-  for(const [route,id] of [['','recog'],['audience','nichos'],['model','matrix'],['playbook','steps'],['implementation','tools'],['resources','models']]){
+  for(const [route,id] of [['','recog'],['audience','nichos'],['model','matrix'],['playbook','steps'],['resources','models']]){
    const body=await html(l,route);const offset=body.indexOf(`id="${id}"`);assert.ok(offset>0);const after=body.slice(offset,offset+1400);assert.match(after,/<(?:article|button|details|a|div)\b/);assert.doesNotMatch(after,/id="\w+"><\/div>/);
-   assert.ok(body.includes('noindex, nofollow'));assert.ok(body.includes('data-ux-page='));
+   if(release.status!=='stable')assert.ok(body.includes('noindex, nofollow'));assert.ok(body.includes('data-ux-page='));
   }
   const resources=await html(l,'resources');assert.ok(resources.includes(`/templates/${l}/domain-charter.md`));assert.ok(resources.includes('/templates/office/pt-br/05_Registro_de_evidencias.xlsx'));
   assert.ok((await html(l,'model')).includes(Knote(l,'anatomyNote')));

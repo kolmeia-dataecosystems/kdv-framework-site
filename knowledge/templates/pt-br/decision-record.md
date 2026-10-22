@@ -41,7 +41,7 @@ Contexto, opções, decisão, responsável pela aprovação e data de revisão.
 - [ ] ...
 
 ---
-KDV Framework / Edição comunitária 1.1.0
+KDV Framework / Edição comunitária 1.2.0
 Modelo original © 2026 Lab of Codes & Kolmeia. CC BY 4.0.
 https://creativecommons.org/licenses/by/4.0/
 https://github.com/kolmeia-dataecosystems/kdv-framework

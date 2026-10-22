@@ -1,5 +1,6 @@
-import {readFile,writeFile,copyFile,mkdir,readdir} from 'node:fs/promises';
+import {readFile,writeFile,copyFile,mkdir,readdir,rm} from 'node:fs/promises';
 import {data,languages} from './model.mjs';
+import {implementationEnabled} from './availability.mjs';
 // Scope the reference's interaction layout. Existing brand typography, header,
 // honeycomb, documentation, sharing artwork and footer remain the foundation.
 function scopeCss(css){
@@ -16,7 +17,10 @@ export async function buildUxAssets(){
  await mkdir('dist/assets/ux',{recursive:true});
  for(const l of languages)await writeFile(`dist/assets/ux/data-${l}.js`,'window.KDV_DATA='+JSON.stringify(data[l]).replace(/</g,'\\u003c')+';\n');
  for(const file of ['interaction.js','components.js','enhancements.js'])await copyFile('src/ux/'+file,'dist/assets/ux/'+file);
- for(const file of await readdir('assets/ux'))await copyFile('assets/ux/'+file,'dist/assets/ux/'+file);
+ for(const file of await readdir('assets/ux')){
+  if(!implementationEnabled&&file.startsWith('D5_')){await rm('dist/assets/ux/'+file,{force:true});continue;}
+  await copyFile('assets/ux/'+file,'dist/assets/ux/'+file);
+ }
  await mkdir('dist/templates/office/pt-br',{recursive:true});
  for(const file of await readdir('assets/office/pt-br'))await copyFile('assets/office/pt-br/'+file,'dist/templates/office/pt-br/'+file);
  const css=await readFile('src/styles.css','utf8')+'\n'+await readFile('review/styles.css','utf8')+'\n'+scopeCss(await readFile('src/ux/reference-components.css','utf8'))+'\n'+await readFile('src/ux/brand.css','utf8');

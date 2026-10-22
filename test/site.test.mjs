@@ -17,7 +17,7 @@ test('English default, localized metadata and unique accessible page structure',
  for(const p of pages){const html=await file(p);const l=p.split('/')[0];assert.ok(html.includes(`lang="${content[l].locale}"`));assert.equal((html.match(/<h1[ >]/g)||[]).length,1,p);assert.equal((html.match(/<link rel="alternate" hreflang=/g)||[]).length,languages.length+1,p);assert.ok(/<main\b[^>]*id="main"/.test(html));const ids=[...html.matchAll(/\sid="([^"]+)"/g)].map(x=>x[1]);assert.equal(new Set(ids).size,ids.length,p);assert.ok(!html.includes('undefined'),p)}
 });
 test('Every generated internal link, asset and fragment resolves',async()=>{
- for(const p of pages){const html=await file(p);for(const [,raw] of html.matchAll(/(?:href|src)="([^"]+)"/g)){
+ for(const p of pages){const html=await file(p);for(const [,quote,raw] of html.matchAll(/(?:href|src)=(["'])([^"']+)\1/g)){
   if(!raw.startsWith('/')&&!raw.startsWith('#'))continue;
   const [pathname,fragment]=raw.split('#');let target=pathname?join(root,pathname):join(root,p);assert.ok(target.startsWith(root));if(pathname?.endsWith('/'))target=join(target,'index.html');await stat(target);
   if(fragment){const text=await readFile(target,'utf8');assert.ok(text.includes(`id="${fragment}"`),`${p}: ${raw}`)}

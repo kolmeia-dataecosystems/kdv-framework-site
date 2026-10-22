@@ -8,11 +8,11 @@ Review the requested purpose against classification and the current contract. Th
 
 ## Working sequence
 
-1. **Consumer:** Requests a version and states the intended use.
+1. **Data discovery and consumption portal:** Requests a version and states the intended use.
 2. **Steward:** Checks purpose, meaning, classification and fit.
 3. **Owner:** Approves, rejects or escalates with a recorded reason.
 4. **Custodian:** Implements the authorised policy and verifies access.
-5. **Consumer + owner:** Review use, expiry, exceptions and continued need.
+5. **Data discovery and consumption portal + owner:** Review use, expiry, exceptions and continued need.
 
 ## Local adaptation
 
@@ -32,6 +32,6 @@ An exception records the affected rule, business reason, risk, accountable appro
 
 ---
 
-Original KDV knowledge. Community edition 1.1.0. CC BY 4.0. Third-party rights remain reserved.
+Original KDV knowledge. Community edition 1.2.0. CC BY 4.0. Third-party rights remain reserved.
 
 [GitHub](https://github.com/kolmeia-dataecosystems/kdv-framework) · [CC BY 4.0](https://creativecommons.org/licenses/by/4.0/)

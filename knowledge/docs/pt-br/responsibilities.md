@@ -4,7 +4,7 @@ Atribua responsabilidades independentemente das interfaces.
 
 ## Propósito
 
-Uma pessoa pode acumular papéis. Registre o papel exercido em cada decisão. Consumer, Producer, EcOps e PlatOps são perspectivas de interação com o produto e não substituem responsabilidades de negócio.
+Uma pessoa pode acumular papéis. Registre o papel exercido em cada decisão. As áreas funcionais de descoberta e consumo, publicação de produtos, governança do ecossistema, operação da plataforma, atendimento e integração apoiam os papéis de negócio. Elas não substituem o responsável pelo domínio, subdomínio ou produto.
 
 ## Fórum de governança
 
@@ -12,7 +12,7 @@ Uma pessoa pode acumular papéis. Registre o papel exercido em cada decisão. Co
 
 Define o baseline, revisa exceções entre domínios e resolve conflitos.
 
-**Interface de referência:** EcOps registra as decisões.
+**Capacidade de apoio:** Console de governança do ecossistema registra as decisões.
 
 ## Gestor do ecossistema
 
@@ -20,7 +20,7 @@ Define o baseline, revisa exceções entre domínios e resolve conflitos.
 
 Coordena a implantação, o escopo, as versões de políticas e a melhoria.
 
-**Interface de referência:** EcOps.
+**Capacidade de apoio:** Console de governança do ecossistema.
 
 ## Dono do domínio
 
@@ -28,7 +28,7 @@ Coordena a implantação, o escopo, as versões de políticas e a melhoria.
 
 Responde pelo domínio e pelas decisões de aprovação escaladas.
 
-**Interface de referência:** EcOps / Producer.
+**Capacidade de apoio:** Console de governança do ecossistema / Gestão e publicação de produtos de dados.
 
 ## Dono do subdomínio
 
@@ -36,7 +36,7 @@ Responde pelo domínio e pelas decisões de aprovação escaladas.
 
 Responde pelo subdomínio e pelsuas decisões de aprovação.
 
-**Interface de referência:** Producer.
+**Capacidade de apoio:** Gestão e publicação de produtos de dados.
 
 ## Dono do produto de dados
 
@@ -44,7 +44,7 @@ Responde pelo subdomínio e pelsuas decisões de aprovação.
 
 Responde pelo propósito, contrato, versões, publicação e relação com consumidores.
 
-**Interface de referência:** Producer.
+**Capacidade de apoio:** Gestão e publicação de produtos de dados.
 
 ## Steward operacional
 
@@ -52,7 +52,7 @@ Responde pelo propósito, contrato, versões, publicação e relação com consu
 
 Mantém significado, classificação e qualidade; revisa pedidos.
 
-**Interface de referência:** Producer / EcOps.
+**Capacidade de apoio:** Gestão e publicação de produtos de dados / Console de governança do ecossistema.
 
 ## Steward coordenador
 
@@ -60,7 +60,7 @@ Mantém significado, classificação e qualidade; revisa pedidos.
 
 Coordena o stewardship e resolve perguntas entre Cells.
 
-**Interface de referência:** EcOps.
+**Capacidade de apoio:** Console de governança do ecossistema.
 
 ## Engenharia de dados
 
@@ -68,7 +68,7 @@ Coordena o stewardship e resolve perguntas entre Cells.
 
 Constrói e mantém preparação e entrega reproduzíveis.
 
-**Interface de referência:** Producer.
+**Capacidade de apoio:** Gestão e publicação de produtos de dados.
 
 ## Custodiante técnico
 
@@ -76,7 +76,7 @@ Constrói e mantém preparação e entrega reproduzíveis.
 
 Opera ambientes e implementa controles autorizados.
 
-**Interface de referência:** PlatOps / EcOps.
+**Capacidade de apoio:** Console de operações da plataforma / Console de governança do ecossistema.
 
 ## Consumidor
 
@@ -84,7 +84,7 @@ Opera ambientes e implementa controles autorizados.
 
 Usa dados nos termos acordados e dá retorno sobre a adequação ao propósito.
 
-**Interface de referência:** Consumer.
+**Capacidade de apoio:** Portal de descoberta e consumo de dados.
 
 ## Escopo e limites
 
@@ -97,6 +97,6 @@ Sem dono de subdomínio, explicite a responsabilidade herdada pelo dono do domí
 
 ---
 
-Conhecimento original KDV. Edição comunitária 1.1.0. CC BY 4.0. Direitos de terceiros reservados.
+Conhecimento original KDV. Edição comunitária 1.2.0. CC BY 4.0. Direitos de terceiros reservados.
 
 [GitHub](https://github.com/kolmeia-dataecosystems/kdv-framework) · [CC BY 4.0](https://creativecommons.org/licenses/by/4.0/)

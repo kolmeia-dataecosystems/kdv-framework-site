@@ -1,16 +1,16 @@
 {
-  "version": "1.2.0-rc.1",
+  "version": "1.2.0",
   "target": "1.2.0",
-  "status": "candidate",
+  "status": "stable",
   "baseline": {
     "tag": "v1.0.0",
     "commit": "9dafad188e419a0019177289e168b06e9bd938f5",
     "designatedOn": "2026-10-21"
   },
   "knowledge": {
-    "version": "1.1.0",
-    "tag": "v1.1.0",
-    "commit": "05a3572b51bde335212dc1fb71df282ac3431c69",
-    "sourceEdition": "1.1.0"
+    "version": "1.2.0",
+    "tag": "v1.2.0",
+    "commit": "57bc85be294170be1f419629ed241d302530d4d9",
+    "sourceEdition": "1.2.0"
   }
 }

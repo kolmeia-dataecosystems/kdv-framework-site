@@ -91,7 +91,7 @@
 
   function pathsMini(host) {
     const { esc, K, T } = U();
-    host.innerHTML = K.caminhos.map((c, i) => `<div class="cell"><span class="n">0${i + 1}</span><h3>${esc(c.nome)}</h3><p class="muted small">${esc(c.como)}</p><a class="btn-line arrow" style="margin-top:auto;align-self:flex-start" href="implementacao.html#caminhos">${esc(T.home.compararCaminhos)}</a></div>`).join("");
+    host.innerHTML = K.caminhos.map((c, i) => `<div class="cell"><span class="n">0${i + 1}</span><h3>${esc(c.nome)}</h3><p class="muted small">${esc(c.como)}</p><a class="btn-line arrow" style="margin-top:auto;align-self:flex-start" href="playbook.html#etapas">${esc(T.home.compararCaminhos)}</a></div>`).join("");
   }
 
   /* ================= Para quem ================= */
@@ -291,7 +291,7 @@
       host.innerHTML = `<div class="toolbar"><div class="chips" role="group" aria-label="${esc(F.etapaAria)}">${etapas.map(([k, l]) => `<button type="button" class="chip" data-fe="${k}" aria-pressed="${etapa === k}">${esc(l)}</button>`).join("")}</div></div>
         ${only ? `<p class="small mt-s">${esc(F.mostrando)} <b>${esc(onlyName)}</b>. <button type="button" class="ref" data-clear-layer>${esc(F.mostrarTodas)}</button></p>` : ""}
         <p class="small muted" aria-live="polite" style="margin:8px 0 14px">${list.length} ${esc(list.length === 1 ? F.um : F.varios)}</p>
-        <div class="grid g3">${list.map((f) => `<button type="button" class="cell click tcard" data-ref="ferramenta:${f.id}"><b style="font-weight:500">${esc(f.nome)}</b><span class="small muted">${esc(f.funcao)}</span><span class="meta"><span class="tag">${esc(f.etapa === "base" ? F.baseComum : IDX.etapa[f.etapa].kdv)}</span><span class="tag">${esc(f.licenca)}</span></span></button>`).join("") || `<p class="cell muted">${esc(F.nenhum)}</p>`}</div>`;
+        <div class="grid g3">${list.map((f) => `<button type="button" class="cell click tcard" data-ref="ferramenta:${f.id}"><b style="font-weight:500">${esc(f.nome)}</b><span class="small muted">${esc(f.funcao)}</span><span class="meta"><span class="tag">${esc(f.etapa === "base" ? F.baseComum : IDX.etapa[f.etapa].kdv)}</span></span></button>`).join("") || `<p class="cell muted">${esc(F.nenhum)}</p>`}</div>`;
     }
     host.addEventListener("click", (e) => {
       const a = e.target.closest("[data-fe]"); if (a) { etapa = a.dataset.fe; draw(); return; }
@@ -331,7 +331,7 @@
   }
   function diagramsGrid(host) {
     const { esc, K, T, ROOT } = U(); const D = T.diagramas;
-    host.innerHTML = K.diagramas.map((d) => { const f = ROOT + "assets/ux/" + d.arquivo; const c = D[d.id]; return `<div class="cell"><button type="button" style="all:unset;cursor:zoom-in;display:block" data-lightbox="${f}.png" data-caption="${esc(c)}" aria-label="${esc(D.ampliar)} ${esc(c)}"><img src="${f}.png" alt="${esc(c)}" loading="lazy" style="border:1px solid var(--line);background:#fff;aspect-ratio:16/10;object-fit:contain;width:100%"></button><span class="n">${d.id}</span><p class="small">${esc(c)}</p><div class="files"><a href="${f}.svg" download>${esc(D.svg)}</a><a href="${f}.png" download>${esc(D.png)}</a></div></div>`; }).join("")
+    host.innerHTML = K.diagramas.filter(d=>K.ux.implementationEnabled||d.id!=="D5").map((d) => { const f = ROOT + "assets/ux/" + d.arquivo; const c = D[d.id]; return `<div class="cell"><button type="button" style="all:unset;cursor:zoom-in;display:block" data-lightbox="${f}.png" data-caption="${esc(c)}" aria-label="${esc(D.ampliar)} ${esc(c)}"><img src="${f}.png" alt="${esc(c)}" loading="lazy" style="border:1px solid var(--line);background:#fff;aspect-ratio:16/10;object-fit:contain;width:100%"></button><span class="n">${d.id}</span><p class="small">${esc(c)}</p><div class="files"><a href="${f}.svg" download>${esc(D.svg)}</a><a href="${f}.png" download>${esc(D.png)}</a></div></div>`; }).join("")
       + (D.nota ? `<p class="cell nota" style="grid-column:1/-1">${esc(D.nota)}</p>` : "");
   }
 

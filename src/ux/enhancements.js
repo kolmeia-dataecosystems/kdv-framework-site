@@ -4,7 +4,7 @@
  const ready=()=>{
   const U=window.KDVUI,K=U.K,lang=U.LANG,main=document.getElementById('main');
   const routeMap={'index.html':'','para-quem.html':'audience','modelo.html':'model','playbook.html':'playbook','implementacao.html':'implementation','recursos.html':'resources','documentacao.html':'docs','comunidade.html':'community','privacidade.html':'privacy'};
-  function cleanLinks(root){root.querySelectorAll('a[href]').forEach(a=>{const href=a.getAttribute('href'),m=href.match(/^([a-z-]+\.html)(?:#(.*))?$/);if(!m||!(m[1] in routeMap))return;if(m[1]==='documentacao.html'&&K.ux.slugs[m[2]])a.href=`/${lang}/docs/${K.ux.slugs[m[2]]}/`;else a.href=`/${lang}/${routeMap[m[1]]?routeMap[m[1]]+'/':''}${m[2]?'#'+m[2]:''}`;});}
+  function cleanLinks(root){root.querySelectorAll('a[href]').forEach(a=>{const href=a.getAttribute('href'),m=href.match(/^([a-z-]+\.html)(?:#(.*))?$/);if(!m||!(m[1] in routeMap))return;if(m[1]==='implementacao.html'&&!K.ux.implementationEnabled)a.href=`/${lang}/model/#modulos`;else if(m[1]==='documentacao.html'&&K.ux.slugs[m[2]])a.href=`/${lang}/docs/${K.ux.slugs[m[2]]}/`;else a.href=`/${lang}/${routeMap[m[1]]?routeMap[m[1]]+'/':''}${m[2]?'#'+m[2]:''}`;});}
   cleanLinks(document);
   const observer=new MutationObserver(entries=>{for(const entry of entries)for(const node of entry.addedNodes)if(node.nodeType===1)cleanLinks(node.parentElement||node);});
   observer.observe(main,{childList:true,subtree:true});observer.observe(document.getElementById('drawer'),{childList:true,subtree:true});

@@ -4,7 +4,7 @@ Asigne responsabilidades independientemente de las interfaces.
 
 ## Propósito
 
-Una persona puede asumir varios roles. Registre el rol ejercido en cada decisión. Consumer, Producer, EcOps y PlatOps son perspectivas de interacción, no sustitutos de responsabilidades de negocio.
+Una persona puede asumir varios roles. Registre el rol ejercido en cada decisión. Las áreas funcionales de descubrimiento y consumo, publicación de productos, gobernanza del ecosistema, operación de la plataforma, atención e integración apoyan los roles de negocio. No sustituyen al responsable del dominio, subdominio o producto.
 
 ## Foro de gobernanza
 
@@ -12,7 +12,7 @@ Una persona puede asumir varios roles. Registre el rol ejercido en cada decisió
 
 Define el baseline, revisa excepciones entre dominios y resuelve conflictos.
 
-**Interfaz de referencia:** EcOps registra decisiones.
+**Capacidad de apoyo:** Consola de gobernanza del ecosistema registra decisiones.
 
 ## Gestor del ecosistema
 
@@ -20,7 +20,7 @@ Define el baseline, revisa excepciones entre dominios y resuelve conflictos.
 
 Coordina implantación, alcance, versiones de políticas y mejora.
 
-**Interfaz de referencia:** EcOps.
+**Capacidad de apoyo:** Consola de gobernanza del ecosistema.
 
 ## Responsable del dominio
 
@@ -28,7 +28,7 @@ Coordina implantación, alcance, versiones de políticas y mejora.
 
 Responde por el dominio y las aprobaciones escaladas.
 
-**Interfaz de referencia:** EcOps / Producer.
+**Capacidad de apoyo:** Consola de gobernanza del ecosistema / Gestión y publicación de productos de datos.
 
 ## Responsable del subdominio
 
@@ -36,7 +36,7 @@ Responde por el dominio y las aprobaciones escaladas.
 
 Responde por el subdominio y sus aprobaciones.
 
-**Interfaz de referencia:** Producer.
+**Capacidad de apoyo:** Gestión y publicación de productos de datos.
 
 ## Responsable del producto
 
@@ -44,7 +44,7 @@ Responde por el subdominio y sus aprobaciones.
 
 Responde por propósito, contrato, versiones, publicación y consumidores.
 
-**Interfaz de referencia:** Producer.
+**Capacidad de apoyo:** Gestión y publicación de productos de datos.
 
 ## Steward operativo
 
@@ -52,7 +52,7 @@ Responde por propósito, contrato, versiones, publicación y consumidores.
 
 Mantiene significado, clasificación y calidad; revisa solicitudes.
 
-**Interfaz de referencia:** Producer / EcOps.
+**Capacidad de apoyo:** Gestión y publicación de productos de datos / Consola de gobernanza del ecosistema.
 
 ## Steward coordinador
 
@@ -60,7 +60,7 @@ Mantiene significado, clasificación y calidad; revisa solicitudes.
 
 Coordina stewardship y resuelve cuestiones entre Cells.
 
-**Interfaz de referencia:** EcOps.
+**Capacidad de apoyo:** Consola de gobernanza del ecosistema.
 
 ## Ingeniería de datos
 
@@ -68,7 +68,7 @@ Coordina stewardship y resuelve cuestiones entre Cells.
 
 Construye y mantiene preparación y entrega reproducibles.
 
-**Interfaz de referencia:** Producer.
+**Capacidad de apoyo:** Gestión y publicación de productos de datos.
 
 ## Custodio técnico
 
@@ -76,7 +76,7 @@ Construye y mantiene preparación y entrega reproducibles.
 
 Opera entornos e implementa controles autorizados.
 
-**Interfaz de referencia:** PlatOps / EcOps.
+**Capacidad de apoyo:** Consola de operaciones de la plataforma / Consola de gobernanza del ecosistema.
 
 ## Consumidor
 
@@ -84,7 +84,7 @@ Opera entornos e implementa controles autorizados.
 
 Usa los datos según las condiciones y aporta comentarios sobre su utilidad.
 
-**Interfaz de referencia:** Consumer.
+**Capacidad de apoyo:** Portal de descubrimiento y consumo de datos.
 
 ## Alcance y límites
 
@@ -97,6 +97,6 @@ Sin responsable del subdominio, explicite la responsabilidad heredada por el del
 
 ---
 
-Conocimiento original KDV. Edición comunitaria 1.1.0. CC BY 4.0. Derechos de terceros reservados.
+Conocimiento original KDV. Edición comunitaria 1.2.0. CC BY 4.0. Derechos de terceros reservados.
 
 [GitHub](https://github.com/kolmeia-dataecosystems/kdv-framework) · [CC BY 4.0](https://creativecommons.org/licenses/by/4.0/)

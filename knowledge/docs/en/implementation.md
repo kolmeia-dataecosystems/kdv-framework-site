@@ -4,7 +4,7 @@ Move from an operating decision to a suitable implementation.
 
 ## Purpose
 
-KDV product documentation is a reference implementation and includes proposals as well as deployed components. This knowledge base expresses an operating model, not a product availability promise. Consumer, Producer, EcOps and PlatOps are supporting interaction perspectives. Other technologies and manual practices can implement the same responsibility model.
+Start from the use case, decision rights and evidence. Describe the capabilities required to deliver and operate the data product before choosing technologies. The operating model can be supported by existing systems, multiple integrated tools or controlled manual practices.
 
 ## Working sequence
 
@@ -47,6 +47,6 @@ Business domains organise accountability. Execution environments organise operat
 
 ---
 
-Original KDV knowledge. Community edition 1.1.0. CC BY 4.0. Third-party rights remain reserved.
+Original KDV knowledge. Community edition 1.2.0. CC BY 4.0. Third-party rights remain reserved.
 
 [GitHub](https://github.com/kolmeia-dataecosystems/kdv-framework) · [CC BY 4.0](https://creativecommons.org/licenses/by/4.0/)

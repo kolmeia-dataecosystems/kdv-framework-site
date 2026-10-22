@@ -1,10 +1,66 @@
 import {release,releaseUi,releaseStatus,frameworkReleaseUrl,websiteBaselineUrl,sourceCommitUrl} from './releases.mjs';
 const e=s=>String(s).replace(/[&<>"']/g,c=>({'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;',"'":'&#39;'}[c]));
 const text={
- en:{title:'Versions and release notes',intro:'The website and the open Framework have independent versions. This edition identifies its exact accepted knowledge source.',changes:'Changes proposed for website 1.2.0',candidate:'Candidate for review. The proposed website experience is separate from the accepted Framework knowledge release shown below.',items:['Eight navigation areas, business-first vocabulary and in-context concept panels with history.','Interactive anatomy, layers × stages, RACI, access simulator and first-case preparation.','Role and organisation journeys; illustrative company, municipality and professional council examples.','Implementation chooser, tool filters, downloadable resources and a local canvas generator.','Four languages, accessible dialogs, quick search, light/dark theme and accepted Markdown reader with provenance.'],site:'Website',source:'Exact accepted knowledge revision'},
- pt:{title:'Versões e notas de release',intro:'O site e o Framework aberto têm versões independentes. Esta edição identifica a revisão exata do conhecimento aceite.',changes:'Alterações propostas para o site 1.2.0',candidate:'Versão candidata para avaliação. A experiência proposta para o site é separada da versão aceite do conhecimento do Framework, identificada abaixo.',items:['Abertura mais clara, vocabulário de negócio familiar e percursos de leitura.','Modelo operacional visual, preparação de um primeiro caso e decisões de acesso explícitas.','Exemplos de municípios e conselhos profissionais.','Escolhas de implementação, orientações de IA e privacidade e recursos editáveis.','Inglês, português do Brasil, português de Portugal e espanhol.'],site:'Site',source:'Revisão exata do conhecimento aceite'},
- 'pt-br':{title:'Versões e notas de release',intro:'O site e o Framework aberto têm versões independentes. Esta edição identifica a revisão exata do conhecimento aprovado.',changes:'Alterações propostas para o site 1.2.0',candidate:'Versão candidata para avaliação. A experiência proposta para o site é separada da versão aprovada do conhecimento do Framework, identificada abaixo.',items:['Abertura mais clara, vocabulário de negócio familiar e percursos de leitura.','Modelo operacional visual, preparação de um primeiro caso e decisões de acesso explícitas.','Exemplos de municípios e conselhos profissionais.','Escolhas de implementação, orientações de IA e privacidade e recursos editáveis.','Inglês, português do Brasil, português de Portugal e espanhol.'],site:'Site',source:'Revisão exata do conhecimento aprovado'},
- es:{title:'Versiones y notas de release',intro:'El sitio y el Framework abierto tienen versiones independientes. Esta edición identifica la revisión exacta del conocimiento aceptado.',changes:'Cambios propuestos para el sitio 1.2.0',candidate:'Versión candidata para revisión. La experiencia propuesta para el sitio es independiente de la versión aceptada del conocimiento del Framework que se indica a continuación.',items:['Presentación más clara, términos de negocio familiares y rutas de lectura.','Modelo operativo visual, preparación de un primer caso y decisiones de acceso explícitas.','Ejemplos para municipios y consejos profesionales.','Opciones de implementación, orientaciones de IA y privacidad y recursos editables.','Inglés, portugués de Brasil, portugués de Portugal y español.'],site:'Sitio',source:'Revisión exacta del conocimiento aceptado'}
+  "en": {
+    "title": "Versions and release notes",
+    "intro": "The website and the open Framework have independent versions. This edition identifies the exact accepted knowledge source.",
+    "changes": "Changes in 1.2.0",
+    "candidate": "A review candidate, separate from the accepted knowledge release.",
+    "items": [
+      "In-context concept panels, profile reading paths, quick search and accessible keyboard interactions.",
+      "Functional terminology for technical capabilities and supporting areas; KDV Studio/Cloud is an optional example.",
+      "Implementation menu and inbound links paused; the previous URL shows an explanatory notice.",
+      "Four languages, sixty accepted guides, editable resources and the exact Framework 1.2.0 source revision.",
+      "Light/dark theme, local-only canvas and checklist; only explicit theme/profile preferences are stored."
+    ],
+    "site": "Website",
+    "source": "Exact accepted knowledge revision"
+  },
+  "pt-br": {
+    "title": "Versões e notas de release",
+    "intro": "O site e o Framework aberto têm versões independentes. Esta edição identifica a revisão exata do conhecimento aprovado.",
+    "changes": "Alterações da versão 1.2.0",
+    "candidate": "Versão candidata para avaliação, separada da release aprovada do conhecimento.",
+    "items": [
+      "Painéis de conceitos no contexto, trilhas por perfil, busca rápida e interações acessíveis pelo teclado.",
+      "Terminologia funcional para capacidades técnicas e áreas de apoio; KDV Studio/Cloud é um exemplo opcional.",
+      "Menu Implementação e vínculos para a seção suspensos; o endereço anterior apresenta um aviso explicativo.",
+      "Quatro idiomas, sessenta guias aprovados, recursos editáveis e a revisão exata do Framework 1.2.0.",
+      "Tema claro/escuro, canvas e checklist locais; apenas preferências explícitas de tema/perfil são armazenadas."
+    ],
+    "site": "Site",
+    "source": "Revisão exata do conhecimento aprovado"
+  },
+  "pt": {
+    "title": "Versões e notas de release",
+    "intro": "O site e o Framework aberto têm versões independentes. Esta edição identifica a revisão exata do conhecimento aceite.",
+    "changes": "Alterações da versão 1.2.0",
+    "candidate": "Versão candidata para avaliação, separada da release aceite do conhecimento.",
+    "items": [
+      "Painéis de conceitos no contexto, percursos por perfil, pesquisa rápida e interações acessíveis pelo teclado.",
+      "Terminologia funcional para capacidades técnicas e áreas de apoio; KDV Studio/Cloud é um exemplo opcional.",
+      "Menu Implementação e ligações para a secção suspensos; o endereço anterior apresenta um aviso explicativo.",
+      "Quatro idiomas, sessenta guias aceites, recursos editáveis e a revisão exata do Framework 1.2.0.",
+      "Tema claro/escuro, canvas e lista de verificação locais; apenas preferências explícitas de tema/perfil são guardadas."
+    ],
+    "site": "Site",
+    "source": "Revisão exata do conhecimento aceite"
+  },
+  "es": {
+    "title": "Versiones y notas de release",
+    "intro": "El sitio y el Framework abierto tienen versiones independientes. Esta edición identifica la revisión exacta del conocimiento aceptado.",
+    "changes": "Cambios de la versión 1.2.0",
+    "candidate": "Versión candidata para revisión, independiente de la release aceptada del conocimiento.",
+    "items": [
+      "Paneles de conceptos en contexto, rutas por perfil, búsqueda rápida e interacciones accesibles por teclado.",
+      "Terminología funcional para capacidades técnicas y áreas de apoyo; KDV Studio/Cloud es un ejemplo opcional.",
+      "Menú Implementación y enlaces a la sección suspendidos; la dirección anterior muestra un aviso explicativo.",
+      "Cuatro idiomas, sesenta guías aceptadas, recursos editables y la revisión exacta del Framework 1.2.0.",
+      "Tema claro/oscuro, canvas y lista de verificación locales; solo se guardan preferencias explícitas de tema/perfil."
+    ],
+    "site": "Sitio",
+    "source": "Revisión exacta del conocimiento aceptado"
+  }
 };
 export const publicationText=text;
 export function publishedRelease(l){

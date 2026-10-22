@@ -7,10 +7,10 @@ An open operational data governance framework for the data community, powered by
 - Repository: https://github.com/kolmeia-dataecosystems/kdv-framework-site
 - Institutional site: https://kdvecosystems.com
 - Published baseline: **v1.0.0**, designated 21 October 2026; the tagged files retain the historical 0.1 labels.
-- Public production baseline: **v1.1.0**, owner-approved and published on 21 October 2026.
-- Proposed website release: **v1.2.0-rc.1**, under review in the existing owner-private Sites preview. This branch does not release new Framework knowledge.
-- Complete candidate edition: English, Brazilian Portuguese, European Portuguese and Spanish; 100 localized pages, 60 guides, 20 Markdown templates and four CSV worksheets. The earlier [proposal preview](review/README.md) remains a separate historical review snapshot. The [1.2 UX decision log](docs/UX-1.2.md) records the new reference, implementation decisions and validation limits.
-- Included Framework: **v1.1.0**, accepted commit `05a3572b51bde335212dc1fb71df282ac3431c69`.
+- Previous public release: **v1.1.0**, published on 21 October 2026.
+- Current website release: **v1.2.0**, authorised for coordinated publication on 22 October 2026.
+- Current edition: English, Brazilian Portuguese, European Portuguese and Spanish; 96 active localized pages plus four compatibility notices, 60 guides, 20 Markdown templates and four CSV worksheets. The earlier [proposal preview](review/README.md) remains a separate historical review snapshot. The [1.2 UX decision log](docs/UX-1.2.md) records the new reference, implementation decisions and validation limits.
+- Included Framework: **v1.2.0**, accepted commit `57bc85be294170be1f419629ed241d302530d4d9`.
 
 See [release policy and publication checklist](docs/RELEASING.md). Website and Framework versions are independent. The localized `/releases/` pages identify the exact version pair, history and publication status. The production build reads only the explicitly imported accepted knowledge snapshot.
 
@@ -84,10 +84,10 @@ Edit `src/` and `build.mjs`, then rebuild. Generated HTML is committed so that a
 
 - `/{language}/`: problem-led overview, six reader roles and six organisation types, in-place concepts and illustrative cases.
 - `/{language}/audience/`: organisation needs, persona cards and frequently asked questions.
-- `/{language}/implementation/`: three-question implementation chooser, architecture layers and fourteen filterable tools.
-- `/{language}/model/`: interactive anatomy, twenty layer/stage cells, ten roles, an illustrative RACI and reference boundaries.
+- `/{language}/implementation/`: temporarily paused; the previous URL displays a noindex notice. Its menu, inbound links, diagram and sitemap entries are disabled. Prepared source remains available for later editorial review.
+- `/{language}/model/`: interactive anatomy, twenty layer/stage cells, ten roles, an illustrative RACI, six generic supporting functional areas and reference boundaries. KDV Studio/Cloud appears as one optional example, without a sales CTA.
 - `/{language}/playbook/`: four-stage playbook with participants, practices, evidence, gates and measures; example access flow; proposed review rhythm; readiness conversation checklist.
-- `/{language}/resources/`: five Markdown templates in four languages, PT-BR Word/Excel companions, diagrams, a localized evidence CSV and a browser-only product canvas generator.
+- `/{language}/resources/`: five Markdown templates in four languages, PT-BR Word/Excel companions, four available process/anatomy diagrams, a localized evidence CSV and a browser-only product canvas generator.
 - `/{language}/community/`: contribution paths, stewardship, licensing and the distinction between the open method and commercial implementations.
 - `/{language}/releases/`: website/framework versions, delivered changes, exact accepted knowledge revision and baseline notes.
 - `/{language}/privacy/`: localized privacy/storage notice, operator and hosting boundaries.
@@ -142,3 +142,9 @@ The synchronization command clones **main only**, validates the content inventor
 A knowledge merge does not automatically deploy this website. No cross-repository credential, webhook or scheduled task is configured. This explicit release boundary is intentional and documented in the knowledge repository. Static Markdown contains the original content; the site renderer escapes raw HTML and rejects unrecognised link protocols. The guide filter runs on existing document titles/descriptions, with no API or persistent storage.
 
 The initial knowledge guardian is **ismael-lab**, as designated by the owner. Its main branch requires CODEOWNER approval, passing `knowledge-check`, up-to-date branches, resolved conversations and fresh approval after changes. Push restrictions allow only the guardian; administrator bypass, force pushes and deletion are disabled. With only one guardian, a guardian-authored PR requires another authorised guardian for independent approval. The source repo's protected policy governs acceptance; the site snapshot exposes provenance, not a second approval authority.
+
+## Functional terminology and Implementation pause
+
+Public pages, guide text and concept panels describe what capabilities do, with no named market tools. The accepted glossary includes nineteen technical capabilities and six functional areas. The commercial-name/concept/function correspondence stays in the knowledge repository under `references/`, outside the website content inventory. It is an editorial aid, not a mandatory stack or licence/readiness claim.
+
+`src/ux/availability.mjs` is the explicit switch for the paused Implementation section. Re-enabling it requires reviewing all entry links, prepared content and the supplier-specific diagram before publication. Old tool hashes resolve to the new functional identifiers. Root language links also preserve valid single-slash routes.

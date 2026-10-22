@@ -37,3 +37,7 @@ Use PATCH for compatible fixes, MINOR for compatible additions, and MAJOR for in
 - [ ] Full build/tests and generated-output check pass.
 - [ ] Review complete before main triggers production deployment.
 - [ ] Final GitHub release and live Hostinger result verified separately.
+
+## Release 1.2.0
+
+The owner authorised publication on 22 October 2026 after requesting functional terminology, optional software examples and a paused Implementation section. Framework 1.2.0 was accepted at `57bc85be294170be1f419629ed241d302530d4d9`; its full main protection configuration was restored and verified before tagging. This website imports that accepted revision and publishes seven active navigation areas. Previous Implementation URLs remain as noindex compatibility notices. The market-tool correspondence is outside the website inventory.
