@@ -17,7 +17,7 @@ export function localizeLinks(html,l){
  html=html.replaceAll('../assets/ux/','/assets/ux/');
  html=html.replace(/href="documentacao\.html#([a-z0-9-]+)"/g,(_,id)=>`href="/${l}/docs/${slugFor(id)}/"`);
  for(const [file,route] of Object.entries(routeFiles))html=html.replaceAll(`href="${file}`,`href="/${l}/${route?route+'/':''}`);
- return html;
+ return html.replace(/[ \t]+$/gm,'');
 }
 const scripts=['interaction.js','components.js'].map(file=>readFileSync(new URL('./'+file,import.meta.url),'utf8'));
 
@@ -67,5 +67,5 @@ export function renderPrototypePage(l,route){
  html=localizeLinks(html,l);
  // Link-based fallbacks make concepts usable even without JavaScript.
  html=html.replace(/<button\b([^>]*\bdata-ref="([a-z]+:[a-z0-9-]+)"[^>]*)>([\s\S]*?)<\/button>/g,(_,attrs,ref,body)=>`<a ${attrs.replace(/type="button"\s*/,'')} href="${fallback(l,ref)}" aria-haspopup="dialog">${body}</a>`);
- return html;
+ return html.replace(/[ \t]+$/gm,'');
 }
