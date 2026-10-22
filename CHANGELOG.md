@@ -1,5 +1,10 @@
 # Changelog
 
+## 1.2.1 — 2026-10-22
+
+- Version CSS and JavaScript request URLs after live verification exposed a browser cache mixing new HTML with the previous styles.
+- Keep accepted Framework 1.2.0 unchanged.
+
 ## 1.2.0 — 2026-10-22
 
 - Integrated the supplied UX reference into the existing dependency-free static website and monochrome KDV identity.

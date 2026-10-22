@@ -19,7 +19,7 @@ test('English default, localized metadata and unique accessible page structure',
 test('Every generated internal link, asset and fragment resolves',async()=>{
  for(const p of pages){const html=await file(p);for(const [,quote,raw] of html.matchAll(/(?:href|src)=(["'])([^"']+)\1/g)){
   if(!raw.startsWith('/')&&!raw.startsWith('#'))continue;
-  const [pathname,fragment]=raw.split('#');let target=pathname?join(root,pathname):join(root,p);assert.ok(target.startsWith(root));if(pathname?.endsWith('/'))target=join(target,'index.html');await stat(target);
+  const [pathWithQuery,fragment]=raw.split('#');const pathname=pathWithQuery.split('?')[0];let target=pathname?join(root,pathname):join(root,p);assert.ok(target.startsWith(root));if(pathname?.endsWith('/'))target=join(target,'index.html');await stat(target);
   if(fragment){const text=await readFile(target,'utf8');assert.ok(text.includes(`id="${fragment}"`),`${p}: ${raw}`)}
  }}
 });
@@ -51,4 +51,15 @@ test('Contribution destinations use the knowledge repository, while implementati
 test('Markdown renderer escapes HTML and rejects executable and unrecognised link targets',()=>{
  const rendered=markdownToHtml('## Safe heading\n\n<script>alert(1)</script>\n\n[x](javascript:alert(1))','en').html;
  assert.ok(rendered.includes('&lt;script&gt;'));assert.ok(!rendered.includes('href="javascript:'));assert.equal(docHref('data:text/html,hello','en'),'#');assert.equal(docHref('anatomy.md','pt'),'/pt/docs/anatomy/');assert.equal(docHref('../../templates/en/domain-charter.md','en'),'/templates/en/domain-charter.md');
+});
+
+
+test('release-versioned assets prevent mixing cached website editions',async()=>{
+ const release=JSON.parse(await readFile('release.json','utf8'));
+ for(const l of ['en','pt-br','pt','es']){
+  const html=await file(l+'/index.html');
+  for(const asset of ['/styles.css','/assets/ux/data-'+l+'.js','/assets/ux/interaction.js','/assets/ux/components.js','/assets/ux/enhancements.js']){
+   assert.ok(html.includes(asset+'?v='+release.version),`missing release version: ${asset}`);
+  }
+ }
 });
