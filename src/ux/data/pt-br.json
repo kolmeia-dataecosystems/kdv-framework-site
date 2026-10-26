@@ -3184,6 +3184,49 @@
     "checkNote": "Este checklist apoia uma conversa sobre evidências; não é uma pontuação de maturidade nem uma avaliação oficial.",
     "implementationEnabled": false,
     "implementationExample": "KDV Studio/Cloud é um exemplo de ferramenta que reúne os módulos necessários para apoiar o KDV: consumo, publicação, governança do ecossistema, operação da plataforma, atendimento e integrações. Seu uso é opcional; o Framework pode ser aplicado com outras ferramentas. Este exemplo não é uma recomendação de contratação.",
-    "exampleLabel": "Um exemplo de implementação em software"
+    "exampleLabel": "Um exemplo de implementação em software",
+    "dynamic": {
+      "title": "Por onde começo?",
+      "intro": "Três perguntas para sugerir um perfil e uma trilha de leitura. Nada é salvo.",
+      "team": "Tamanho do time de dados",
+      "teams": [
+        "1–3 pessoas",
+        "Algumas equipes",
+        "Várias áreas"
+      ],
+      "maturity": "Maturidade",
+      "maturities": [
+        "Começando",
+        "Algumas práticas",
+        "Processo estabelecido"
+      ],
+      "goal": "Objetivo principal",
+      "goals": [
+        "Saber quem responde pelos dados",
+        "Compartilhar com segurança",
+        "Provar valor e conformidade"
+      ],
+      "profiles": [
+        "Solo",
+        "Equipe",
+        "Organização"
+      ],
+      "meanings": [
+        "Comece com um escopo pequeno e responsabilidades claras.",
+        "Coordene práticas e decisões entre equipes.",
+        "Conecte responsabilidades e evidências entre áreas."
+      ],
+      "rule": "Time pequeno e começando: Solo. Várias áreas ou processo estabelecido: Organização. Nos demais casos: Equipe. O objetivo escolhe os guias.",
+      "suggested": "Perfil sugerido",
+      "product": "Produto KDV: uma implementação opcional",
+      "optional": "Aplicar o framework não exige comprar o produto.",
+      "readingTime": "{n} min de leitura",
+      "copyLink": "Copiar link",
+      "copied": "Link copiado",
+      "copyPrompt": "Copie este link:",
+      "pauseCycle": "Pausar ciclo",
+      "releaseNote": "Ciclo e anatomia animados, trilha inicial em três perguntas, ferramentas de leitura e ação no celular; suporte a movimento reduzido e quatro idiomas.",
+      "noScript": "Ative o JavaScript para atualizar a sugestão ou use a regra abaixo e consulte os guias vinculados."
+    }
   }
 }

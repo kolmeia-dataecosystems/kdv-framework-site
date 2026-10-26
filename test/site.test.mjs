@@ -27,7 +27,7 @@ test('Templates contain working sections, original-content licence and provenanc
  for(const l of languages)for(const [slug,title] of content[l].templates){const md=await file(`templates/${l}/${slug}.md`);assert.ok(md.startsWith('# '+title));assert.ok((md.match(/^## /gm)||[]).length>=8);assert.ok(md.includes('CC BY 4.0'));assert.ok(md.includes('not official')||md.includes('não formulários oficiais')||md.includes('no formularios oficiales'))}
 });
 test('Progressive interaction stays local, with only explicit browser preferences persisted',async()=>{
- const scripts=await Promise.all(['interaction.js','components.js','enhancements.js'].map(f=>file('assets/ux/'+f)));
+ const scripts=await Promise.all(['interaction.js','components.js','enhancements.js','dynamic.js','dynamics.js'].map(f=>file('assets/ux/'+f)));
  for(const script of scripts){new vm.Script(script);assert.doesNotMatch(script,/XMLHttpRequest|sendBeacon|document\.cookie/);}
  assert.match(scripts[0],/if \(!\["tema", "perfil"\]\.includes\(k\)\)/);
  assert.doesNotMatch(scripts[0]+scripts[1],/\bfetch\(/);

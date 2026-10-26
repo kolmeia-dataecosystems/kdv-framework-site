@@ -1,10 +1,11 @@
+import {data} from './ux/model.mjs';
 import {release,releaseUi,releaseStatus,frameworkReleaseUrl,websiteBaselineUrl,sourceCommitUrl} from './releases.mjs';
 const e=s=>String(s).replace(/[&<>"']/g,c=>({'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;',"'":'&#39;'}[c]));
 const text={
   "en": {
     "title": "Versions and release notes",
     "intro": "The website and the open Framework have independent versions. This edition identifies the exact accepted knowledge source.",
-    "changes": "Changes in 1.2.2 / 1.2.0",
+    "changes": "Changes in 1.3.0 / 1.2.0",
     "candidate": "A review candidate, separate from the accepted knowledge release.",
     "items": [
       "Official KDV / framework logo and brand typeface (Delight) across the site.",
@@ -21,7 +22,7 @@ const text={
   "pt-br": {
     "title": "Versões e notas de release",
     "intro": "O site e o Framework aberto têm versões independentes. Esta edição identifica a revisão exata do conhecimento aprovado.",
-    "changes": "Alterações das versões 1.2.2 / 1.2.0",
+    "changes": "Alterações das versões 1.3.0 / 1.2.0",
     "candidate": "Versão candidata para avaliação, separada da release aprovada do conhecimento.",
     "items": [
       "Marca oficial KDV / framework e fonte Delight em todo o site.",
@@ -38,7 +39,7 @@ const text={
   "pt": {
     "title": "Versões e notas de release",
     "intro": "O site e o Framework aberto têm versões independentes. Esta edição identifica a revisão exata do conhecimento aceite.",
-    "changes": "Alterações das versões 1.2.2 / 1.2.0",
+    "changes": "Alterações das versões 1.3.0 / 1.2.0",
     "candidate": "Versão candidata para avaliação, separada da release aceite do conhecimento.",
     "items": [
       "Marca oficial KDV / framework e tipo de letra Delight em todo o site.",
@@ -55,7 +56,7 @@ const text={
   "es": {
     "title": "Versiones y notas de release",
     "intro": "El sitio y el Framework abierto tienen versiones independientes. Esta edición identifica la revisión exacta del conocimiento aceptado.",
-    "changes": "Cambios de las versiones 1.2.2 / 1.2.0",
+    "changes": "Cambios de las versiones 1.3.0 / 1.2.0",
     "candidate": "Versión candidata para revisión, independiente de la release aceptada del conocimiento.",
     "items": [
       "Marca oficial KDV / framework y tipografía Delight en todo el sitio.",
@@ -70,6 +71,7 @@ const text={
     "source": "Revisión exacta del conocimiento aceptado"
   }
 };
+for(const l of Object.keys(text))text[l].items.unshift(data[l].ux.dynamic.releaseNote);
 export const publicationText=text;
 export function publishedRelease(l){
  const t=text[l],ui=releaseUi[l];

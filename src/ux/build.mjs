@@ -18,7 +18,8 @@ function scopeCss(css){
 export async function buildUxAssets(){
  await mkdir('dist/assets/ux',{recursive:true});
  for(const l of languages)await writeFile(`dist/assets/ux/data-${l}.js`,'window.KDV_DATA='+JSON.stringify(data[l]).replace(/</g,'\\u003c')+';window.KDV_BRAND='+JSON.stringify(brandLogo)+';\n');
- for(const file of ['interaction.js','components.js','enhancements.js'])await copyFile('src/ux/'+file,'dist/assets/ux/'+file);
+ for(const file of ['interaction.js','components.js','enhancements.js','dynamic.js'])await copyFile('src/ux/'+file,'dist/assets/ux/'+file);
+ await copyFile('src/ux/dynamics.cjs','dist/assets/ux/dynamics.js');
  for(const file of await readdir('assets/ux')){
   if(!implementationEnabled&&file.startsWith('D5_')){await rm('dist/assets/ux/'+file,{force:true});continue;}
   await copyFile('assets/ux/'+file,'dist/assets/ux/'+file);

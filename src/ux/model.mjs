@@ -1,8 +1,7 @@
+import {startingPoint,stageHoneycomb} from './dynamic-render.mjs';
 import {readFileSync} from 'node:fs';
 import {createRequire} from 'node:module';
 import vm from 'node:vm';
-import {honeycomb} from '../legacy-render.mjs';
-import {content} from '../content.mjs';
 import {implementationEnabled} from './availability.mjs';
 
 const require=createRequire(import.meta.url);
@@ -52,11 +51,8 @@ export function renderPrototypePage(l,route){
   html=html.replace(pattern,(_,start,end)=>start+host.html()+end);
  }
  if(id==='home'){
-  const aliases={ecosystem:'ecossistema',hive:'dominio',cell:'subdominio',comb:'agrupamento',product:'produto',farm:'ambiente'};
-  const c={...content[l],anatomy:content[l].anatomy.map(a=>{const item=K.conceitos.find(x=>x.id===aliases[a[0]]);return [a[0],item.cliente,item.kdv,...a.slice(3)];})};
-  const art=honeycomb(l,c).replace(/href="[^"]*#concept-([a-z]+)"/g,(_,concept)=>`href="${fallback(l,'conceito:'+aliases[concept])}" data-ref="conceito:${aliases[concept]}"`);
-  html=html.replace(/<div class="hexmap" id="hexmap">[\s\S]*?<p class="cap">[\s\S]*?<\/p><\/div>/,`<div class="ux-honeycomb">${art}</div>`);
-  html=html.replace('</section>',`</section>`);
+  html=html.replace(/<div class="hexmap" id="hexmap">[\s\S]*?<p class="cap">[\s\S]*?<\/p><\/div>/,`<div class="ux-honeycomb">${stageHoneycomb(K,l)}</div>`);
+  html=html.replace('<section class="sec tint" id="proposta"',startingPoint(K,l)+'<section class="sec tint" id="proposta"');
   html=html.replace('<section class="sec" id="exemplos"',`<p class="wrap nota pilot-note">${escape(K.ux.pilot)}</p><section class="sec" id="exemplos"`);
  }
  if(id==='implementacao')html=html.replace('<div id="tools">',`<p class="nota maturity-note">${escape(K.ux.maturity)}</p><div id="tools">`);
