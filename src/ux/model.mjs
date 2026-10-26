@@ -51,8 +51,9 @@ export function renderPrototypePage(l,route){
   html=html.replace(pattern,(_,start,end)=>start+host.html()+end);
  }
  if(id==='home'){
-  html=html.replace(/<div class="hexmap" id="hexmap">[\s\S]*?<p class="cap">[\s\S]*?<\/p><\/div>/,`<div class="ux-honeycomb">${stageHoneycomb(K,l)}</div>`);
-  html=html.replace('<section class="sec tint" id="proposta"',startingPoint(K,l)+'<section class="sec tint" id="proposta"');
+  // A colmeia de termos (Hive, Cell, Comb, Farm…) fica no topo; o ciclo das quatro etapas ganha seção própria.
+  const cycle=`<section class="sec stage-cycle" id="ciclo"><div class="wrap"><div class="sec-head"><h2>${escape(K.ui.home.etapasAria)}</h2></div><div class="ux-honeycomb">${stageHoneycomb(K,l)}</div></div></section>`;
+  html=html.replace('<section class="sec tint" id="proposta"',cycle+startingPoint(K,l)+'<section class="sec tint" id="proposta"');
   html=html.replace('<section class="sec" id="exemplos"',`<p class="wrap nota pilot-note">${escape(K.ux.pilot)}</p><section class="sec" id="exemplos"`);
  }
  if(id==='implementacao')html=html.replace('<div id="tools">',`<p class="nota maturity-note">${escape(K.ux.maturity)}</p><div id="tools">`);

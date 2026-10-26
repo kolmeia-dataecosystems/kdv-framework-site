@@ -18,6 +18,7 @@ for(const dir of ['brand','fonts']){
 for(const language of languages)await copyFile(`assets/social/kdv-framework-social-${language==='pt-br'?'pt':language}-v1.png`,`dist/assets/kdv-framework-social-${language}-v1.png`);
 await writeFile('dist/styles.css',await readFile('src/styles.css','utf8')+'\n'+await readFile('review/styles.css','utf8'));
 await copyFile('src/runtime.js','dist/runtime.js');
+await copyFile('assets/htaccess','dist/.htaccess');
 await buildUxAssets();
 let urls=[];
 for(const l of languages){

@@ -100,3 +100,5 @@ html:not(.has-js) .ux-experience [role="tabpanel"][hidden],html:not(.has-js) .ux
 .ux-experience .cell.click:is(:hover,:focus-visible) .go::after{transform:translateX(3px)}
 .ux-experience #models article .arrow::after{display:inline-block;transition:transform .2s}
 .ux-experience #models article:is(:hover,:focus-within) .arrow::after{transform:translateX(3px)}
+
+.ux-experience .stage-cycle .ux-honeycomb{max-width:460px;margin:0 auto}.ux-experience .stage-cycle .sec-head{text-align:center;justify-content:center}
