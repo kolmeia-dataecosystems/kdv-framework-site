@@ -3184,6 +3184,49 @@
     "checkNote": "This checklist supports a conversation about evidence; it is not a maturity score or an official assessment.",
     "implementationEnabled": false,
     "implementationExample": "KDV Studio/Cloud is one example of software bringing together the modules needed to support KDV: consumption, publishing, ecosystem governance, platform operations, service desk and integrations. It is optional; the Framework can be applied with other tools. This example is not a purchasing recommendation.",
-    "exampleLabel": "One possible software implementation"
+    "exampleLabel": "One possible software implementation",
+    "dynamic": {
+      "title": "Where do I start?",
+      "intro": "Three questions to suggest a profile and a reading path. Nothing is saved.",
+      "team": "Data team size",
+      "teams": [
+        "1–3 people",
+        "A few teams",
+        "Several areas"
+      ],
+      "maturity": "Maturity",
+      "maturities": [
+        "Starting out",
+        "Some practices",
+        "Established process"
+      ],
+      "goal": "Main goal",
+      "goals": [
+        "Know who is accountable for data",
+        "Share safely",
+        "Demonstrate value and compliance"
+      ],
+      "profiles": [
+        "Solo",
+        "Team",
+        "Organization"
+      ],
+      "meanings": [
+        "Start with a small scope and clear responsibilities.",
+        "Coordinate practices and decisions across teams.",
+        "Connect decision rights and evidence across areas."
+      ],
+      "rule": "Small team and starting out: Solo. Several areas or an established process: Organization. Otherwise: Team. Your goal selects the guides.",
+      "suggested": "Suggested profile",
+      "product": "KDV product: an optional implementation",
+      "optional": "Applying the framework does not require buying the product.",
+      "readingTime": "{n} min read",
+      "copyLink": "Copy link",
+      "copied": "Link copied",
+      "copyPrompt": "Copy this link:",
+      "pauseCycle": "Pause cycle",
+      "releaseNote": "Animated lifecycle and anatomy, a three-question starting path, reading tools and a mobile action; reduced motion and four languages supported.",
+      "noScript": "Enable JavaScript to update the suggestion, or use the rule below and browse the linked guides."
+    }
   }
 }

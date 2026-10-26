@@ -50,7 +50,7 @@
     const button=event.currentTarget,expanded=button.getAttribute('aria-expanded')!=='true';
     button.setAttribute('aria-expanded',String(expanded));document.querySelector('.docs-sidebar').classList.toggle('is-open',expanded);
    });
-   hints();updateTrail();cleanLinks(main);
+   hints();updateTrail();cleanLinks(main);document.dispatchEvent(new Event('kdv:content'));
   }
   async function navigate(url,push=true){
    if(navigating)return; navigating=true;main.setAttribute('aria-busy','true');

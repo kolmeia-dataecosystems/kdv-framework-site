@@ -1,5 +1,12 @@
 # Changelog
 
+## 1.3.0 — 2026-10-26
+
+- Add a four-stage home cycle, progressive anatomy and restrained section/card motion.
+- Add a three-question starting-point selector with localized profiles and accepted guide links.
+- Add reading progress, build-time reading estimates, heading link copying and a mobile institutional CTA.
+- Respect reduced motion, keyboard access and both themes in all four languages; keep Framework 1.2.0 unchanged.
+
 ## 1.2.2 — 2026-10-26
 
 - Official KDV / framework logo and brand typeface (Delight) across the site.

@@ -3188,6 +3188,49 @@
     "checkNote": "Esta lista de verificación apoya una conversación sobre evidencias; no es una puntuación de madurez ni una evaluación oficial.",
     "implementationEnabled": false,
     "implementationExample": "KDV Studio/Cloud es un ejemplo de herramienta que reúne los módulos necesarios para apoyar KDV: consumo, publicación, gobernanza del ecosistema, operación de la plataforma, atención e integraciones. Su uso es opcional; el Framework puede aplicarse con otras herramientas. Este ejemplo no es una recomendación de contratación.",
-    "exampleLabel": "Un ejemplo de implementación en software"
+    "exampleLabel": "Un ejemplo de implementación en software",
+    "dynamic": {
+      "title": "¿Por dónde empiezo?",
+      "intro": "Tres preguntas para sugerir un perfil y una ruta de lectura. No se guarda nada.",
+      "team": "Tamaño del equipo de datos",
+      "teams": [
+        "1–3 personas",
+        "Algunos equipos",
+        "Varias áreas"
+      ],
+      "maturity": "Madurez",
+      "maturities": [
+        "Empezando",
+        "Algunas prácticas",
+        "Proceso establecido"
+      ],
+      "goal": "Objetivo principal",
+      "goals": [
+        "Saber quién responde por los datos",
+        "Compartir con seguridad",
+        "Demostrar valor y conformidad"
+      ],
+      "profiles": [
+        "Solo",
+        "Equipo",
+        "Organización"
+      ],
+      "meanings": [
+        "Empiece con un alcance pequeño y responsabilidades claras.",
+        "Coordine prácticas y decisiones entre equipos.",
+        "Conecte responsabilidades y evidencias entre áreas."
+      ],
+      "rule": "Equipo pequeño y empezando: Solo. Varias áreas o proceso establecido: Organización. En los demás casos: Equipo. El objetivo elige las guías.",
+      "suggested": "Perfil sugerido",
+      "product": "Producto KDV: una implementación opcional",
+      "optional": "Aplicar el framework no exige comprar el producto.",
+      "readingTime": "{n} min de lectura",
+      "copyLink": "Copiar enlace",
+      "copied": "Enlace copiado",
+      "copyPrompt": "Copie este enlace:",
+      "pauseCycle": "Pausar ciclo",
+      "releaseNote": "Ciclo y anatomía animados, ruta inicial en tres preguntas, herramientas de lectura y acción móvil; soporte para movimiento reducido y cuatro idiomas.",
+      "noScript": "Active JavaScript para actualizar la sugerencia o use la regla siguiente y consulte las guías enlazadas."
+    }
   }
 }
