@@ -1,5 +1,13 @@
 # Changelog
 
+## 1.5.0 — 2026-10-26
+
+- Unified the home lifecycle honeycomb and stage panels, with ARIA tabs, arrow/Home/End navigation and automatic cycling that ends on interaction.
+- Presented the five common requirements as icon badges, governance outcomes as a connected sequence and terminology as linked definition pairs with filtering.
+- Restyled the transient starting questionnaire as native radio chips and profile cards with one, three or seven hexagons.
+- Preserved existing home copy and links in four languages and build-time HTML. Hero, reference strip, reader selector and accepted knowledge remain unchanged.
+- Added content-preservation, keyboard/cycle, profile-scale and theme-token checks. Browser viewport and assistive-technology QA remain unverified in the restricted environment.
+
 ## 1.4.0 — 2026-10-26
 
 - Unify interface icons as accessible 24-grid stroke SVGs, including theme and navigation controls.

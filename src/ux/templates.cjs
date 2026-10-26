@@ -26,8 +26,8 @@ const PAGES = {
     <a class="btn-line" style="border:0;justify-content:center;font-size:20px" href="modelo.html#referenciais">Data Mesh</a>
   </div></div>
 ` + sec("voce", S.voce, '<div class="recog" id="recog"></div>').replace('class="sec"', 'class="sec" style="border-top:0"')
-      + sec("proposta", S.proposta, `<div class="grid g3">${P.propostaCells.map(([n, h, t]) => `<div class="cell"><span class="n">${n}</span><h3>${h}</h3><p class="muted small">${rich(t)}</p></div>`).join("")}</div>`, true)
-      + sec("como", S.como, '<div id="stages"></div>')
+      + sec("proposta", S.proposta, `<ol class="value-chain">${P.propostaCells.map(([n,h,t],i)=>`<li><span class="chain-icon">${icon(["persona","govern","evidencia"][i],32)}</span><span class="n">${n}</span><h3>${h}</h3><p class="muted small">${rich(t)}</p>${i<2?`<span class="chain-connector" aria-hidden="true">${icon("seta",32)}</span>`:""}</li>`).join("")}</ol>`, true)
+      + sec("como", S.como, '<span id="ciclo" class="route-alias"></span><div id="stages"></div>')
       + sec("minimo", S.minimo, '<div class="baseline" id="baseline"></div>', true)
       + sec("colmeia", S.colmeia, '<div id="translation"></div>')
       + sec("aberto", S.aberto, `<div class="grid g3" id="paths-mini"></div><div class="row mt-m"><a class="btn-line arrow" href="implementacao.html">${P.abertoLinks[0]}</a><a class="btn-line arrow" href="comunidade.html#marcas">${P.abertoLinks[1]}</a></div>`, true)

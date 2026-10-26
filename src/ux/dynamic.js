@@ -9,19 +9,25 @@
   form?.addEventListener('submit',event=>event.preventDefault());
   form?.addEventListener('change',()=>{
    const values=new FormData(form),profile=R.profile(values.get('team'),values.get('maturity')),i=['solo','team','organization'].indexOf(profile);
-   document.querySelector('[data-start-result]').innerHTML=`<h3>${esc(t.suggested)}: ${esc(t.profiles[i])}</h3><p>${esc(t.meanings[i])}</p><ul>${R.guideIds(values.get('goal')).map(id=>`<li><a class="text-link" href="/${lang}/docs/${K.ux.slugs[id]}/">${esc(K.guias.find(g=>g.id===id).titulo)}</a></li>`).join('')}</ul><p>${esc(t.optional)} <a class="text-link" href="https://kdvecosystems.com">${esc(t.product)} ↗</a></p>`;
+   document.querySelector('[data-start-result]').innerHTML=`${R.scale(profile,window.KDVIcons.icon)}<h3>${esc(t.suggested)}: ${esc(t.profiles[i])}</h3><p>${esc(t.meanings[i])}</p><ul>${R.guideIds(values.get('goal')).map(id=>`<li><a class="text-link" href="/${lang}/docs/${K.ux.slugs[id]}/">${esc(K.guias.find(g=>g.id===id).titulo)}</a></li>`).join('')}</ul><p>${esc(t.optional)} <a class="text-link" href="https://kdvecosystems.com">${esc(t.product)} ↗</a></p>`;
   });
 
-  const hive=document.querySelector('.stage-honeycomb');
-  if(hive){
-   const links=[...hive.querySelectorAll('[data-cycle-stage]')],caption=document.querySelector('[data-cycle-caption]');
-   let active=0,timer,hover=false,paused=false;
-   document.querySelector('[data-cycle-pause]').addEventListener('click',event=>{paused=!paused;event.currentTarget.setAttribute('aria-pressed',String(paused));schedule();});
-   function select(i){active=i;links.forEach((link,n)=>link.classList.toggle('selected',n===i));caption.textContent=K.etapas.find(s=>s.id===links[i].dataset.cycleStage).frase;}
-   function schedule(){clearTimeout(timer);if(reduced.matches||paused||document.hidden||hover||hive.contains(document.activeElement))return;timer=setTimeout(()=>{select((active+1)%links.length);schedule();},2500);}
-   hive.addEventListener('mouseenter',()=>{hover=true;schedule();});hive.addEventListener('mouseleave',()=>{hover=false;schedule();});
-   hive.addEventListener('focusin',event=>{const i=links.indexOf(event.target);if(i>=0)select(i);schedule();});hive.addEventListener('focusout',()=>setTimeout(schedule,0));
-   document.addEventListener('visibilitychange',schedule);reduced.addEventListener('change',schedule);schedule();
+  // A seção é redesenhada pelos componentes depois do carregamento: os eventos são delegados e
+  // as abas e painéis são lidos a cada ação, para não ficarem presos a elementos substituídos.
+  const stages=document.querySelector('#stages');
+  if(stages){
+   const tabs=()=>[...stages.querySelectorAll('.stage-honeycomb [role="tab"]')],panels=()=>[...stages.querySelectorAll('.stage-panels [role="tabpanel"]')];
+   let active=0,timer,interacted=false;
+   function select(i){const t=tabs(),p=panels();if(!t.length)return;active=i;t.forEach((tab,n)=>{tab.classList.toggle('selected',n===i);tab.setAttribute('aria-selected',String(n===i));tab.tabIndex=n===i?0:-1;if(p[n])p[n].hidden=n!==i;});}
+   function stop(){interacted=true;clearTimeout(timer);}
+   function schedule(){clearTimeout(timer);if(reduced.matches||interacted||document.hidden)return;timer=setTimeout(()=>{select((active+1)%Math.max(tabs().length,1));schedule();},2500);}
+   stages.addEventListener('pointerdown',stop);
+   stages.addEventListener('pointerenter',stop);
+   stages.addEventListener('focusin',stop);
+   stages.addEventListener('click',event=>{const tab=event.target.closest('.stage-honeycomb [role="tab"]');if(tab){stop();select(tabs().indexOf(tab));}});
+   stages.addEventListener('keydown',event=>{const tab=event.target.closest('.stage-honeycomb [role="tab"]');if(!tab)return;const t=tabs(),i=R.stageIndex(event.key,t.indexOf(tab),t.length);if(i===null)return;event.preventDefault();stop();select(i);t[i].focus();});
+   new MutationObserver(()=>{if(panels().some((p,n)=>p.hidden===(n===active)))select(active);}).observe(stages,{childList:true,subtree:true});
+   document.addEventListener('visibilitychange',schedule);reduced.addEventListener('change',schedule);select(0);schedule();
   }
 
   let revealObserver,anatomyObserver;

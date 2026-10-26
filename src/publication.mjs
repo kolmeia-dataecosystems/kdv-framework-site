@@ -6,14 +6,14 @@ const text={
   "en": {
     "title": "Versions and release notes",
     "intro": "Website and Framework versions are independent. Accepted knowledge remains at 1.2.0.",
-    "changes": "Website 1.4.0 · Framework 1.2.0",
+    "changes": "Website 1.5.0 · Framework 1.2.0",
     "candidate": "A review candidate, separate from the accepted knowledge release.",
     "items": [
-      "One stroke SVG system for concepts, links and theme controls.",
-      "Shorter institutional introductions and cards in four languages.",
-      "Shared section headers, card states and navigation patterns.",
-      "Approved home and accepted guides, templates and knowledge revision preserved."
-    ],
+      "Unified lifecycle honeycomb with accessible stage selection.",
+      "Five common badges and a connected sequence for everyday governance.",
+      "Connected terminology pairs and profile chips with scale illustrations.",
+      "Complete home content preserved in four languages, including without JavaScript."
+],
     "site": "Website",
     "source": "Exact accepted knowledge revision",
     "summary": "Presentation revised across four languages."
@@ -21,14 +21,14 @@ const text={
   "pt-br": {
     "title": "Versões e notas de release",
     "intro": "Site e Framework têm versões independentes. O conhecimento aprovado permanece em 1.2.0.",
-    "changes": "Site 1.4.0 · Framework 1.2.0",
+    "changes": "Site 1.5.0 · Framework 1.2.0",
     "candidate": "Versão candidata para avaliação, separada da release aprovada do conhecimento.",
     "items": [
-      "Um sistema SVG de traço para conceitos, links e tema.",
-      "Intros e cartões institucionais mais curtos em quatro idiomas.",
-      "Cabeçalhos, estados dos cartões e navegação consistentes.",
-      "Home aprovada, guias, templates e revisão do conhecimento preservados."
-    ],
+      "Colmeia unificada do ciclo com seleção acessível de etapas.",
+      "Cinco emblemas comuns e uma sequência ligada para a governança no trabalho.",
+      "Pares de termos ligados e chips de perfil com desenhos de escala.",
+      "Conteúdo integral da home preservado em quatro idiomas, inclusive sem JavaScript."
+],
     "site": "Site",
     "source": "Revisão exata do conhecimento aprovado",
     "summary": "Apresentação revisada em quatro idiomas."
@@ -36,14 +36,14 @@ const text={
   "pt": {
     "title": "Versões e notas de release",
     "intro": "Site e Framework têm versões independentes. O conhecimento aceite permanece em 1.2.0.",
-    "changes": "Site 1.4.0 · Framework 1.2.0",
+    "changes": "Site 1.5.0 · Framework 1.2.0",
     "candidate": "Versão candidata para avaliação, separada da release aceite do conhecimento.",
     "items": [
-      "Um sistema SVG de traço para conceitos, ligações e tema.",
-      "Intros e cartões institucionais mais curtos em quatro idiomas.",
-      "Cabeçalhos, estados dos cartões e navegação consistentes.",
-      "Home aprovada, guias, modelos e revisão do conhecimento preservados."
-    ],
+      "Colmeia unificada do ciclo com seleção acessível de etapas.",
+      "Cinco emblemas comuns e uma sequência ligada para a governação no trabalho.",
+      "Pares de termos ligados e chips de perfil com desenhos de escala.",
+      "Conteúdo integral da página inicial preservado em quatro idiomas, incluindo sem JavaScript."
+],
     "site": "Site",
     "source": "Revisão exata do conhecimento aceite",
     "summary": "Apresentação revista em quatro idiomas."
@@ -51,14 +51,14 @@ const text={
   "es": {
     "title": "Versiones y notas de release",
     "intro": "Sitio y Framework tienen versiones independientes. El conocimiento aceptado permanece en 1.2.0.",
-    "changes": "Sitio 1.4.0 · Framework 1.2.0",
+    "changes": "Sitio 1.5.0 · Framework 1.2.0",
     "candidate": "Versión candidata para revisión, independiente de la release aceptada del conocimiento.",
     "items": [
-      "Un sistema SVG de trazo para conceptos, enlaces y tema.",
-      "Introducciones y tarjetas institucionales más breves en cuatro idiomas.",
-      "Encabezados, estados de tarjetas y navegación consistentes.",
-      "Inicio aprobado, guías, plantillas y revisión del conocimiento preservados."
-    ],
+      "Colmena unificada del ciclo con selección accesible de etapas.",
+      "Cinco emblemas comunes y una secuencia conectada para la gobernanza diaria.",
+      "Pares de términos conectados y chips de perfil con dibujos de escala.",
+      "Contenido completo del inicio conservado en cuatro idiomas, incluso sin JavaScript."
+],
     "site": "Sitio",
     "source": "Revisión exacta del conocimiento aceptado",
     "summary": "Presentación revisada en cuatro idiomas."
