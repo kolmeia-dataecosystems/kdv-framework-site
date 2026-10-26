@@ -293,7 +293,7 @@
     const page = document.body.dataset.page;
     const nav = K.paginas.map((p) => `<a href="${p.href}"${p.id === page ? ' aria-current="page"' : ""}>${esc(p.nome)}</a>`).join("");
     const langs = (cls) => `<div class="langs ${cls}" role="group" aria-label="${esc(T.idioma)}">${K.idiomas.map((l) => `<a data-lang-to="${l.code}" hreflang="${l.html}" lang="${l.html}" title="${esc(l.nome)}"${l.code === LANG ? ' aria-current="true"' : ""}>${l.label}</a>`).join("")}</div>`;
-    const logo = `<img class="logo-b" src="${ROOT}assets/img/kdv-black.png" alt="KDV" width="111" height="23"><img class="logo-w" src="${ROOT}assets/img/kdv-white.png" alt="" width="111" height="23"><span>/ framework</span>`;
+    const logo = window.KDV_BRAND;
     $("#site-header").outerHTML = `<header class="site-header"><div class="wrap hdr">
       <a class="brand" href="index.html" aria-label="${esc(T.marcaAria)}">${logo}</a>
       <nav class="nav" id="nav" aria-label="${esc(T.navAria)}">${nav}${langs("langs-m")}</nav>
@@ -307,7 +307,7 @@
     const R = T.rodape; const nome = (id) => esc(K.paginas.find((p) => p.id === id).nome);
     $("#site-footer").outerHTML = `<footer class="site-footer"><div class="wrap">
       <div class="ft">
-        <div class="stack"><a class="brand" href="index.html">${logo}</a><p class="muted small" style="max-width:40ch">${esc(R.blurb)}</p></div>
+        <div class="stack"><a class="brand" href="index.html" aria-label="KDV / framework">${logo}</a><p class="muted small" style="max-width:40ch">${esc(R.blurb)}</p></div>
         <div><h5>${esc(R.entender)}</h5><a href="index.html">${nome("home")}</a><a href="para-quem.html">${nome("para-quem")}</a><a href="modelo.html">${nome("modelo")}</a><a href="implementacao.html">${nome("implementacao")}</a></div>
         <div><h5>${esc(R.aplicar)}</h5><a href="playbook.html">${nome("playbook")}</a><a href="recursos.html">${nome("recursos")}</a><a href="documentacao.html">${nome("documentacao")}</a></div>
         <div><h5>${esc(R.sobre)}</h5><a href="comunidade.html">${nome("comunidade")}</a><a href="comunidade.html#marcas">${esc(R.marcas)}</a><a href="privacidade.html">${esc(R.privacidade)}</a><a href="${K.meta.github}" target="_blank" rel="noopener">GitHub ↗</a></div>

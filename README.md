@@ -8,7 +8,7 @@ An open operational data governance framework for the data community, powered by
 - Institutional site: https://kdvecosystems.com
 - Published baseline: **v1.0.0**, designated 21 October 2026; the tagged files retain the historical 0.1 labels.
 - Previous public release: **v1.1.0**, published on 21 October 2026.
-- Current website release: **v1.2.1**, authorised for coordinated publication on 22 October 2026.
+- Current website release: **v1.2.2**, prepared on 26 October 2026.
 - Current edition: English, Brazilian Portuguese, European Portuguese and Spanish; 96 active localized pages plus four compatibility notices, 60 guides, 20 Markdown templates and four CSV worksheets. The earlier [proposal preview](review/README.md) remains a separate historical review snapshot. The [1.2 UX decision log](docs/UX-1.2.md) records the new reference, implementation decisions and validation limits.
 - Included Framework: **v1.2.0**, accepted commit `57bc85be294170be1f419629ed241d302530d4d9`.
 
@@ -117,7 +117,7 @@ Original framework copy, diagrams and templates are available under **CC BY 4.0*
 
 ## Brand and privacy
 
-The monochrome identity continues the KDV brand: large editorial typography, strict grids, original line icons, hive geometry and restrained pixel motifs. Supplied logos are retained. No Delight font files were provided, so the site uses system Arial/Helvetica/sans-serif without remote font requests.
+The monochrome identity continues the KDV brand: large editorial typography, strict grids, original line icons, hive geometry and restrained pixel motifs. The official KDV / framework SVG inherits the theme colour. Delight is served locally in five weights (300–700), with system Arial/Helvetica/sans-serif fallbacks and no remote font requests. Monospaced labels retain their existing typeface.
 
 Operator: **Lab of Codes & Kolmeia**. Privacy contact: **info@kolmeia.io**. Application cookies and analytics: **none**. Persistent storage is limited to the optional theme and explicitly selected reader profile. Hosting sign-in and provider processing are separate; see [privacy inventory](docs/PRIVACY.md). Display language does not determine whether LGPD or GDPR applies.
 

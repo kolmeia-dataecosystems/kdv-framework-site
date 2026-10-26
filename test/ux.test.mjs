@@ -41,3 +41,26 @@ test('Native modal dialogs have names, close controls and language-preserving li
  const script=await readFile('dist/assets/ux/interaction.js','utf8');
  assert.match(script,/addEventListener\("cancel"/);assert.match(script,/lastFocus.*focus/);assert.match(script,/ArrowRight/);assert.match(script,/aria-activedescendant/);
 });
+
+test('Official inline brand and local Delight assets are available in every locale',async()=>{
+ const logo=await readFile('assets/brand/kdv-framework.svg','utf8');
+ assert.equal(await readFile('dist/assets/brand/kdv-framework.svg','utf8'),logo);
+ assert.match(logo,/viewBox="0 0 1830 200"/);
+ assert.doesNotMatch(logo,/fill="black"/);
+ const css=await readFile('dist/styles.css','utf8');
+ assert.doesNotMatch(css,/mix-blend-mode/);
+ for(const [name,weight] of [['Light',300],['Regular',400],['Medium',500],['SemiBold',600],['Bold',700]]){
+  const path=`assets/fonts/Delight-${name}.woff2`;
+  assert.deepEqual(await readFile('dist/'+path),await readFile(path));
+  assert.match(css,new RegExp(`@font-face\\{[^}]*Delight-${name}\\.woff2\\?v=${release.version.replaceAll('.','\\.')}[^}]*font-weight:${weight};font-display:swap`));
+ }
+ for(const l of languages){
+  const page=await html(l);
+  for(const frame of [page.slice(page.indexOf('<header'),page.indexOf('</header>')),page.slice(page.indexOf('<footer>'),page.indexOf('</footer>'))]){
+   assert.match(frame,/<a class="brand"[^>]*aria-label="KDV \/ framework"/);
+   assert.match(frame,/<svg class="brand-logo" role="img" aria-label="KDV \/ framework"/);
+   assert.match(frame,/fill="currentColor"/);
+   assert.doesNotMatch(frame,/kdv-(?:black|white)\.png|<span>\/ framework/);
+  }
+ }
+});
