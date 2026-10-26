@@ -1,3 +1,5 @@
+import {brandLogo} from '../brand.mjs';
+import {release} from '../releases.mjs';
 import {readFile,writeFile,copyFile,mkdir,readdir,rm} from 'node:fs/promises';
 import {data,languages} from './model.mjs';
 import {implementationEnabled} from './availability.mjs';
@@ -15,7 +17,7 @@ function scopeCss(css){
 }
 export async function buildUxAssets(){
  await mkdir('dist/assets/ux',{recursive:true});
- for(const l of languages)await writeFile(`dist/assets/ux/data-${l}.js`,'window.KDV_DATA='+JSON.stringify(data[l]).replace(/</g,'\\u003c')+';\n');
+ for(const l of languages)await writeFile(`dist/assets/ux/data-${l}.js`,'window.KDV_DATA='+JSON.stringify(data[l]).replace(/</g,'\\u003c')+';window.KDV_BRAND='+JSON.stringify(brandLogo)+';\n');
  for(const file of ['interaction.js','components.js','enhancements.js'])await copyFile('src/ux/'+file,'dist/assets/ux/'+file);
  for(const file of await readdir('assets/ux')){
   if(!implementationEnabled&&file.startsWith('D5_')){await rm('dist/assets/ux/'+file,{force:true});continue;}
@@ -24,5 +26,5 @@ export async function buildUxAssets(){
  await mkdir('dist/templates/office/pt-br',{recursive:true});
  for(const file of await readdir('assets/office/pt-br'))await copyFile('assets/office/pt-br/'+file,'dist/templates/office/pt-br/'+file);
  const css=await readFile('src/styles.css','utf8')+'\n'+await readFile('review/styles.css','utf8')+'\n'+scopeCss(await readFile('src/ux/reference-components.css','utf8'))+'\n'+await readFile('src/ux/brand.css','utf8');
- await writeFile('dist/styles.css',css);
+ await writeFile('dist/styles.css',css.replace(/(Delight-[A-Za-z]+\.woff2)/g,'$1?v='+release.version));
 }

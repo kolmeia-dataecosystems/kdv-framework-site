@@ -1,4 +1,4 @@
-import {mkdir,readFile,writeFile,copyFile,rm} from 'node:fs/promises';
+import {mkdir,readFile,writeFile,copyFile,rm,readdir} from 'node:fs/promises';
 import {copy} from './review/copy.mjs';
 import {implementationEnabled} from './src/ux/availability.mjs';
 import {buildUxAssets} from './src/ux/build.mjs';
@@ -11,6 +11,10 @@ const hosting=JSON.parse(await readFile('.openai/hosting.json','utf8'));
 hosting.static={directory:'dist'};
 await writeFile('.openai/hosting.json',JSON.stringify(hosting,null,2)+'\n');
 await mkdir('dist/assets',{recursive:true});
+for(const dir of ['brand','fonts']){
+ await mkdir(`dist/assets/${dir}`,{recursive:true});
+ for(const file of await readdir(`assets/${dir}`))await copyFile(`assets/${dir}/${file}`,`dist/assets/${dir}/${file}`);
+}
 for(const language of languages)await copyFile(`assets/social/kdv-framework-social-${language==='pt-br'?'pt':language}-v1.png`,`dist/assets/kdv-framework-social-${language}-v1.png`);
 await writeFile('dist/styles.css',await readFile('src/styles.css','utf8')+'\n'+await readFile('review/styles.css','utf8'));
 await copyFile('src/runtime.js','dist/runtime.js');

@@ -1,5 +1,9 @@
 # Changelog
 
+## 1.2.2 — 2026-10-26
+
+- Official KDV / framework logo and brand typeface (Delight) across the site.
+
 ## 1.2.1 — 2026-10-22
 
 - Version CSS and JavaScript request URLs after live verification exposed a browser cache mixing new HTML with the previous styles.
