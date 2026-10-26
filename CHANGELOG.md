@@ -1,5 +1,9 @@
 # Changelog
 
+## 1.3.2 — 2026-10-26
+
+- Fix the hover state of the five common items on the home page: the list inherited an old dark band, so the highlighted card turned light with light text. It now follows the theme tokens like the other cards.
+
 ## 1.3.1 — 2026-10-26
 
 - Restore the vocabulary honeycomb (Ecosystem, Hive, Cell, Comb, data product, Farm) in the home hero; the four-stage cycle moves to its own section below.
