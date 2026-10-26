@@ -8,8 +8,8 @@ An open operational data governance framework for the data community, powered by
 - Institutional site: https://kdvecosystems.com
 - Published baseline: **v1.0.0**, designated 21 October 2026; the tagged files retain the historical 0.1 labels.
 - Previous public release: **v1.1.0**, published on 21 October 2026.
-- Current website release: **v1.3.2**, prepared on 26 October 2026.
-- Current edition: English, Brazilian Portuguese, European Portuguese and Spanish; 96 active localized pages plus four compatibility notices, 60 guides, 20 Markdown templates and four CSV worksheets. The earlier [proposal preview](review/README.md) remains a separate historical review snapshot. The [1.3 UX decision log](docs/UX-1.3.md) records motion, the starting-point selector and reading tools. The [1.2 UX decision log](docs/UX-1.2.md) records the new reference, implementation decisions and validation limits.
+- Current website release: **v1.4.0**, prepared on 26 October 2026.
+- Current edition: English, Brazilian Portuguese, European Portuguese and Spanish; 96 active localized pages plus four compatibility notices, 60 guides, 20 Markdown templates and four CSV worksheets. The earlier [proposal preview](review/README.md) remains a separate historical review snapshot. The [1.4 UX decision log](docs/UX-1.4.md) records the shared SVG icons and four-language editorial consistency review. The [1.3 UX decision log](docs/UX-1.3.md) records motion, the starting-point selector and reading tools. The [1.2 UX decision log](docs/UX-1.2.md) records the new reference, implementation decisions and validation limits.
 - Included Framework: **v1.2.0**, accepted commit `57bc85be294170be1f419629ed241d302530d4d9`.
 
 See [release policy and publication checklist](docs/RELEASING.md). Website and Framework versions are independent. The localized `/releases/` pages identify the exact version pair, history and publication status. The production build reads only the explicitly imported accepted knowledge snapshot.

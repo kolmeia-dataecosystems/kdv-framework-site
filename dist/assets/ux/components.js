@@ -1,6 +1,7 @@
 /* KDV Framework — componentes de cada página (multilíngue). Tudo abre no lugar. */
 (function () {
   "use strict";
+  const icon = (name,size=24) => window.KDVIcons.icon(name,size);
   const U = () => window.KDVUI;
   const ETAPAS4 = ["cultivar", "governar", "compartilhar", "ativar"];
 
@@ -34,7 +35,7 @@
       if (!items.some((i) => i.id === sel)) sel = items[0].id;
       host.innerHTML = `<div class="recog-pick">
           <div class="seg-ctrl" role="group" aria-label="${esc(H.modoAria)}"><button type="button" data-mode="persona" aria-pressed="${mode === "persona"}">${esc(H.porPapel)}</button><button type="button" data-mode="nicho" aria-pressed="${mode === "nicho"}">${esc(H.porOrg)}</button></div>
-          <div class="recog-list">${items.map((i) => `<button type="button" data-pick="${i.id}" aria-pressed="${i.id === sel}" aria-controls="recog-out"><span class="s" aria-hidden="true">${i.sinal || "▢"}</span><span>${esc(i.nome)}</span></button>`).join("")}</div></div>
+          <div class="recog-list">${items.map((i) => `<button type="button" data-pick="${i.id}" aria-pressed="${i.id === sel}" aria-controls="recog-out"><span class="s" aria-hidden="true">${icon(mode === "persona" ? "persona" : "organizacao",20)}</span><span>${esc(i.nome)}</span>${icon("seta",16)}</button>`).join("")}</div></div>
         <div class="recog-out" id="recog-out" aria-live="polite">${out()}</div>`;
     }
     host.addEventListener("click", (e) => {
@@ -55,7 +56,7 @@
         <div class="stack" style="align-self:end"><button type="button" class="btn-ghost" data-ref="etapa:${s.id}">${esc(H.maisDetalhes)}</button><a class="btn-line arrow" href="playbook.html#${s.id}">${esc(H.abrirPlaybook)}</a></div>`;
     }
     function draw() {
-      host.innerHTML = `<div class="stages" role="group" aria-label="${esc(H.etapasAria)}">${ETAPAS4.map((id) => { const s = IDX.etapa[id]; return `<button type="button" data-st="${id}" aria-expanded="${open === id}" aria-controls="stage-detail"><span class="n">0${s.n}</span><b>${esc(s.cliente)}</b><span class="k">${esc(s.kdv)} · ${esc(s.frase)}</span></button>`; }).join("")}</div>
+      host.innerHTML = `<div class="stages" role="group" aria-label="${esc(H.etapasAria)}">${ETAPAS4.map((id) => { const s = IDX.etapa[id]; return `<button type="button" data-st="${id}" aria-expanded="${open === id}" aria-controls="stage-detail"><span class="n">${String(s.n).padStart(2,"0")}</span><b>${esc(s.cliente)}</b><span class="k">${esc(s.kdv)} · ${esc(s.frase)}</span></button>`; }).join("")}</div>
         <div class="stage-detail" id="stage-detail">${detail(IDX.etapa[open])}</div>`;
     }
     host.addEventListener("click", (e) => { const b = e.target.closest("[data-st]"); if (b) { open = b.dataset.st; draw(); host.querySelector(`[data-st="${open}"]`).focus(); } });
@@ -103,7 +104,7 @@
   }
   function personasGrid(host) {
     const { esc, store, K, T } = U(); const cur = store.get("perfil", null); const A = T.aspas || ["“", "”"];
-    host.innerHTML = K.personas.map((p) => `<button type="button" class="cell click" data-ref="persona:${p.id}"><span class="n" aria-hidden="true">${p.sinal}</span><h3>${esc(p.nome)}</h3><p style="font-size:18px;letter-spacing:-.01em">${A[0]}${esc(p.dor)}${A[1]}</p><p class="muted small">${esc(p.comeco)}</p><span class="go">${cur === p.id ? esc(T.paraQuem.seuPerfil) : ""}${esc(T.paraQuem.verMuda)}</span></button>`).join("");
+    host.innerHTML = K.personas.map((p) => `<button type="button" class="cell click" data-ref="persona:${p.id}"><span class="n" aria-hidden="true">${icon("persona",32)}</span><h3>${esc(p.titulo)}</h3><p class="muted small card-support">${esc(p.apoio)}</p><span class="go">${cur === p.id ? esc(T.paraQuem.seuPerfil) : ""}${esc(T.paraQuem.verMuda)}</span></button>`).join("");
   }
 
   /* ================= Como funciona ================= */
@@ -174,7 +175,7 @@
 
   function modulesGrid(host) {
     const { esc, K } = U();
-    host.innerHTML = K.modulos.map((m) => `<button type="button" class="cell click" data-ref="modulo:${m.id}"><span class="n">${esc(m.etapa)}</span><h3>${esc(m.nome)}</h3><p class="small"><b>${esc(m.quem)}.</b> <span class="muted">${esc(m.faz)}</span></p></button>`).join("");
+    host.innerHTML = K.modulos.map((m) => `<button type="button" class="cell click" data-ref="modulo:${m.id}" aria-label="${esc(m.nome)}"><span class="n">${esc(m.etapa)}</span>${icon("papel",24)}<h3>${esc(m.titulo)}</h3><p class="small muted card-support">${esc(m.apoio)}</p></button>`).join("");
   }
 
   function referenciais(host) {
@@ -198,7 +199,7 @@
     const done = store.get("etapas-feitas", {});
     let open = location.hash.slice(1); if (!K.etapas.some((s) => s.id === open)) open = "preparar";
     host.innerHTML = `<div class="steps">${K.etapas.map((s) => { const v = view("etapa:" + s.id); return `<div class="step ${done[s.id] ? "done" : ""}" id="${s.id}">
-      <div class="step-rail"><span class="dot">${s.n}</span></div>
+      <div class="step-rail"><span class="dot">${String(s.n).padStart(2,"0")}</span></div>
       <div><button type="button" class="step-head" aria-expanded="${open === s.id}" aria-controls="body-${s.id}"><span class="t"><small>${s.n === "0" ? esc(T.playbook.antes) : esc(T.painel.etapa) + " " + s.n} · ${esc(s.kdv)}</small><h3>${esc(s.cliente)}</h3><span class="muted small">${esc(s.frase)} ${esc(s.entrada)}</span></span><span class="plus" aria-hidden="true"></span></button>
       <div class="step-body" id="body-${s.id}" ${open === s.id ? "" : "hidden"}>${tabsHTML(v.tabs, { label: s.cliente })}
         <label class="row mt-m small" style="cursor:pointer"><input type="checkbox" data-done="${s.id}" ${done[s.id] ? "checked" : ""} style="width:18px;height:18px;accent-color:var(--ink)"> ${esc(T.playbook.marcar)}</label></div></div></div>`; }).join("")}</div>`;
@@ -308,7 +309,7 @@
     function draw() {
       const list = K.modelos.filter((m) => f === "todas" || m.etapas.includes(f));
       host.innerHTML = `<div class="toolbar"><div class="chips" role="group" aria-label="${esc(R.filtroAria)}">${[["todas", R.todasEtapas]].concat(K.etapas.map((s) => [s.id, s.cliente])).map(([k, l]) => `<button type="button" class="chip" data-mf="${k}" aria-pressed="${f === k}">${esc(l)}</button>`).join("")}</div></div>
-        <div class="grid g3">${list.map((m) => `<article class="cell"><span class="n">${m.n} · ${esc(IDX.camada[m.camada].nome)}</span><h3>${esc(m.nome)}</h3><p class="muted small">${esc(m.para)}</p>
+        <div class="grid g3">${list.map((m) => `<article class="cell"><span class="n">${m.n} · ${esc(IDX.camada[m.camada].nome)}</span>${icon("template",24)}<h3>${esc(m.nome)}</h3><p class="muted small card-support">${esc(m.apoio)}</p>
           <div class="row">${m.etapas.map((e) => `<span class="tag">${esc(IDX.etapa[e].kdv)}</span>`).join("")}</div>
           ${filesHTML(m)}<button type="button" class="btn-line" style="align-self:flex-start;margin-top:auto" data-ref="modelo:${m.id}">${esc(R.verExemplo)}</button></article>`).join("")}</div>
         ${T.officeNota ? `<p class="nota">${esc(T.officeNota)}</p>` : ""}`;
@@ -351,12 +352,12 @@
         <section><h3>${esc(D.cinco)}</h3><div class="acc">${K.camadas.map((c, i) => `<details><summary><span class="n">0${i + 1}</span><span><b style="font-weight:500">${esc(c.nome)}</b> <span class="muted">· ${esc(c.pergunta)}</span></span><span class="plus" aria-hidden="true"></span></summary><div class="acc-body"><p>${esc(c.resumo)}</p><ul class="mt-s">${ETAPAS4.map((e) => `<li><b>${esc(IDX.etapa[e].kdv)}:</b> ${esc(c.celulas[e][1])}</li>`).join("")}</ul></div></details>`).join("")}</div></section>`,
       conceitos: () => `<section><h3>${esc(D.seisConceitos)}</h3><div class="grid g2">${K.conceitos.map((c) => `<button type="button" class="cell click" data-ref="conceito:${c.id}"><span class="row"><span class="tag kdv">${esc(c.kdv)}</span>${c.opcional ? `<span class="tag">${esc(T.painel.opcional)}</span>` : ""}</span><h4>${esc(c.cliente)}</h4><p class="small muted">${esc(c.frase)}</p><span class="go">${esc(D.verDetalhe)}</span></button>`).join("")}</div><button type="button" class="btn-line arrow mt-s" style="align-self:flex-start" data-lightbox="${ROOT}assets/ux/D2_anatomia_ecossistema_arquitetura.png" data-caption="${esc(T.diagramas.D2)}">${esc(D.verAnatomia)}</button></section>`,
       raci: () => `<section><h3>${esc(D.quemFaz)}</h3><div id="doc-raci"></div></section>`,
-      etapas: () => `<section><h3>${esc(D.etapasUmaUma)}</h3><div class="acc">${K.etapas.map((s) => `<details><summary><span class="n">${s.n}</span><span><b style="font-weight:500">${esc(s.cliente)}</b> <span class="muted">· ${esc(s.kdv)}</span></span><span class="plus" aria-hidden="true"></span></summary><div class="acc-body">${tabsHTML(U().view("etapa:" + s.id).tabs, { label: s.cliente })}</div></details>`).join("")}</div><button type="button" class="btn-line arrow mt-s" style="align-self:flex-start" data-lightbox="${ROOT}assets/ux/D3_processo_jornada_do_dado.png" data-caption="${esc(T.diagramas.D3)}">${esc(D.verJornada)}</button></section>`,
+      etapas: () => `<section><h3>${esc(D.etapasUmaUma)}</h3><div class="acc">${K.etapas.map((s) => `<details><summary><span class="n">${String(s.n).padStart(2,"0")}</span><span><b style="font-weight:500">${esc(s.cliente)}</b> <span class="muted">· ${esc(s.kdv)}</span></span><span class="plus" aria-hidden="true"></span></summary><div class="acc-body">${tabsHTML(U().view("etapa:" + s.id).tabs, { label: s.cliente })}</div></details>`).join("")}</div><button type="button" class="btn-line arrow mt-s" style="align-self:flex-start" data-lightbox="${ROOT}assets/ux/D3_processo_jornada_do_dado.png" data-caption="${esc(T.diagramas.D3)}">${esc(D.verJornada)}</button></section>`,
       "modelo:contrato": () => `<section><h3>${esc(D.modeloBaixar)}</h3>${filesHTML(IDX.modelo.contrato)}<button type="button" class="btn-line" style="align-self:flex-start" data-ref="modelo:contrato">${esc(D.verContrato)}</button></section>`,
       acesso: () => `<section><h3>${esc(D.simule)}</h3><div id="doc-acesso"></div></section>`,
       ritmo: () => `<section><h3>${esc(D.ritmo)}</h3><div class="grid g3">${K.ritmo.map((r) => `<div class="cell"><span class="n">${esc(r.quando)}</span><p>${esc(r.oque)}</p></div>`).join("")}</div></section>`,
       caminhos: () => `<section><h3>${esc(D.tresPontos)}</h3><div class="grid g3">${K.caminhos.map((c) => `<div class="cell"><h4>${esc(c.nome)}</h4><p class="small">${esc(c.como)}</p><p class="small muted">${esc(c.cuidado)}</p></div>`).join("")}</div><a class="btn-line arrow" style="align-self:flex-start" href="implementacao.html">${esc(D.verImplementacao)}</a></section>`,
-      "exemplo-etapas": () => `<section><h3>${esc(D.conselhoEtapas)}</h3><div class="acc">${K.etapas.map((s) => `<details><summary><span class="n">${s.n}</span><span>${esc(s.cliente)} <span class="muted">· ${esc(s.kdv)}</span></span><span class="plus" aria-hidden="true"></span></summary><div class="acc-body"><p>${esc(s.exemplo)}</p></div></details>`).join("")}</div></section>`,
+      "exemplo-etapas": () => `<section><h3>${esc(D.conselhoEtapas)}</h3><div class="acc">${K.etapas.map((s) => `<details><summary><span class="n">${String(s.n).padStart(2,"0")}</span><span>${esc(s.cliente)} <span class="muted">· ${esc(s.kdv)}</span></span><span class="plus" aria-hidden="true"></span></summary><div class="acc-body"><p>${esc(s.exemplo)}</p></div></details>`).join("")}</div></section>`,
       referenciais: () => `<section><div id="doc-refs"></div></section>`
     };
     const refsIn = (g) => Array.from(new Set(Array.from(JSON.stringify(g.secoes || "").matchAll(/\{\{([a-z]+:[a-z0-9-]+)\|/g)).map((m) => m[1])));
@@ -424,7 +425,7 @@
     },
     recursos() { on("models", modelsGrid); on("canvas-ui", canvasGen); on("diagrams", diagramsGrid); },
     documentacao() {},
-    comunidade() { on("brands", (h) => { const { esc, K } = U(); h.innerHTML = K.marcas.map((m) => `<div><b style="font-weight:500">${esc(m.nome)}</b><span class="small muted">${esc(m.papel)}</span></div>`).join(""); }); },
+    comunidade() { on("brands", (h) => { const { esc, K } = U(); h.innerHTML = K.marcas.map((m) => `<div><b style="font-weight:500">${esc(m.nome)}</b><span class="small muted">${esc(m.apoio || m.papel)}</span></div>`).join(""); }); },
     privacidade() {}
   };
 })();

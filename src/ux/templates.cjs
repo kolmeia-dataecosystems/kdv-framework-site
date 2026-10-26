@@ -1,8 +1,10 @@
+const {icon}=require('./icons.cjs');
 const rich = s => String(s ?? '').replace(/\{\{([a-z]+:[a-z0-9-]+)\|([^}]+)\}\}/g, (_,ref,txt) => '<button type="button" class="ref" data-ref="'+ref+'">'+txt+'</button>');
 const attr = s => String(s??'').replace(/[&"<]/g,c=>({'&':'&amp;','"':'&quot;','<':'&lt;'}[c]));
 const strip = s => String(s??'').replace(/<[^>]+>/g,'');
 function hero(H,extra=''){return '<header class="wrap page-hero"><p class="eyebrow">'+H.eb+'</p><h1>'+H.h1+'</h1><p class="lead">'+rich(H.lead)+'</p>'+extra+'</header>';}
-function sec(id,S,body,tint){return '<section class="sec '+(tint?'tint':'')+'" id="'+id+'"'+(S.sub?' data-sub="'+attr(S.sub)+'"':'')+'><div class="wrap"><div class="sec-head"><p class="eyebrow">'+S.eb+'</p><h2>'+S.h2+'</h2><p class="muted">'+rich(S.p)+'</p></div>'+body+'</div></section>';}
+const sectionIcons={organizacoes:'organizacao',perfis:'persona',perguntas:'documento',anatomia:'artefato',camadas:'pratica',papeis:'papel',modulos:'papel',referenciais:'pratica',ia:'risco',etapas:'estagio',acesso:'papel',ritmo:'pratica',checklist:'evidencia',caminhos:'estagio',arquitetura:'artefato',ferramentas:'artefato',interfaces:'papel',licencas:'documento',modelos:'template',canvas:'artefato',diagramas:'documento',fontes:'link-externo',contribuir:'comunidade',guardioes:'papel',roteiro:'estagio',marcas:'comunidade'};
+function sec(id,S,body,tint){return '<section class="sec '+(tint?'tint':'')+'" id="'+id+'"'+(S.sub?' data-sub="'+attr(S.sub)+'"':'')+'><div class="wrap"><div class="sec-head"><p class="eyebrow">'+(sectionIcons[id]?icon(sectionIcons[id],20):'')+S.eb+'</p><h2>'+S.h2+'</h2><p class="muted">'+rich(S.p)+'</p></div>'+body+'</div></section>';}
 const GH='https://github.com/kolmeia-dataecosystems/kdv-framework';
 const PAGES = {
   home(P) {
@@ -53,7 +55,7 @@ const PAGES = {
       + sec("papeis", S.papeis, '<div id="roles"></div>')
       + sec("modulos", S.modulos, '<div class="grid g3" id="modules"></div>', true)
       + sec("referenciais", S.referenciais, '<div id="refs"></div>')
-      + sec("ia", S.ia, `<div class="grid g4">${P.iaCards.map(([h, t], i) => `<div class="cell"><span class="n">0${i + 1}</span><h3>${h}</h3><p class="small muted">${rich(t)}</p></div>`).join("")}</div><div class="row mt-m"><a class="btn-line arrow" href="documentacao.html#ia-privacidade">${P.iaLink}</a><span class="pill-note">${P.iaNota}</span></div>`, true);
+      + sec("ia", S.ia, `<div class="grid g2">${P.iaCards.map(([h, t], i) => `<div class="cell"><span class="n">0${i + 1}</span><h3>${h}</h3><p class="small muted">${rich(t)}</p></div>`).join("")}</div><div class="row mt-m"><a class="btn-line arrow" href="documentacao.html#ia-privacidade">${P.iaLink}</a><span class="pill-note">${P.iaNota}</span></div>`, true);
   },
   playbook(P) {
     const S = P.sec, H = P.hero;
@@ -70,7 +72,7 @@ const PAGES = {
       + sec("arquitetura", S.arquitetura, `<div id="arch"></div><button type="button" class="btn-line arrow mt-m" data-lightbox="../assets/ux/D5_arquitetura_referencia_ferramentas.png" data-caption="${attr(P.diagramaLegenda)}">${P.verDiagrama}</button>`, true)
       + sec("ferramentas", S.ferramentas, '<div id="tools"></div>')
       + sec("interfaces", S.interfaces, '<div class="grid g3" id="modules"></div>', true)
-      + sec("licencas", S.licencas, `<div class="two"><div class="prose"><h3>${X.h3a}</h3><p>${X.pa}</p></div><div class="prose"><h3>${X.h3b}</h3><p>${X.pb}</p></div></div>`);
+      + sec("licencas", S.licencas, `<div class="two"><div class="prose"><h3>${X.h3a}</h3><ul>${X.criterios.map(p=>`<li>${p}</li>`).join("")}</ul></div><div class="prose"><h3>${X.h3b}</h3><p>${X.pb}</p></div></div>`);
   },
   recursos(P) {
     const S = P.sec;
@@ -92,8 +94,8 @@ const PAGES = {
     const S = P.sec, G = P.guardioes, H = P.hero;
     const links = [GH + "/issues/new?template=question.yml", GH + "/blob/main/CONTRIBUTING.md", GH + "/issues/new?template=example.yml", "https://github.com/kolmeia-dataecosystems/kdv-framework-site"];
     return hero(H, `<div class="actions mt-m"><a class="btn" href="${GH}" target="_blank" rel="noopener">${H.cta1}</a></div>`)
-      + sec("contribuir", S.contribuir, `<div class="grid g4">${P.contribuir.map(([h, t, l], i) => `<a class="cell click" style="text-decoration:none" href="${links[i]}" target="_blank" rel="noopener"><span class="n">0${i + 1}</span><h3>${h}</h3><p class="small muted">${t}</p><span class="go">${l}</span></a>`).join("")}</div>`)
-      + sec("guardioes", S.guardioes, `<div class="two"><div class="prose"><h3>${G.h3a}</h3><ol>${G.passos.map((p) => `<li>${p}</li>`).join("")}</ol></div><div class="prose"><h3>${G.h3b}</h3><p>${G.p1}</p><p>${G.p2}</p></div></div>`, true)
+      + sec("contribuir", S.contribuir, `<div class="grid g2">${P.contribuir.map(([h, t, l], i) => `<a class="cell click" style="text-decoration:none" href="${links[i]}" target="_blank" rel="noopener"><span class="n">0${i + 1}</span><h3>${h}</h3><p class="small muted">${t}</p><span class="go">${l}</span></a>`).join("")}</div>`)
+      + sec("guardioes", S.guardioes, `<div class="two"><div class="prose"><h3>${G.h3a}</h3><ol>${G.passos.map((p) => `<li>${p}</li>`).join("")}</ol></div><div class="prose"><h3>${G.h3b}</h3><p>${G.p1}</p><ul>${G.regras.map(p=>`<li>${p}</li>`).join("")}</ul></div></div>`, true)
       + sec("roteiro", S.roteiro, `<div class="grid g3">${P.roteiro.map(([h, t], i) => `<div class="cell"><span class="n">0${i + 1}</span><h3>${h}</h3><p class="small muted">${t}</p></div>`).join("")}</div><div class="panel mt-m prose"><h3>${P.versao.h3}</h3><p>${P.versao.p}</p></div>`)
       + sec("marcas", S.marcas, `<div class="brands" id="brands"></div><div class="two mt-m"><div class="prose"><h3>${P.licenca.h3}</h3><p>${P.licenca.p}</p></div><div class="prose"><h3>${P.contato.h3}</h3><p>${rich(P.contato.p)}</p></div></div>`, true);
   },
