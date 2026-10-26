@@ -2,6 +2,8 @@
 (function(root){
  'use strict';
  const paths={
+  classificacao:'<path d="M3 3h8l10 10-8 8L3 11Z"/><circle cx="7" cy="7" r="1"/>',
+  hexagono:'<path d="m12 2 9 5v10l-9 5-9-5V7Z"/>',
   persona:'<circle cx="12" cy="6" r="3"/><path d="M5 21v-6l3-3h8l3 3v6"/>',
   organizacao:'<path d="M2 22h20M4 22V3h11v19M15 9h5v13M8 7h3M8 11h3M8 15h3M18 13v1M18 17v1"/>',
   papel:'<path d="M8 5V2h8v3M3 5h18v17H3ZM3 11h18M10 10v4h4v-4"/>',

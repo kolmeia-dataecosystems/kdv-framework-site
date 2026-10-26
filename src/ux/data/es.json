@@ -3300,6 +3300,13 @@
           "title": "Dos ejemplos completos"
         }
       }
+    },
+    "visual": {
+      "localChoices": [
+        "Nombres de los roles",
+        "Flujos de aprobación",
+        "Ritmo de revisión"
+      ]
     }
   }
 }

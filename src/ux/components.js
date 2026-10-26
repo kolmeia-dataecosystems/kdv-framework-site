@@ -48,39 +48,32 @@
 
   function stagesInline(host) {
     const { esc, IDX, refChip, T } = U(); const H = T.home;
-    let open = "cultivar";
     function detail(s) {
       return `<div><h4>${esc(H.comecaQuando)}</h4><p>${esc(s.entrada)}</p></div>
         <div><h4>${esc(H.oQueFazer)}</h4><ul>${s.praticas.map((p) => `<li>${esc(p)}</li>`).join("")}</ul></div>
         <div><h4>${esc(H.evidencia)}</h4><ul>${s.evidencia.map((p) => `<li>${esc(p)}</li>`).join("")}</ul><h4 style="margin-top:14px">${esc(H.quem)}</h4><div class="who">${s.participantes.map((p) => refChip("papel:" + p)).join("")}</div></div>
         <div class="stack" style="align-self:end"><button type="button" class="btn-ghost" data-ref="etapa:${s.id}">${esc(H.maisDetalhes)}</button><a class="btn-line arrow" href="playbook.html#${s.id}">${esc(H.abrirPlaybook)}</a></div>`;
     }
-    function draw() {
-      host.innerHTML = `<div class="stages" role="group" aria-label="${esc(H.etapasAria)}">${ETAPAS4.map((id) => { const s = IDX.etapa[id]; return `<button type="button" data-st="${id}" aria-expanded="${open === id}" aria-controls="stage-detail"><span class="n">${String(s.n).padStart(2,"0")}</span><b>${esc(s.cliente)}</b><span class="k">${esc(s.kdv)} · ${esc(s.frase)}</span></button>`; }).join("")}</div>
-        <div class="stage-detail" id="stage-detail">${detail(IDX.etapa[open])}</div>`;
-    }
-    host.addEventListener("click", (e) => { const b = e.target.closest("[data-st]"); if (b) { open = b.dataset.st; draw(); host.querySelector(`[data-st="${open}"]`).focus(); } });
-    draw();
+    host.innerHTML = `<div class="stage-layout"><div class="stage-honeycomb" role="tablist" aria-label="${esc(H.etapasAria)}">${ETAPAS4.map((id,i)=>{const s=IDX.etapa[id];return `<button type="button" class="stage-hex ${i===0?'selected':''}" id="stage-tab-${id}" role="tab" aria-selected="${i===0}" aria-controls="stage-panel-${id}" tabindex="${i===0?0:-1}" data-cycle-stage="${id}"><span class="n">0${i+1}</span>${icon(['grow','govern','share','activate'][i],24)}<b>${esc(s.kdv)}</b><span class="small">${esc(s.cliente)}</span></button>`;}).join('')}</div><div class="stage-panels">${ETAPAS4.map((id,i)=>{const s=IDX.etapa[id];return `<section class="stage-detail" id="stage-panel-${id}" role="tabpanel" aria-labelledby="stage-tab-${id}" tabindex="0"${i===0?'':' hidden'}><h3>${esc(s.kdv)}</h3><p class="stage-phrase">${esc(s.frase)}</p>${detail(s)}</section>`;}).join('')}</div></div>`;
   }
 
   function baselineRow(host) {
-    const { esc, K } = U();
-    host.innerHTML = K.baseline.map((b, i) => `<button type="button" data-ref="base:${b.id}"><span class="n">0${i + 1}</span><b>${esc(b.nome)}</b><span class="why">${esc(b.porque)}</span></button>`).join("");
+    const { esc, K, T, refChip } = U(),P=T.painel;
+    host.innerHTML = `<div class="baseline-orbit">${K.ux.visual.localChoices.map(x=>`<span>${esc(x)}</span>`).join('')}</div><div class="baseline-badges">${K.baseline.map((b, i) => `<details class="baseline-item"><summary><span class="badge-hex">${icon(['persona','documento','classificacao','govern','evidencia'][i],32)}<span class="n">0${i+1}</span></span><b>${esc(b.nome)}</b></summary><div class="baseline-copy"><p>${esc(b.porque)}</p><h4>${esc(P.comoVerificar)}</h4><p>${esc(b.verificar)}</p><h4>${esc(P.evidencia)}</h4><p>${esc(b.evidencia)}</p><h4>${esc(P.modelo)}</h4>${refChip('modelo:'+b.modelo)}</div></details>`).join('')}</div>`;
+    let pointer=false;
+    host.addEventListener('pointerdown',()=>{pointer=true;});
+    host.addEventListener('focusin',event=>{const item=event.target.closest('.baseline-item');if(item&&!pointer)item.open=true;});
+    host.addEventListener('click',()=>{pointer=false;});
   }
 
   function translation(host) {
-    const { esc, K, T } = U(); const H = T.home; let analog = false;
-    function draw() {
-      const L = H.linhaCiclo;
-      host.innerHTML = `<div class="toolbar"><p class="muted small">${esc(H.tradDica)}</p>
-        <div class="seg-ctrl" role="group" aria-label="${esc(H.colunasAria)}"><button type="button" data-an="0" aria-pressed="${!analog}">${esc(H.colExemplos)}</button><button type="button" data-an="1" aria-pressed="${analog}">${esc(H.colAnalogia)}</button></div></div>
-        <div class="tbl-wrap"><table class="tbl"><thead><tr><th>${esc(H.thCliente)}</th><th>${esc(H.thKdv)}</th><th>${esc(analog ? H.thPorque : H.thExemplo)}</th></tr></thead><tbody>
-        ${K.conceitos.map((c) => `<tr class="rowclick" data-ref="conceito:${c.id}" tabindex="0"><td class="first">${esc(c.cliente)}<br><span class="muted small">${esc(c.frase)}</span></td><td><span class="tag kdv">${esc(c.kdv)}</span></td><td>${esc(analog ? c.analogia : c.exemplo)}</td></tr>`).join("")}
-        <tr><td class="first">${esc(L[0])}</td><td><span class="tag kdv">${esc(L[1])}</span></td><td>${esc(analog ? L[3] : L[2])}</td></tr></tbody></table></div>`;
-    }
-    host.addEventListener("click", (e) => { const b = e.target.closest("[data-an]"); if (b) { analog = b.dataset.an === "1"; draw(); } });
-    host.addEventListener("keydown", (e) => { const r = e.target.closest("tr[data-ref]"); if (r && (e.key === "Enter" || e.key === " ")) { e.preventDefault(); U().openRef(r.dataset.ref); } });
-    draw();
+    const { esc, K, T } = U(); const H = T.home;
+    const pair=(client,kdv,phrase,example,analogy,ref)=>`<div class="term-pair" data-term-pair><dt><span class="sr">${esc(H.thCliente)}: </span>${ref?`<button type="button" class="term-side" data-ref="${ref}">${esc(client)}</button>`:`<span class="term-side" tabindex="0">${esc(client)}</span>`}<span class="term-connector" aria-hidden="true">${icon('seta',24)}</span><span class="sr">${esc(H.thKdv)}: </span>${ref?`<button type="button" class="term-side term-kdv" data-ref="${ref}">${esc(kdv)}</button>`:`<span class="term-side term-kdv" tabindex="0">${esc(kdv)}</span>`}</dt><dd>${phrase?`<p>${esc(phrase)}</p>`:''}<p data-term-example><b>${esc(H.thExemplo)}:</b> ${esc(example)}</p><p data-term-analogy><b>${esc(H.thPorque)}:</b> ${esc(analogy)}</p></dd></div>`;
+    const L=H.linhaCiclo;
+    host.innerHTML = `<div class="toolbar"><p class="muted small">${esc(H.tradDica)}</p><div class="seg-ctrl" role="group" aria-label="${esc(H.colunasAria)}"><button type="button" data-an="0" aria-pressed="true">${esc(H.colExemplos)}</button><button type="button" data-an="1" aria-pressed="false">${esc(H.colAnalogia)}</button></div><label class="term-filter">${esc(T.docs.glossFiltro)}<input type="search" data-term-filter></label></div><div class="term-head" aria-hidden="true"><span>${esc(H.thCliente)}</span><span>${esc(H.thKdv)}</span></div><dl class="term-pairs">${K.conceitos.map(c=>pair(c.cliente,c.kdv,c.frase,c.exemplo,c.analogia,'conceito:'+c.id)).join('')}${pair(L[0],L[1],'',L[2],L[3])}</dl>`;
+    host.querySelectorAll('[data-term-analogy]').forEach(p=>p.hidden=true);
+    host.addEventListener('click',event=>{const button=event.target.closest('[data-an]');if(!button)return;host.querySelectorAll('[data-an]').forEach(b=>b.setAttribute('aria-pressed',String(b===button)));host.querySelectorAll('[data-term-example]').forEach(p=>p.hidden=button.dataset.an==='1');host.querySelectorAll('[data-term-analogy]').forEach(p=>p.hidden=button.dataset.an==='0');});
+    host.addEventListener('input',event=>{if(!event.target.matches('[data-term-filter]'))return;const normalize=s=>s.normalize('NFD').replace(/[\u0300-\u036f]/g,'').toLowerCase(),q=normalize(event.target.value);host.querySelectorAll('[data-term-pair]').forEach(row=>row.hidden=!normalize(row.textContent).includes(q));});
   }
 
   function casesTabs(host) {

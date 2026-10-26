@@ -3296,6 +3296,13 @@
           "title": "Dois exemplos completos"
         }
       }
+    },
+    "visual": {
+      "localChoices": [
+        "Nomes de papéis",
+        "Fluxos de aprovação",
+        "Ritmo de revisão"
+      ]
     }
   }
 }
