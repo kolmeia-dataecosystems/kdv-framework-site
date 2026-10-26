@@ -20,7 +20,7 @@ export function localizeLinks(html,l){
  for(const [file,route] of Object.entries(routeFiles))html=html.replaceAll(`href="${file}`,`href="/${l}/${route?route+'/':''}`);
  return html.replace(/[ \t]+$/gm,'');
 }
-const scripts=['interaction.js','components.js'].map(file=>readFileSync(new URL('./'+file,import.meta.url),'utf8'));
+const scripts=['icons.cjs','interaction.js','components.js'].map(file=>readFileSync(new URL('./'+file,import.meta.url),'utf8'));
 
 // Render the same first interaction state at build time. Only reviewed, local
 // presentation modules execute here. No browser, network or contributor code.

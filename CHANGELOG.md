@@ -1,5 +1,11 @@
 # Changelog
 
+## 1.4.0 — 2026-10-26
+
+- Unify interface icons as accessible 24-grid stroke SVGs, including theme and navigation controls.
+- Shorten institutional introductions and cards in all four languages; align section headers, cards and links.
+- Preserve the approved home, paused implementation route and accepted Framework 1.2.0 knowledge.
+
 ## 1.3.2 — 2026-10-26
 
 - Fix the hover state of the five common items on the home page: the list inherited an old dark band, so the highlighted card turned light with light text. It now follows the theme tokens like the other cards.

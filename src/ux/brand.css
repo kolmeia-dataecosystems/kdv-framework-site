@@ -95,7 +95,7 @@ html:not(.has-js) .ux-experience [role="tabpanel"][hidden],html:not(.has-js) .ux
 
 .ux-experience :is(.btn,.chip,.icon-btn){transition:background .2s,color .2s}
 .ux-experience .stage-honeycomb .hex-link:not(.selected){color:var(--ink)}
-.ux-experience .cell.click .go::after{content:'↗';display:inline-block;transition:transform .2s}
+.ux-experience .cell.click .go::after{content:'';display:inline-block;transition:transform .2s}
 .ux-experience .cell.click:is(:hover,:focus-visible) .go{color:var(--ink)}
 .ux-experience .cell.click:is(:hover,:focus-visible) .go::after{transform:translateX(3px)}
 .ux-experience #models article .arrow::after{display:inline-block;transition:transform .2s}
@@ -108,3 +108,29 @@ html:not(.has-js) .ux-experience [role="tabpanel"][hidden],html:not(.has-js) .ux
 .ux-experience .baseline{background:none;color:var(--ink);padding:0}
 .ux-experience .baseline button{transition:background .18s,box-shadow .18s}
 .ux-experience .baseline button:is(:hover,:focus-visible){background:var(--soft);box-shadow:inset 0 0 0 1px var(--ink)}
+/* Website 1.4: one stroke system and shared institutional rhythm. */
+.ux-experience .icon{display:inline-block;vertical-align:middle;flex:none;stroke-width:1.5;stroke-linecap:square;stroke-linejoin:miter}
+.ux-experience .icon-16{width:16px;height:16px}.ux-experience .icon-20{width:20px;height:20px}.ux-experience .icon-24{width:24px;height:24px}.ux-experience .icon-32{width:32px;height:32px}
+.ux-experience .header-tools .icon{width:20px;height:20px}
+.ux-experience .arrow,.ux-experience .go{display:inline-flex;align-items:center;gap:8px}
+.ux-experience .arrow>.icon:first-child,.ux-experience .go>.icon:first-child{order:1}
+.ux-experience .arrow::after,.ux-experience .go::after,.ux-experience .recog-list button::after,.ux-experience .plus::after{content:none!important}
+.ux-experience .arrow .icon,.ux-experience .go .icon{transition:transform .2s}
+.ux-experience :is(.arrow,.cell.click):is(:hover,:focus-visible) :is([data-icon="seta"],[data-icon="link-externo"]){transform:translateX(3px)}
+.ux-experience .plus .icon{transition:transform .2s}.ux-experience details[open]>summary .plus .icon,.ux-experience .step-head[aria-expanded="true"] .plus .icon{transform:rotate(45deg)}
+.ux-experience .arrow-back .icon{transform:rotate(180deg)}
+.ux-experience .sec-head .eyebrow{display:flex;align-items:center;gap:10px}
+.ux-experience :is(.cell,.docs-guide,.review-release-pair>article){border:1px solid var(--line);padding:clamp(18px,2.2vw,28px);background:transparent}
+.ux-experience :is(.cell.click,.docs-guide,.review-release-pair>article){transition:background .2s,border-color .2s}
+.ux-experience :is(.cell.click,.docs-guide,.review-release-pair>article):is(:hover,:focus-visible,:focus-within){background:var(--soft);border-color:var(--ink)}
+.ux-experience :is(.card-support,.docs-guide p){max-width:48ch;font-size:14px;line-height:1.5}
+.ux-experience .docs-guide>svg:last-child{position:absolute;right:22px;bottom:17px}
+.ux-experience .docs-guide h2{margin-top:16px}
+.ux-experience .review-release-pair{gap:24px}
+.ux-experience .release-change-list li{margin-block:10px}
+.ux-experience[data-page="releases"] .section{padding-block:clamp(56px,8vw,104px)}
+.ux-experience .sec .prose li,.ux-experience .docs-governance li{margin-block:8px;color:var(--ink-2)}
+/* Connected grids share a single border, as in 1.3. */
+.ux-experience .grid>.cell{border-top:0;border-left:0}
+.ux-experience .docs-guide-grid{border:0;border-top:1px solid var(--line);border-left:1px solid var(--line)}
+.ux-experience .docs-guide{border:0;border-right:1px solid var(--line);border-bottom:1px solid var(--line)}

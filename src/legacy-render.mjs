@@ -1,3 +1,4 @@
+import icons from './ux/icons.cjs';
 import {brandLogo} from './brand.mjs';
 import {publishedRelease,publicationText} from './publication.mjs';
 import {reviewMode,completeExperience,localeLabels,institutionalLanguage,availableGuideSlugs} from './context.mjs';
@@ -14,8 +15,7 @@ const e=escape;
 const lines=s=>e(s).replace(/\n/g,'<br>');
 const path=(l,r='')=>`/${l}/${r?r+'/':''}`;
 const arrow='<span aria-hidden="true">↗</span>';
-const icons={hive:'<path d="M12 2 21 7v10l-9 5-9-5V7Z"/><path d="m3 7 9 5 9-5M12 12v10"/>',cell:'<path d="M5 5h14v14H5Z"/><path d="M9 9h6v6H9Z"/>',ecosystem:'<path d="m12 1 10 6v11l-10 5L2 18V7Z"/><path d="M12 7v10M7 9l10 6M17 9 7 15"/>',comb:'<path d="M2 3h8v8H2Zm12 0h8v8h-8ZM2 15h8v8H2Zm12 0h8v8h-8Z"/>',product:'<path d="M6 2h12v20H6ZM6 7h12M9 11h6M9 15h6M9 18h3"/>',farm:'<path d="m2 10 10-8 10 8M5 8v14h14V8M9 22v-8h6v8"/>',grow:'<path d="M12 22V10M12 14C3 14 3 6 3 6s9-1 9 8ZM12 10C12 2 21 2 21 2s0 8-9 8Z"/>',govern:'<path d="m12 2 9 4v6c0 6-9 11-9 11S3 18 3 12V6Z"/><path d="m7 12 3 3 7-7"/>',share:'<path d="m7 12 10-7M7 12l10 7"/><path d="M2 9h6v6H2Zm15-7h5v5h-5Zm0 15h5v5h-5Z"/>',activate:'<path d="M3 21V3M3 21h19M7 17l5-5 4 2 6-9M17 5h5v5"/>',code:'<path d="m8 5-6 7 6 7M16 5l6 7-6 7M14 2l-4 20"/>',people:'<path d="M9 2h6v6H9ZM5 22v-8h14v8M1 7h4v4H1Zm18 0h4v4h-4M1 22v-6h4M23 22v-6h-4"/>'};
-export const icon=(name,cls='')=>`<svg class="icon ${cls}" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.25" aria-hidden="true">${icons[name]||icons.product}</svg>`;
+export const icon=(name,cls='')=>icons.icon(name,24).replace('class="icon ',`class="icon ${cls} `);
 const link=(href,text,cls='text-link')=>`<a class="${cls}" href="${e(href)}">${e(text)}${arrow}</a>`;
 const eyebrow=t=>`<p class="eyebrow">${e(t)}</p>`;
 function header(l,r,c){return `<a class="skip" href="#main">${e(c.skip)}</a><header class="header"><div class="wrap header-row"><a class="brand" href="${path(l)}" aria-label="KDV / framework">${brandLogo}</a><nav class="main-nav" id="navigation" aria-label="${e(c.menu)}">${['','model','playbook','docs','resources','community'].map(x=>`<a ${x===r||(x==='docs'&&r.startsWith('docs/'))?'aria-current="page"':''} href="${path(l,x)}">${e(x==='docs'?docsUi[l].label:c.nav[routes.indexOf(x)])}</a>`).join('')}</nav><div class="header-tools"><div class="languages" aria-label="${l==='en'?'Language':'Idioma'}">${languages.map(x=>`<a lang="${content[x].locale}" href="${path(x,r)}" ${x===l?'aria-current="true"':''}>${completeExperience?localeLabels[x]:x.toUpperCase()}</a>`).join('')}</div><a class="github-icon" href="${REPO}" aria-label="GitHub">${icon('code')}</a><button class="mobile-toggle" aria-expanded="false" aria-controls="navigation">${e(c.menu)} <span aria-hidden="true">+</span></button></div></div></header>`;}

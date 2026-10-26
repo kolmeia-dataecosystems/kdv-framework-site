@@ -395,42 +395,54 @@
       "nome": "Portal de descubrimiento y consumo de datos",
       "quem": "Quien busca y usa datos",
       "faz": "Catálogo, solicitud de acceso con plazo, lectura del contrato y seguimiento de las concesiones.",
-      "etapa": "Compartir · Activar"
+      "etapa": "Compartir · Activar",
+      "titulo": "Descubrimiento y consumo",
+      "apoio": "Encuentre datos, lea contratos y siga accesos."
     },
     {
       "id": "producer",
       "nome": "Gestión y publicación de productos de datos",
       "quem": "Quien prepara y publica datos",
       "faz": "Dominios, subdominios, contratos, versiones, calidad y decisión sobre solicitudes de acceso.",
-      "etapa": "Cultivar · Gobernar · Compartir"
+      "etapa": "Cultivar · Gobernar · Compartir",
+      "titulo": "Publicación de productos",
+      "apoio": "Prepare contratos, versiones, calidad y decisiones de acceso."
     },
     {
       "id": "ecops",
       "nome": "Consola de gobernanza del ecosistema",
       "quem": "Quien gobierna el ecosistema",
       "faz": "Políticas comunes, perfiles de gobernanza, roles, decisiones del foro e indicadores.",
-      "etapa": "Gobernar"
+      "etapa": "Gobernar",
+      "titulo": "Gobernanza del ecosistema",
+      "apoio": "Coordine políticas, roles, decisiones del foro e indicadores."
     },
     {
       "id": "platops",
       "nome": "Consola de operaciones de la plataforma",
       "quem": "Quien opera la plataforma",
       "faz": "Entornos, servicios, alertas, certificados y secretos, sin mostrar sus valores.",
-      "etapa": "Base compartida"
+      "etapa": "Base compartida",
+      "titulo": "Operaciones de plataforma",
+      "apoio": "Opere entornos, servicios, alertas, certificados y secretos."
     },
     {
       "id": "desk",
       "nome": "Centro de atención de datos",
       "quem": "Todos",
       "faz": "Mostrador común para dudas, problemas e incidentes de datos.",
-      "etapa": "Activar"
+      "etapa": "Activar",
+      "titulo": "Atención de datos",
+      "apoio": "Gestione dudas, problemas e incidentes de datos."
     },
     {
       "id": "adapters",
       "nome": "Adaptadores de integración de la plataforma",
       "quem": "Ingeniería de plataforma",
       "faz": "Conectan el modelo con las herramientas elegidas, sin versiones separadas del producto.",
-      "etapa": "Base compartida"
+      "etapa": "Base compartida",
+      "titulo": "Integraciones",
+      "apoio": "Conecte el modelo con las herramientas elegidas."
     }
   ],
   "etapas": [
@@ -951,7 +963,6 @@
   "personas": [
     {
       "id": "gestor",
-      "sinal": "◈",
       "trilha": [
         "primeiros-passos",
         "exemplo",
@@ -963,11 +974,12 @@
       "dor": "Cada reunión empieza discutiendo qué cifra es la correcta.",
       "quer": "Beneficio para el negocio, esfuerzo exigido al equipo y un primer resultado visible.",
       "muda": "Un producto de datos con responsable y definición acordada sustituye las versiones paralelas de la misma cifra.",
-      "comeco": "Elija una decisión importante y patrocine el primer caso."
+      "comeco": "Elija una decisión importante y patrocine el primer caso.",
+      "titulo": "Gestión de negocio",
+      "apoio": "Elija el indicador que más necesita una decisión."
     },
     {
       "id": "dados",
-      "sinal": "◎",
       "trilha": [
         "principios",
         "papeis",
@@ -979,11 +991,12 @@
       "dor": "Tenemos herramientas, pero no gobernanza. El DAMA es demasiado grande para empezar.",
       "quer": "Por dónde empezar, roles mínimos y cómo medir el progreso sin un cuestionario de madurez.",
       "muda": "Una base común de cinco elementos y cuatro etapas ponen orden en el trabajo, medido por lo que queda registrado.",
-      "comeco": "Defina la base común y los roles del primer dominio."
+      "comeco": "Defina la base común y los roles del primer dominio.",
+      "titulo": "Gobernanza de datos",
+      "apoio": "Empiece por un dominio y sus responsables."
     },
     {
       "id": "privacidade",
-      "sinal": "◇",
       "trilha": [
         "acesso",
         "ia-privacidade",
@@ -995,11 +1008,12 @@
       "dor": "No puedo demostrar quién accedió a qué, por qué y hasta cuándo.",
       "quer": "Registro de decisiones, rastro de acceso y vínculo con el RGPD y la LGPD.",
       "muda": "Solicitud, decisión, aplicación y revisión quedan registradas como actos separados, con plazo.",
-      "comeco": "Revise el flujo de acceso y el registro de excepciones."
+      "comeco": "Revise el flujo de acceso y el registro de excepciones.",
+      "titulo": "Riesgo y cumplimiento",
+      "apoio": "Registre límites de uso y decisiones de acceso."
     },
     {
       "id": "engenharia",
-      "sinal": "⌘",
       "trilha": [
         "anatomia",
         "implementacao",
@@ -1011,11 +1025,12 @@
       "dor": "Las solicitudes de acceso llegan por correo, los pipelines no tienen responsable y temo quedar atado a un proveedor.",
       "quer": "Herramientas abiertas, contratos versionados, políticas automatizadas y licencias claras.",
       "muda": "Cada regla acordada se convierte en un control aplicado por la plataforma, con herramientas abiertas.",
-      "comeco": "Compare los tres caminos de implementación."
+      "comeco": "Compare los tres caminos de implementación.",
+      "titulo": "Ingeniería de datos",
+      "apoio": "Acuerde responsabilidades antes de integrar herramientas."
     },
     {
       "id": "steward",
-      "sinal": "◐",
       "trilha": [
         "papeis",
         "contratos",
@@ -1027,11 +1042,12 @@
       "dor": "Soy a quien todo el mundo pregunta qué significa esta columna.",
       "quer": "El rol designado, qué hacer en cada etapa y plantillas de glosario y contrato.",
       "muda": "Lo que hoy es un favor informal pasa a ser un rol reconocido, con ámbito y plantilla de trabajo.",
-      "comeco": "Empiece por el contrato del producto más solicitado."
+      "comeco": "Empiece por el contrato del producto más solicitado.",
+      "titulo": "Data steward",
+      "apoio": "Empiece por el contrato del producto más solicitado."
     },
     {
       "id": "consumidor",
-      "sinal": "↗",
       "trilha": [
         "contratos",
         "acesso",
@@ -1042,7 +1058,9 @@
       "dor": "Tardo semanas en conseguir acceso y no sé si puedo usar el dato.",
       "quer": "Catálogo, solicitud de acceso con plazo y un contrato fácil de leer.",
       "muda": "El contrato dice de antemano qué se puede hacer, y la solicitud tiene responsable y plazo de respuesta.",
-      "comeco": "Lea el contrato del producto antes de solicitar acceso."
+      "comeco": "Lea el contrato del producto antes de solicitar acceso.",
+      "titulo": "Análisis e IA",
+      "apoio": "Lea el contrato antes de solicitar acceso."
     }
   ],
   "nichos": [
@@ -1720,7 +1738,8 @@
           "Revisión",
           "Trimestral"
         ]
-      ]
+      ],
+      "apoio": "Propósito, alcance, responsables y decisiones del dominio."
     },
     {
       "id": "contrato",
@@ -1768,7 +1787,8 @@
           "Revisión",
           "Con cada nueva fuente o cada 6 meses"
         ]
-      ]
+      ],
+      "apoio": "Alcance, calidad, acceso, versiones y uso por IA."
     },
     {
       "id": "decisao",
@@ -1808,7 +1828,8 @@
           "Próxima revisión",
           "Tras 3 meses de uso"
         ]
-      ]
+      ],
+      "apoio": "Contexto, opciones, decisión, aprobación y revisión."
     },
     {
       "id": "acesso",
@@ -1848,7 +1869,8 @@
           "Revisión",
           "Al vencer o al cerrar el caso"
         ]
-      ]
+      ],
+      "apoio": "Propósito, clasificación, aprobación, plazo y evidencias."
     },
     {
       "id": "evidencias",
@@ -1885,7 +1907,8 @@
           "Próxima revisión",
           "Reunión mensual del foro"
         ]
-      ]
+      ],
+      "apoio": "Práctica, responsable, control, evidencia y revisión."
     }
   ],
   "grupos": [
@@ -2196,27 +2219,32 @@
     {
       "id": "framework",
       "nome": "KDV Framework",
-      "papel": "El método abierto (CC BY 4.0). Gratuito para leer, adaptar y aplicar con cualquier herramienta."
+      "papel": "El método abierto (CC BY 4.0). Gratuito para leer, adaptar y aplicar con cualquier herramienta.",
+      "apoio": "El método abierto (CC BY 4.0). Gratuito para leer, adaptar y aplicar con cualquier herramienta."
     },
     {
       "id": "kolmeia",
       "nome": "Kolmeia",
-      "papel": "La base de código abierto, en desarrollo, que implementa el método en un data lakehouse."
+      "papel": "La base de código abierto, en desarrollo, que implementa el método en un data lakehouse.",
+      "apoio": "La base de código abierto, en desarrollo, que implementa el método en un data lakehouse."
     },
     {
       "id": "edicoes",
       "nome": "KDV Studio/Cloud",
-      "papel": "KDV Studio/Cloud es un ejemplo de herramienta que reúne los módulos necesarios para apoyar KDV: consumo, publicación, gobernanza del ecosistema, operación de la plataforma, atención e integraciones. Su uso es opcional; el Framework puede aplicarse con otras herramientas. Este ejemplo no es una recomendación de contratación."
+      "papel": "KDV Studio/Cloud es un ejemplo de herramienta que reúne los módulos necesarios para apoyar KDV: consumo, publicación, gobernanza del ecosistema, operación de la plataforma, atención e integraciones. Su uso es opcional; el Framework puede aplicarse con otras herramientas. Este ejemplo no es una recomendación de contratación.",
+      "apoio": "Implementación opcional en software. El método admite otras herramientas; este ejemplo no recomienda contratación."
     },
     {
       "id": "empresa",
       "nome": "KDV Ecosystems",
-      "papel": "La empresa que mantiene el framework y ofrece implementación y servicios opcionales."
+      "papel": "La empresa que mantiene el framework y ofrece implementación y servicios opcionales.",
+      "apoio": "La empresa que mantiene el framework y ofrece implementación y servicios opcionales."
     },
     {
       "id": "operador",
       "nome": "Lab of Codes & Kolmeia",
-      "papel": "Operador identificado de este sitio, a efectos de privacidad (contacto: info@kolmeia.io)."
+      "papel": "Operador identificado de este sitio, a efectos de privacidad (contacto: info@kolmeia.io).",
+      "apoio": "Operador identificado de este sitio, a efectos de privacidad (contacto: info@kolmeia.io)."
     }
   ],
   "diagramas": [
@@ -2762,20 +2790,20 @@
       "hero": {
         "eb": "Para quién",
         "h1": "Para quien necesita compartir datos <span class='dim'>con confianza y sin burocracia.</span>",
-        "lead": "Seis tipos de organización y seis perfiles profesionales encuentran en KDV una respuesta a problemas parecidos. Abra cada uno para ver los problemas, qué cambia y un buen primer caso."
+        "lead": "Encuentre su contexto entre seis organizaciones y seis perfiles. Explore dificultades, responsabilidades y un primer caso."
       },
       "sec": {
         "organizacoes": {
           "sub": "Organizaciones",
           "eb": "Tipos de organización",
           "h2": "Organizaciones como la suya.",
-          "p": "Abra un elemento para ver problemas típicos, cómo responde KDV y un buen primer caso."
+          "p": "Explore dificultades y un primer caso por contexto."
         },
         "perfis": {
           "sub": "Perfiles",
           "eb": "Perfiles profesionales",
           "h2": "Quién decide y quién usa.",
-          "p": "Seleccione un perfil. Puede guardarlo: la Documentación le sugerirá un itinerario de lectura."
+          "p": "Elija un perfil para sugerir lecturas en la Documentación."
         },
         "perguntas": {
           "sub": "Preguntas",
@@ -2817,7 +2845,7 @@
       "hero": {
         "eb": "Cómo funciona",
         "h1": "Quién responde, quién decide <span class='dim'>y qué prueba queda.</span>",
-        "lead": "Toda organización ya tiene áreas que producen datos y personas que dependen de ellos. El modelo operativo KDV le pone nombre. Explore cada parte sin salir de esta página."
+        "lead": "El modelo KDV conecta áreas, personas y productos de datos. Explore responsabilidades, decisiones y evidencias."
       },
       "sec": {
         "anatomia": {
@@ -2842,7 +2870,7 @@
           "sub": "Interfaces",
           "eb": "Área funcional",
           "h2": "Capacidades que apoyan el trabajo.",
-          "p": "Estas áreas funcionales apoyan el consumo, la publicación, la gobernanza y la operación. La organización puede cubrirlas con distintas herramientas o prácticas de trabajo acordadas; los derechos de decisión siguen perteneciendo a los roles de negocio."
+          "p": "Consumo, publicación, gobernanza y operación pueden combinar herramientas y prácticas. Los roles de negocio mantienen los derechos de decisión."
         },
         "referenciais": {
           "sub": "Referencias",
@@ -2854,25 +2882,25 @@
           "sub": "IA y privacidad",
           "eb": "IA, RGPD y LGPD",
           "h2": "Datos para IA con límites de uso explícitos.",
-          "p": "Una entrada de catálogo o un conector de IA no bastan. La gobernanza se aplica a la finalidad, las entradas, los resultados y las decisiones humanas."
+          "p": "Declare finalidad, entradas, resultados y revisión humana. Un catálogo o conector de IA no basta."
         }
       },
       "iaCards": [
         [
           "Propósito y autoridad",
-          "Registre el uso previsto y quién puede autorizarlo. Un nuevo uso en IA puede exigir una nueva decisión."
+          "Registre el propósito y quién autoriza cada uso."
         ],
         [
           "Minimización y acceso",
-          "Limite datos y privilegios a lo necesario, también en la búsqueda y en los resultados derivados."
+          "Limite datos y privilegios, incluidos resultados derivados."
         ],
         [
           "Origen y evaluación",
-          "Registre fuentes, actualización y limitaciones; evalúe la calidad de las respuestas."
+          "Registre fuentes, actualización, limitaciones y calidad de respuestas."
         ],
         [
           "Personas y derechos",
-          "Prevea revisión, impugnación, incidentes y los derechos de los interesados ({{termo:lgpd|RGPD/LGPD}})."
+          "Prevea revisión, impugnación, incidentes y derechos de los titulares."
         ]
       ],
       "iaLink": "Abrir la guía IA y privacidad",
@@ -2884,7 +2912,7 @@
       "hero": {
         "eb": "Playbook",
         "h1": "Empiece pequeño. <span class='dim'>Guarde la evidencia.</span>",
-        "lead": "Un camino práctico hacia el primer producto de datos: una preparación breve y cuatro etapas. Cada etapa se abre aquí mismo, con qué hacer, quién participa, la evidencia y la plantilla para descargar.",
+        "lead": "Prepare el primer producto de datos y recorra cuatro etapas. Cada una reúne acciones, participantes, evidencias y plantillas.",
         "cta1": "Empezar por la preparación",
         "cta2": "Ver el ejemplo completo"
       },
@@ -2893,7 +2921,7 @@
           "sub": "Etapas",
           "eb": "Preparación y cuatro etapas",
           "h2": "Del caso elegido al valor observado.",
-          "p": "Abre una etapa y márcala como completada en tu caso; el progreso se conserva en esta página hasta recargarla o salir."
+          "p": "Abra una etapa y marque lo completado. El progreso dura hasta salir o recargar la página."
         },
         "acesso": {
           "sub": "Acceso",
@@ -2922,7 +2950,7 @@
       "hero": {
         "eb": "Implementación",
         "h1": "Un método abierto. Elija el apoyo adecuado a su contexto.",
-        "lead": "Empiece por el caso de uso, los derechos de decisión y las evidencias. Describa las capacidades necesarias para entregar y operar el producto de datos antes de elegir tecnologías. El modelo operativo puede apoyarse en sistemas existentes, herramientas integradas o prácticas manuales controladas."
+        "lead": "Defina el caso de uso, los derechos de decisión y las evidencias antes de la tecnología. Use sistemas existentes, herramientas integradas o prácticas manuales controladas."
       },
       "sec": {
         "caminhos": {
@@ -2941,19 +2969,19 @@
           "sub": "Componentes",
           "eb": "Componentes de la implementación de referencia",
           "h2": "Capacidades técnicas de apoyo",
-          "p": "Use estos nombres funcionales al debatir requisitos. Identifican la capacidad necesaria sin prescribir un proveedor o una herramienta. Un producto puede reunir varias capacidades y una capacidad puede depender de varios componentes."
+          "p": "Discuta capacidades sin prescribir proveedores. Productos y componentes pueden cubrir más de una capacidad."
         },
         "interfaces": {
           "sub": "Interfaces",
           "eb": "Área funcional",
           "h2": "Una interfaz para cada rol.",
-          "p": "Estas áreas funcionales apoyan el consumo, la publicación, la gobernanza y la operación. La organización puede cubrirlas con distintas herramientas o prácticas de trabajo acordadas; los derechos de decisión siguen perteneciendo a los roles de negocio."
+          "p": "Combine herramientas y prácticas de trabajo. Los derechos de decisión siguen en los roles de negocio."
         },
         "licencas": {
           "sub": "Licencias",
           "eb": "Licencias y alternativas",
           "h2": "Abierto por elección, con una política explícita.",
-          "p": "Evalúe la interoperabilidad, la integración de identidad, la aplicación de políticas de acceso, la recuperación de evidencias, la accesibilidad, la portabilidad y el soporte operativo. Elija los componentes según estos requisitos, sin convertir una stack en requisito del Framework."
+          "p": "Evalúe requisitos y contexto antes de elegir componentes. Una stack no es requisito del Framework."
         }
       },
       "verDiagrama": "Ver el diagrama completo",
@@ -2962,7 +2990,12 @@
         "h3a": "Sin quedar atado a un proveedor",
         "pa": "Evalúe la interoperabilidad, la integración de identidad, la aplicación de políticas de acceso, la recuperación de evidencias, la accesibilidad, la portabilidad y el soporte operativo. Elija los componentes según estos requisitos, sin convertir una stack en requisito del Framework.",
         "h3b": "Otras herramientas también sirven",
-        "pb": "La descripción explica qué hace la capacidad. La selección de tecnología, la integración, las licencias y la validación dependen de los requisitos y del contexto acordado."
+        "pb": "La descripción explica qué hace la capacidad. La selección de tecnología, la integración, las licencias y la validación dependen de los requisitos y del contexto acordado.",
+        "criterios": [
+          "Interoperabilidad y portabilidad.",
+          "Identidad y políticas de acceso.",
+          "Evidencias, accesibilidad y soporte operativo."
+        ]
       }
     },
     "recursos": {
@@ -2971,7 +3004,7 @@
       "hero": {
         "eb": "Recursos",
         "h1": "Plantillas para usar mañana.",
-        "lead": "Cinco plantillas en Markdown, Word y Excel, cada una con un ejemplo rellenado y la etapa en que se usa. Los ejemplos usan datos ficticios. Son plantillas de trabajo KDV, no formularios oficiales DAMA ni DCAM."
+        "lead": "Cinco plantillas KDV con ejemplos ficticios, en Markdown, Word y Excel. Son recursos de trabajo, no formularios oficiales DAMA ni DCAM."
       },
       "sec": {
         "modelos": {
@@ -3024,7 +3057,7 @@
       "hero": {
         "eb": "Comunidad",
         "h1": "Hecho para usarse. <span class='dim'>Mejor cuando se comparte.</span>",
-        "lead": "Lea, use, cuestione y mejore el método. Las propuestas son públicas y los guardianes revisan lo que entra en la versión publicada.",
+        "lead": "Use, cuestione y mejore el método. Las propuestas son públicas; los guardianes revisan la publicación.",
         "cta1": "Ir a GitHub ↗"
       },
       "sec": {
@@ -3085,7 +3118,12 @@
         ],
         "h3b": "Guardianes",
         "p1": "Guardián inicial: <span class='mono'>@ismael-lab</span>.",
-        "p2": "Guardián inicial: ismael-lab. Cualquier persona puede proponer un cambio. La gobernanza publicada en el repositorio determina la revisión y aceptación; los nuevos guardianes requieren autorización del responsable para actualizar accesos y políticas. Un guardián no puede aprobar de forma independiente su propio PR."
+        "p2": "Guardián inicial: ismael-lab. Cualquier persona puede proponer un cambio. La gobernanza publicada en el repositorio determina la revisión y aceptación; los nuevos guardianes requieren autorización del responsable para actualizar accesos y políticas. Un guardián no puede aprobar de forma independiente su propio PR.",
+        "regras": [
+          "La revisión y aceptación siguen la gobernanza publicada en el repositorio.",
+          "Los nuevos guardianes requieren autorización del responsable para actualizar accesos y políticas.",
+          "Un guardián no puede aprobar de forma independiente su propio PR."
+        ]
       },
       "roteiro": [
         [
@@ -3103,7 +3141,7 @@
       ],
       "versao": {
         "h3": "Qué significa la versión 1.x",
-        "p": "El sitio y el framework tienen versiones independientes. En la versión 1.x se mantienen estables los nombres de los conceptos y la base común; textos, ejemplos y plantillas pueden mejorar entre versiones menores. Las versiones anteriores (identificadas como 0.1) siguen registradas en el repositorio."
+        "p": "En la versión 1.x, conceptos y mínimo común siguen estables; textos, ejemplos y plantillas pueden mejorar. Las versiones históricas 0.1 permanecen en el repositorio."
       },
       "licenca": {
         "h3": "Use, adapte y cite",
@@ -3231,6 +3269,37 @@
       "pauseCycle": "Pausar ciclo",
       "releaseNote": "Ciclo y anatomía animados, ruta inicial en tres preguntas, herramientas de lectura y acción móvil; soporte para movimiento reducido y cuatro idiomas.",
       "noScript": "Active JavaScript para actualizar la sugerencia o use la regla siguiente y consulte las guías enlazadas."
+    },
+    "documentation": {
+      "intro": "Explore las guías por tema o perfil. Consulte la revisión aceptada en el repositorio abierto.",
+      "rules": [
+        "Cualquier persona puede proponer mejoras.",
+        "La publicación exige revisión del guardián y verificaciones aprobadas.",
+        "Guardián inicial: ismael-lab; el sitio usa una revisión fijada."
+      ],
+      "cards": {
+        "lifecycle": {
+          "description": "Acciones, participantes, controles y evidencias por etapa."
+        },
+        "access-and-exceptions": {
+          "description": "Solicitud, decisión, revisión y fin del acceso."
+        },
+        "evidence": {
+          "description": "Observe ejecución y resultados, sin notas de madurez."
+        },
+        "reference-architecture": {
+          "description": "Responsabilidades, controles y opciones de despliegue.",
+          "title": "Arquitectura de referencia"
+        },
+        "ai-privacy": {
+          "description": "Finalidad, riesgo y derechos en decisiones operativas.",
+          "title": "IA y privacidad"
+        },
+        "worked-example": {
+          "description": "Planificación municipal y fiscalización profesional con trazabilidad.",
+          "title": "Dos ejemplos completos"
+        }
+      }
     }
   }
 }

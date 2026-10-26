@@ -21,6 +21,7 @@
     return b === undefined ? a : b;
   }
   const K = (window.KDV = window.KDV_DATA);
+  const icon = window.KDVIcons.icon;
   const T = K.ui;
   const LANG = K.code;
   const ROOT = "/";
@@ -267,7 +268,7 @@
   function themeNow() { return document.documentElement.dataset.theme || (mq && mq.matches ? "dark" : "light"); }
   function paintThemeBtn() {
     const b = $("#theme-btn"); if (!b) return; const dark = themeNow() === "dark";
-    b.setAttribute("aria-pressed", dark); b.querySelector(".ico").textContent = dark ? "☾" : "☀";
+    b.setAttribute("aria-pressed", dark); b.querySelector(".ico").innerHTML = window.KDVIcons.icon(dark ? "lua" : "sol",20);
     b.querySelector(".lbl").textContent = dark ? T.temaEscuro : T.temaClaro;
     b.title = T.temaAria; b.setAttribute("aria-label", T.temaAria + " · " + (dark ? T.temaEscuro : T.temaClaro));
   }
@@ -298,10 +299,10 @@
       <a class="brand" href="index.html" aria-label="${esc(T.marcaAria)}">${logo}</a>
       <nav class="nav" id="nav" aria-label="${esc(T.navAria)}">${nav}${langs("langs-m")}</nav>
       <div class="hdr-actions">
-        <button type="button" class="icon-btn persona-chip" id="persona-chip" title="${esc(T.removerPerfil)}"><span>${esc(T.perfil)}</span> <b id="persona-name"></b> ✕</button>
+        <button type="button" class="icon-btn persona-chip" id="persona-chip" title="${esc(T.removerPerfil)}"><span>${esc(T.perfil)}</span> <b id="persona-name"></b> ${icon("fechar",20)}</button>
         ${langs("langs-d")}
-        <button type="button" class="icon-btn" id="theme-btn" aria-pressed="false"><span class="ico" aria-hidden="true">☀</span><span class="lbl"></span></button>
-        <button type="button" class="icon-btn" id="search-btn" aria-label="${esc(T.buscarAria)}"><span aria-hidden="true">⌕</span><span class="lbl">${esc(T.buscar)}</span><span class="kbd">Ctrl K</span></button>
+        <button type="button" class="icon-btn" id="theme-btn" aria-pressed="false"><span class="ico" aria-hidden="true">${icon("sol",20)}</span><span class="lbl"></span></button>
+        <button type="button" class="icon-btn" id="search-btn" aria-label="${esc(T.buscarAria)}"><span aria-hidden="true">${icon("busca",20)}</span><span class="lbl">${esc(T.buscar)}</span><span class="kbd">Ctrl K</span></button>
         <button type="button" class="icon-btn menu-btn" id="menu-btn" aria-expanded="false" aria-controls="nav">${esc(T.menu)}</button>
       </div></div></header>`;
     const R = T.rodape; const nome = (id) => esc(K.paginas.find((p) => p.id === id).nome);
@@ -319,7 +320,7 @@
       <aside class="drawer" id="drawer" role="dialog" aria-modal="true" aria-labelledby="drawer-title" aria-hidden="true">
         <div class="drawer-bar"><button type="button" class="icon-btn" id="drawer-back" hidden>${esc(P.voltar)}</button><span class="crumbs"></span>
           <button type="button" class="icon-btn" id="drawer-link" title="${esc(P.copiarLinkTitulo)}">${esc(P.copiarLink)}</button>
-          <button type="button" class="icon-btn" id="drawer-close" aria-label="${esc(P.fechar)}">✕</button></div>
+          <button type="button" class="icon-btn" id="drawer-close" aria-label="${esc(P.fechar)}">${icon("fechar",20)}</button></div>
         <div class="drawer-body" tabindex="-1"></div></aside>
       <div class="palette" id="palette" role="dialog" aria-modal="true" aria-label="${esc(T.busca.aria)}"><div class="palette-box">
         <label class="sr" for="pal-in">${esc(T.busca.label)}</label>
