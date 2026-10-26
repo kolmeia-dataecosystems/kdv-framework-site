@@ -1,0 +1,13 @@
+# Cache: o HTML é sempre revalidado (Last-Modified), para cada publicação aparecer na hora.
+# Scripts e estilos são versionados por ?v=, mas os módulos importados não: cache curto.
+<IfModule mod_headers.c>
+  <FilesMatch "\.html?$">
+    Header set Cache-Control "no-cache"
+  </FilesMatch>
+  <FilesMatch "\.(css|js|mjs|json)$">
+    Header set Cache-Control "public, max-age=3600"
+  </FilesMatch>
+  <FilesMatch "\.(woff2|png|jpe?g|webp|svg|ico)$">
+    Header set Cache-Control "public, max-age=604800"
+  </FilesMatch>
+</IfModule>

@@ -1,5 +1,10 @@
 # Changelog
 
+## 1.3.1 — 2026-10-26
+
+- Restore the vocabulary honeycomb (Ecosystem, Hive, Cell, Comb, data product, Farm) in the home hero; the four-stage cycle moves to its own section below.
+- Serve HTML with `Cache-Control: no-cache` and short caching for scripts and styles, so each publication is visible immediately.
+
 ## 1.3.0 — 2026-10-26
 
 - Add a four-stage home cycle, progressive anatomy and restrained section/card motion.
